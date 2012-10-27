@@ -37,7 +37,7 @@ api.refresh();
 
 setInterval(function(param) {
   api.refresh();
-}, 300000);
+}, 86400000);
 
 // Routes
 
