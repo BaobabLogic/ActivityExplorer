@@ -28,9 +28,6 @@ var search = {
 
 exports.refresh = function () {
 	https.get(search, function(res) {
-  	console.log("statusCode: ", res.statusCode);
-  	console.log("headers: ", res.headers);
-
   	res.on('data', function(d) {
     	parser.parseString(d);
   	});
