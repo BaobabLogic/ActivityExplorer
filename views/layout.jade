@@ -5,13 +5,11 @@ html(lang='en', ng-app='activity')
     title= title
     link(rel='stylesheet', href='/css/jquery-ui-1.8.24.custom.css')
     link(rel='stylesheet', href='/css/angular-ui.min.css')
-    link(rel='stylesheet', href='/css/popup.css')
     link(rel='stylesheet', href='/css/menu.css')
     link(rel='stylesheet', href='/css/main.css')
     script(type='text/javascript', src='/js/jquery-1.8.2.min.js')
     script(type='text/javascript', src='/js/jquery-ui-1.8.24.custom.min.js')
-    script(type='text/javascript', src='/js/main.js')
-    script(type='text/javascript', src='/js/popup.js')
+    script(type='text/javascript', src='/js/extra.js')
 
   body
     div#header(ng-controller='SearchCtrl')
@@ -24,25 +22,39 @@ html(lang='en', ng-app='activity')
           span Go 
       nav#topButtons
         ul
-          button.barButton(type='button', value='Themes', id="themes")
+          button.headButton(type='button', value='themes', id="themes")
             span Themes  
-          button.barButton(type='button', value='Refine', id="refine")
+          button.headButton(type='button', value='refine', id="refine")
             span Refine  
-          button.barButton(type='button', value='Sort', id="sort")
+          button.headButton(type='button', value='sort', id="sort")
             span Sort
-    #refinePopUp
+    div#themesPopUp 
+      | Themes       
+    div#refinePopUp
       | Budget: &nbsp
       span#budget Slide to select
       #budgetS.slider
       | Duration:
       span#duration Slide to select
-      #durationS.slider            
+      #durationS.slider
+    div#sortPopUp
+      | Price
+      | Duration
+      | Name              
+      | Location  
 
     block content
 
     div#popups(ng-controller="PopupCtrl")
-      div#popup(ng-style="mainStyle") 
-      div#background
+      div#social(ng-style="mainStyle", class="popup")
+        div#facebook
+          iframe(src='//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FActivityExplorer&width=300&height=468&colorscheme=light&show_faces=false&border_color&stream=true&header=true&appId=177056142347559', scrolling='no', frameborder='0', style='border: none; overflow: hidden; width: 300px; height: 468px;', allowtransparency='true')
+        div#twitter 
+          a.twitter-timeline(width="300", height="468",data-dnt='true', href='https://twitter.com/ActivityExplore', data-widget-id='262054067466014721') Tweets by @ActivityExplore
+          script !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");    
+    
+
+    div#background
 
     nav#footer(ng-controller='FooterCtrl') 
       #view
@@ -56,16 +68,14 @@ html(lang='en', ng-app='activity')
           span
           a(href="/large") Large
       ul
-        button.barButton(type='button', value='Social')
+        button.barButton(type='button', value='social')
           span Social
-        button.barButton(type='button', value='Videos')
-          span Videos
-        button.barButton(type='button', value='About')
+        button.barButton(type='button', value='f.a.q')
+          span F.A.Q
+        button.barButton(type='button', value='about')
           span About
-        button.barButton(type='button', value='Contact')
+        button.barButton(type='button', value='contact')
           span Contact
-        button.barButton(type='button', value='Help')
-          span Help
 
     script(type='text/javascript', src='/js/angular.min.js')
     script(type='text/javascript', src='/js/angular-ui.min.js')

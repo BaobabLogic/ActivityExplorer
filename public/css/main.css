@@ -257,16 +257,66 @@ button span {
 	top: -1px;
 }
 
+.headButton {
+	color: #fff;
+	font-family: 'BebasNeueRegular';	
+	font-size: 20px;
+	text-shadow: 0px 2px 3px #000;
+	background-color: #f28e36;
+	height: 27px;
+	width: 80px;
+	padding-left: 7px;
+	padding-right: 7px;
+	margin: 3px 8px;
+  border-radius:7px;
+	position: relative;
+	
+	background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(242,142,54)),
+		color-stop(0.61, rgb(241,175,83))
+	);
+	
+	-moz-box-shadow: 1px 1px 3px black;
+	-webkit-box-shadow: 1px 1px 3px black;
+	box-shadow: 1px 1px 3px black;
+}
+
+.headButton:hover {
+	background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(241,175,83)),
+		color-stop(0.61, rgb(242,142,54))
+	);
+}
+
+.headButton span {
+	position: relative;
+	top: -2px;
+}
+
 #topButtons {
 	position: relative;
 	top: 1px;
 }
 
 #refine {
-}
-
-#refinePopUp {
-	display: none;
 }
 
 #budget, #duration{
@@ -304,6 +354,40 @@ button span {
 
 #sort {
 	margin-right: 12px;
+}
+
+/*Header Popups*/
+#themesPopUp {
+	display: none;
+	width: 200px;
+	height: 100px;
+	position: fixed;
+	top: 40px;
+	right: 50px;
+	background-color: white;
+	z-index: 150;
+}
+
+#refinePopUp {
+	display: none;
+	width: 200px;
+	height: 100px;
+	position: fixed;
+	top: 40px;
+	right: 50px;
+	background-color: white;
+	z-index: 150;
+}
+
+#sortPopUp {
+	display: none;
+	width: 200px;
+	height: 100px;
+	position: fixed;
+	top: 40px;
+	right: 50px;
+	background-color: white;
+	z-index: 150;
 }
 
 
@@ -485,6 +569,44 @@ li {
 	);
 }
 
+/*Footer Popups*/
+.popup {
+  display: none;
+  position: absolute;
+  background: #FFFFFF;
+  padding: 5px;
+  z-index: 151;
+  min-height: 560px;
+  min-width: 820px;
+	-moz-box-shadow: 1px 1px 5px #8a8a8a;
+	-webkit-box-shadow: 1px 1px 5px #8a8a8a;
+	box-shadow: 1px 1px 5px #8a8a8a; 
+}
+
+#background {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #ebebeb;
+  z-index: 150;
+	opacity: 0.2;
+}
+
+#facebook {
+	float: left;
+	margin: 40px 0 0 60px;
+  z-index: 151;
+}	
+
+#twitter {
+	float: right;
+	margin: 40px 60px 0 0;
+  z-index: 151;
+}
+
 
 
 
@@ -579,22 +701,4 @@ li {
 
 .price {
 	float: right;
-}
-
-.hello {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 16px;
-	color: #858585;	
-  height: 40px;
-  border-bottom: 1px solid gray;
-}
-
-#fixed {
-    height: 300px;
-    width: 300px;
-    position: fixed;
-    top: 100px;
-    left: 550px;
-    background-color: white;
-    overflow: auto;
 }
