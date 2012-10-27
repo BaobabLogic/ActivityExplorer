@@ -1,0 +1,11 @@
+div(id="main", ng-style="mainStyle", ng-click="loadMore()", when-scrolled="loadMore()")
+	div(ng-repeat="result in results", class="mediumResult")
+		div(class="mediumImage") 
+			image(ng-src='{{image(result.image[0])}}', width=279, height=185)
+		div.details
+			div 
+				| Type
+			div 
+				| Location
+				span(class="price") 
+					| R{{price(result.price[0])}} 

@@ -1,0 +1,41 @@
+#menuForm { 
+	display: none;
+	position: fixed;
+	width: 280px;
+	top: 40px;
+	font-size: 16px;
+	line-height: 150%;
+	overflow: auto;
+}
+
+#browse {
+	position: relative;
+	width: 250px;
+	margin-bottom: 2px;
+}
+.categories {
+	display: none;
+}
+.themeButton {
+	position: relative;
+	margin: 0px;
+}
+.categoryButton {
+	position: relative;
+	margin: 0px;
+
+	background-color: #15a0db;	
+	background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(242,142,54)),
+		color-stop(0.61, rgb(241,175,83))
+	);		
+}

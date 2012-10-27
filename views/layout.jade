@@ -1,0 +1,77 @@
+doctype 5
+html(lang='en', ng-app='activity')
+
+  head
+    title= title
+    link(rel='stylesheet', href='/css/jquery-ui-1.8.24.custom.css')
+    link(rel='stylesheet', href='/css/angular-ui.min.css')
+    link(rel='stylesheet', href='/css/popup.css')
+    link(rel='stylesheet', href='/css/menu.css')
+    link(rel='stylesheet', href='/css/main.css')
+    script(type='text/javascript', src='/js/jquery-1.8.2.min.js')
+    script(type='text/javascript', src='/js/jquery-ui-1.8.24.custom.min.js')
+    script(type='text/javascript', src='/js/main.js')
+    script(type='text/javascript', src='/js/popup.js')
+
+  body
+    div#header(ng-controller='SearchCtrl')
+      div#logo  
+        image(src='/img/logo-small.png', height=28, width=289)
+      div#search  
+        input#searchBar(type='text', name='explore', size='30', ng-model="search", spellcheck="false",
+          search-bar="{focus:'search=focus', blur:'search=blur'}")
+        button.goButton(type='button', value='go')
+          span Go 
+      nav#topButtons
+        ul
+          button.barButton(type='button', value='Themes', id="themes")
+            span Themes  
+          button.barButton(type='button', value='Refine', id="refine")
+            span Refine  
+          button.barButton(type='button', value='Sort', id="sort")
+            span Sort
+    #refinePopUp
+      | Budget: &nbsp
+      span#budget Slide to select
+      #budgetS.slider
+      | Duration:
+      span#duration Slide to select
+      #durationS.slider            
+
+    block content
+
+    div#popups(ng-controller="PopupCtrl")
+      div#popup(ng-style="mainStyle") 
+      div#background
+
+    nav#footer(ng-controller='FooterCtrl') 
+      #view
+        label(class='ng-class: viewButtonClass("/small")')
+          span
+          a(href="/small") Small
+        label(class='ng-class: viewButtonClass("/medium")')
+          span
+          a(href="/medium") Medium
+        label(class='ng-class: viewButtonClass("/large")')
+          span
+          a(href="/large") Large
+      ul
+        button.barButton(type='button', value='Social')
+          span Social
+        button.barButton(type='button', value='Videos')
+          span Videos
+        button.barButton(type='button', value='About')
+          span About
+        button.barButton(type='button', value='Contact')
+          span Contact
+        button.barButton(type='button', value='Help')
+          span Help
+
+    script(type='text/javascript', src='/js/angular.min.js')
+    script(type='text/javascript', src='/js/angular-ui.min.js')
+    script(type='text/javascript', src='/js/angular-ui-ieshiv.min.js')
+    script(type='text/javascript', src='/js/app.js')
+    script(type='text/javascript', src='/js/controllers.js')
+    script(type='text/javascript', src='/js/directives.js')
+    script(type='text/javascript', src='/js/filters.js')
+    script(type='text/javascript', src='/js/services.js')
