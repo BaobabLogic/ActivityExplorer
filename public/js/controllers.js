@@ -52,7 +52,7 @@ function ResultsCtrl($scope, $http, $location) {
     var width = window.innerWidth;
     switch (size){
       case "/large": return width - (width-70)%786 - 70; break;
-      case "/small": return width - (width-70)%136 - 70; break;
+      case "/small": return width - (width-70)%186 - 70; break;
       default: return width - (width-70)%315 - 70;
     }    
   };

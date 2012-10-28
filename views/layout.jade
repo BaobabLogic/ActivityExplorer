@@ -20,7 +20,7 @@ html(lang='en', ng-app='activity')
           search-bar="{focus:'search=focus', blur:'search=blur'}")
         button.goButton(type='button', value='go')
           span Go 
-      nav#topButtons
+      nav#topButtons(ng-model="head")
         ul
           button.headButton(type='button', value='themes', id="themes")
             span Themes  
@@ -29,7 +29,15 @@ html(lang='en', ng-app='activity')
           button.headButton(type='button', value='sort', id="sort")
             span Sort
     div#themesPopUp 
-      | Themes       
+      form#menuForm(ng-controller='FormCtrl')
+        #browse
+          div(ng-repeat="theme in themes")
+            button.themeButton(type='button', value='{{theme.name}}', ng-click='theme.visible=!theme.visible')
+              span {{theme.name}}
+            div(id='{{theme.name}}', class='categories', ng-visible='theme.visible')
+              div(ng-repeat="category in theme.list")
+                button.categoryButton(type='button', value='{{category}}')
+                  span {{category}}       
     div#refinePopUp
       | Budget: &nbsp
       span#budget Slide to select
@@ -38,10 +46,11 @@ html(lang='en', ng-app='activity')
       span#duration Slide to select
       #durationS.slider
     div#sortPopUp
-      | Price
-      | Duration
-      | Name              
-      | Location  
+      div Price
+      div Duration
+      div Name              
+      div Location
+    div#invisiBackground
 
     block content
 

@@ -1,7 +1,7 @@
 div(id="main", ng-style="mainStyle", ng-click="loadMore()", when-scrolled="loadMore()")
 	div(ng-repeat="result in results", class="smallResult")
 		div(class="smallImage") 
-			image(ng-src='{{result.image[0]}}')
+			image(ng-src='{{image(result.image[0])}}', width=150, height=100)
 		div.details
 			div 
 				| Type

@@ -359,35 +359,54 @@ button span {
 /*Header Popups*/
 #themesPopUp {
 	display: none;
-	width: 200px;
-	height: 100px;
+	width: 400px;
+	height: 250px;
 	position: fixed;
-	top: 40px;
-	right: 50px;
+	top: 36px;
+	right: 240px;
 	background-color: white;
 	z-index: 150;
+	-moz-box-shadow: 1px 1px 3px #2b2b2b;
+	-webkit-box-shadow: 1px 1px 3px #2b2b2b;
+	box-shadow: 1px 1px 3px #2b2b2b;
 }
 
 #refinePopUp {
 	display: none;
-	width: 200px;
-	height: 100px;
+	width: 300px;
+	height: 150px;
 	position: fixed;
-	top: 40px;
-	right: 50px;
+	top: 36px;
+	right: 144px;
 	background-color: white;
 	z-index: 150;
+	-moz-box-shadow: 1px 1px 3px #2b2b2b;
+	-webkit-box-shadow: 1px 1px 3px #2b2b2b;
+	box-shadow: 1px 1px 3px #2b2b2b;
 }
 
 #sortPopUp {
 	display: none;
 	width: 200px;
-	height: 100px;
+	height: 150px;
 	position: fixed;
-	top: 40px;
-	right: 50px;
+	top: 36px;
+	right: 48px;
 	background-color: white;
 	z-index: 150;
+	-moz-box-shadow: 1px 1px 3px #2b2b2b;
+	-webkit-box-shadow: 1px 1px 3px #2b2b2b;
+	box-shadow: 1px 1px 3px #2b2b2b;
+}
+
+#invisiBackground {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 120;
 }
 
 
@@ -623,7 +642,7 @@ li {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 
-	width: 100px;
+	width: 150px;
 	height: 140px;	
 	margin: 16px 8px 0px 8px;
 	padding: 10px 10px 0px 10px;
@@ -674,7 +693,7 @@ li {
 }
 
 .smallImage {
-	width: 100px;
+	width: 150px;
 	height: 100px;
 	background: #ededed;
 	background-image: url('/img/main-noise.png');

@@ -2,7 +2,6 @@ $(function() {
 	var footerButton = "";
   $('.barButton').click(function() {
   	footerButton = $(this).val();
-    $("#test").html("Button");
 		$("#" + footerButton).fadeIn("slow");
 		$("#background").fadeIn("slow");
 	});
@@ -16,20 +15,47 @@ $(function() {
 	
 $(function() {
 	var headButton = "";
-  $('.headButton').click(function(event) {
-  	headButton = $(this).val();
-		$("#" + headButton + "PopUp").fadeIn("slow");
-		$("#" + headButton + "PopUp").click(function(event){
-    	event.stopPropagation();
- 		});
-    event.stopPropagation();
-	});
 
-	$('html').click(function() {
-		if($("#" + headButton + "PopUp").is(":visible")){
-    	$("#" + headButton + "PopUp").fadeOut("slow");
-		}
- 	});		
+  $('.headButton').click(function(e) {
+  	headButton = $(this).val();
+
+  	if(headButton == 'themes') {
+  		if($('#refinePopUp').is(':visible')){
+        $('#refinePopUp').fadeOut();
+    	}
+    	if($('#sortPopUp').is(':visible')){
+        $('#sortPopUp').fadeOut();
+    	}
+  	}
+  	else if(headButton == 'refine') {
+  		if($('#themesPopUp').is(':visible')){
+        $('#themesPopUp').fadeOut();
+    	}
+    	if($('#sortPopUp').is(':visible')){
+        $('#sortPopUp').fadeOut();
+    	}
+  	}
+  	else if(headButton == 'sort') {
+    	if($('#themesPopUp').is(':visible')){
+        $('#themesPopUp').fadeOut();
+    	}
+  		if($('#refinePopUp').is(':visible')){
+        $('#refinePopUp').fadeOut();
+    	}
+  	}
+
+    if(!$('#' + headButton + 'PopUp').is(':visible')){
+        $('#' + headButton + 'PopUp').fadeIn();
+        e.stopPropagation();
+    }
+    else{
+        $('#' + headButton + 'PopUp').fadeOut();
+    } 
+
+		$(document).click( function(e){
+	    if (e.target.id != headButton + 'PopUp') $('#' + headButton + 'PopUp').fadeOut();
+		});    
+	});     
 });
 
 $(function() {
