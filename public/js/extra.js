@@ -2,13 +2,13 @@ $(function() {
 	var footerButton = "";
   $('.barButton').click(function() {
   	footerButton = $(this).val();
-		$("#" + footerButton).fadeIn("slow");
-		$("#background").fadeIn("slow");
+		$("#" + footerButton).show();
+		$("#background").show();
 	});
 	
   $("#background").click(function(){
-    $("#background").fadeOut("slow");
-    $("#" + footerButton).fadeOut("slow");
+    $("#background").hide();
+    $("#" + footerButton).hide();
   });        
 });
 
@@ -21,39 +21,39 @@ $(function() {
 
   	if(headButton == 'themes') {
   		if($('#refinePopUp').is(':visible')){
-        $('#refinePopUp').fadeOut();
+        $('#refinePopUp').hide();
     	}
     	if($('#sortPopUp').is(':visible')){
-        $('#sortPopUp').fadeOut();
+        $('#sortPopUp').hide();
     	}
   	}
   	else if(headButton == 'refine') {
   		if($('#themesPopUp').is(':visible')){
-        $('#themesPopUp').fadeOut();
+        $('#themesPopUp').hide();
     	}
     	if($('#sortPopUp').is(':visible')){
-        $('#sortPopUp').fadeOut();
+        $('#sortPopUp').hide();
     	}
   	}
   	else if(headButton == 'sort') {
     	if($('#themesPopUp').is(':visible')){
-        $('#themesPopUp').fadeOut();
+        $('#themesPopUp').hide();
     	}
   		if($('#refinePopUp').is(':visible')){
-        $('#refinePopUp').fadeOut();
+        $('#refinePopUp').hide();
     	}
   	}
 
     if(!$('#' + headButton + 'PopUp').is(':visible')){
-        $('#' + headButton + 'PopUp').fadeIn();
+        $('#' + headButton + 'PopUp').show();
         e.stopPropagation();
     }
     else{
-        $('#' + headButton + 'PopUp').fadeOut();
+        $('#' + headButton + 'PopUp').hide();
     } 
 
 		$(document).click( function(e){
-	    if (e.target.id != headButton + 'PopUp') $('#' + headButton + 'PopUp').fadeOut();
+	    if (e.target.id != headButton + 'PopUp') $('#' + headButton + 'PopUp').hide();
 		});    
 	});     
 });

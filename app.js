@@ -44,6 +44,7 @@ setInterval(function(param) {
 app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
 app.get('/api', api.api);
+app.get('/api/:id', api.specificService);
 
 
 // redirect all others to the index (HTML5 history)

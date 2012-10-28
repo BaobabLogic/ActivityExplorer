@@ -1,5 +1,5 @@
-div(id="main", ng-style="mainStyle", ng-click="loadMore()", when-scrolled="loadMore()")
-	div(ng-repeat="result in results", class="smallResult")
+div(id="main", ng-style="mainStyle", when-scrolled="loadMore()")
+	div(ng-repeat="result in results", class="smallResult", ng-click="popUpResult(result.id[0])")
 		div(class="smallImage") 
 			image(ng-src='{{image(result.image[0])}}', width=150, height=100)
 		div.details
@@ -9,4 +9,7 @@ div(id="main", ng-style="mainStyle", ng-click="loadMore()", when-scrolled="loadM
 				| Location
 				span(class="price") 
 					| R{{price(result.price[0])}} 
+div.resultPopUp(ng-visible="visible", ng-style="activityStyle")
+	div {{activity.name[0]}}
+div#resultBackground(ng-visible="visible", ng-click="popUpResult()")
 			

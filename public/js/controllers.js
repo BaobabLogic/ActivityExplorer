@@ -66,6 +66,38 @@ function ResultsCtrl($scope, $http, $location) {
     $scope.$apply();
   }); 
 
+  $scope.visible = false;
+
+  $scope.popUpResult = function(id) { 
+    $scope.activity = "";
+    $http.get('/api/' + id).
+      success(function(data, status, headers, config) {
+        $scope.activity = data;
+      }); 
+    $scope.visible = !$scope.visible;
+  };
+
+  var computeTop = function() {
+    var height = window.innerHeight;
+    return (height-560)/2; 
+  };
+
+  var computeLeft = function() {
+    var width = window.innerWidth;
+    return (width-860)/2; 
+  };
+    
+  $scope.activityStyle = {
+    top: computeTop() + 'px',
+    left: computeLeft() + 'px'
+  };
+    
+  angular.element(window).bind('resize', function() {
+    $scope.activityStyle.top = computeTop() + 'px';
+    $scope.activityStyle.left = computeLeft() + 'px';
+    $scope.$apply();
+  });
+
   $http.get('/api').
     success(function(data, status, headers, config) {
       $scope.activities = data;

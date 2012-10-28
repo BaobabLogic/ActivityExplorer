@@ -44,20 +44,4 @@ app.directive('whenScrolled', function() {
       }
     });
   };
-});
-
-app.directive('clickOutside', function($document){
-  return {
-    restrict: 'A',
-    link: function(scope, elem, attr, ctrl) {
-      elem.bind('click', function(e) {
-        e.stopPropagation();
-      });
-      $document.bind('click', function() {
-        // magic here.
-        scope.$eval(attr.clickOutside);
-        scope.$apply();
-      })
-    }
-  }
-})     
+}); 

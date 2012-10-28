@@ -8,12 +8,18 @@ var https = require('https'),
 //XML Parser
 
 var inspect = require('eyes').inspector({maxLength: false});
-var activitar;
+var activitar; var activity;
 
 var parser = new xml2js.Parser();
 parser.addListener('end', function(result) {
     activitar = result.services.service;
-    console.log('Activitar main query refreshed.');
+    console.log('Activitar main query response received.');
+});
+
+var parser2 = new xml2js.Parser();
+parser2.addListener('end', function(result) {
+    activity = result.service;
+    console.log('Activitar specific service response received.');
 });
 
 // Activitar API Request paramaters
@@ -24,7 +30,7 @@ var search = {
   method: 'GET',
 };
 
-//Activitar main query refresh
+//Activitar main refresh query
 
 exports.refresh = function () {
 	https.get(search, function(res) {
@@ -37,8 +43,48 @@ exports.refresh = function () {
 	});
 }
 
-//Activity Explorer Response to Activitar Search
+//Activitar service query
+
+function service(serviceID) {
+  var service = {
+    hostname: 'www.activitar.com',
+    port: 443,
+    path: '/api/services/' + serviceID + '.xml?api_key=rTLUr5A4iGiat3Y2BjZn&per_page=99999',
+    method: 'GET',  
+  };
+
+  https.get(service, function(res) {
+    res.on('data', function(d) {
+      parser2.parseString(d);
+    });
+
+  }).on('error', function(e) {
+    console.error(e);
+  });
+}
+
+//Activity Explorer responses to requests for Activitar API info
 
 exports.api = function (req, res) {
   res.json(activitar);
+};
+
+exports.specificService = function (req, res) {
+  var serviceID = req.params.id;
+  var service = {
+    hostname: 'www.activitar.com',
+    port: 443,
+    path: '/api/services/' + serviceID + '.xml?api_key=rTLUr5A4iGiat3Y2BjZn&per_page=99999',
+    method: 'GET',  
+  };
+
+  https.get(service, function(res2) {
+    res2.on('data', function(d) {
+      parser2.parseString(d);
+      res.json(activity);
+    });
+
+  }).on('error', function(e) {
+    console.error(e);
+  });
 };

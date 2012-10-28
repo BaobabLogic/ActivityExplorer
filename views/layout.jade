@@ -39,12 +39,14 @@ html(lang='en', ng-app='activity')
                 button.categoryButton(type='button', value='{{category}}')
                   span {{category}}       
     div#refinePopUp
-      | Budget: &nbsp
-      span#budget Slide to select
-      #budgetS.slider
-      | Duration:
-      span#duration Slide to select
-      #durationS.slider
+      div#refineInside
+        | Budget: &nbsp
+        span#budget Slide to select
+        #budgetS.slider
+        br
+        | Duration:
+        span#duration Slide to select
+        #durationS.slider
     div#sortPopUp
       div Price
       div Duration

@@ -373,16 +373,21 @@ button span {
 
 #refinePopUp {
 	display: none;
-	width: 300px;
-	height: 150px;
+	width: 280px;
+	height: 120px;
 	position: fixed;
 	top: 36px;
 	right: 144px;
 	background-color: white;
 	z-index: 150;
+	border: 2px solid #f7941d;
 	-moz-box-shadow: 1px 1px 3px #2b2b2b;
 	-webkit-box-shadow: 1px 1px 3px #2b2b2b;
 	box-shadow: 1px 1px 3px #2b2b2b;
+}
+
+#refineInside {
+	margin: 20px 25px;
 }
 
 #sortPopUp {
@@ -611,7 +616,7 @@ li {
   left: 0;
   background: #ebebeb;
   z-index: 150;
-	opacity: 0.2;
+	opacity: 0.6;
 }
 
 #facebook {
@@ -636,6 +641,10 @@ li {
 
 .mainNone{
 	display: none;
+}
+
+.result{
+
 }
 
 .smallResult{
@@ -667,11 +676,14 @@ li {
 	display: inline-block;
 
 	background-color: #fff;
-	-moz-box-shadow: 1px 1px 2px #8a8a8a;
-	-webkit-box-shadow: 1px 1px 2px #8a8a8a;
-	box-shadow: 1px 1px 2px #8a8a8a; 
 
 	border: 0;
+}
+
+.mediumResult:hover {
+	-moz-box-shadow: 0px 0px 10px #8a8a8a;
+	-webkit-box-shadow: 0px 0px 10px #8a8a8a;
+	box-shadow: 0px 0px 10px #8a8a8a;
 }
 
 .largeResult{
@@ -720,4 +732,31 @@ li {
 
 .price {
 	float: right;
+}
+
+/*Items in result popup*/
+.resultPopUp {
+  display: none;
+  position: fixed;
+  background: #FFFFFF;
+  padding: 25px;
+  z-index: 151;
+  height: 510px;
+  width: 810px;
+  overflow: auto;
+	-moz-box-shadow: 1px 1px 5px #8a8a8a;
+	-webkit-box-shadow: 1px 1px 5px #8a8a8a;
+	box-shadow: 1px 1px 5px #8a8a8a; 
+}
+
+#resultBackground {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #ebebeb;
+  z-index: 150;
+	opacity: 0.6;
 }
