@@ -11,8 +11,8 @@ html(lang='en', ng-app='activity')
     script(type='text/javascript', src='/js/jquery-ui-1.8.24.custom.min.js')
     script(type='text/javascript', src='/js/extra.js')
 
-  body
-    div#header(ng-controller='SearchCtrl')
+  body(ng-controller='AppCtrl')
+    div#header
       div#logo  
         image(src='/img/logo-small.png', height=28, width=289)
       div#search  
@@ -29,7 +29,7 @@ html(lang='en', ng-app='activity')
           button.headButton(type='button', value='sort', id="sort")
             span Sort
     div#themesPopUp 
-      form#menuForm(ng-controller='FormCtrl')
+      form#menuForm
         #browse
           div(ng-repeat="theme in themes")
             button.themeButton(type='button', value='{{theme.name}}', ng-click='theme.visible=!theme.visible')
@@ -56,8 +56,8 @@ html(lang='en', ng-app='activity')
 
     block content
 
-    div#popups(ng-controller="PopupCtrl")
-      div#social(ng-style="mainStyle", class="popup")
+    div#popups
+      div#social(ng-style="popUpStyle", class="popup")
         div#facebook
           iframe(src='//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FActivityExplorer&width=300&height=468&colorscheme=light&show_faces=false&border_color&stream=true&header=true&appId=177056142347559', scrolling='no', frameborder='0', style='border: none; overflow: hidden; width: 300px; height: 468px;', allowtransparency='true')
         div#twitter 
@@ -67,7 +67,7 @@ html(lang='en', ng-app='activity')
 
     div#background
 
-    nav#footer(ng-controller='FooterCtrl') 
+    nav#footer
       #view
         label(class='ng-class: viewButtonClass("/small")')
           span

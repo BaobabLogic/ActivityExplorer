@@ -2,13 +2,12 @@
 
 /* Controllers */
 
-function SearchCtrl($scope) {
+function AppCtrl($scope, $http, $location) {
+  //Search Bar 
+
   $scope.search = "Explore";
   $scope.blur = "Explore";
   $scope.focus = "";
-}
-
-function FormCtrl($scope) {
   $scope.themes = [
     { "name": "Adventure",
       "visible": false,
@@ -44,9 +43,11 @@ function FormCtrl($scope) {
       "visible": false,
       "list": ["Fishing", "Scuba", "Shark Cage Diving", "Stand Up Paddle", "Waterfall Adventure", "Whale Watching"]}
   ];
-}
 
-function ResultsCtrl($scope, $http, $location) {
+
+  //Results Section
+    //Results Display Section
+
   var size = $location.path();
   var computeWidth = function() {
     var width = window.innerWidth;
@@ -59,22 +60,6 @@ function ResultsCtrl($scope, $http, $location) {
     
   $scope.mainStyle = {
     width: computeWidth() + 'px'
-  };
-    
-  angular.element(window).bind('resize', function() {
-    $scope.mainStyle.width = computeWidth() + 'px';
-    $scope.$apply();
-  }); 
-
-  $scope.visible = false;
-
-  $scope.popUpResult = function(id) { 
-    $scope.activity = "";
-    $http.get('/api/' + id).
-      success(function(data, status, headers, config) {
-        $scope.activity = data;
-      }); 
-    $scope.visible = !$scope.visible;
   };
 
   var computeTop = function() {
@@ -93,24 +78,21 @@ function ResultsCtrl($scope, $http, $location) {
   };
     
   angular.element(window).bind('resize', function() {
+    $scope.mainStyle.width = computeWidth() + 'px';
     $scope.activityStyle.top = computeTop() + 'px';
     $scope.activityStyle.left = computeLeft() + 'px';
+    $scope.popUpStyle.top = (window.innerHeight - 560)/2 + 'px';
+    $scope.popUpStyle.left = (window.innerWidth - 830)/2 + 'px';
     $scope.$apply();
   });
 
+   //Results Data Section
+
   $http.get('/api').
     success(function(data, status, headers, config) {
-      $scope.activities = data;
+      $scope.results = data;
       $scope.loadMore();
     });
-
-  $scope.image = function (url) {
-    return url.replace("search", "medium");
-  }
-
-  $scope.price = function (num) {
-    return num.substring(0, (num.length-2));
-  }
 
   $scope.results = [];
     
@@ -124,29 +106,47 @@ function ResultsCtrl($scope, $http, $location) {
   };
   $scope.loadMore = function() {      
     for (var i = 0; i < amount(); i++) {
-      if(count < $scope.activities.length){
-        $scope.results.push($scope.activities[count]);
+      if(count < $scope.results.length){
+        $scope.activities.push($scope.results[count]);
         count++;
       }
     }
   };
-}
 
-function PopupCtrl($scope) {
-  $scope.mainStyle = {
+  $scope.image = function (url) {
+    return url.replace("search", "medium");
+  }
+
+  $scope.price = function (num) {
+    return num.substring(0, (num.length-2));
+  }
+
+
+  //PopUps
+    //Activity PopUps
+
+  $scope.visible = false;
+
+  $scope.popUpResult = function(id) { 
+    $scope.activity = "";
+    $http.get('/api/' + id).
+      success(function(data, status, headers, config) {
+        $scope.activity = data;
+      }); 
+    $scope.visible = !$scope.visible;
+  };
+
+    //Footer PopUps
+
+  $scope.popUpStyle = {
     position: 'fixed',
     top: (window.innerHeight - 560)/2 + 'px',
     left: (window.innerWidth - 830)/2 + 'px'
   };
-    
-  angular.element(window).bind('resize', function() {
-    $scope.mainStyle.top = (window.innerHeight - 560)/2 + 'px';
-    $scope.mainStyle.left = (window.innerWidth - 830)/2 + 'px';
-    $scope.$apply();
-  });
-}
 
-function FooterCtrl($scope, $location) {
+
+  //Footer
+
   $scope.viewButtonClass = function (button) {
     if($location.path() != button) {
       return "";
