@@ -1,6 +1,7 @@
 /*Orange: #f7941d
   Blue: #249cff
-  Dark Blue: #0073ff;*/
+  Dark Blue: #0073ff;
+  Random 15a0db */
 
 /*Fonts*/
 @font-face {
@@ -87,8 +88,10 @@ html, body {
 }
 
 #main {
-	margin: 35px auto;
-	padding: 15px 0 60px 0;   /* Height of the footer element 15a0db*/
+	position: relative;
+	top: 40px;
+	margin: 0 auto;
+	padding: 0 0 60px 0;   
 }
 
 

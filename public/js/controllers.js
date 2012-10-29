@@ -48,9 +48,8 @@ function AppCtrl($scope, $http, $location) {
   //Results Section
     //Results Display Section
 
-  var computeWidth = function() {
+  var computeWidth = function(size) {
     var width = window.innerWidth;
-    var size = $location.path();
     switch (size){
       case "/large": return width - (width-70)%786 - 70; break;
       case "/small": return width - (width-70)%186 - 70; break;
@@ -58,8 +57,13 @@ function AppCtrl($scope, $http, $location) {
     }    
   };
     
-  $scope.mainStyle = {
-    width: computeWidth() + 'px'
+  $scope.mainStyle = function(size) {
+    var width = window.innerWidth;
+    switch (size){
+      case "/large": return { width: (width - (width-70)%786 - 70) + 'px' }; break;
+      case "/small": return { width: (width - (width-70)%186 - 70) + 'px' }; break;
+      default: return { width: (width - (width-70)%315 - 70) + 'px' };
+    }
   };
 
   var computeTop = function() {
@@ -77,10 +81,9 @@ function AppCtrl($scope, $http, $location) {
     left: computeLeft() + 'px'
   };
 
-  var amount = function() {
+  $scope.amount = function(size) {
     var width = window.innerWidth;
     var height = window.innerHeight;
-    var size = $location.path();
     switch (size){
       case "/large": 
         var wide = Math.floor((width-70)/786);
@@ -88,7 +91,7 @@ function AppCtrl($scope, $http, $location) {
         return (wide*high); break;
       case "/small": 
         var wide = Math.floor((width-70)/186);
-        var high = Math.floor((height/166) + 2);
+        var high = Math.floor((height/166) + 1);
         return (wide*high); break;
       default: 
         var wide = Math.floor((width-70)/315);
@@ -97,16 +100,13 @@ function AppCtrl($scope, $http, $location) {
     }  
   };
 
-  var counter = 0;
+  $scope.count = 0;
 
   $scope.loadMore = function() {
-    counter++;
-    $scope.count = counter*amount();
+    $scope.count++;
   };
 
   $scope.applyDisplaySettings = function() {
-    $scope.mainStyle.width = computeWidth() + 'px';
-    $scope.count = counter*amount();
     $scope.activityStyle.top = computeTop() + 'px';
     $scope.activityStyle.left = computeLeft() + 'px';
     $scope.popUpStyle.top = (window.innerHeight - 560)/2 + 'px';
