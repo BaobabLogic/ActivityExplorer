@@ -8,7 +8,6 @@ angular.module('activity.filters', [])
       var tempArray = []; 
       var newArray = [];
 
-
       for(var i=0; i<array.length; i++) {
       	if(text == 'Explore'){
       		tempArray.push(array[i]);      		

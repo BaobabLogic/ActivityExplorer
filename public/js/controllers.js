@@ -48,9 +48,9 @@ function AppCtrl($scope, $http, $location) {
   //Results Section
     //Results Display Section
 
-  var size = $location.path();
   var computeWidth = function() {
     var width = window.innerWidth;
+    var size = $location.path();
     switch (size){
       case "/large": return width - (width-70)%786 - 70; break;
       case "/small": return width - (width-70)%186 - 70; break;
@@ -76,22 +76,49 @@ function AppCtrl($scope, $http, $location) {
     top: computeTop() + 'px',
     left: computeLeft() + 'px'
   };
-    
-  angular.element(window).bind('resize', function() {
+
+  var amount = function() {
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    var size = $location.path();
+    switch (size){
+      case "/large": 
+        var wide = Math.floor((width-70)/786);
+        var high = Math.floor((height/566) + 2);
+        return (wide*high); break;
+      case "/small": 
+        var wide = Math.floor((width-70)/186);
+        var high = Math.floor((height/166) + 2);
+        return (wide*high); break;
+      default: 
+        var wide = Math.floor((width-70)/315);
+        var high = Math.floor((height/251) + 2);
+        return (wide*high);
+    }  
+  };
+
+  var counter = 0;
+
+  $scope.loadMore = function() {
+    counter++;
+    $scope.count = counter*amount();
+  };
+
+  $scope.applyDisplaySettings = function() {
     $scope.mainStyle.width = computeWidth() + 'px';
+    $scope.count = counter*amount();
     $scope.activityStyle.top = computeTop() + 'px';
     $scope.activityStyle.left = computeLeft() + 'px';
     $scope.popUpStyle.top = (window.innerHeight - 560)/2 + 'px';
     $scope.popUpStyle.left = (window.innerWidth - 830)/2 + 'px';
-    $scope.$apply();
+    $scope.$apply();    
+  }
+    
+  angular.element(window).bind('resize', function() {
+    $scope.applyDisplaySettings();
   });
 
-   //Results Data Section
-  $scope.count = 0;
-
-  $scope.loadMore = function() {
-    $scope.count = $scope.count + amount();
-  };
+   //Results Data Section    
 
   $http.get('/api').
     success(function(data, status, headers, config) {
@@ -99,16 +126,13 @@ function AppCtrl($scope, $http, $location) {
       $scope.loadMore();
     });
 
-  var amount = function() {
-    switch (size){
-      case "/large": return 5; break;
-      case "/small": return 60; break;
-      default: return 20;
-    }  
-  };  
-
   $scope.image = function (url) {
-    return url.replace("search", "medium");
+    if (typeof url == 'string' || url instanceof String) {
+      return url.replace("search", "medium");
+    }
+    else {
+      return "";
+    }    
   }
 
   $scope.price = function (num) {
