@@ -1,5 +1,5 @@
 div(id="main", ng-style="mainStyle", when-scrolled="loadMore()")
-	div(ng-repeat="result in results | searchFilter:search", class="largeResult", ng-click="popUpResult(result.id[0])")
+	div(ng-repeat="result in results | searchFilter:search:count", class="largeResult", ng-click="popUpResult(result.id[0])")
 		div(class="largeImage") 
 			image(ng-src='{{image(result.image[0])}}', width=750, height=500)
 		div.details

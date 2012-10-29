@@ -87,6 +87,11 @@ function AppCtrl($scope, $http, $location) {
   });
 
    //Results Data Section
+  $scope.count = 0;
+
+  $scope.loadMore = function() {
+    $scope.count = $scope.count + amount();
+  };
 
   $http.get('/api').
     success(function(data, status, headers, config) {
@@ -94,24 +99,13 @@ function AppCtrl($scope, $http, $location) {
       $scope.loadMore();
     });
 
-  $scope.results = [];
-    
-  var count = 0;
   var amount = function() {
     switch (size){
       case "/large": return 5; break;
       case "/small": return 60; break;
       default: return 20;
     }  
-  };
-  $scope.loadMore = function() {      
-    for (var i = 0; i < amount(); i++) {
-      if(count < $scope.results.length){
-        $scope.activities.push($scope.results[count]);
-        count++;
-      }
-    }
-  };
+  };  
 
   $scope.image = function (url) {
     return url.replace("search", "medium");
