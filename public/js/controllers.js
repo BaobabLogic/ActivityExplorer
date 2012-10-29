@@ -51,7 +51,7 @@ function AppCtrl($scope, $http, $location) {
   var computeWidth = function(size) {
     var width = window.innerWidth;
     switch (size){
-      case "/large": return width - (width-70)%786 - 70; break;
+      case "/large": return width - (width-70)%666 - 70; break;
       case "/small": return width - (width-70)%186 - 70; break;
       default: return width - (width-70)%315 - 70;
     }    
@@ -60,7 +60,7 @@ function AppCtrl($scope, $http, $location) {
   $scope.mainStyle = function(size) {
     var width = window.innerWidth;
     switch (size){
-      case "/large": return { width: (width - (width-70)%786 - 70) + 'px' }; break;
+      case "/large": return { width: (width - (width-70)%666 - 70) + 'px' }; break;
       case "/small": return { width: (width - (width-70)%186 - 70) + 'px' }; break;
       default: return { width: (width - (width-70)%315 - 70) + 'px' };
     }
@@ -86,8 +86,8 @@ function AppCtrl($scope, $http, $location) {
     var height = window.innerHeight;
     switch (size){
       case "/large": 
-        var wide = Math.floor((width-70)/786);
-        var high = Math.floor((height/566) + 2);
+        var wide = Math.floor((width-70)/666);
+        var high = Math.floor((height/326) + 2);
         return (wide*high); break;
       case "/small": 
         var wide = Math.floor((width-70)/186);
