@@ -226,7 +226,8 @@ button span {
 	height: 27px;
 	bottom: 3px;
 	margin-top: 3px;
-	
+
+	background-color: #f28e36;	
 	background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
 	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
 	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
@@ -560,6 +561,7 @@ li {
 
 #view label:hover {
   height: 26px;
+	background-color: #f28e36;
   background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
 	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
 	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
@@ -577,6 +579,7 @@ li {
 
 .currentView {
   height: 26px;
+	background-color: #f28e36;
   background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
 	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
 	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
@@ -781,48 +784,47 @@ li {
 }
 
 .smallDetails .details {
-	margin-top: 1px;
 	display: inline-block;
 }
 
 .mediumDetails .details {
-	margin-top: 3px;
+	margin-top: 1px;
 	display: inline-block;
 }
 
 .largeDetails .details {
-	margin-top: 3px;
+	margin-top: 1px;
 	display: inline-block;
 }
 
 .topHalf {
 	font-family: 'BebasNeueRegular';	
-	font-size: 18px;
+	font-size: 20px;
 	width: 200px;
 }
 
 .smallDetails .details .bottomHalf {
 	font-family: 'Lobster';	
 	width: 200px;
-	margin: 6px 0 0 4px;
+	margin: 3px 0 0 4px;
 	color: #25afe6;
-	font-size: 16px;
+	font-size: 18px;
 }
 
 .mediumDetails .details .bottomHalf {
 	font-family: 'Lobster';	
 	width: 268px;
-	margin: 6px 0 0 4px;
+	margin: 5px 0 0 4px;
 	color: #25afe6;
-	font-size: 16px;
+	font-size: 18px;
 }
 
 .largeDetails .details .bottomHalf {
 	font-family: 'Lobster';	
 	width: 400px;
-	margin: 6px 0 0 10px;
+	margin: 5px 0 0 10px;
 	color: #25afe6;
-	font-size: 16px;
+	font-size: 18px;
 }
 
 .location {
