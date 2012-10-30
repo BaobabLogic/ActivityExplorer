@@ -2,7 +2,7 @@ div(id="main", ng-style="mainStyle('/medium')", when-scrolled="loadMore()")
 	div(ng-repeat="result in results | searchFilter:search:(count*amount('/medium'))", class="mediumResult", ng-click="popUpResult(result.id[0])")
 		div(class="mediumImage") 
 			image(ng-src='{{image(result.image[0])}}', width=279, height=185)
-		div.details
+		div.mediumDetails
 			div 
 				| Type
 			div 
