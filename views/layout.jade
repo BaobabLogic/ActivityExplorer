@@ -16,10 +16,9 @@ html(lang='en', ng-app='activity')
       div#logo  
         image(src='/img/logo-small.png', height=28, width=289)
       div#search  
-        input#searchBar(type='text', name='explore', size='30', ng-model="search", spellcheck="false",
-          search-bar="{focus:'search=focus', blur:'search=blur'}")
-        button.goButton(type='button', value='go')
-          span Go 
+        button.explore
+          span Explore
+        input#searchBar(type='text', name='explore', size='30', ng-model="search", spellcheck="false")
       nav#topButtons(ng-model="head")
         ul
           button.headButton(type='button', value='themes', id="themes")

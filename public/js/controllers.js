@@ -5,9 +5,7 @@
 function AppCtrl($scope, $http, $location) {
   //Search Bar 
 
-  $scope.search = "Explore";
-  $scope.blur = "Explore";
-  $scope.focus = "";
+  $scope.search = "";
   $scope.themes = [
     { "name": "Adventure",
       "visible": false,
@@ -51,7 +49,7 @@ function AppCtrl($scope, $http, $location) {
   var computeWidth = function(size) {
     var width = window.innerWidth;
     switch (size){
-      case "/large": return width - (width-70)%666 - 70; break;
+      case "/large": return width - (width-70)%456 - 70; break;
       case "/small": return width - (width-70)%186 - 70; break;
       default: return width - (width-70)%315 - 70;
     }    
@@ -60,7 +58,7 @@ function AppCtrl($scope, $http, $location) {
   $scope.mainStyle = function(size) {
     var width = window.innerWidth;
     switch (size){
-      case "/large": return { width: (width - (width-70)%666 - 70) + 'px' }; break;
+      case "/large": return { width: (width - (width-70)%456 - 70) + 'px' }; break;
       case "/small": return { width: (width - (width-70)%186 - 70) + 'px' }; break;
       default: return { width: (width - (width-70)%315 - 70) + 'px' };
     }
@@ -86,8 +84,8 @@ function AppCtrl($scope, $http, $location) {
     var height = window.innerHeight;
     switch (size){
       case "/large": 
-        var wide = Math.floor((width-70)/666);
-        var high = Math.floor((height/326) + 2);
+        var wide = Math.floor((width-70)/456);
+        var high = Math.floor((height/346) + 2);
         return (wide*high); break;
       case "/small": 
         var wide = Math.floor((width-70)/186);
@@ -95,7 +93,7 @@ function AppCtrl($scope, $http, $location) {
         return (wide*high); break;
       default: 
         var wide = Math.floor((width-70)/315);
-        var high = Math.floor((height/251) + 2);
+        var high = Math.floor((height/252) + 2);
         return (wide*high);
     }  
   };

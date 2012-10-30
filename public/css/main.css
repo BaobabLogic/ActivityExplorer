@@ -116,6 +116,10 @@ a, a:link, a:hover, a:visited, a:active {
 	color: #fff;
 }
 
+button{
+	cursor: pointer; cursor: hand;
+}
+
 button span {
 	position: relative;
 	top: 2px;
@@ -168,9 +172,9 @@ button span {
 	position: fixed;
 	margin-top: 5px;
 	margin-bottom: 10px;
-	width: 320px;
+	width: 324px;
 	height: 26px;
-	left: 355px;
+	left: 360px;
 	background: #fff;
   border:1px inset #adadad;
 	display: inline-block;
@@ -185,10 +189,9 @@ button span {
 	font-size: 16px;
 	color: #858585;
 	position: relative;
-	float: left;
-	width: 259px;
+	float: right;
+	width: 250px;
 	height: 24px;
-	margin-left: 5px;
 	border: none;
 }
 
@@ -201,17 +204,16 @@ button span {
   outline: none;
 }
 
-.goButton {
+.explore {
 	font-family: 'BebasNeueRegular';
 	font-size: 21px;
 	color: #fff;
 	text-shadow: 0px 2px 3px #000;
 	position: relative;
-	width: 50px;
+	width: 67px;
 	height: 27px;
 	bottom: 3px;
 	margin-top: 3px;
-	right: -5px;
 	
 	background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
 	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
@@ -236,27 +238,7 @@ button span {
 	border-radius: 0;
 }
 
-.goButton:hover {
-	background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
-	background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
-	background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
-	background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
-	background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
-
-	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		left top,
-		color-stop(0.21, rgb(241,175,83)),
-		color-stop(0.61, rgb(242,142,54))
-	);
-}
-
-.goButton:target {
-  border-top:1px inset #f1af53;
-}
-
-.goButton span {
+.explore span {
 	top: -1px;
 }
 
@@ -663,14 +645,18 @@ li {
 	display: inline-block;
 
 	background-color: #fff;
+	-moz-box-shadow: 0px 0px 8px #8a8a8a;
+	-webkit-box-shadow: 0px 0px 8px #8a8a8a;
+	box-shadow: 0px 0px 8px #8a8a8a;
 
 	border: 0;
 }
 
 .smallResult:hover {
-	-moz-box-shadow: 0px 0px 10px #8a8a8a;
-	-webkit-box-shadow: 0px 0px 10px #8a8a8a;
-	box-shadow: 0px 0px 10px #8a8a8a;
+	cursor: pointer; cursor: hand;
+	-moz-box-shadow: 0px 2px 12px #616161;
+	-webkit-box-shadow: 0px 2px 12px #616161;
+	box-shadow: 0px 2px 12px #616161;
 }
 
 .mediumResult{
@@ -678,41 +664,49 @@ li {
 	font-size: 12px;
 
 	width: 279px;
-	height: 225px;	
+	height: 226px;	
 	margin: 16px 8px 0px 8px;
 	padding: 10px 10px 0px 10px;
 	display: inline-block;
 
 	background-color: #fff;
+	-moz-box-shadow: 0px 0px 8px #8a8a8a;
+	-webkit-box-shadow: 0px 0px 8px #8a8a8a;
+	box-shadow: 0px 0px 8px #8a8a8a;
 
 	border: 0;
 }
 
 .mediumResult:hover {
-	-moz-box-shadow: 0px 0px 10px #8a8a8a;
-	-webkit-box-shadow: 0px 0px 10px #8a8a8a;
-	box-shadow: 0px 0px 10px #8a8a8a;
+	cursor: pointer; cursor: hand;
+	-moz-box-shadow: 0px 2px 12px #616161;
+	-webkit-box-shadow: 0px 2px 12px #616161;
+	box-shadow: 0px 2px 12px #616161;
 }
 
 .largeResult{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 
-	width: 630px;
-	height: 350px;	
+	width: 420px;
+	height: 320px;	
 	margin: 16px 8px 0px 8px;
 	padding: 10px 10px 0px 10px;
 	display: inline-block;
 
 	background-color: #fff;
+	-moz-box-shadow: 0px 0px 8px #8a8a8a;
+	-webkit-box-shadow: 0px 0px 8px #8a8a8a;
+	box-shadow: 0px 0px 8px #8a8a8a;
 
 	border: 0;
 }
 
 .largeResult:hover {
-	-moz-box-shadow: 0px 0px 10px #8a8a8a;
-	-webkit-box-shadow: 0px 0px 10px #8a8a8a;
-	box-shadow: 0px 0px 10px #8a8a8a;
+	cursor: pointer; cursor: hand;
+	-moz-box-shadow: 0px 2px 12px #616161;
+	-webkit-box-shadow: 0px 2px 12px #616161;
+	box-shadow: 0px 2px 12px #616161;
 }
 
 .smallImage {
@@ -724,14 +718,14 @@ li {
 
 .mediumImage {
 	width: 279px;
-	height: 185px;
+	height: 186px;
 	background: #ededed;
 	background-image: url('/img/main-noise.png');
 }
 
 .largeImage {
-	width: 630px;
-	height: 310px;
+	width: 420px;
+	height: 280px;
 	background: #ededed;
 	background-image: url('/img/main-noise.png');
 }

@@ -1,7 +1,7 @@
 div(id="main", ng-style="mainStyle('/large')", when-scrolled="loadMore()")
 	div(ng-repeat="result in results | searchFilter:search:(count*amount('/large'))", class="largeResult", ng-click="popUpResult(result.id[0])")
 		div(class="largeImage") 
-			image(ng-src='{{image(result.image[0])}}', width=630, height=310)
+			image(ng-src='{{image(result.image[0])}}', width=420, height=280)
 		div.details
 			div 
 				span Type

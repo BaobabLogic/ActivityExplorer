@@ -9,10 +9,7 @@ angular.module('activity.filters', [])
       var newArray = [];
 
       for(var i=0; i<array.length; i++) {
-      	if(text == 'Explore'){
-      		tempArray.push(array[i]);      		
-      	}
-      	else if((new RegExp(text, 'i')).test(array[i].name[0])){
+        if((new RegExp(text, 'i')).test(array[i].name[0])){
       		tempArray.push(array[i]);
       	}
       	else if((new RegExp(text, 'i')).test(array[i].service_type[0])) {
