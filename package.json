@@ -1,6 +1,5 @@
 {
-  "name": "application-name",
-  "version": "0.0.1-2",
+  "name": "activity-explorer",
   "private": true,
   "scripts": {
     "start": "node app.js"
@@ -15,5 +14,6 @@
     "node": "0.8.x",
     "npm": "1.1.x"
   },
-  "subdomain": "activityexplorer"
+  "subdomain": "activityexplorer",
+  "version": "0.0.0"
 }
