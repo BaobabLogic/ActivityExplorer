@@ -13,13 +13,22 @@ var activitar; var activity;
 var parser = new xml2js.Parser();
 parser.addListener('end', function(result) {
     activitar = result.services.service;
+    var i = activitar.length;
+    if ( i == 0 ) return false;
+    while ( --i ) {
+      var j = Math.floor( Math.random() * ( i + 1 ) );
+      var tempi = activitar[i];
+      var tempj = activitar[j];
+      activitar[i] = tempj;
+      activitar[j] = tempi;
+    }
+    activitar = result.services.service;
     console.log('Activitar main query response received.');
 });
 
 var parser2 = new xml2js.Parser();
 parser2.addListener('end', function(result) {
     activity = result.service;
-    console.log('Activitar specific service response received.');
 });
 
 // Activitar API Request paramaters

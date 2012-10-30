@@ -3,12 +3,12 @@ div(id="main", ng-style="mainStyle('/medium')", when-scrolled="loadMore()")
 		div(class="mediumImage") 
 			image(ng-src='{{image(result.image[0])}}', width=279, height=185)
 		div.mediumDetails
-			div 
-				| Type
-			div 
-				| Location
-				span(class="price") 
-					| R{{price(result.price[0])}}
+			div.details 
+				div.topHalf 
+					| Educational Experience
+				div.bottomHalf 
+					div.location Plettenberg Bay
+					div.price R{{price(result.price[0])}}
 div.resultPopUp(ng-visible="visible", ng-style="activityStyle")
 	div {{activity.name[0]}}
 div#resultBackground(ng-visible="visible", ng-click="popUpResult()")

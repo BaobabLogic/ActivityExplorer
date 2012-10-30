@@ -28,15 +28,13 @@ html(lang='en', ng-app='activity')
           button.headButton(type='button', value='sort', id="sort")
             span Sort
     div#themesPopUp 
-      form#menuForm
-        #browse
-          div(ng-repeat="theme in themes")
-            button.themeButton(type='button', value='{{theme.name}}', ng-click='theme.visible=!theme.visible')
-              span {{theme.name}}
-            div(id='{{theme.name}}', class='categories', ng-visible='theme.visible')
-              div(ng-repeat="category in theme.list")
-                button.categoryButton(type='button', value='{{category}}')
-                  span {{category}}       
+      div(ng-repeat="theme in themes")
+        button.themeButton(type='button', value='{{theme.name}}', ng-click='theme.visible=!theme.visible')
+          span {{theme.name}}
+        div(id='{{theme.name}}', class='categories', ng-visible='theme.visible')
+          div(ng-repeat="category in theme.list")
+            button.categoryButton(type='button', value='{{category}}')
+              span {{category}}       
     div#refinePopUp
       div#refineInside
         | Budget: &nbsp

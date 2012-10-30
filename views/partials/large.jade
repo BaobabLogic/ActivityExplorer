@@ -3,10 +3,12 @@ div(id="main", ng-style="mainStyle('/large')", when-scrolled="loadMore()")
 		div(class="largeImage") 
 			image(ng-src='{{image(result.image[0])}}', width=420, height=280)
 		div.largeDetails
-			div 
-				span Type
-				span Location
-				span(class="price") R{{price(result.price[0])}}  
+			div.details 
+				div.topHalf 
+					| Educational Experience
+				div.bottomHalf 
+					div.location Plettenberg Bay
+					div.price R{{price(result.price[0])}}
 div.resultPopUp(ng-visible="visible", ng-style="activityStyle")
 	div {{activity.name[0]}}
 div#resultBackground(ng-visible="visible", ng-click="popUpResult()")
