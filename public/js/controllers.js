@@ -3,9 +3,13 @@
 /* Controllers */
 
 function AppCtrl($scope, $http, $location) {
-  //Search Bar 
-
+  //Search Bar   
+   //Search
   $scope.search = "";
+  
+   //Themes
+	$scope.theme = "";
+	$scope.category = "";
   $scope.themes = [
     { "name": "Adventure",
       "visible": false,
@@ -41,7 +45,19 @@ function AppCtrl($scope, $http, $location) {
       "visible": false,
       "list": ["Fishing", "Scuba", "Shark Cage Diving", "Stand Up Paddle", "Waterfall Adventure", "Whale Watching"]}
   ];
-
+  
+   //Refine
+	
+	  //Sort 
+	$scope.sort = "random";
+	$scope.sortButtonClass = function(button) {
+	  if(button == $scope.sort) {
+	    return "currentSort";
+	  }
+	  else {
+	    return "";
+	  }  
+	};
 
   //Results Section
     //Results Display Section

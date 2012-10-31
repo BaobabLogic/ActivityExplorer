@@ -1,5 +1,6 @@
 div(id="main", ng-style="mainStyle('/small')", when-scrolled="loadMore()")
-	div(ng-repeat="result in results | searchFilter:search:(count*amount('/small'))", class="smallResult", ng-click="popUpResult(result.id[0])")
+	div(ng-repeat="result in results | searchFilter:search:theme:category:budget:duration:sort:(count*amount('/small'))",
+	 class="smallResult", ng-click="popUpResult(result.id[0])")
 		div(class="smallImage") 
 			image(ng-src='{{image(result.image[0])}}', width=210, height=140)
 		div.smallDetails

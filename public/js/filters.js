@@ -4,22 +4,36 @@
 
 angular.module('activity.filters', [])
 	.filter('searchFilter', function () {
-    return function (array, text, count) {
+    return function (array, search, theme, category, budget, duration, sort, count) {
       var tempArray = []; 
       var newArray = [];
+      
+      console.log(budget);
+      console.log(duration);
 
       for(var i=0; i<array.length; i++) {
-        if((new RegExp(text, 'i')).test(array[i].name[0])){
+        if((new RegExp(search, 'i')).test(array[i].name[0])){
       		tempArray.push(array[i]);
       	}
-      	else if((new RegExp(text, 'i')).test(array[i].service_type[0])) {
+      	else if((new RegExp(search, 'i')).test(array[i].service_type[0])) {
       		tempArray.push(array[i]);
       	}
-      	else if((new RegExp(text, 'i')).test(array[i].description[0])) {
+      	else if((new RegExp(search, 'i')).test(array[i].description[0])) {
       		tempArray.push(array[i]);
       	}
       }
 
+      if(sort == 'priceLow') {
+        tempArray.sort(function(a, b) {
+          return a.price - b.price;
+        });
+      }
+      else if(sort == 'priceHigh') {
+        tempArray.sort(function(a, b) {
+          return b.price - a.price;
+        });
+      }
+      
       if(tempArray.length < count){
       	count = tempArray.length;
       }      
@@ -27,10 +41,6 @@ angular.module('activity.filters', [])
       for(var j=0; j<count; j++) {
       	newArray.push(tempArray[j]);  
       }
-
-      /*var arrayb = newArray.sort(function(a, b) {
-        a.name[0].localeCompare(b.name[0]);
-      });*/
 
     	return newArray;
     };
