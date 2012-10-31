@@ -16,7 +16,7 @@ html(lang='en', ng-app='activity')
       div#logo  
         image(src='/img/logo-small.png', height=28, width=289)
       div#search  
-        button.explore
+        div.explore 
           span Explore
         input#searchBar(type='text', name='explore', size='30', ng-model="search", spellcheck="false")
       nav#topButtons(ng-model="head")
@@ -45,10 +45,11 @@ html(lang='en', ng-app='activity')
         span#duration Slide to select
         #durationS.slider
     div#sortPopUp
-      div Price
-      div Duration
-      div Name              
-      div Location
+      button.sortButton Random
+      button.sortButton Price
+      button.sortButton Duration
+      button.sortButton Name              
+      button.sortButton Location
     div#invisiBackground
 
     block content

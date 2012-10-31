@@ -28,6 +28,10 @@ angular.module('activity.filters', [])
       	newArray.push(tempArray[j]);  
       }
 
+      /*var arrayb = newArray.sort(function(a, b) {
+        a.name[0].localeCompare(b.name[0]);
+      });*/
+
     	return newArray;
     };
   });
