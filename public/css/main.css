@@ -348,24 +348,24 @@ button span {
 	);
 }
 
-#browse {
-	position: relative;
-	width: 250px;
-	margin-bottom: 2px;
-}
-.categories {
-	display: none;
-}
 .themeButton {
-	position: relative;
-	margin: 0px;
-}
-.categoryButton {
-	position: relative;
-	margin: 0px;
+	font-family: "BebasNeueRegular";
+	color: white;
+	font-size: 21px;
+	text-shadow: 0px 2px 3px #000;
 
-	background-color: #15a0db;	
-	background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	width: 200px;
+	margin: 0px;
+	display: block;
+	
+	background-color: transparent;
+	border: 0;	
+	box-shadow: none;
+}
+
+.themeButton:hover {
+	background-color: #f28e36;
+  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
 	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
 	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
 	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
@@ -377,7 +377,38 @@ button span {
 		left top,
 		color-stop(0.21, rgb(242,142,54)),
 		color-stop(0.61, rgb(241,175,83))
-	);		
+	);
+}
+.categoryButton {
+	font-family: "BebasNeueRegular";
+	color: white;
+	font-size: 21px;
+	text-shadow: 0px 2px 3px #000;
+
+	width: 200px;
+	margin: 0px;
+	display: block;
+	
+	background-color: transparent;
+	border: 0;	
+	box-shadow: none;
+}
+
+.categoryButton:hover {
+	background-color: #f28e36;
+  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(242,142,54)),
+		color-stop(0.61, rgb(241,175,83))
+	);
 }
 
 #refinePopUp {
@@ -391,7 +422,7 @@ button span {
 	height: 128px;
 	position: fixed;
 	top: 36px;
-	right: 38px;
+	right: 40px;
 	z-index: 150;
 	border: 2px solid #f7941d;
   border-radius:7px;
@@ -466,11 +497,11 @@ button span {
 
 #sortPopUp {
 	display: none;
-	width: 100px;
-	height: 145px;
+	width: 110px;
+	height: 150px;
 	position: fixed;
 	top: 36px;
-	right: 35px;
+	right: 30px;
 	z-index: 150;
 	color: white;
 	border: 2px solid #f7941d;
@@ -499,10 +530,10 @@ button span {
 .sortButton {
 	font-family: "BebasNeueRegular";
 	color: white;
-	font-size: 20px;
+	font-size: 21px;
 	text-shadow: 0px 2px 3px #000;
 
-	width: 100px;
+	width: 110px;
 	margin: 0px;
 	display: block;
 	

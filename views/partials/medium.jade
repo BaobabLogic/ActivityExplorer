@@ -9,7 +9,7 @@ div(id="main", ng-style="mainStyle('/medium')", when-scrolled="loadMore()")
 					| Game Drive
 				div.bottomHalf 
 					div.location Cape Town
-					div.price R{{price(result.price[0])}}
+					div.price R{{price(result.price[0])}}			
 div.resultPopUp(ng-visible="visible", ng-style="activityStyle")
 	div {{activity.name[0]}}
 div#resultBackground(ng-visible="visible", ng-click="popUpResult()")

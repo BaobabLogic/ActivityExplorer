@@ -47,6 +47,9 @@ function AppCtrl($scope, $http, $location) {
   ];
   
    //Refine
+  $scope.budget = 10;
+  $scope.duration = 10;
+  $scope.selectedDate = "Aladdin";
 	
 	  //Sort 
 	$scope.sort = "random";
@@ -73,7 +76,6 @@ function AppCtrl($scope, $http, $location) {
     
   $scope.mainStyle = function(size) {
     var width = window.innerWidth;
-    console.log("Window width " + width);
     switch (size){
       case "/large": return { width: (width - (width-70)%456 - 70) + 'px' }; break;
       case "/small": return { width: (width - (width-70)%246 - 70) + 'px' }; break;

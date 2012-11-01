@@ -40,11 +40,11 @@ html(lang='en', ng-app='activity')
         div#budgetDiv
           | Budget:
           span#budget Slide to select
-        #budgetS.slider(ng-model="budget")
+        div.slider(id="budgetS", slider="budget")
         div#durationDiv
           | Duration:
           span#duration Slide to select
-        #durationS.slider(ng-model="duration")
+        div.slider(id="durationS", slider="duration")
     div#sortPopUp
       button.sortButton(class='ng-class: sortButtonClass("random")', ng-click="sort='random'") Random
       button.sortButton(class='ng-class: sortButtonClass("priceLow")', ng-click="sort='priceLow'") Price Low
@@ -77,6 +77,8 @@ html(lang='en', ng-app='activity')
         label(class='ng-class: viewButtonClass("/large")')
           span
           a(href="/large") Large
+      input(type="text", datepicker="selectedDate")
+      {{selectedDate}}        
       ul
         button.barButton(type='button', value='social')
           span Social
