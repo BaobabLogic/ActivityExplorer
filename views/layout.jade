@@ -5,7 +5,6 @@ html(lang='en', ng-app='activity')
     title= title
     link(rel='stylesheet', href='/css/jquery-ui-1.8.24.custom.css')
     link(rel='stylesheet', href='/css/angular-ui.min.css')
-    link(rel='stylesheet', href='/css/menu.css')
     link(rel='stylesheet', href='/css/main.css')
     script(type='text/javascript', src='/js/jquery-1.8.2.min.js')
     script(type='text/javascript', src='/js/jquery-ui-1.8.24.custom.min.js')
@@ -28,13 +27,33 @@ html(lang='en', ng-app='activity')
           button.headButton(type='button', value='sort', id="sort")
             span Sort
     div#themesPopUp 
-      div(ng-repeat="theme in themes")
-        button.themeButton(type='button', value='{{theme.name}}', ng-click='theme.visible=!theme.visible')
-          span {{theme.name}}
-        div(id='{{theme.name}}', class='categories', ng-visible='theme.visible')
-          div(ng-repeat="category in theme.list")
-            button.categoryButton(type='button', value='{{category}}')
-              span {{category}}       
+      div#themeFront(ng-visible="themeVisible")
+        div#themeTop
+          button#themeTitle(ng-click="themeTitleClick(themes, !themes.selected)")
+            | Themes
+        div#themeLeft
+          div(ng-repeat="theme in themes.left")
+            button.themeButton(ng-click="themeButtonClick(theme)")  {{theme.name}} 
+            button.themeSelectButton(ng-class="select(theme.selected)", ng-click="themeSelectClick(theme)")
+        div#themeRight  
+          div(ng-repeat="theme in themes.right")
+            button.themeButton(ng-click="themeButtonClick(theme)")  {{theme.name}}
+            button.themeSelectButton(ng-class="select(theme.selected)", ng-click="themeSelectClick(theme)")
+      div#themeBack(ng-visible="!themeVisible") 
+        div#typeTop
+          div#typeBack 
+            button#backButton.themeButton(ng-click="themeVisible=!themeVisible") Back
+          button#typeTitle(ng-click="themeTitleClick(theme, !theme.selected)")
+            | {{theme.name}}
+        div#themeLeft
+          div.typeBox(ng-repeat="type in theme.left")
+            span.typeSpan {{type.name}} 
+            button.themeSelectButton(ng-class="select(type.selected)", ng-click="typeSelectClick(type, theme)")
+        div#themeRight  
+          div.typeBox(ng-repeat="type in theme.right")
+            span.typeSpan {{type.name}}
+            button.themeSelectButton(ng-class="select(type.selected)", ng-click="typeSelectClick(type, theme)")
+        
     div#refinePopUp
       div#refineInside
         div#budgetDiv
@@ -77,8 +96,6 @@ html(lang='en', ng-app='activity')
         label(class='ng-class: viewButtonClass("/large")')
           span
           a(href="/large") Large
-      input(type="text", datepicker="selectedDate")
-      {{selectedDate}}        
       ul
         button.barButton(type='button', value='social')
           span Social

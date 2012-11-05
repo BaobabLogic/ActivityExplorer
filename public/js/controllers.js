@@ -8,43 +8,186 @@ function AppCtrl($scope, $http, $location) {
   $scope.search = "";
   
    //Themes
-	$scope.theme = "";
 	$scope.category = "";
-  $scope.themes = [
-    { "name": "Adventure",
-      "visible": false,
-      "list": ["Activity Parks", "Archery", "Bushwalks", "Hiking and Walking", "Paint Ball", "Team Building", "Tree adventures"]}, 
-    { "name": "Adventure Trips",
-      "visible": false,
-      "list": ["4x4 Trails", "Day Drive", "Game Drives", "Horse Riding", "Mountain Biking", "Quad Biking", "Safari"]},
-    { "name": "Air",
-      "visible": false,
-      "list": ["Aerobatic Flights", "Balloon Trips", "Flying", "Helicopter Trips", "Helicopter Charter", "Microlight Flights", "Plane Charter"]},
-    { "name": "Animal Experience",
-      "visible": false,
-      "list": ["Aquariums", "Educational Experience", "Elephant Experience", "Reptile Demonstration", "Wildlife Experience", "Wildlife Photography"]},
-    { "name": "Culture",
-      "visible": false,
-      "list": ["Art Experience", "Drumming", "Music Experience", "Tribal Dancing", "Wine Tasting"]},
-    { "name": "Extreme Air",
-      "visible": false,
-      "list": ["Bungy Swing", "Parachuting", "Paragliding", "Skydiving", "Tandem Skydiving", "Zipline"]},
-    { "name": "Extreme Land",
-      "visible": false,
-      "list": ["2 Wheel Off-Road", "Abseiling", "Rally Experience", "Sail Karts", "Sandboarding", "Wall Climbing"]},
-    { "name": "Extreme Water",
-      "visible": false,
-      "list": ["Coasteering", "Kite Surfing", "Surfing", "Tubing", "Wakeboarding", "Waterskiing", "White River Rafting"]},
-    { "name": "Tours",
-      "visible": false,
-      "list": ["City Tours", "Mine Tours", "Panorama Tour", "Sight Seeing Tours", "Township Tour", "Wine Tours"]},
-    { "name": "Water Trips",
-      "visible": false,
-      "list": ["Boat Charter", "Boat Trips", "Boating", "Canoeing", "Kayaking", "Rafting", "Sailing", "Sea Kayaking"]},
-    { "name": "Water Adventures",
-      "visible": false,
-      "list": ["Fishing", "Scuba", "Shark Cage Diving", "Stand Up Paddle", "Waterfall Adventure", "Whale Watching"]}
-  ];
+	$scope.themeVisible = true;
+	
+	$scope.themeTitleClick = function(theme, selected){
+	  for(var i=0; i<theme.left.length; i++) {
+	    theme.left[i].selected = selected;
+	    if(theme.left[i].left != undefined) {
+	      $scope.themeTitleClick(theme.left[i], selected);
+	    }
+	  }
+	  for(var j=0; j<theme.right.length; j++) {
+	    theme.right[j].selected = selected;
+	    if(theme.right[j].right != undefined) {
+	      $scope.themeTitleClick(theme.right[j], selected);
+	    }
+	  }	  
+    theme.selected = selected;
+	};
+	$scope.themeSelected = function(theme) {
+    var selected = false;
+	  for(var i=0; i<theme.left.length; i++) {
+	    if(theme.left[i].selected == true) {
+	      selected = true;
+	    }
+	  }
+	  for(var j=0; j<theme.right.length; j++) {
+	    if(theme.right[j].selected == true) {
+	      selected = true;
+	    }
+	  }
+	  return selected;
+	};
+	$scope.themeSelectClick = function(theme) {
+	  var selected = !theme.selected;
+	  for(var i=0; i<theme.left.length; i++) {
+	    theme.left[i].selected = selected;
+	  }
+	  for(var j=0; j<theme.right.length; j++) {
+	    theme.right[j].selected = selected;
+	  }
+  	theme.selected = selected;
+	};	
+	$scope.typeSelectClick = function(type, theme) {
+  	type.selected = !type.selected;
+  	theme.selected= $scope.themeSelected(theme);
+	};
+	$scope.select = function(selected) {
+	  if(!selected) {
+	    return "themeSelectEmpty";
+	  }
+	};
+	
+	$scope.themeButtonClick = function(theme) {
+	  $scope.themeVisible = !($scope.themeVisible);
+	  $scope.theme = theme;
+	};
+	
+  $scope.themes = { 
+    "left":    [
+                  { 
+                    "name": "Adventure",
+                    "left": [  { "name": "Activity Parks", "selected": true }, 
+                               { "name": "Archery", "selected": true },
+                               { "name": "Bushwalks", "selected": true }, 
+                               { "name": "Hiking and Walking", "selected": true }],
+                    "right": [  { "name": "Paint Ball", "selected": true },
+                                { "name": "Team Building", "selected": true }, 
+                                { "name": "Tree adventures", "selected": true }],
+                    "selected": true            
+                  }, 
+                  { 
+                    "name": "Adventure Trips",
+                    "left": [  { "name": "4x4 Trails", "selected": true },
+                               { "name": "Day Drive", "selected": true },
+                               { "name": "Game Drives", "selected": true }, 
+                               { "name": "Horse Riding", "selected": true }], 
+                    "right": [  { "name": "Mountain Biking", "selected": true }, 
+                                { "name": "Quad Biking", "selected": true }, 
+                                { "name": "Safari", "selected": true }],
+                    "selected": true
+                  },
+                  { 
+                    "name": "Air",
+                    "left": [  { "name": "Aerobatic Flights", "selected": true }, 
+                               { "name": "Balloon Trips", "selected": true }, 
+                               { "name": "Flying", "selected": true }, 
+                               { "name": "Helicopter Trips", "selected": true }],
+                    "right": [  { "name": "Helicopter Charter", "selected": true }, 
+                                { "name": "Microlight Flights", "selected": true }, 
+                                { "name": "Plane Charter", "selected": true }],
+                    "selected": true
+                  },
+                  { 
+                    "name": "Animal Experience",
+                    "left": [  { "name": "Aquariums", "selected": true }, 
+                               { "name": "Educational Experience", "selected": true }, 
+                               { "name": "Elephant Experience", "selected": true }], 
+                    "right": [  { "name": "Reptile Demonstration", "selected": true }, 
+                                { "name": "Wildlife Experience", "selected": true }, 
+                                { "name": "Wildlife Photography", "selected": true }],
+                    "selected": true
+                  },
+                  { 
+                    "name": "Culture",
+                    "left": [  { "name": "Art Experience", "selected": true }, 
+                               { "name": "Drumming", "selected": true }, 
+                               { "name": "Music Experience", "selected": true }],
+                    "right": [  { "name": "Tribal Dancing", "selected": true }, 
+                                { "name": "Wine Tasting", "selected": true }],
+                    "selected": true
+                  },
+              ],
+    "right":  [  
+                { 
+                  "name": "Extreme Air",
+                  "left": [ { "name": "Bungy Swing", "selected": true }, 
+                            { "name": "Parachuting", "selected": true }, 
+                            { "name": "Paragliding", "selected": true }],
+                  "right": [  { "name": "Skydiving", "selected": true }, 
+                              { "name": "Tandem Skydiving", "selected": true }, 
+                              { "name": "Zipline", "selected": true }],
+                  "selected": true
+                },
+                { 
+                  "name": "Extreme Land",
+                  "left": [  { "name": "2 Wheel Off-Road", "selected": true }, 
+                             { "name": "Abseiling", "selected": true }, 
+                             { "name": "Rally Experience", "selected": true }],
+                  "right": [  { "name": "Sail Karts", "selected": true }, 
+                              { "name": "Sandboarding", "selected": true }, 
+                              { "name": "Wall Climbing", "selected": true }],
+                  "selected": true
+                },
+                { 
+                  "name": "Extreme Water",
+                  "left": [  { "name": "Coasteering", "selected": true }, 
+                             { "name": "Kite Surfing", "selected": true }, 
+                             { "name": "Surfing", "selected": true }, 
+                             { "name": "Tubing", "selected": true }],
+                  "right": [  { "name": "Wakeboarding", "selected": true }, 
+                              { "name": "Waterskiing", "selected": true }, 
+                              { "name": "White River Rafting", "selected": true }],
+                  "selected": true
+                },
+                { 
+                  "name": "Tours",
+                  "left": [  { "name": "City Tours", "selected": true }, 
+                             { "name": "Mine Tours", "selected": true }, 
+                             { "name": "Panorama Tour", "selected": true }],
+                  "right": [  { "name": "Sight Seeing Tours", "selected": true }, 
+                              { "name": "Township Tour", "selected": true }, 
+                              { "name": "Wine Tours", "selected": true }],
+                  "selected": true
+                },
+                { 
+                  "name": "Water Trips",
+                  "left": [  { "name": "Boat Charter", "selected": true }, 
+                             { "name": "Boat Trips", "selected": true }, 
+                             { "name": "Boating", "selected": true }, 
+                             { "name": "Canoeing", "selected": true }],
+                  "right": [  { "name": "Kayaking", "selected": true }, 
+                             { "name": "Rafting", "selected": true }, 
+                             { "name": "Sailing", "selected": true }, 
+                             { "name": "Sea Kayaking", "selected": true }],
+                 "selected": true
+                },
+                { 
+                  "name": "Water Adventures",
+                  "left": [  { "name": "Fishing", "selected": true }, 
+                             { "name": "Scuba", "selected": true }, 
+                            { "name": "Shark Cage Diving", "selected": true }],
+                  "right": [  { "name": "Stand Up Paddle", "selected": true }, 
+                              { "name": "Waterfall Adventure", "selected": true }, 
+                              { "name": "Whale Watching", "selected": true }],
+                  "selected": true
+                }
+            ],
+    "selected": true      
+  };      
+  $scope.theme = $scope.themes.left[0];    
   
    //Refine
   $scope.budget = 10;
@@ -85,7 +228,7 @@ function AppCtrl($scope, $http, $location) {
 
   var computeTop = function() {
     var height = window.innerHeight;
-    return (height-560)/2; 
+    return (height-600)/2; 
   };
 
   var computeLeft = function() {
@@ -153,7 +296,11 @@ function AppCtrl($scope, $http, $location) {
   }
 
   $scope.price = function (num) {
-    return num.substring(0, (num.length-2));
+    var price = 0;
+    if (num != undefined) {
+      price = num.substring(0, (num.length-2));
+    }
+    return price;
   }
 
 

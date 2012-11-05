@@ -53,7 +53,7 @@ $(function() {
     } 
 
 		$(document).click( function(e){
-	    if (e.target.id != headButton + 'PopUp') $('#' + headButton + 'PopUp').hide();
+	    if ( $(e.target).parents("#" + headButton + "PopUp").length == 0 ) $('#' + headButton + 'PopUp').hide();
 		});    
 	});     
 });

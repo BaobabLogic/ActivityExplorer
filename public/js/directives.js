@@ -75,8 +75,11 @@ app.directive('slider', ['$parse', function($parse) {
                     if(val==1){
                       $("#duration").html(val + " hour or less"); 
                     }
-                    else if(val<=5){
+                    else if(val<5){
                       $("#duration").html(val + " hours or less"); 
+                    }
+                    else if(val==5){
+                      $("#duration").html(6 + " hours or less"); 
                     }
                     else if(val==6){
                       $("#duration").html((val-5) + " day or less"); 

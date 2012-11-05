@@ -9,7 +9,25 @@ div(id="main", ng-style="mainStyle('/medium')", when-scrolled="loadMore()")
 					| Game Drive
 				div.bottomHalf 
 					div.location Cape Town
-					div.price R{{price(result.price[0])}}			
+					div.price R{{price(result.price[0])}}
 div.resultPopUp(ng-visible="visible", ng-style="activityStyle")
-	div {{activity.name[0]}}
+	div.resultName 
+		span {{activity.name[0]}}
+	div.resultExtra 
+		span.leftExtra
+			| Game Drive Cape Town
+		span.price R{{price(activity.price[0])}} per person
+	div.resultImages
+		button#leftButton.imageButton
+		div.resultImage
+			image(ng-src="{{activity.images[0].image[0].medium[0]}}", width=300, height=200)
+		button#rightButton.imageButton
+	div.resultBooking
+		input(type="text", datepicker="selectedDate")
+		{{selectedDate}}
+	div.resultTabs
+		button.tabButton Description
+		button.tabButton Details
+	div.resultMoreDetails
+		{{activity.description[0]}}
 div#resultBackground(ng-visible="visible", ng-click="popUpResult()")
