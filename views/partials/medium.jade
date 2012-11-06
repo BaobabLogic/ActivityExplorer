@@ -1,14 +1,14 @@
 div(id="main", ng-style="mainStyle('/medium')", when-scrolled="loadMore()")
-	div(ng-repeat="result in results | searchFilter:search:theme:category:budget:duration:sort:(count*amount('/medium'))",
+	div(ng-repeat="result in results | searchFilter:search:themes:budget:duration:sort:(count*amount('/medium'))",
 	 class="mediumResult", ng-click="popUpResult(result.id[0])")
 		div(class="mediumImage") 
 			image(ng-src='{{image(result.image[0])}}', width=279, height=185)
 		div.mediumDetails
 			div.details 
 				div.topHalf 
-					| Game Drive
+					| {{result.service_category[0]}}
 				div.bottomHalf 
-					div.location Cape Town
+					div.location {{result.location[0]}}
 					div.price R{{price(result.price[0])}}
 div.resultPopUp(ng-visible="visible", ng-style="activityStyle")
 	div.resultName 

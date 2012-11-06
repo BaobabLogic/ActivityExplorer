@@ -1,17 +1,19 @@
 div(id="main", ng-style="mainStyle('/small')", when-scrolled="loadMore()")
-	div(ng-repeat="result in results | searchFilter:search:theme:category:budget:duration:sort:(count*amount('/small'))",
+	div(ng-repeat="result in results | searchFilter:search:themes:budget:duration:sort:(count*amount('/small'))",
 	 class="smallResult", ng-click="popUpResult(result.id[0])")
 		div(class="smallImage") 
 			image(ng-src='{{image(result.image[0])}}', width=210, height=140)
 		div.smallDetails
 			div.details 
 				div.topHalf 
-					| Educational Experience
+					| {{result.service_category[0]}}
 				div.bottomHalf 
-					div.location Plettenberg Bay
+					div.location {{result.location[0]}}
 					div.price R{{price(result.price[0])}}
 div.resultPopUp(ng-visible="visible", ng-style="activityStyle")
 	div {{activity.name[0]}}
 	input(type="text", datepicker="selectedDate")
 	{{selectedDate}}
+	div {{activity.duration[0]}}
+	div {{activity.location[0]}}
 div#resultBackground(ng-visible="visible", ng-click="popUpResult()")

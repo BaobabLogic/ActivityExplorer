@@ -288,7 +288,7 @@ function AppCtrl($scope, $http, $location) {
 
   $scope.image = function (url) {
     if (typeof url == 'string' || url instanceof String) {
-      return url.replace("search", "medium");
+      return url.replace("thumb", "medium");
     }
     else {
       return "";
