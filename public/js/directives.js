@@ -17,6 +17,46 @@ app.directive('ngVisible', function() {
   };
 });
 
+app.directive('ngAvailable', function() {
+  return {
+    restrict: 'A',
+    scope: true,
+    link: function( scope, element, attrs ) {
+      scope.$watch(function(){ 
+        var args = attrs.ngAvailable.match(/[^ ]+/g);
+        var obj = scope.$eval(args[0]);
+        if(args[1] == 'available'){
+          element.css('display', ((obj != undefined) && (obj[0].inventory != undefined)) ? 'block' : 'none');
+        }
+        else if(args[1] == 'unavailable'){
+          element.css('display', ((obj != undefined) && (obj[0].inventory == undefined)) ? 'block' : 'none');
+        }
+        else if(args[1] == 'loading'){
+          element.css('display', (obj == undefined) ? 'block' : 'none');
+        }
+      }); 
+    }
+  };
+});
+
+app.directive('ngLoading', function() {
+  return {
+    restrict: 'A',
+    scope: true,
+    link: function( scope, element, attrs ) {
+      scope.$watch(function(){ 
+        var args = attrs.ngLoading.match(/[^ ]+/g);
+        if(scope.$eval(args[1])) {
+          element.css('display', (scope.$eval(args[0]) == '') ? 'block' : 'none');
+        }
+        else if(!scope.$eval(args[1])) {
+          element.css('display', (scope.$eval(args[0]) != '') ? 'block' : 'none');
+        }
+      }); 
+    }
+  };
+});
+
 app.directive('searchBar', function() {
     return function(scope, elm, attrs) {
         var events = scope.$eval(attrs.searchBar);

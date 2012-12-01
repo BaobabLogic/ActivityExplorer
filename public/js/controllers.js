@@ -191,8 +191,7 @@ function AppCtrl($scope, $http, $location) {
   
    //Refine
   $scope.budget = 10;
-  $scope.duration = 10;
-  $scope.selectedDate = "Aladdin";
+  $scope.duration = 10;  
 	
 	  //Sort 
 	$scope.sort = "random";
@@ -278,6 +277,24 @@ function AppCtrl($scope, $http, $location) {
     $scope.applyDisplaySettings();
   });
 
+  var myDate = new Date();
+  myDate.setDate(myDate.getDate()+2);
+  $scope.selectedDate = myDate;
+
+  $scope.adults = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+  $scope.children = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+
+  $scope.resultMore = true;
+
+  $scope.tabButtonClass = function(selected) {
+    if(selected) {
+      return "selected";
+    }
+    else {
+      return "";
+    }  
+  };
+
    //Results Data Section    
 
   $http.get('/api').
@@ -285,6 +302,16 @@ function AppCtrl($scope, $http, $location) {
       $scope.results = data;
       $scope.loadMore();
     });
+
+  $scope.availabilityCheck = function(adults, children, date, id) { 
+    $scope.available = "";
+    if(adults == undefined) {adults = 1}
+    if(children == undefined) {children = 0}
+    $http.get('/api/available/' + adults + '/' + children + '/' + date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + '/' + id).
+      success(function(data, status, headers, config) {
+        $scope.available = data;
+      }); 
+  }; 
 
   $scope.image = function (url) {
     if (typeof url == 'string' || url instanceof String) {
@@ -295,12 +322,39 @@ function AppCtrl($scope, $http, $location) {
     }    
   }
 
+  $scope.imageNum = 0;
+
+  $scope.activityImage = function (images, side) {
+    if (images != undefined) {
+      if(side && ($scope.imageNum < (images.length-1)) ) {
+        $scope.imageNum++;
+      }
+      else if(side) {
+        $scope.imageNum = 0;
+      }
+      else if(!side && ($scope.imageNum > 0) ) {
+        $scope.imageNum--;
+      }
+      else if(!side) {
+        $scope.imageNum = images.length-1;
+      }
+    }  
+  }
+
   $scope.price = function (num) {
     var price = 0;
     if (num != undefined) {
       price = num.substring(0, (num.length-2));
     }
     return price;
+  }
+
+  $scope.getDuration = function (time) {
+    var duration = 1;
+    if (time != undefined) {
+      duration = Math.round(time/360) / 10;
+    }
+    return duration;
   }
 
 
@@ -311,9 +365,10 @@ function AppCtrl($scope, $http, $location) {
 
   $scope.popUpResult = function(id) { 
     $scope.activity = "";
-    $http.get('/api/' + id).
+    $http.get('/api/service/' + id).
       success(function(data, status, headers, config) {
         $scope.activity = data;
+        $scope.availabilityCheck(1, 0, $scope.selectedDate, $scope.activity.id);
       }); 
     $scope.visible = !$scope.visible;
   };

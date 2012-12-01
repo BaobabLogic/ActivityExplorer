@@ -10,7 +10,7 @@ var https = require('https'),
 var inspect = require('eyes').inspector({maxLength: false});
 var round = Math.round;
 var activitar= []; 
-var activity;
+var activity; var availability;
 
 var parser = new xml2js.Parser();
 
@@ -46,7 +46,12 @@ parser.addListener('end', function(result) {
 
 var parser2 = new xml2js.Parser();
 parser2.addListener('end', function(result) {
-    activity = result.service;
+  activity = result.service;
+});
+
+var parser3 = new xml2js.Parser();
+parser3.addListener('end', function(result) {
+  availability = result.services.service;
 });
 
 //Activitar main refresh query
@@ -102,20 +107,53 @@ exports.api = function (req, res) {
 
 exports.specificService = function (req, res) {
   var serviceID = req.params.id;
-  var service = {
-    hostname: 'www.activitar.com',
-    port: 443,
-    path: '/api/services/' + serviceID + '.xml?api_key=rTLUr5A4iGiat3Y2BjZn&per_page=99999',
-    method: 'GET',  
-  };
+  if(serviceID != 'undefined') {
+    var service = {
+      hostname: 'www.activitar.com',
+      port: 443,
+      path: '/api/services/' + serviceID + '.xml?api_key=rTLUr5A4iGiat3Y2BjZn&per_page=99999',
+      method: 'GET',  
+    };
 
-  https.get(service, function(res2) {
-    res2.on('data', function(d) {
-      parser2.parseString(d);
-      res.json(activity);
+    https.get(service, function(res2) {
+      res2.on('data', function(d) {
+        parser2.parseString(d);
+        res.json(activity);
+      });
+
+    }).on('error', function(e) {
+      console.error(e);
     });
+  }
+  else {
+    res.json(activity);
+  }
+};
 
-  }).on('error', function(e) {
-    console.error(e);
-  });
+exports.availabilityCheck = function (req, res) {
+  var adults = req.params.adults;
+  var children = req.params.children;
+  var date = req.params.date;
+  var id = req.params.id;
+  if(id != 'undefined'){
+    var service = {
+      hostname: 'www.activitar.com',
+      port: 443,
+      path: '/api/services/available.xml?api_key=rTLUr5A4iGiat3Y2BjZn&adults=' + adults + '&children=' + children + '&date=' +  date + '&ids=' + id,
+      method: 'GET',  
+    };
+
+    https.get(service, function(res2) {
+      res2.on('data', function(d) {
+        parser3.parseString(d);
+        res.json(availability);
+      });
+
+    }).on('error', function(e) {
+      console.error(e);
+    });
+  }
+  else {
+    res.json(availability);
+  } 
 };

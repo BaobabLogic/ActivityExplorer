@@ -7,6 +7,7 @@ div(id="main", ng-style="mainStyle('/small')", when-scrolled="loadMore()")
 			div.details 
 				div.topHalf 
 					| {{result.service_category[0]}}
+					div.duration {{getDuration(result.duration[0])}} hrs
 				div.bottomHalf 
 					div.location {{result.location[0]}}
 					div.price R{{price(result.price[0])}}

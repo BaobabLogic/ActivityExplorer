@@ -1203,10 +1203,25 @@ li {
 	display: inline-block;
 }
 
-.topHalf {
+.smallDetails .details .topHalf {
 	font-family: 'BebasNeueRegular';	
+	text-shadow: 0px 1px 2px #000;
 	font-size: 20px;
-	width: 200px;
+	width: 206px;
+}
+
+.mediumDetails .details .topHalf {
+	font-family: 'BebasNeueRegular';	
+	text-shadow: 0px 1px 2px #000;
+	font-size: 20px;
+	width: 272px;
+}
+
+.largeDetails .details .topHalf {
+	font-family: 'BebasNeueRegular';	
+	text-shadow: 0px 1px 2px #000;
+	font-size: 20px;
+	width: 410px;
 }
 
 .smallDetails .details .bottomHalf {
@@ -1246,6 +1261,11 @@ li {
 	display: inline-block;
 }
 
+.duration {
+	float: right;
+	display: inline-block;
+}
+
 /*Items in result popup*/
 .resultPopUp {
   display: none;
@@ -1272,12 +1292,13 @@ li {
 }
 
 .resultName span {
-	margin: 4px 0px 0px 20px;
+	margin: 4px 20px 0px 20px;
 }
 
 .resultExtra {
 	font-family: 'Lobster';	
 	width: 820px;
+	height: 25px;
 	margin: 3px 20px 10px 20px;
 	color: #25afe6;
 	font-size: 18px;
@@ -1320,21 +1341,7 @@ li {
 	
 	border: 0;	
 	box-shadow: none;
-	
-  background-color:#15a0db;
-  background-image: linear-gradient(bottom, rgb(31,148,237) 21%, rgb(29,177,251) 61%);
-	background-image: -o-linear-gradient(bottom, rgb(31,148,237) 21%, rgb(29,177,251) 61%);
-	background-image: -moz-linear-gradient(bottom, rgb(31,148,237) 21%, rgb(29,177,251) 61%);
-	background-image: -webkit-linear-gradient(bottom, rgb(31,148,237) 21%, rgb(29,177,251) 61%);
-	background-image: -ms-linear-gradient(bottom, rgb(31,148,237) 21%, rgb(29,177,251) 61%);
-
-	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		left top,
-		color-stop(0.21, rgb(31,148,237)),
-		color-stop(0.61, rgb(29,177,251))
-	);
+	background-color: #24afe8;
 }
 
 .imageButton:hover {
@@ -1358,6 +1365,22 @@ li {
 	float: left;
 }
 
+.resultBooking {
+	width: 350px;
+	height: 200px;
+	margin: 0 30px;
+	float: right;
+	display: inline-block;
+	background-color: #24afe8;
+}
+
+#datePicker {
+  font-family: "PTN";
+	font-size: 16px;
+	width: 150px;
+	margin: 20px 0px 0 100px;
+}
+
 .resultTabs {
   margin-left: 30px;
 }
@@ -1368,7 +1391,7 @@ li {
   font-size: 21px;
   text-shadow: 0px 2px 3px #000;
 
-  margin: 0;
+  margin: 30px 0 0;
   display: inline-block;
 
   background-color: #15a0db;
@@ -1406,34 +1429,31 @@ li {
 		color-stop(0.61, rgb(241,175,83))
 	);
 }
-.resultBooking {
-	width: 350px;
-	height: 200px;
-	margin: 0 30px;
-	float: right;
-	display: inline-block;
-  border-radius:7px;
 
-	background-color: rgb(44,185,245);
-	background-image: linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
-	background-image: -o-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
-	background-image: -moz-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
-	background-image: -webkit-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
-	background-image: -ms-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+.tabButton.selected {
+	background-color: #f28e36;
+  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
 
 	background-image: -webkit-gradient(
 		linear,
 		left bottom,
 		left top,
-		color-stop(0.43, rgb(51,170,255)),
-		color-stop(0.72, rgb(51,190,255)),
-		color-stop(0.86, rgb(61,190,255))
-	);
+		color-stop(0.21, rgb(242,142,54)),
+		color-stop(0.61, rgb(241,175,83))
+	);	
 }
 
 .resultMoreDetails {
 	margin: 0 30px 30px;
 	border: 1px solid #25afe6;
+	height: 180px;
+	width: 798px;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 #resultBackground {
