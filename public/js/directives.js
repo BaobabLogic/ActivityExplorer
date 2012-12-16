@@ -62,12 +62,12 @@ app.directive('searchBar', function() {
         var events = scope.$eval(attrs.searchBar);
         angular.forEach(events, function(value, key) {
             elm.bind(key, function() {
-            		if (scope.search == scope.blur) {
-                	scope.$apply(value);
-            		}
-            		else if (scope.search == scope.focus) {
-            			scope.$apply(value);
-            		}
+                if (scope.search == scope.blur) {
+                  scope.$apply(value);
+                }
+                else if (scope.search == scope.focus) {
+                  scope.$apply(value);
+                }
             });
         });
     };

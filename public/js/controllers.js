@@ -8,63 +8,63 @@ function AppCtrl($scope, $http, $location) {
   $scope.search = "";
   
    //Themes
-	$scope.category = "";
-	$scope.themeVisible = true;
-	
-	$scope.themeTitleClick = function(theme, selected){
-	  for(var i=0; i<theme.left.length; i++) {
-	    theme.left[i].selected = selected;
-	    if(theme.left[i].left != undefined) {
-	      $scope.themeTitleClick(theme.left[i], selected);
-	    }
-	  }
-	  for(var j=0; j<theme.right.length; j++) {
-	    theme.right[j].selected = selected;
-	    if(theme.right[j].right != undefined) {
-	      $scope.themeTitleClick(theme.right[j], selected);
-	    }
-	  }	  
+  $scope.category = "";
+  $scope.themeVisible = true;
+  
+  $scope.themeTitleClick = function(theme, selected){
+    for(var i=0; i<theme.left.length; i++) {
+      theme.left[i].selected = selected;
+      if(theme.left[i].left != undefined) {
+        $scope.themeTitleClick(theme.left[i], selected);
+      }
+    }
+    for(var j=0; j<theme.right.length; j++) {
+      theme.right[j].selected = selected;
+      if(theme.right[j].right != undefined) {
+        $scope.themeTitleClick(theme.right[j], selected);
+      }
+    }   
     theme.selected = selected;
-	};
-	$scope.themeSelected = function(theme) {
+  };
+  $scope.themeSelected = function(theme) {
     var selected = false;
-	  for(var i=0; i<theme.left.length; i++) {
-	    if(theme.left[i].selected == true) {
-	      selected = true;
-	    }
-	  }
-	  for(var j=0; j<theme.right.length; j++) {
-	    if(theme.right[j].selected == true) {
-	      selected = true;
-	    }
-	  }
-	  return selected;
-	};
-	$scope.themeSelectClick = function(theme) {
-	  var selected = !theme.selected;
-	  for(var i=0; i<theme.left.length; i++) {
-	    theme.left[i].selected = selected;
-	  }
-	  for(var j=0; j<theme.right.length; j++) {
-	    theme.right[j].selected = selected;
-	  }
-  	theme.selected = selected;
-	};	
-	$scope.typeSelectClick = function(type, theme) {
-  	type.selected = !type.selected;
-  	theme.selected= $scope.themeSelected(theme);
-	};
-	$scope.select = function(selected) {
-	  if(!selected) {
-	    return "themeSelectEmpty";
-	  }
-	};
-	
-	$scope.themeButtonClick = function(theme) {
-	  $scope.themeVisible = !($scope.themeVisible);
-	  $scope.theme = theme;
-	};
-	
+    for(var i=0; i<theme.left.length; i++) {
+      if(theme.left[i].selected == true) {
+        selected = true;
+      }
+    }
+    for(var j=0; j<theme.right.length; j++) {
+      if(theme.right[j].selected == true) {
+        selected = true;
+      }
+    }
+    return selected;
+  };
+  $scope.themeSelectClick = function(theme) {
+    var selected = !theme.selected;
+    for(var i=0; i<theme.left.length; i++) {
+      theme.left[i].selected = selected;
+    }
+    for(var j=0; j<theme.right.length; j++) {
+      theme.right[j].selected = selected;
+    }
+    theme.selected = selected;
+  };  
+  $scope.typeSelectClick = function(type, theme) {
+    type.selected = !type.selected;
+    theme.selected= $scope.themeSelected(theme);
+  };
+  $scope.select = function(selected) {
+    if(!selected) {
+      return "themeSelectEmpty";
+    }
+  };
+  
+  $scope.themeButtonClick = function(theme) {
+    $scope.themeVisible = !($scope.themeVisible);
+    $scope.theme = theme;
+  };
+  
   $scope.themes = { 
     "left":    [
                   { 
@@ -192,17 +192,17 @@ function AppCtrl($scope, $http, $location) {
    //Refine
   $scope.budget = 10;
   $scope.duration = 10;  
-	
-	  //Sort 
-	$scope.sort = "random";
-	$scope.sortButtonClass = function(button) {
-	  if(button == $scope.sort) {
-	    return "currentSort";
-	  }
-	  else {
-	    return "";
-	  }  
-	};
+  
+    //Sort 
+  $scope.sort = "random";
+  $scope.sortButtonClass = function(button) {
+    if(button == $scope.sort) {
+      return "currentSort";
+    }
+    else {
+      return "";
+    }  
+  };
 
   //Results Section
     //Results Display Section

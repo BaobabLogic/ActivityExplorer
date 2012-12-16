@@ -1,48 +1,48 @@
 $(function() {
-	var footerButton = "";
+  var footerButton = "";
   $('.barButton').click(function() {
-  	footerButton = $(this).val();
-		$("#" + footerButton).show();
-		$("#background").show();
-	});
-	
+    footerButton = $(this).val();
+    $("#" + footerButton).show();
+    $("#background").show();
+  });
+  
   $("#background").click(function(){
     $("#background").hide();
     $("#" + footerButton).hide();
   });        
 });
 
-	
+  
 $(function() {
-	var headButton = "";
+  var headButton = "";
 
   $('.headButton').click(function(e) {
-  	headButton = $(this).val();
+    headButton = $(this).val();
 
-  	if(headButton == 'themes') {
-  		if($('#refinePopUp').is(':visible')){
+    if(headButton == 'themes') {
+      if($('#refinePopUp').is(':visible')){
         $('#refinePopUp').hide();
-    	}
-    	if($('#sortPopUp').is(':visible')){
+      }
+      if($('#sortPopUp').is(':visible')){
         $('#sortPopUp').hide();
-    	}
-  	}
-  	else if(headButton == 'refine') {
-  		if($('#themesPopUp').is(':visible')){
+      }
+    }
+    else if(headButton == 'refine') {
+      if($('#themesPopUp').is(':visible')){
         $('#themesPopUp').hide();
-    	}
-    	if($('#sortPopUp').is(':visible')){
+      }
+      if($('#sortPopUp').is(':visible')){
         $('#sortPopUp').hide();
-    	}
-  	}
-  	else if(headButton == 'sort') {
-    	if($('#themesPopUp').is(':visible')){
+      }
+    }
+    else if(headButton == 'sort') {
+      if($('#themesPopUp').is(':visible')){
         $('#themesPopUp').hide();
-    	}
-  		if($('#refinePopUp').is(':visible')){
+      }
+      if($('#refinePopUp').is(':visible')){
         $('#refinePopUp').hide();
-    	}
-  	}
+      }
+    }
 
     if(!$('#' + headButton + 'PopUp').is(':visible')){
         $('#' + headButton + 'PopUp').show();
@@ -52,8 +52,8 @@ $(function() {
         $('#' + headButton + 'PopUp').hide();
     } 
 
-		$(document).click( function(e){
-	    if ( $(e.target).parents("#" + headButton + "PopUp").length == 0 ) $('#' + headButton + 'PopUp').hide();
-		});    
-	});     
+    $(document).click( function(e){
+      if ( $(e.target).parents("#" + headButton + "PopUp").length == 0 ) $('#' + headButton + 'PopUp').hide();
+    });    
+  });     
 });
