@@ -139,7 +139,8 @@ exports.availabilityCheck = function (req, res) {
     var service = {
       hostname: 'www.activitar.com',
       port: 443,
-      path: '/api/services/available.xml?api_key=rTLUr5A4iGiat3Y2BjZn&adults=' + adults + '&children=' + children + '&date=' +  date + '&ids=' + id,
+      path: '/api/services/available.xml?api_key=rTLUr5A4iGiat3Y2BjZn&adults=' + 
+        adults + '&children=' + children + '&date=' +  date + '&ids=' + id,
       method: 'GET',  
     };
 
