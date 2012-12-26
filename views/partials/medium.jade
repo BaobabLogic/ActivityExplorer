@@ -1,5 +1,5 @@
-div(ng-style="mainLoadingStyle", ng-loading="results true")
-  div#resultLoadingWheel(class="loadingWheel")
+div(ng-loading="results true")
+  div#mainLoadingWheel(ng-style="mainLoadingStyle", class="loadingWheel")
 div(id="main", ng-style="mainStyle('/medium')", when-scrolled="loadMore()", ng-loading="results false")
   div(ng-repeat="result in results | searchFilter:search:themes:budget:duration:sort:(count*amount('/medium'))",
    class="mediumResult", ng-click="popUpResult(result.id[0])")
