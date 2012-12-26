@@ -1,20 +1,15 @@
+div(ng-style="mainLoadingStyle", ng-loading="results true")
+  div#resultLoadingWheel(class="loadingWheel")
 div(id="main", ng-style="mainStyle('/small')", when-scrolled="loadMore()")
-	div(ng-repeat="result in results | searchFilter:search:themes:budget:duration:sort:(count*amount('/small'))",
-	 class="smallResult", ng-click="popUpResult(result.id[0])")
-		div(class="smallImage") 
-			image(ng-src='{{image(result.image[0])}}', width=210, height=140)
-		div.smallDetails
-			div.details 
-				div.topHalf 
-					| {{result.service_category[0]}}
-					div.duration {{getDuration(result.duration[0])}} hrs
-				div.bottomHalf 
-					div.location {{result.location[0]}}
-					div.price R{{price(result.price[0])}}
-div.resultPopUp(ng-visible="visible", ng-style="activityStyle")
-	div {{activity.name[0]}}
-	input(type="text", datepicker="selectedDate")
-	{{selectedDate}}
-	div {{activity.duration[0]}}
-	div {{activity.location[0]}}
-div#resultBackground(ng-visible="visible", ng-click="popUpResult()")
+  div(ng-repeat="result in results | searchFilter:search:themes:budget:duration:sort:(count*amount('/small'))",
+   class="smallResult", ng-click="popUpResult(result.id[0])")
+    div(class="smallImage") 
+      image(ng-src='{{image(result.image[0])}}', width=231, height=154)
+    div.smallDetails
+      div.details 
+        div.topHalf 
+          | {{result.service_category[0]}}
+          div.duration {{getDuration(result.duration[0])}} hrs
+        div.bottomHalf 
+          div.location {{result.location[0]}}
+          div.price R{{price(result.price[0])}}

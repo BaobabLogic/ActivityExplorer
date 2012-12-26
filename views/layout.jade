@@ -19,7 +19,7 @@ html(lang='en', ng-app='activity')
           span Explore
         input#searchBar(type='text', name='explore', size='30', ng-model="search", spellcheck="false")
       nav#topButtons(ng-model="head")
-        ul
+        ul.headerList
           button.headButton(type='button', value='themes', id="themes")
             span Themes  
           button.headButton(type='button', value='refine', id="refine")
@@ -74,6 +74,29 @@ html(lang='en', ng-app='activity')
 
     block content
 
+    div.resultPopUp(ng-visible="visible", ng-style="activityStyle")
+      div#activityLoading(ng-loading="activity true")
+        div#resultLoadingWheel(class="loadingWheel")
+      div(ng-loading="activity false")
+        div.resultSlider
+          div.resultImages(ng-style="imagesStyle")
+            span.resultImage(ng-repeat="image in activity.images[0].image")
+              image(ng-src="{{image.medium[0]}}", width=840, height=560)
+          div.imageButton(id="leftButton", ng-click="activityImage(activity.images[0].image, false)")   
+          div.imageButton(id="rightButton", ng-click="activityImage(activity.images[0].image, true)") 
+          ul.imageNavigation
+            li.imageNavigationButton(ng-repeat="image in activity.images[0].image", ng-style="imageNavigationStyle(image)", 
+              ng-click="imageNavigate(image)")
+        div.resultName 
+          span {{activity.name[0]}}
+          div.duration {{getDuration(activity.duration[0])}} hours
+        div.resultExtra 
+          span.leftExtra
+            | {{activity.location[0]}}
+          span.price R{{price(activity.price[0])}} per person
+            
+    div#resultBackground(ng-visible="visible", ng-click="popUpResultClose()")
+
     div#popups
       div#social(ng-style="popUpStyle", class="popup")
         div#facebook
@@ -82,6 +105,8 @@ html(lang='en', ng-app='activity')
           a.twitter-timeline(width="300", height="468",data-dnt='true', href='https://twitter.com/ActivityExplore', data-widget-id='262054067466014721') Tweets by @ActivityExplore
           script !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");    
     
+
+    div#about(ng-style="popUpStyle", class="popup")   
 
     div#background
 
@@ -96,7 +121,7 @@ html(lang='en', ng-app='activity')
         label(class='ng-class: viewButtonClass("/large")')
           span
           a(href="/large") Large
-      ul
+      ul.footerList
         button.barButton(type='button', value='social')
           span Social
         button.barButton(type='button', value='f.a.q')

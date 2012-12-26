@@ -210,8 +210,8 @@ function AppCtrl($scope, $http, $location) {
   var computeWidth = function(size) {
     var width = window.innerWidth;
     switch (size){
-      case "/large": return width - (width-70)%456 - 70; break;
-      case "/small": return width - (width-70)%246 - 70; break;
+      case "/large": return width - (width-68)%457 - 68; break;
+      case "/small": return width - (width-70)%247 - 70; break;
       default: return width - (width-70)%316 - 70;
     }    
   };
@@ -219,8 +219,8 @@ function AppCtrl($scope, $http, $location) {
   $scope.mainStyle = function(size) {
     var width = window.innerWidth;
     switch (size){
-      case "/large": return { width: (width - (width-70)%456 - 70) + 'px' }; break;
-      case "/small": return { width: (width - (width-70)%246 - 70) + 'px' }; break;
+      case "/large": return { width: (width - (width-68)%457 - 68) + 'px' }; break;
+      case "/small": return { width: (width - (width-70)%247 - 70) + 'px' }; break;
       default: return { width: (width - (width-70)%316 - 70) + 'px' };
     }
   };
@@ -245,16 +245,16 @@ function AppCtrl($scope, $http, $location) {
     var height = window.innerHeight;
     switch (size){
       case "/large": 
-        var wide = Math.floor((width-70)/456);
-        var high = Math.floor((height/368) + 2);
+        var wide = Math.floor((width-68)/457);
+        var high = Math.floor((height/372) + 2);
         return (wide*high); break;
       case "/small": 
-        var wide = Math.floor((width-70)/246);
-        var high = Math.floor((height/225) + 1);
+        var wide = Math.floor((width-70)/247);
+        var high = Math.floor((height/229) + 1);
         return (wide*high); break;
       default: 
         var wide = Math.floor((width-70)/316);
-        var high = Math.floor((height/261) + 2);
+        var high = Math.floor((height/278) + 2);
         return (wide*high);
     }  
   };
@@ -265,11 +265,21 @@ function AppCtrl($scope, $http, $location) {
     $scope.count++;
   };
 
+  var computeTopLoading = function() {
+    var height = window.innerHeight;
+    return (height-128)/2;
+  };
+
+  $scope.mainLoadingStyle = {
+    top: computeTopLoading() + 'px'
+  };
+
   $scope.applyDisplaySettings = function() {
     $scope.activityStyle.top = computeTop() + 'px';
     $scope.activityStyle.left = computeLeft() + 'px';
     $scope.popUpStyle.top = (window.innerHeight - 560)/2 + 'px';
     $scope.popUpStyle.left = (window.innerWidth - 830)/2 + 'px';
+    $scope.mainLoadingStyle.top = computeTopLoading() + 'px';
     $scope.$apply();    
   }
     
@@ -322,25 +332,6 @@ function AppCtrl($scope, $http, $location) {
     }    
   }
 
-  $scope.imageNum = 0;
-
-  $scope.activityImage = function (images, side) {
-    if (images != undefined) {
-      if(side && ($scope.imageNum < (images.length-1)) ) {
-        $scope.imageNum++;
-      }
-      else if(side) {
-        $scope.imageNum = 0;
-      }
-      else if(!side && ($scope.imageNum > 0) ) {
-        $scope.imageNum--;
-      }
-      else if(!side) {
-        $scope.imageNum = images.length-1;
-      }
-    }  
-  }
-
   $scope.price = function (num) {
     var price = 0;
     if (num != undefined) {
@@ -362,17 +353,70 @@ function AppCtrl($scope, $http, $location) {
     //Activity PopUps
 
   $scope.visible = false;
+  $scope.imagesStyle = {
+    width: '840px',
+    left: '0px'
+  };
+
+  $scope.imageNum = 0;
+
+  var next = true;
+  $scope.activityImage = function(images, side) {
+    if(next) {
+      next = false;
+      if (images != undefined) {
+        if(side && ($scope.imageNum < (images.length-1)) ) {
+          $scope.imageNum++;
+        }
+        else if(side) {
+          $scope.imageNum = 0;
+        }
+        else if(!side && ($scope.imageNum > 0) ) {
+          $scope.imageNum--;
+        }
+        else if(!side) {
+          $scope.imageNum = images.length-1;
+        }
+      }
+      $('.resultImages').animate({ left: '-' + (840*$scope.imageNum) + 'px' }, 1200, 'easeOutExpo', function() {
+        next = true;
+      });
+    }
+  }
+
+  $scope.imageNavigationStyle = function(image) {
+    if($scope.activity.images[0].image[$scope.imageNum] == image) {
+      return { "background-image": "url('/img/slider_selector_current.png')" };
+    }
+  };
+
+  var navigate = true;
+  $scope.imageNavigate = function(image) {
+    if(navigate) {
+      navigate = false;
+      $scope.imageNum = $scope.activity.images[0].image.indexOf(image);
+      $('.resultImages').animate({ left: '-' + (840*$scope.imageNum) + 'px' }, 1200, 'easeOutExpo', function() {
+        navigate = true;
+      });
+    }
+  };
 
   $scope.popUpResult = function(id) { 
     $scope.activity = "";
     $http.get('/api/service/' + id).
       success(function(data, status, headers, config) {
         $scope.activity = data;
+        $scope.imagesStyle.width = (840*$scope.activity.images[0].image.length) + 'px';
         $scope.availabilityCheck(1, 0, $scope.selectedDate, $scope.activity.id);
       }); 
     $scope.visible = !$scope.visible;
   };
 
+  $scope.popUpResultClose = function() { 
+    $scope.activity = "";
+    $scope.imageNum = 0;
+    $scope.visible = !$scope.visible;
+  }
     //Footer PopUps
 
   $scope.popUpStyle = {

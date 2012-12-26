@@ -101,7 +101,7 @@ html, body {
 	padding:0;
 	height:100%;
 	background: #7ddaff;
-	background-image: url('/img/main-noise.png');
+	/*background-image: url('/img/main-noise.png');*/
 }
 
 #wrapper {
@@ -154,6 +154,15 @@ button span {
   margin: 0px 10px;
 }
 
+.loadingWheel {
+	width: 128px;
+	height: 128px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	background-image: url('/img/loading_128.gif');	
+}
+
 
 
 /* Items in header*/
@@ -185,6 +194,14 @@ button span {
 	-moz-box-shadow: 1px 1px 2px #2e2e2e;
 	-webkit-box-shadow: 1px 1px 2px #2e2e2e;
 	box-shadow: 1px 1px 2px #2e2e2e;
+}
+
+.headerList {
+	position: relative;
+	top: 1px;
+	float: right;
+	margin: 0 35px;
+	padding:0;
 }
 
 #logo {
@@ -830,16 +847,20 @@ nav {
 }
 
 ul {
-	position: relative;
-	top: 1px;
-	float: right;
 	list-style-type:none;
-	margin: 0 35px;
-	padding:0;
 }
 
 li {
 	display: inline;
+}
+
+.footerList {
+	position: relative;
+	top: 1px;
+	float: right;
+	margin: 0 35px;
+	padding:0;
+
 }
 
 #footer {
@@ -1061,10 +1082,9 @@ li {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 
-	width: 210px;
-	height: 199px;	
+	width: 231px;
+	height: 203px;	
 	margin: 16px 8px 0px 8px;
-	padding: 10px 10px 0px 10px;
 	display: inline-block;
 
 	background-color: #fff;
@@ -1084,11 +1104,9 @@ li {
 
 .smallDetails {
 	position: relative;
-	margin-top: 10px;
 	height: 23px;
-	width: 206px;
-	padding: 0px 12px;
-	left: -10px;
+	width: 211px;
+	padding: 0px 10px;
 	color: #fff;
 	text-shadow: 0px 2px 3px #000;
 	background-color: #25afe6;
@@ -1098,10 +1116,10 @@ li {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 
-	width: 279px;
-	height: 245px;	
+	width: 300px;
+	height: 252px;	
 	margin: 16px 8px 0px 8px;
-	padding: 10px 10px 0px 10px;
+	padding: 0px;
 	display: inline-block;
 
 	background-color: #fff;
@@ -1121,11 +1139,9 @@ li {
 
 .mediumDetails {
 	position: relative;
-	margin-top: 8px;
 	height: 25px;
-	width: 275px;
-	padding: 0px 12px;
-	left: -10px;
+	width: 280px;
+	padding: 0px 10px;
 	color: #fff;
 	text-shadow: 0px 2px 3px #000;
 	background-color: #25afe6;
@@ -1135,10 +1151,9 @@ li {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 
-	width: 420px;
-	height: 342px;	
+	width: 441px;
+	height: 346px;	
 	margin: 16px 8px 0px 8px;
-	padding: 10px 10px 0px 10px;
 	display: inline-block;
 
 	background-color: #fff;
@@ -1158,35 +1173,33 @@ li {
 
 .largeDetails {
 	position: relative;
-	margin-top: 10px;
 	height: 25px;
-	width: 416px;
+	width: 417px;
 	padding: 0px 12px;
-	left: -10px;
 	color: #fff;
 	text-shadow: 0px 2px 3px #000;
 	background-color: #25afe6;
 }
 
 .smallImage {
-	width: 210px;
-	height: 140px;
+	width: 231px;
+	height: 154px;
 	background: #ededed;
-	background-image: url('/img/main-noise.png');
+	/*background-image: url('/img/main-noise.png');*/
 }
 
 .mediumImage {
-	width: 279px;
-	height: 186px;
+	width: 300px;
+	height: 200px;
 	background: #ededed;
-	background-image: url('/img/main-noise.png');
+	/*background-image: url('/img/main-noise.png');*/
 }
 
 .largeImage {
-	width: 420px;
-	height: 280px;
+	width: 441px;
+	height: 294px;
 	background: #ededed;
-	background-image: url('/img/main-noise.png');
+	/*background-image: url('/img/main-noise.png');*/
 }
 
 .smallDetails .details {
@@ -1207,43 +1220,43 @@ li {
 	font-family: 'BebasNeueRegular';	
 	text-shadow: 0px 1px 2px #000;
 	font-size: 20px;
-	width: 206px;
+	width: 210px;
 }
 
 .mediumDetails .details .topHalf {
 	font-family: 'BebasNeueRegular';	
 	text-shadow: 0px 1px 2px #000;
 	font-size: 20px;
-	width: 272px;
+	width: 280px;
 }
 
 .largeDetails .details .topHalf {
 	font-family: 'BebasNeueRegular';	
 	text-shadow: 0px 1px 2px #000;
 	font-size: 20px;
-	width: 410px;
+	width: 417px;
 }
 
 .smallDetails .details .bottomHalf {
 	font-family: 'Lobster';	
-	width: 200px;
-	margin: 3px 0 0 4px;
+	width: 210px;
+	margin-top: 3px;
 	color: #25afe6;
 	font-size: 18px;
 }
 
 .mediumDetails .details .bottomHalf {
 	font-family: 'Lobster';	
-	width: 268px;
-	margin: 5px 0 0 4px;
+	width: 280px;
+	margin-top: 5px;
 	color: #25afe6;
 	font-size: 18px;
 }
 
 .largeDetails .details .bottomHalf {
 	font-family: 'Lobster';	
-	width: 400px;
-	margin: 5px 0 0 10px;
+	width: 417px;
+	margin-top: 5px;
 	color: #25afe6;
 	font-size: 18px;
 }
@@ -1272,12 +1285,22 @@ li {
   position: fixed;
   background: #FFFFFF;
   z-index: 151;
-  height: 560px;
-  width: 860px;
-  overflow: auto;
-	-moz-box-shadow: 1px 1px 5px #8a8a8a;
-	-webkit-box-shadow: 1px 1px 5px #8a8a8a;
-	box-shadow: 1px 1px 5px #8a8a8a; 
+  width: 840px;
+  height: 620px;
+  overflow: hidden;
+	-moz-box-shadow: 1px 1px 5px #2c2c2c;
+	-webkit-box-shadow: 1px 1px 5px #2c2c2c;
+	box-shadow: 1px 1px 5px #2c2c2c; 
+}
+
+#activityLoading {
+  width: 840px;
+  height: 620px;
+	background: #7ddaff;
+}
+
+#resultLoadingWheel {
+	top: 246px; 
 }
 
 .resultName {
@@ -1286,20 +1309,16 @@ li {
 	color: #fff;
 	text-shadow: 0px 2px 3px #000;
 	background-color: #24afe8;
-  width: 860px;
-	height: 28px;
-	margin: 12px 0px;
-}
-
-.resultName span {
-	margin: 4px 20px 0px 20px;
+  width: 800px;
+	height: 26px;
+	padding: 3px 20px 1px;
 }
 
 .resultExtra {
 	font-family: 'Lobster';	
-	width: 820px;
+	width: 800px;
 	height: 25px;
-	margin: 3px 20px 10px 20px;
+	margin: 6px 20px 0px 20px;
 	color: #25afe6;
 	font-size: 18px;
 }
@@ -1312,57 +1331,65 @@ li {
 	float: right;
 }
 
+.resultSlider {
+	width: 840px;
+	height: 560px;
+	margin: 0px;
+	top: 0px;
+	display: block;
+	overflow: hidden;
+}
+
 .resultImages {
-	width: 390px;
-	height: 200px;
-	margin: 0 30px;
-	float: left;
+	height: 560px;
+	position: absolute;
 	display: inline-block;
-  border-radius:7px;
+	overflow: visible;
 }
 
 .resultImage {
-	width: 300px;
-	height: 200px;
-	float: left;
+	width: 840px;
+	height: 560px;
+	position: relative;
 	display: inline-block;
+	background: #ededed;
 }
 
 .imageButton {
-	font-family: "BebasNeueRegular";
-	color: white;
-	font-size: 21px;
-	text-shadow: 0px 2px 3px #000;
-
-	width: 20px;
-	height: 200px;
-	margin: 0px;
+	position: relative;
 	display: inline-block;
-	
-	border: 0;	
-	box-shadow: none;
-	background-color: #24afe8;
-}
-
-.imageButton:hover {
-	background-color: #f28e36;
-  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
-	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-
-	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		left top,
-		color-stop(0.21, rgb(242,142,54)),
-		color-stop(0.61, rgb(241,175,83))
-	);
+	width: 22px;
+	height: 22px;
+	top: 269px;
+	margin: 0px 10px;
+	z-index: 150;
 }
 
 #leftButton {
 	float: left;
+	background-image: url('/img/left_arrow.png');
+}
+
+#rightButton {
+	float: right;
+	background-image: url('/img/right_arrow.png');
+}
+
+.imageNavigation {
+	float: right;
+	position: relative;
+	top: 515px;
+	right: -30px;
+}
+
+.imageNavigationButton {
+	position: relative;
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin-left: 5px; 
+	z-index: 150;
+	background-image: url('/img/slider_selector.png');	
 }
 
 .resultBooking {
@@ -1463,7 +1490,18 @@ li {
   width: 100%;
   top: 0;
   left: 0;
-  background: #ebebeb;
+  background: black;
   z-index: 150;
 	opacity: 0.6;
+}
+
+/* Other */
+
+#mapTop {
+	width: 100%;
+	height: 50px;
+};
+
+#loading {
+	display: block;
 }

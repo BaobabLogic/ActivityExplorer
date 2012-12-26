@@ -49,7 +49,7 @@ app.directive('ngLoading', function() {
         if(scope.$eval(args[1])) {
           element.css('display', (scope.$eval(args[0]) == '') ? 'block' : 'none');
         }
-        else if(!scope.$eval(args[1])) {
+        else {
           element.css('display', (scope.$eval(args[0]) != '') ? 'block' : 'none');
         }
       }); 
