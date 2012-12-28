@@ -1323,10 +1323,6 @@ li {
 	font-size: 18px;
 }
 
-.resultLeftExtra {
-	
-}
-
 .resultPrice {
 	float: right;
 }
@@ -1362,7 +1358,7 @@ li {
 	height: 22px;
 	top: 269px;
 	margin: 0px 10px;
-	z-index: 150;
+	z-index: 160;
 }
 
 #leftButton {
@@ -1388,17 +1384,27 @@ li {
 	width: 10px;
 	height: 10px;
 	margin-left: 5px; 
-	z-index: 150;
+	z-index: 160;
 	background-image: url('/img/slider_selector.png');	
 }
 
-.resultBooking {
-	width: 350px;
+/* Result Tabs*/
+
+#resultTabs {
+	width: 840px;
+	height: 560px;
+	position: fixed;
+	overflow: hidden;
+}
+
+#resultBooking {
+	width: 300px;
 	height: 200px;
-	margin: 0 30px;
-	float: right;
 	display: inline-block;
-	background-color: #24afe8;
+	position: relative;
+	float: left;
+	top: -170px;
+	z-index: 200;
 }
 
 #datePicker {
@@ -1408,79 +1414,73 @@ li {
 	margin: 20px 0px 0 100px;
 }
 
-.resultTabs {
-  margin-left: 30px;
+#resultDetails {
+	width: 280px;
+	height: 560px;
+	display: inline-block;
+	position: relative;
+	float: right;
+	right: -250px;
+	z-index: 200;
 }
 
-.tabButton {
-  font-family: "BebasNeueRegular";
-  color: white;
-  font-size: 21px;
-  text-shadow: 0px 2px 3px #000;
-
-  margin: 30px 0 0;
-  display: inline-block;
-
-  background-color: #15a0db;
-  border: 0;	
-  box-shadow: none; 
-  
-  background-image: linear-gradient(bottom, rgb(31,148,237) 21%, rgb(29,177,251) 61%);
-	background-image: -o-linear-gradient(bottom, rgb(31,148,237) 21%, rgb(29,177,251) 61%);
-	background-image: -moz-linear-gradient(bottom, rgb(31,148,237) 21%, rgb(29,177,251) 61%);
-	background-image: -webkit-linear-gradient(bottom, rgb(31,148,237) 21%, rgb(29,177,251) 61%);
-	background-image: -ms-linear-gradient(bottom, rgb(31,148,237) 21%, rgb(29,177,251) 61%);
-
-	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		left top,
-		color-stop(0.21, rgb(31,148,237)),
-		color-stop(0.61, rgb(29,177,251))
-	); 
+#resultDescription {
+	height: 200px;
+	width: 840px;
+	display: inline-block;
+	position: relative;
+	top: -30px;
+	z-index: 200;
 }
 
-.tabButton:hover {
-	background-color: #f28e36;
-  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
-	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-
-	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		left top,
-		color-stop(0.21, rgb(242,142,54)),
-		color-stop(0.61, rgb(241,175,83))
-	);
+#resultBookingArea {
+	width: 300px;
+	height: 170px;
+	display: block;
+	background-color: white;
 }
 
-.tabButton.selected {
-	background-color: #f28e36;
-  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
-	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-
-	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		left top,
-		color-stop(0.21, rgb(242,142,54)),
-		color-stop(0.61, rgb(241,175,83))
-	);	
-}
-
-.resultMoreDetails {
-	margin: 0 30px 30px;
-	border: 1px solid #25afe6;
-	height: 180px;
-	width: 798px;
+#resultDetailsArea {
+	width: 250px;
+	height: 560px;
+	display: inline-block;
 	overflow-x: hidden;
 	overflow-y: scroll;
+	background-color: white;
+}
+
+#resultDescriptionArea {
+	width: 840px;
+	height: 170px;
+	display: inline-block;
+	position: relative;
+	z-index: 500;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	background-color: white;
+}
+
+#resultBookingButton {
+	width: 100px;
+	height: 30px;
+	display: block;
+	background-color: transparent;
+}
+
+#resultDetailsButton {
+	width: 30px;
+	height: 150px;
+	display: inline-block;
+	position: relative;
+	top: -546px;
+	background-color: transparent;
+}
+
+#resultDescriptionButton {
+	width: 150px;
+	height: 30px;
+	display: inline-block;
+	background-color: transparent;
 }
 
 #resultBackground {
@@ -1490,7 +1490,7 @@ li {
   width: 100%;
   top: 0;
   left: 0;
-  background: black;
+  background: #1C1C1C;
   z-index: 150;
 	opacity: 0.6;
 }

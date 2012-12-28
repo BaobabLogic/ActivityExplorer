@@ -82,11 +82,66 @@ html(lang='en', ng-app='activity')
           div.resultImages(ng-style="imagesStyle")
             span.resultImage(ng-repeat="image in activity.images[0].image")
               image(ng-src="{{image.medium[0]}}", width=840, height=560)
-          div.imageButton(id="leftButton", ng-click="activityImage(activity.images[0].image, false)")   
-          div.imageButton(id="rightButton", ng-click="activityImage(activity.images[0].image, true)") 
-          ul.imageNavigation
-            li.imageNavigationButton(ng-repeat="image in activity.images[0].image", ng-style="imageNavigationStyle(image)", 
-              ng-click="imageNavigate(image)")
+          div#imageSelection   
+            div.imageButton(id="leftButton", ng-click="activityImage(activity.images[0].image, false)")   
+            div.imageButton(id="rightButton", ng-click="activityImage(activity.images[0].image, true)") 
+            ul.imageNavigation
+              li.imageNavigationButton(ng-repeat="image in activity.images[0].image", ng-style="imageNavigationStyle(image)", 
+                ng-click="imageNavigate(image)")
+
+          div#resultTabs(ng-style="activityStyle")  
+            div#resultBooking
+              div#resultBookingArea
+                input#datePicker(ng-model="selectedDate",  value="{{selectedDate | date:'dd MMMM yyyy'}}", ui-date)
+                div
+                  select(ng-model="selectedAdults", ng-options="adult for adult in adults")
+                    option(value="") Adults
+                  select(ng-model="selectedChildren", ng-options="child for child in children")
+                    option(value="") Children
+                div(ng-available="available[0].inventories available")    
+                  select(name="timeslot", ng-options="timeslot.start_time[0] for timeslot in available[0].inventories[0].inventory")
+                {{available[0].inventories[0].inventory.length}}    
+                button(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])", 
+                        ng-available="available[0].inventories available") Book Now 
+                button(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])", 
+                        ng-available="available[0].inventories unavailable") Check Availability Again
+                div(ng-available="available[0].inventories loading")
+                  | Loading
+              div#resultBookingButton(ng-click="toggleResultBooking()")
+                | Book
+
+            div#resultDetails
+              div#resultDetailsButton(ng-click="toggleResultDetails()")
+                | Details
+              div#resultDetailsArea
+                h2 Requirements
+                | Age: {{activity.min_age[0]}}
+                | Minimum Height: {{activity.min_height[0]}}
+                | Maximum Height: {{activity.max_height[0]}}
+                | Fitness: {{activity.fitness[0]}}
+                | Qualifications: {{activity.qualifications[0]}}
+                | Maximum Weight: {{activity.max_weight[0]}}
+                | Certification: {{activity.certification[0]}}
+                | Experience Level: {{activity.experience_level[0]}}
+                {{activity.id[0]}}
+                h2 Instructions
+                | Notes: {{activity.instructions[0]}}
+                | Where: {{activity.where[0]}}
+                | When: {{activity.when[0]}}
+                | Weather: {{activity.weather[0]}}
+                | What to Wear: {{activity.wear[0]}}
+                | Things to bring: {{activity.bring[0]}}
+                | Guest/Spectators: {{activity.guests[0]}}
+                | Inclusions: {{activity.inclusions[0]}}
+                | Exclusions: {{activity.exclusions[0]}}
+
+            div#resultDescription
+              div#resultDescriptionButton(ng-click="toggleResultDescription()")
+                | Description
+              div#resultDescriptionArea
+                {{activity.description[0]}}
+            
+              
         div.resultName 
           span {{activity.name[0]}}
           div.duration {{getDuration(activity.duration[0])}} hours
