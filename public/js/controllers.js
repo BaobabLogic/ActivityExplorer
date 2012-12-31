@@ -306,7 +306,7 @@ function AppCtrl($scope, $http, $location) {
     $scope.available = "";
     if(adults == undefined) {adults = 1}
     if(children == undefined) {children = 0}
-    $http.get('/api/available/' + adults + '/' + children + '/' + date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + '/' + id).
+    $http.get('/api/available/' + adults + '/' + children + '/' + date.getFullYear() + '-' + date.getMonth()+1 + '-' + date.getDate() + '/' + id).
       success(function(data, status, headers, config) {
         $scope.available = data;
       }); 
@@ -341,7 +341,6 @@ function AppCtrl($scope, $http, $location) {
   //PopUps
     //Activity PopUps
 
-  $scope.visible = false;
   $scope.imagesStyle = {
     width: '840px',
     left: '0px'
@@ -433,7 +432,7 @@ function AppCtrl($scope, $http, $location) {
       $('#imageSelection').fadeOut(800, 'easeOutExpo');
       $('#resultBooking').animate({ top: '-170px' }, 800, 'easeOutExpo');
       $('#resultDetails').animate({ right: '-250px' }, 800, 'easeOutExpo');
-      $('#resultDescription').animate({ top: '-200px' }, 800, 'easeOutExpo');
+      $('#resultDescription').animate({ top: '-140px' }, 800, 'easeOutExpo');
     }
     else {
       $('#resultDescription').animate({ top: '-30px' }, 800, 'easeOutExpo');
@@ -449,18 +448,26 @@ function AppCtrl($scope, $http, $location) {
         $scope.imagesStyle.width = (840*$scope.activity.images[0].image.length) + 'px';
         $scope.availabilityCheck(1, 0, $scope.selectedDate, $scope.activity.id);
       }); 
-    $scope.visible = !$scope.visible;
+
+    $('#resultPopUp').fadeIn(800, 'easeOutExpo');
+    $('#resultBackground').fadeIn(800, 'easeOutExpo');
+
+    $('.scrollable').bind('mousewheel DOMMouseScroll', function(e) {
+      var delta = e.wheelDelta || -e.detail;
+      this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+      e.preventDefault();
+    });
   };
 
   $scope.popUpResultClose = function() { 
     $scope.activity = "";
     $scope.imageNum = 0;
-    $scope.visible = !$scope.visible;
     $('#imageSelection').fadeIn(800, 'easeOutExpo');
-    $('#resultBooking').css('top', '-170px');
-    $('#resultDetails').css('right', '-250px');
-    $('#resultDescription').css('top', '-30px');
-    $scope.$apply();
+    $('#resultBooking').animate({ top: '-170px' }, 800, 'easeOutExpo');
+    $('#resultDetails').animate({ right: '-250px' }, 800, 'easeOutExpo');
+    $('#resultDescription').animate({ top: '-30px' }, 800, 'easeOutExpo');
+    $('#resultPopUp').fadeOut(800, 'easeOutExpo');
+    $('#resultBackground').fadeOut(800, 'easeOutExpo');
   }
     //Footer PopUps
 

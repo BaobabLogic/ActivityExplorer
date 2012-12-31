@@ -74,7 +74,7 @@ html(lang='en', ng-app='activity')
 
     block content
 
-    div.resultPopUp(ng-visible="visible", ng-style="activityStyle")
+    div#resultPopUp(ng-style="activityStyle")
       div#activityLoading(ng-loading="activity true")
         div#resultLoadingWheel(class="loadingWheel")
       div(ng-loading="activity false")
@@ -115,24 +115,38 @@ html(lang='en', ng-app='activity')
                 | Details
               div#resultDetailsArea
                 h2 Requirements
-                | Age: {{activity.min_age[0]}}
+                | Age: {{activity.min_age[0]}} 
+                br
                 | Minimum Height: {{activity.min_height[0]}}
+                br
                 | Maximum Height: {{activity.max_height[0]}}
+                br
                 | Fitness: {{activity.fitness[0]}}
+                br
                 | Qualifications: {{activity.qualifications[0]}}
+                br
                 | Maximum Weight: {{activity.max_weight[0]}}
+                br
                 | Certification: {{activity.certification[0]}}
+                br
                 | Experience Level: {{activity.experience_level[0]}}
-                {{activity.id[0]}}
                 h2 Instructions
                 | Notes: {{activity.instructions[0]}}
+                br
                 | Where: {{activity.where[0]}}
+                br
                 | When: {{activity.when[0]}}
+                br
                 | Weather: {{activity.weather[0]}}
+                br
                 | What to Wear: {{activity.wear[0]}}
+                br
                 | Things to bring: {{activity.bring[0]}}
-                | Guest/Spectators: {{activity.guests[0]}}
+                br
+                | Guest/Spectators: {{activity.guests[0]}}                
+                br
                 | Inclusions: {{activity.inclusions[0]}}
+                br
                 | Exclusions: {{activity.exclusions[0]}}
 
             div#resultDescription
@@ -150,7 +164,7 @@ html(lang='en', ng-app='activity')
             | {{activity.location[0]}}
           span.price R{{price(activity.price[0])}} per person
             
-    div#resultBackground(ng-visible="visible", ng-click="popUpResultClose()")
+    div#resultBackground(ng-click="popUpResultClose()")
 
     div#popups
       div#social(ng-style="popUpStyle", class="popup")
