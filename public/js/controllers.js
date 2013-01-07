@@ -267,10 +267,10 @@ function AppCtrl($scope, $http, $location) {
 
   var computeTopLoading = function() {
     var height = window.innerHeight;
-    return (height-128)/2;
+    return (height-200)/2;
   };
 
-  $scope.mainLoadingStyle = {
+  $scope.mainRestartingStyle = {
     top: computeTopLoading() + 'px'
   };
 
@@ -279,7 +279,7 @@ function AppCtrl($scope, $http, $location) {
     $scope.activityStyle.left = computeLeft() + 'px';
     $scope.popUpStyle.top = (window.innerHeight - 560)/2 + 'px';
     $scope.popUpStyle.left = (window.innerWidth - 830)/2 + 'px';
-    $scope.mainLoadingStyle.top = computeTopLoading() + 'px';
+    $scope.mainRestartingStyle.top = computeTopLoading() + 'px';
     $scope.$apply();    
   }
     
@@ -398,7 +398,7 @@ function AppCtrl($scope, $http, $location) {
       $('#imageSelection').fadeOut(800, 'easeOutExpo');
       $('#resultBooking').animate({ top: '0px' }, 800, 'easeOutExpo');
       $('#resultDetails').animate({ right: '-250px' }, 800, 'easeOutExpo');
-      $('#resultDescription').animate({ top: '-30px' }, 800, 'easeOutExpo');
+      $('#resultDescription').animate({ top: '0px' }, 800, 'easeOutExpo');
     }
     else {
       $('#resultBooking').animate({ top: '-170px' }, 800, 'easeOutExpo');
@@ -415,7 +415,7 @@ function AppCtrl($scope, $http, $location) {
       $('#imageSelection').fadeOut(800, 'easeOutExpo');
       $('#resultBooking').animate({ top: '-170px' }, 800, 'easeOutExpo');
       $('#resultDetails').animate({ right: '0px' }, 800, 'easeOutExpo');
-      $('#resultDescription').animate({ top: '-30px' }, 800, 'easeOutExpo');
+      $('#resultDescription').animate({ top: '0px' }, 800, 'easeOutExpo');
     }
     else {
       $('#resultDetails').animate({ right: '-250px' }, 800, 'easeOutExpo');
@@ -428,14 +428,14 @@ function AppCtrl($scope, $http, $location) {
         style = window.getComputedStyle(element),
         top = style.getPropertyValue('top');
 
-    if(top == '-30px') {
+    if(top == '0px') {
       $('#imageSelection').fadeOut(800, 'easeOutExpo');
       $('#resultBooking').animate({ top: '-170px' }, 800, 'easeOutExpo');
       $('#resultDetails').animate({ right: '-250px' }, 800, 'easeOutExpo');
-      $('#resultDescription').animate({ top: '-140px' }, 800, 'easeOutExpo');
+      $('#resultDescription').animate({ top: '-110px' }, 800, 'easeOutExpo');
     }
     else {
-      $('#resultDescription').animate({ top: '-30px' }, 800, 'easeOutExpo');
+      $('#resultDescription').animate({ top: '0px' }, 800, 'easeOutExpo');
       $('#imageSelection').fadeIn(800, 'easeOutExpo');
     }
   };
@@ -465,7 +465,7 @@ function AppCtrl($scope, $http, $location) {
     $('#imageSelection').fadeIn(800, 'easeOutExpo');
     $('#resultBooking').animate({ top: '-170px' }, 800, 'easeOutExpo');
     $('#resultDetails').animate({ right: '-250px' }, 800, 'easeOutExpo');
-    $('#resultDescription').animate({ top: '-30px' }, 800, 'easeOutExpo');
+    $('#resultDescription').animate({ top: '0px' }, 800, 'easeOutExpo');
     $('#resultPopUp').fadeOut(800, 'easeOutExpo');
     $('#resultBackground').fadeOut(800, 'easeOutExpo');
   }
