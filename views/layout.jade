@@ -79,43 +79,29 @@ html(lang='en', ng-app='activity')
       div#activityLoading(ng-loading="activity true")
         div#resultLoadingWheel(class="loadingWheel")
       div(ng-loading="activity false")
+        div#resultTopBar
+          span#resultTabTitle(ng-click='hideTabs()'){{activity.name[0]}}
+          div#resultTabButtons  
+            div#resultDescriptionButton(class="resultTabButton", ng-click="toggleResultDescription()", ng-class="resultTabSelected('description')")
+              | Description
+            div#resultDetailsButton(class="resultTabButton", ng-click="toggleResultDetails()", ng-class="resultTabSelected('details')")
+              | Details
+            div#resultBookingButton(class="resultTabButton", ng-click="toggleResultBooking()", ng-class="resultTabSelected('booking')")
+              | Book
         div.resultSlider        
-          div.resultImages(ng-style="imagesStyle")
+          div.resultImages(ng-style="imagesStyle", ng-click='hideTabs()')
             span.resultImage(ng-repeat="image in activity.images[0].image")
               image(ng-src="{{image.medium[0]}}", width=840, height=560)
-
-          div#popUpButtons   
+          div#popUpButtons(ng-click='hideTabs()')   
             div.imageButton(id="leftButton", ng-click="activityImage(activity.images[0].image, false)")   
             div.imageButton(id="rightButton", ng-click="activityImage(activity.images[0].image, true)") 
             ul.imageNavigation
               li.imageNavigationButton(ng-repeat="image in activity.images[0].image", ng-style="imageNavigationStyle(image)", 
                 ng-click="imageNavigate(image)") 
-            div#resultTabButtons  
-              div#resultDescriptionButton(ng-click="toggleResultDescription()")
-                | Description
-              div#resultDetailsButton(ng-click="toggleResultDetails()")
-                | Details
-              div#resultBookingButton(ng-click="toggleResultBooking()")
-                | Book
-
-          div#resultTabs(ng-style="activityStyle")  
-            div#resultBooking
-              input#datePicker(ng-model="selectedDate",  value="{{selectedDate | date:'dd MMMM yyyy'}}", ui-date)
-              div
-                select(ng-model="selectedAdults", ng-options="adult for adult in adults")
-                  option(value="") Adults
-                select(ng-model="selectedChildren", ng-options="child for child in children")
-                  option(value="") Children
-              div(ng-available="available[0].inventories available")    
-                select(name="timeslot", ng-options="timeslot.start_time[0] for timeslot in available[0].inventories[0].inventory")
-              {{available[0].inventories[0].inventory.length}}    
-              button(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])", 
-                      ng-available="available[0].inventories available") Book Now 
-              button(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])", 
-                      ng-available="available[0].inventories unavailable") Check Availability Again
-              div(ng-available="available[0].inventories loading")
-                | Loading
-            div#resultDetails
+          div#resultTabs  
+            div#resultDescription(class="resultTab")
+              {{activity.description[0]}}
+            div#resultDetails(class="resultTab")
               h2 Requirements
               | Age: {{activity.min_age[0]}} 
               br
@@ -150,14 +136,28 @@ html(lang='en', ng-app='activity')
               | Inclusions: {{activity.inclusions[0]}}
               br
               | Exclusions: {{activity.exclusions[0]}}
-            div#resultDescription
-              {{activity.description[0]}}
+            div#resultBooking(class="resultTab")
+              input#datePicker(ng-model="selectedDate",  value="{{selectedDate | date:'dd MMMM yyyy'}}", ui-date)
+              div
+                select(ng-model="selectedAdults", ng-options="adult for adult in adults")
+                  option(value="") Adults
+                select(ng-model="selectedChildren", ng-options="child for child in children")
+                  option(value="") Children
+              div(ng-available="available[0].inventories available")    
+                select(name="timeslot", ng-options="timeslot.start_time[0] for timeslot in available[0].inventories[0].inventory")
+              {{available[0].inventories[0].inventory.length}}    
+              button(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])", 
+                      ng-available="available[0].inventories available") Book Now 
+              button(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])", 
+                      ng-available="available[0].inventories unavailable") Check Availability Again
+              div(ng-available="available[0].inventories loading")
+                | Loading
             
               
-        div.resultName 
+        div.resultName(ng-click='hideTabs()') 
           span {{activity.name[0]}}
           div.duration {{getDuration(activity.duration[0])}} hours
-        div.resultExtra 
+        div.resultExtra(ng-click='hideTabs()')
           span.leftExtra
             | {{activity.location[0]}}
           span.price R{{price(activity.price[0])}} per person
