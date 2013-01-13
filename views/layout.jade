@@ -165,7 +165,7 @@ html(lang='en', ng-app='activity')
     div#resultBackground(ng-click="popUpResultClose()")
 
     div#popups
-      div#social(ng-style="popUpStyle", class="popup")
+      div#about(ng-style="popUpStyle", class="popup")
         div#facebook
           iframe(src='//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FActivityExplorer&width=300&height=468&colorscheme=light&show_faces=false&border_color&stream=true&header=true&appId=177056142347559', scrolling='no', frameborder='0', style='border: none; overflow: hidden; width: 300px; height: 468px;', allowtransparency='true')
         div#twitter 
@@ -189,14 +189,8 @@ html(lang='en', ng-app='activity')
           span
           a(href="/large") Large
       ul.footerList
-        button.barButton(type='button', value='social')
-          span Social
-        button.barButton(type='button', value='f.a.q')
-          span F.A.Q
         button.barButton(type='button', value='about')
           span About
-        button.barButton(type='button', value='contact')
-          span Contact
 
     script(type='text/javascript', src='/js/angular.min.js')
     script(type='text/javascript', src='/js/angular-ui.min.js')
