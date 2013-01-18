@@ -6,12 +6,12 @@
 
 /*Fonts*/
 @font-face {
-    font-family: 'BebasNeueRegular';
+    font-family: 'LANENAR';
     src: url('/fonts/BebasNeue-webfont.eot');
     src: url('/fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
          url('/fonts/BebasNeue-webfont.woff') format('woff'),
          url('/fonts/BebasNeue-webfont.ttf') format('truetype'),
-         url('/fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+         url('/fonts/BebasNeue-webfont.svg#LANENAR') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -33,7 +33,7 @@
     src: url('/fonts/DISTGRG-webfont.eot?#iefix') format('embedded-opentype'),
          url('/fonts/DISTGRG-webfont.woff') format('woff'),
          url('/fonts/DISTGRG-webfont.ttf') format('truetype'),
-         url('/fonts/DISTGRG-webfont.svg#BebasNeueRegular') format('svg');
+         url('/fonts/DISTGRG-webfont.svg#LANENAR') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -61,34 +61,45 @@
 }
 
 @font-face {
-    font-family: 'EnigmaticRegular';
-    src: url('/fonts/Enigma__2-webfont.eot');
-    src: url('/fonts/Enigma__2-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/Enigma__2-webfont.woff') format('woff'),
-         url('/fonts/Enigma__2-webfont.ttf') format('truetype'),
-         url('/fonts/Enigma__2-webfont.svg#EnigmaticRegular') format('svg');
+    font-family: 'LANENAR';
+    src: url('/fonts/LANENAR_-webfont.eot');
+    src: url('/fonts/LANENAR_-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/LANENAR_-webfont.woff') format('woff'),
+         url('/fonts/LANENAR_-webfont.ttf') format('truetype'),
+         url('/fonts/LANENAR_-webfont.svg#LANENAR_') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'EnigmaticItalic';
-    src: url('/fonts/Enigma_2i-webfont.eot');
-    src: url('/fonts/Enigma_2i-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/Enigma_2i-webfont.woff') format('woff'),
-         url('/fonts/Enigma_2i-webfont.ttf') format('truetype'),
-         url('/fonts/Enigma_2i-webfont.svg#EnigmaticItalic') format('svg');
+    font-family: 'LANEPOSH';
+    src: url('/fonts/LANEPOSH-webfont.eot');
+    src: url('/fonts/LANEPOSH-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/LANEPOSH-webfont.woff') format('woff'),
+         url('/fonts/LANEPOSH-webfont.ttf') format('truetype'),
+         url('/fonts/LANEPOSH-webfont.svg#LANENPOSH') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'EnigmaticBold';
-    src: url('/fonts/EnigmaB_2-webfont.eot');
-    src: url('/fonts/EnigmaB_2-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/EnigmaB_2-webfont.woff') format('woff'),
-         url('/fonts/EnigmaB_2-webfont.ttf') format('truetype'),
-         url('/fonts/EnigmaB_2-webfont.svg#EnigmaticBold') format('svg');
+    font-family: 'Walkway_UltraBold';
+    src: url('/fonts/Walkway_UltraBold-webfont.eot');
+    src: url('/fonts/Walkway_UltraBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Walkway_UltraBold-webfont.woff') format('woff'),
+         url('/fonts/Walkway_UltraBold-webfont.ttf') format('truetype'),
+         url('/fonts/Walkway_UltraBold-webfont.svg#Walkway_UltraBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cantarell-Regular';
+    src: url('/fonts/Cantarell-Regular-webfont.eot');
+    src: url('/fonts/Cantarell-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Cantarell-Regular-webfont.woff') format('woff'),
+         url('/fonts/Cantarell-Regular-webfont.ttf') format('truetype'),
+         url('/fonts/Cantarell-Regular-webfont.svg#Cantarell-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -96,7 +107,8 @@
 
 /* Main items */
 html, body {
-	font-family: 'PTN';
+	font-family: "Cantarell-Regular";
+	font-size: 15px;
 	margin:0;
 	padding:0;
 	height:100%;
@@ -123,7 +135,7 @@ html, body {
 /* Common items */
 h2 {	
 	color: #f7941d;
-	font-family: 'BebasNeueRegular';	
+	font-family: 'LANENAR';	
 	font-size: 25px;
 	text-shadow: 1px 1px 1px #000;
 	margin: 0;
@@ -136,7 +148,6 @@ a, a:link, a:hover, a:visited, a:active {
 
 button{
 	cursor: pointer; cursor: hand;
-	opacity: .99;
 }
 
 button span {
@@ -250,11 +261,10 @@ button span {
 }
 
 .explore {
-	opacity: .99;
-	font-family: 'BebasNeueRegular';
-	font-size: 21px;
+	font-family: 'LANENAR';
+	font-size: 18px;
 	color: #fff;
-	text-shadow: 1px 1px 2px #000;
+	text-shadow: 1px 1px 1px #000;
 	position: relative;
 	width: 68px;
 	height: 27px;
@@ -293,8 +303,8 @@ button span {
 
 .headButton {
 	color: #fff;
-	font-family: 'BebasNeueRegular';	
-	font-size: 20px;
+	font-family: 'LANENAR';	
+	font-size: 18px;
 	text-shadow: 1px 1px 2px #000;
 	background-color: #f28e36;
 	height: 27px;
@@ -302,6 +312,7 @@ button span {
 	padding-left: 7px;
 	padding-right: 7px;
 	margin: 3px 8px;
+	border: 0px;
   border-radius:7px;
 	position: relative;
 	
@@ -319,12 +330,12 @@ button span {
 		color-stop(0.61, rgb(241,175,83))
 	);
 	
-	-moz-box-shadow: 1px 1px 3px black;
-	-webkit-box-shadow: 1px 1px 3px black;
-	box-shadow: 1px 1px 3px black;
+	-moz-box-shadow: 1px 1px 3px #2b2b2b;
+	-webkit-box-shadow: 1px 1px 3px #2b2b2b;
+	box-shadow: 1px 1px 3px #2b2b2b;
 }
 
-.headButton:hover {
+.headButton:active {
 	background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
 	background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
 	background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
@@ -356,7 +367,6 @@ button span {
 
 /*Header Popups*/
 #themesPopUp {
-	opacity: .99;
 	-webkit-font-smoothing: antialiased;
 	display: none;
 	width: 500px;
@@ -389,7 +399,7 @@ button span {
 }
 
 #themeTop {
-  font-family: "BebasNeueRegular";
+  font-family: "LANENAR";
   color: white;
   font-size: 21px;
   text-shadow: 1px 1px 2px #000;
@@ -403,7 +413,7 @@ button span {
 }
 
 #themeTitle {
-  font-family: "BebasNeueRegular";
+  font-family: "LANENAR";
   color: white;
   font-size: 21px;
   text-shadow: 1px 1px 2px #000;
@@ -436,7 +446,7 @@ button span {
 	);
 }
 
-#themeTitle:hover {
+#themeTitle:active {
   background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
   background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
   background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
@@ -453,7 +463,7 @@ button span {
 }
 
 #typeTop {
-  font-family: "BebasNeueRegular";
+  font-family: "LANENAR";
   color: white;
   font-size: 21px;
   text-shadow: 1px 1px 2px #000;
@@ -478,7 +488,7 @@ button span {
 }
 
 #typeTitle {
-  font-family: "BebasNeueRegular";
+  font-family: "LANENAR";
   color: white;
   font-size: 21px;
   text-shadow: 1px 1px 2px #000;
@@ -511,7 +521,7 @@ button span {
 	);
 }
 
-#typeTitle:hover {
+#typeTitle:active {
   background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
   background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
   background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
@@ -544,12 +554,12 @@ button span {
 }
 
 .typeSpan {
-  font-family: "BebasNeueRegular";
+  font-family: "LANENAR";
   color: white;
   font-size: 20px;
   text-shadow: 1px 1px 2px #000;
   height: 20px;
-  padding: 2px 6px 3px;
+  padding: 2px 0px 3px;
 }
 
 .typeBox {
@@ -557,7 +567,7 @@ button span {
 }
 
 .themeButton {
-	font-family: "BebasNeueRegular";
+	font-family: "LANENAR";
 	color: white;
 	font-size: 20px;
 	text-shadow: 1px 1px 2px #000;
@@ -598,6 +608,27 @@ button span {
 	);
 }
 
+.themeButton:active {
+  -moz-box-shadow: 1px 1px 3px #2b2b2b;
+	-webkit-box-shadow: 1px 1px 3px #2b2b2b;
+	box-shadow: 1px 1px 3px #2b2b2b;
+	
+	background-color: #f28e36;
+	background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(241,175,83)),
+		color-stop(0.61, rgb(242,142,54))
+	);
+}
+
 .themeSelectButton {
 	width: 20px;
 	height: 20px;
@@ -628,7 +659,7 @@ button span {
 	);
 }
 
-.themeSelectButton:hover {
+.themeSelectButton:active {
   background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
   background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
   background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
@@ -654,7 +685,7 @@ button span {
 	box-shadow: 1px 1px 2px #5c5c5c;
 }
 
-.themeSelectEmpty:hover {
+.themeSelectEmpty:active {
   background-image: none;
   background-color: transparent;
   border: 1px solid #f7941d;
@@ -665,8 +696,7 @@ button span {
 }
 
 #refinePopUp {
-	opacity: .99;
-	font-family: "BebasNeueRegular";
+	font-family: "LANENAR";
   color: #ffb657;
 	font-size: 23px;
 	text-shadow: 1px 1px 2px #000;
@@ -706,7 +736,7 @@ button span {
 }
 
 #budget, #duration{
-	font-family: 'Lobster';
+	font-family: 'LANENAR';
 	color: #fff;
 	font-size: 21px;
 	margin-top: 4px;
@@ -715,13 +745,13 @@ button span {
 }
 
 #budgetDiv {
-  width: 220px;
-  margin: 0px 0px 8px 17px;
+  width: 240px;
+  margin: 0px 0px 8px 8px;
 }
 
 #durationDiv {
-  width: 230px;
-  margin: 18px 0px 8px 10px;
+  width: 225px;
+  margin: 18px 0px 8px 15px;
 }
 
 .slider {
@@ -750,7 +780,6 @@ button span {
 }
 
 #sortPopUp {
-	opacity: .99;
 	display: none;
 	width: 110px;
 	height: 150px;
@@ -783,7 +812,7 @@ button span {
 }
 
 .sortButton {
-	font-family: "BebasNeueRegular";
+	font-family: "LANENAR";
 	color: white;
 	font-size: 21px;
 	text-shadow: 1px 1px 2px #000;
@@ -797,7 +826,7 @@ button span {
 	box-shadow: none;
 }
 
-.sortButton:hover {
+.sortButton:active {
 	background-color: #f28e36;
   background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
 	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
@@ -845,7 +874,7 @@ button span {
 /* Items in footer */
 nav {
 	color: #fff;
-	font-family: 'BebasNeueRegular';	
+	font-family: 'LANENAR';	
 	font-size: 22px;
 	text-shadow: 1px 1px 2px #000;
 }
@@ -868,9 +897,8 @@ li {
 }
 
 #footer {
-	opacity: .99;
 	color: #fff;
-	font-family: 'BebasNeueRegular';	
+	font-family: 'LANENAR';	
 	text-shadow: 1px 1px 2px #000;
 	width:100%;
 	min-width: 1024px;
@@ -899,7 +927,7 @@ li {
 
 .barButton {
 	color: #fff;
-	font-family: 'BebasNeueRegular';	
+	font-family: 'LANENAR';	
 	font-size: 20px;
 	text-shadow: 1px 1px 2px #000;
 	background-color: #f28e36;
@@ -908,6 +936,7 @@ li {
 	padding-left: 7px;
 	padding-right: 7px;
 	margin: 3px 8px;
+	border: 0px;
   border-radius:7px;
 	position: relative;
 	
@@ -930,7 +959,7 @@ li {
 	box-shadow: 1px 1px 3px black;
 }
 
-.barButton:hover {
+.barButton:active {
 	background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
 	background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
 	background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
@@ -952,7 +981,7 @@ li {
 }
 
 #view {
-	font-size: 21px;
+	font-size: 20px;
   margin: 3px 4px 4px 45px;
   background-color:#15a0db;
   border-radius:4px;
@@ -991,7 +1020,7 @@ li {
   padding: 0 12px 0 12px;
 }
 
-#view label:hover {
+#view label:active {
   height: 26px;
 	background-color: #f28e36;
   background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
@@ -1048,7 +1077,7 @@ li {
   width: 100%;
   top: 0;
   left: 0;
-  background: #ebebeb;
+  background: #1C1C1C;
   z-index: 150;
 	opacity: 0.6;
 }
@@ -1072,13 +1101,12 @@ li {
 
 /*Items in result section */
 #mainRestarting {
-	opacity: 0.9;
 	position: relative;
 	width: 735px;
 	height: 32px;
 	margin-left: auto;
 	margin-right: auto;
-	font-family: 'BebasNeueRegular';
+	font-family: 'LANENAR';
 	font-size: 32px;
 	color: #fff;
 	text-shadow: 1px 1px 2px #000;
@@ -1097,9 +1125,6 @@ li {
 }
 
 .smallResult{
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-
 	width: 231px;
 	height: 203px;	
 	margin: 16px 8px 0px 8px;
@@ -1122,20 +1147,17 @@ li {
 
 .smallDetails {
 	position: relative;
-	height: 23px;
-	width: 211px;
-	padding: 0px 10px;
+	height: 27px;
+	width: 217px;
+	padding: 0px 2px 0px 12px;
 	color: #fff;
 	text-shadow: 1px 1px 2px #000;
 	background-color: #25afe6;
 }
 
 .mediumResult{
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-
 	width: 300px;
-	height: 252px;	
+	height: 258px;	
 	margin: 16px 8px 0px 8px;
 	padding: 0px;
 	display: inline-block;
@@ -1157,7 +1179,7 @@ li {
 
 .mediumDetails {
 	position: relative;
-	height: 25px;
+	height: 29px;
 	width: 280px;
 	padding: 0px 10px;
 	color: #fff;
@@ -1166,11 +1188,8 @@ li {
 }
 
 .largeResult{
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-
 	width: 441px;
-	height: 346px;	
+	height: 352px;	
 	margin: 16px 8px 0px 8px;
 	display: inline-block;
 
@@ -1191,7 +1210,7 @@ li {
 
 .largeDetails {
 	position: relative;
-	height: 25px;
+	height: 29px;
 	width: 417px;
 	padding: 0px 12px;
 	color: #fff;
@@ -1234,32 +1253,31 @@ li {
 }
 
 .topHalf {
-	opacity: .99;
 }
 
 .smallDetails .details .topHalf {
-	font-family: 'BebasNeueRegular';	
+	font-family: 'LANENAR';	
 	text-shadow: 0px 1px 1px #000;
 	font-size: 20px;
 	width: 210px;
 }
 
 .mediumDetails .details .topHalf {
-	font-family: 'BebasNeueRegular';	
+	font-family: 'LANENAR';	
 	text-shadow: 0px 1px 2px #000;
 	font-size: 20px;
 	width: 280px;
 }
 
 .largeDetails .details .topHalf {
-	font-family: 'BebasNeueRegular';	
+	font-family: 'LANENAR';	
 	text-shadow: 1px 1px 2px #000;
 	font-size: 20px;
 	width: 417px;
 }
 
 .smallDetails .details .bottomHalf {
-	font-family: 'Lobster';	
+	font-family: 'LANENAR';	
 	width: 210px;
 	margin-top: 3px;
 	color: #25afe6;
@@ -1267,15 +1285,15 @@ li {
 }
 
 .mediumDetails .details .bottomHalf {
-	font-family: 'Lobster';	
+	font-family: 'LANENAR';	
 	width: 280px;
 	margin-top: 5px;
 	color: #25afe6;
-	font-size: 18px;
+	font-size: 20px;
 }
 
 .largeDetails .details .bottomHalf {
-	font-family: 'Lobster';	
+	font-family: 'LANENAR';	
 	width: 417px;
 	margin-top: 5px;
 	color: #25afe6;
@@ -1290,7 +1308,7 @@ li {
 
 .price {
 	color: #ff8426;
-	text-shadow: 0px 1px 1px #000;
+	text-shadow: 0px 0px 0px #000;
 	float: right;
 	display: inline-block;
 }
@@ -1325,8 +1343,7 @@ li {
 }
 
 .resultName {
-	opacity: .99;
-	font-family: 'BebasNeueRegular';	
+	font-family: 'LANENAR';	
 	font-size: 20px;
 	color: #fff;
 	text-shadow: 1px 1px 2px #000;
@@ -1415,13 +1432,12 @@ li {
 /* Result Tabs*/
 
 #resultTopBar {
-	opacity: .99;
-  width: 840px;
+  width: 820px;
 	height: 30px;
-	padding: 0px 20px;
+	padding-left: 20px;
 	position: relative;
 	display: inline-block;
-	font-family: 'BebasNeueRegular';	
+	font-family: 'LANENAR';	
 	font-size: 20px;
 	color: #fff;
 	text-shadow: 1px 1px 2px #000;
@@ -1430,30 +1446,29 @@ li {
 }
 
 #resultTabTitle {
-	width: 590px;
+	width: 539px;
 	height: 27px;
 	padding-top: 3px;
 	display: inline-block;	
 }
 
 #resultTabButtons {
-	width: 220px;
+	width: 281px;
 	position: relative;
 	display: inline-block;	
 }
 
 .resultTabButton {
-	opacity: 0.99;
 	cursor: pointer; cursor: hand;	
 	height: 28px;
 	top: -1px;
 	padding-top: 2px;
-	padding-left: 8px;
+	padding-left: 15px;
 	position: relative;
 	display: inline-block;
 	z-index: 160;
 
-	font-family: 'BebasNeueRegular';
+	font-family: 'LANENAR';
 	font-size: 20px;
 	color: #fff;
 	text-shadow: 1px 1px 2px #000;
@@ -1462,15 +1477,15 @@ li {
 }
 
 #resultBookingButton {
-	width: 42px;
+	width: 58px;
 }
 
 #resultDetailsButton {
-	width: 62px;  
+	width: 70px;  
 }
 
 #resultDescriptionButton {
-	width: 92px;
+	width: 108px;
 }
 
  #resultBookingButton:hover, #resultDetailsButton:hover, #resultDescriptionButton:hover {
@@ -1508,33 +1523,48 @@ li {
  }
 
 #resultTabs {
+	font-family: "Cantarell-Regular";
+	font-size: 14px;
+
 	width: 2520px;
-	height: 170px;
-	top: -222px;
+	height: 230px;
+	top: -262px;
 	left: -1680px;
 	position: relative;
 	overflow: hidden;
 }
 
 .resultTab {
-	width: 840px;
-	height: 170px;
+	width: 810px;
+	height: 200px;
+	padding: 5px 15px;
 	display: inline-block;
 	position: relative;
 	background-color: white;
 	overflow-x: hidden;
 	overflow-y: scroll;
+	background-color: #f7f5f5;
 	z-index: 200;
 }
 
 #datePicker {
-  font-family: "PTN";
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	width: 150px;
 	margin: 20px 0px 0 100px;
 }
 
 #resultBooking {
+}
+
+#bookingSection {	
+	display: inline-block;
+	float: left;
+}
+
+#requirementsSection {
+	display: inline-block;
+	float: right;
 }
 
 #resultDetails {

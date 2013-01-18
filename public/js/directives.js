@@ -95,7 +95,7 @@ app.directive('slider', ['$parse', function($parse) {
               min: 1,
               max: 10,
               step: 1,
-              value: 6,
+              value: 10,
               animate: true,
               slide: function(event, ui) {
                 var id = $(this).attr('id');

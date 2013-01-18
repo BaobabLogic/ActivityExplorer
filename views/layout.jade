@@ -22,7 +22,7 @@ html(lang='en', ng-app='activity')
       nav#topButtons(ng-model="head")
         ul.headerList
           button.headButton(type='button', value='themes', id="themes")
-            span Themes  
+            span Themes 
           button.headButton(type='button', value='refine', id="refine")
             span Refine  
           button.headButton(type='button', value='sort', id="sort")
@@ -59,11 +59,11 @@ html(lang='en', ng-app='activity')
       div#refineInside
         div#budgetDiv
           | Budget:
-          span#budget Slide to select
+          span#budget R5000 or more
         div.slider(id="budgetS", slider="budget")
         div#durationDiv
-          | Duration:
-          span#duration Slide to select
+          | Time:
+          span#duration 3 days or more
         div.slider(id="durationS", slider="duration")
     div#sortPopUp
       button.sortButton(class='ng-class: sortButtonClass("random")', ng-click="sort='random'") Random
@@ -102,60 +102,81 @@ html(lang='en', ng-app='activity')
             div#resultDescription(class="resultTab")
               {{activity.description[0]}}
             div#resultDetails(class="resultTab")
-              h2 Requirements
-              | Age: {{activity.min_age[0]}} 
-              br
-              | Minimum Height: {{activity.min_height[0]}}
-              br
-              | Maximum Height: {{activity.max_height[0]}}
-              br
-              | Fitness: {{activity.fitness[0]}}
-              br
-              | Qualifications: {{activity.qualifications[0]}}
-              br
-              | Maximum Weight: {{activity.max_weight[0]}}
-              br
-              | Certification: {{activity.certification[0]}}
-              br
-              | Experience Level: {{activity.experience_level[0]}}
-              h2 Instructions
-              | Notes: {{activity.instructions[0]}}
-              br
-              | Where: {{activity.where[0]}}
-              br
-              | When: {{activity.when[0]}}
-              br
-              | Weather: {{activity.weather[0]}}
-              br
-              | What to Wear: {{activity.wear[0]}}
-              br
-              | Things to bring: {{activity.bring[0]}}
-              br
-              | Guest/Spectators: {{activity.guests[0]}}                
-              br
-              | Inclusions: {{activity.inclusions[0]}}
-              br
-              | Exclusions: {{activity.exclusions[0]}}
+              table
+                tr
+                  td Notes: 
+                  td {{activity.instructions[0]}}
+                tr
+                  td Where: 
+                  td {{activity.where[0]}}
+                tr
+                  td When:  
+                  td{{activity.when[0]}}
+                tr
+                  td Weather: 
+                  td{{activity.weather[0]}}
+                tr
+                  td What to Wear: 
+                  td {{activity.wear[0]}}
+                tr
+                  td Things to bring: 
+                  td {{activity.bring[0]}}
+                tr
+                  td Guest/Spectators: 
+                  td {{activity.guests[0]}}              
+                tr
+                  td Inclusions: 
+                  td {{activity.inclusions[0]}}
+                tr
+                  td Exclusions: 
+                  td {{activity.exclusions[0]}}
             div#resultBooking(class="resultTab")
-              input#datePicker(ng-model="selectedDate",  value="{{selectedDate | date:'dd MMMM yyyy'}}", ui-date)
-              div
-                select(ng-model="selectedAdults", ng-options="adult for adult in adults")
-                  option(value="") Adults
-                select(ng-model="selectedChildren", ng-options="child for child in children")
-                  option(value="") Children
-              div(ng-available="available[0].inventories available")    
-                select(name="timeslot", ng-options="timeslot.start_time[0] for timeslot in available[0].inventories[0].inventory")
-              {{available[0].inventories[0].inventory.length}}    
-              button(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])", 
-                      ng-available="available[0].inventories available") Book Now 
-              button(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])", 
-                      ng-available="available[0].inventories unavailable") Check Availability Again
-              div(ng-available="available[0].inventories loading")
-                | Loading
+              div#bookingSection
+                input#datePicker(ng-model="selectedDate",  value="{{selectedDate | date:'dd MMMM yyyy'}}", ui-date)
+                div
+                  select(ng-model="selectedAdults", ng-options="adult for adult in adults")
+                    option(value="") Adults
+                  select(ng-model="selectedChildren", ng-options="child for child in children")
+                    option(value="") Children
+                div(ng-available="available[0].inventories available")    
+                  select(name="timeslot", ng-options="timeslot.start_time[0] for timeslot in available[0].inventories[0].inventory")
+                {{available[0].inventories[0].inventory.length}}    
+                button(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])", 
+                        ng-available="available[0].inventories available") Book Now 
+                button(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])", 
+                        ng-available="available[0].inventories unavailable") Check Availability Again
+                div(ng-available="available[0].inventories loading")
+                  | Loading
+              div#requirementsSection  
+                table 
+                  tr 
+                    td Minimum Age: 
+                    td {{activity.min_age[0]}}
+                  tr
+                    td Maximum Weight: 
+                    td {{activity.max_weight[0]}}
+                  tr
+                    td Minimum Height: 
+                    td {{activity.min_height[0]}}
+                  tr
+                    td Maximum Height: 
+                    td {{activity.max_height[0]}}
+                  tr
+                    td Fitness: 
+                    td {{activity.fitness[0]}}
+                  tr
+                    td Qualifications: 
+                    td {{activity.qualifications[0]}}
+                  tr
+                    td Certification: 
+                    td {{activity.certification[0]}}
+                  tr
+                    td Experience Level: 
+                    td {{activity.experience_level[0]}}
             
               
         div.resultName(ng-click='hideTabs()') 
-          span {{activity.name[0]}}
+          span Category
           div.duration {{getDuration(activity.duration[0])}} hours
         div.resultExtra(ng-click='hideTabs()')
           span.leftExtra

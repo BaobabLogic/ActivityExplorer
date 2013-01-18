@@ -246,15 +246,15 @@ function AppCtrl($scope, $http, $location) {
     switch (size){
       case "/large": 
         var wide = Math.floor((width-68)/457);
-        var high = Math.floor((height/372) + 2);
+        var high = Math.floor((height/378) + 2);
         return (wide*high); break;
       case "/small": 
         var wide = Math.floor((width-70)/247);
-        var high = Math.floor((height/229) + 1);
+        var high = Math.floor((height/235) + 1);
         return (wide*high); break;
       default: 
         var wide = Math.floor((width-70)/316);
-        var high = Math.floor((height/278) + 2);
+        var high = Math.floor((height/284) + 2);
         return (wide*high);
     }  
   };
@@ -406,7 +406,7 @@ function AppCtrl($scope, $http, $location) {
   $scope.tabSelected = "none";
 
   $scope.toggleResultDescription = function() {
-    if($scope.resultTabPosition().top == '-222px') { 
+    if($scope.resultTabPosition().top == '-262px') { 
       $('#resultTabs').css('left', '0px');
       $('#resultTabs').animate({ top: '-52px' }, 800, 'easeOutExpo');
       $scope.tabSelected = "description";
@@ -416,13 +416,13 @@ function AppCtrl($scope, $http, $location) {
       $scope.tabSelected = "description";
     }
     else {
-      $('#resultTabs').animate({ top: '-222px' }, 800, 'easeOutExpo');
+      $('#resultTabs').animate({ top: '-262px' }, 800, 'easeOutExpo');
       $scope.tabSelected = "none";
     }
   };
 
   $scope.toggleResultDetails = function() {
-    if($scope.resultTabPosition().top == '-222px') { 
+    if($scope.resultTabPosition().top == '-262px') { 
       $('#resultTabs').css('left', '-840px');
       $('#resultTabs').animate({ top: '-52px' }, 800, 'easeOutExpo');
       $scope.tabSelected = "details";
@@ -432,13 +432,13 @@ function AppCtrl($scope, $http, $location) {
       $scope.tabSelected = "details";
     }
     else {
-      $('#resultTabs').animate({ top: '-222px' }, 800, 'easeOutExpo');
+      $('#resultTabs').animate({ top: '-262px' }, 800, 'easeOutExpo');
       $scope.tabSelected = "none";
     }
   };
 
   $scope.toggleResultBooking = function() {
-    if($scope.resultTabPosition().top == '-222px') { 
+    if($scope.resultTabPosition().top == '-262px') { 
       $('#resultTabs').css('left', '-1680px');
       $('#resultTabs').animate({ top: '-52px' }, 800, 'easeOutExpo');
       $scope.tabSelected = "booking";
@@ -448,14 +448,14 @@ function AppCtrl($scope, $http, $location) {
       $scope.tabSelected = "booking";
     }
     else {
-      $('#resultTabs').animate({ top: '-222px' }, 800, 'easeOutExpo');
+      $('#resultTabs').animate({ top: '-262px' }, 800, 'easeOutExpo');
       $scope.tabSelected = "none";
     }
   };
 
   $scope.hideTabs = function() {
-    if($scope.resultTabPosition().top != '-222px') { 
-      $('#resultTabs').animate({ top: '-222px' }, 800, 'easeOutExpo');
+    if($scope.resultTabPosition().top != '-262px') { 
+      $('#resultTabs').animate({ top: '-262px' }, 800, 'easeOutExpo');
       $scope.tabSelected = "none";
     }  
   };
@@ -480,12 +480,15 @@ function AppCtrl($scope, $http, $location) {
   };
 
   $scope.popUpResultClose = function() { 
-    $('#resultTabs').animate({ top: '-222px' }, 800, 'easeOutExpo');
+    $('#resultTabs').animate({ top: '-262px' }, 800, 'easeOutExpo');
     $scope.tabSelected = "none";
     $('#resultPopUp').fadeOut(800, 'easeOutExpo');
     $('#resultBackground').fadeOut(800, 'easeOutExpo', function() {
       $scope.activity = "";
       $scope.imageNum = 0;
+      $('.resultImages').animate({ left: '-' + (840*$scope.imageNum) + 'px' }, 1200, 'easeOutExpo', function() {
+        navigate = true;
+      });
     });
   }
     //Footer PopUps
