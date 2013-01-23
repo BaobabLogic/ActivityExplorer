@@ -175,6 +175,33 @@ button span {
 
 
 
+/* Mobile Coming Soon Page*/
+#mobileLogo {
+	color: #249cff;
+	font-family: 'DISTGRG';	
+	font-size: 140px;
+	text-shadow: 2px 2px 2px #000;
+	margin: 0;
+	width: 100%;
+	text-align: center; 	
+}
+
+.orange {
+	color: #f28e36;
+}
+
+#mobileSoon {
+	color: #fff;
+	font-family: 'Bebas';	
+	font-size: 150px;
+	text-shadow: 2px 2px 2px #000;
+	margin: 0;
+	width: 100%;
+	text-align: center; 	
+}
+
+
+
 /* Items in header*/
 #header {
 	width: 100%;
