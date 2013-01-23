@@ -1,6 +1,8 @@
 div(ng-loading="results true")
   div#mainRestarting(ng-style="mainRestartingStyle")
-   | The server is restarting. Please refresh the page in about 1 minute.
+   | The server is restarting. 
+   br
+   | Please refresh the page in about 1 minute.
 div(id="main", ng-style="mainStyle('/medium')", when-scrolled="loadMore()", ng-loading="results false")
   div(ng-repeat="result in results | searchFilter:search:themes:budget:duration:sort:(count*amount('/medium'))",
    class="mediumResult", ng-click="popUpResult(result.id[0])")

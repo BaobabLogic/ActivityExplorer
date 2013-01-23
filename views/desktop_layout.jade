@@ -1,0 +1,223 @@
+doctype 5
+html(lang='en', ng-app='activity')
+
+  head
+    title= title
+    meta(name="detectify-verification", content="505388be3469f9a32b6e99eabb1954e0")
+    link(rel='stylesheet', href='/css/jquery-ui-1.9.1.custom.min.css')
+    link(rel='stylesheet', href='/css/angular-ui.min.css')
+    link(rel='stylesheet', href='/css/main.css')
+    script(type='text/javascript', src='/js/jquery-1.8.2.min.js')
+    script(type='text/javascript', src='/js/jquery-ui-1.9.1.custom.min.js')
+    script(type='text/javascript', src='/js/extra.js')
+
+  body(ng-controller='AppCtrl')
+    div#header
+      div#logo  
+        image(src='/img/logo-small2.png', height=28, width=289)
+      div#search  
+        div.explore 
+          span Explore
+        input#searchBar(type='text', name='explore', size='30', ng-model="search", spellcheck="false")
+      nav#topButtons(ng-model="head")
+        ul.headerList
+          button.headButton(type='button', value='themes', id="themes")
+            span Themes 
+          button.headButton(type='button', value='refine', id="refine")
+            span Refine  
+          button.headButton(type='button', value='sort', id="sort")
+            span Sort
+    div#themesPopUp 
+      div#themeFront(ng-visible="themeVisible")
+        div#themeTop
+          button#themeTitle(ng-click="themeTitleClick(themes, !themes.selected)")
+            | Themes
+        div#themeLeft
+          div(ng-repeat="theme in themes.left")
+            button.themeButton(ng-click="themeButtonClick(theme)")  {{theme.name}} 
+            button.themeSelectButton(ng-class="select(theme.selected)", ng-click="themeSelectClick(theme)")
+        div#themeRight  
+          div(ng-repeat="theme in themes.right")
+            button.themeButton(ng-click="themeButtonClick(theme)")  {{theme.name}}
+            button.themeSelectButton(ng-class="select(theme.selected)", ng-click="themeSelectClick(theme)")
+      div#themeBack(ng-visible="!themeVisible") 
+        div#typeTop
+          div#typeBack 
+            button#backButton.themeButton(ng-click="themeVisible=!themeVisible") Back
+          button#typeTitle(ng-click="themeTitleClick(theme, !theme.selected)")
+            | {{theme.name}}
+        div#themeLeft
+          div.typeBox(ng-repeat="type in theme.left")
+            span.typeSpan {{type.name}} 
+            button.themeSelectButton(ng-class="select(type.selected)", ng-click="typeSelectClick(type, theme)")
+        div#themeRight  
+          div.typeBox(ng-repeat="type in theme.right")
+            span.typeSpan {{type.name}}
+            button.themeSelectButton(ng-class="select(type.selected)", ng-click="typeSelectClick(type, theme)")
+        
+    div#refinePopUp
+      div#refineInside
+        div#budgetDiv
+          | Budget:
+          span#budget R5000 or more
+        div.slider(id="budgetS", slider="budget")
+        div#durationDiv
+          | Time:
+          span#duration 3 days or more
+        div.slider(id="durationS", slider="duration")
+    div#sortPopUp
+      button.sortButton(class='ng-class: sortButtonClass("random")', ng-click="sort='random'") Random
+      button.sortButton(class='ng-class: sortButtonClass("priceLow")', ng-click="sort='priceLow'") Price Low
+      button.sortButton(class='ng-class: sortButtonClass("priceHigh")', ng-click="sort='priceHigh'") Price High
+      button.sortButton(class='ng-class: sortButtonClass("timeShort")', ng-click="sort='timeShort'") Time Short  
+      button.sortButton(class='ng-class: sortButtonClass("timeLong")', ng-click="sort='timeLong'") Time Long        
+    div#invisiBackground
+
+    block content
+
+    div#resultPopUp(ng-style="activityStyle")
+      div#activityLoading(ng-loading-result="activity true")
+        div#resultLoadingWheel(class="loadingWheel")
+      div(ng-loading-result="activity false")
+        div#resultTopBar
+          span#resultTabTitle(ng-click='hideTabs()'){{activity.name[0]}}
+          div#resultTabButtons  
+            div#resultDescriptionButton(class="resultTabButton", ng-click="toggleResultDescription()", ng-class="resultTabSelected('description')")
+              | Description
+            div#resultDetailsButton(class="resultTabButton", ng-click="toggleResultDetails()", ng-class="resultTabSelected('details')")
+              | Details
+            div#resultBookingButton(class="resultTabButton", ng-click="toggleResultBooking()", ng-class="resultTabSelected('booking')")
+              | Book
+        div.resultSlider        
+          div.resultImages(ng-style="imagesStyle", ng-click='hideTabs()')
+            span.resultImage(ng-repeat="image in activity.images[0].image")
+              image(ng-src="{{image.medium[0]}}", width=840, height=560)
+          div#popUpButtons(ng-click='hideTabs()')   
+            div.imageButton(id="leftButton", ng-click="activityImage(activity.images[0].image, false)")   
+            div.imageButton(id="rightButton", ng-click="activityImage(activity.images[0].image, true)") 
+            ul.imageNavigation
+              li.imageNavigationButton(ng-repeat="image in activity.images[0].image", ng-style="imageNavigationStyle(image)", 
+                ng-click="imageNavigate(image)") 
+          div#resultTabs  
+            div#resultDescription(class="resultTab")
+              {{activity.description[0]}}
+            div#resultDetails(class="resultTab")
+              table
+                tr
+                  td Notes: 
+                  td {{activity.instructions[0]}}
+                tr
+                  td Where: 
+                  td {{activity.where[0]}}
+                tr
+                  td When:  
+                  td{{activity.when[0]}}
+                tr
+                  td Weather: 
+                  td{{activity.weather[0]}}
+                tr
+                  td What to Wear: 
+                  td {{activity.wear[0]}}
+                tr
+                  td Things to bring: 
+                  td {{activity.bring[0]}}
+                tr
+                  td Guest/Spectators: 
+                  td {{activity.guests[0]}}              
+                tr
+                  td Inclusions: 
+                  td {{activity.inclusions[0]}}
+                tr
+                  td Exclusions: 
+                  td {{activity.exclusions[0]}}
+            div#resultBooking(class="resultTab")
+              div#bookingSection
+                input#datePicker(ng-model="selectedDate",  value="{{selectedDate | date:'dd MMMM yyyy'}}", ui-date)
+                div
+                  select(ng-model="selectedAdults", ng-options="adult for adult in adults")
+                    option(value="") Adults
+                  select(ng-model="selectedChildren", ng-options="child for child in children")
+                    option(value="") Children
+                div(ng-available="available[0].inventories available")    
+                  select(name="timeslot", ng-options="timeslot.start_time[0] for timeslot in available[0].inventories[0].inventory")
+                {{available[0].inventories[0].inventory.length}}    
+                button(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])", 
+                        ng-available="available[0].inventories available") Book Now 
+                button(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])", 
+                        ng-available="available[0].inventories unavailable") Check Availability Again
+                div(ng-available="available[0].inventories loading")
+                  | Loading
+              div#requirementsSection  
+                table 
+                  tr 
+                    td Minimum Age: 
+                    td {{activity.min_age[0]}}
+                  tr
+                    td Maximum Weight: 
+                    td {{activity.max_weight[0]}}
+                  tr
+                    td Minimum Height: 
+                    td {{activity.min_height[0]}}
+                  tr
+                    td Maximum Height: 
+                    td {{activity.max_height[0]}}
+                  tr
+                    td Fitness: 
+                    td {{activity.fitness[0]}}
+                  tr
+                    td Qualifications: 
+                    td {{activity.qualifications[0]}}
+                  tr
+                    td Certification: 
+                    td {{activity.certification[0]}}
+                  tr
+                    td Experience Level: 
+                    td {{activity.experience_level[0]}}
+            
+              
+        div.resultName(ng-click='hideTabs()') 
+          span Category
+          div.duration {{getDuration(activity.duration[0])}} hours
+        div.resultExtra(ng-click='hideTabs()')
+          span.leftExtra
+            | {{activity.location[0]}}
+          span.price R{{price(activity.price[0])}} per person
+            
+    div#resultBackground(ng-click="popUpResultClose()")
+
+    div#popups
+      div#about(ng-style="popUpStyle", class="popup")
+        div#facebook
+          iframe(src='//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FActivityExplorer&width=300&height=468&colorscheme=light&show_faces=false&border_color&stream=true&header=true&appId=177056142347559', scrolling='no', frameborder='0', style='border: none; overflow: hidden; width: 300px; height: 468px;', allowtransparency='true')
+        div#twitter 
+          a.twitter-timeline(width="300", height="468",data-dnt='true', href='https://twitter.com/ActivityExplore', data-widget-id='262054067466014721') Tweets by @ActivityExplore
+          script !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");    
+    
+
+    div#about(ng-style="popUpStyle", class="popup")   
+
+    div#background
+
+    nav#footer
+      #view
+        label(class='ng-class: viewButtonClass("/small")')
+          span
+          a(href="/small") Small
+        label(class='ng-class: viewButtonClass("/medium")')
+          span
+          a(href="/medium") Medium
+        label(class='ng-class: viewButtonClass("/large")')
+          span
+          a(href="/large") Large
+      ul.footerList
+        button.barButton(type='button', value='about')
+          span About
+
+    script(type='text/javascript', src='/js/angular.min.js')
+    script(type='text/javascript', src='/js/angular-ui.min.js')
+    script(type='text/javascript', src='/js/angular-ui-ieshiv.min.js')
+    script(type='text/javascript', src='/js/app.js')
+    script(type='text/javascript', src='/js/controllers.js')
+    script(type='text/javascript', src='/js/directives.js')
+    script(type='text/javascript', src='/js/filters.js')
+    script(type='text/javascript', src='/js/services.js')

@@ -73,6 +73,57 @@ app.directive('ngLoading', function() {
   };
 });
 
+app.directive('ngLoadingResult', function() {
+  return {
+    restrict: 'A',
+    scope: true,
+    link: function( scope, element, attrs ) {
+      var args = attrs.ngLoadingResult.match(/[^ ]+/g);
+      scope.$watch(function(){ 
+        return scope.$eval(args[0]);
+      }, function() {
+        if(scope.$eval(args[1])) {
+          element.css('display', (scope.$eval(args[0]) == '') ? 'block' : 'none');
+        }
+        else {
+          if($("#resultDescription").prop('offsetHeight') != 0) {
+            var descriptionH = $("#resultDescription").prop('offsetHeight'),
+                detailsH = $("#resultDetails").prop('offsetHeight'),
+                bookingH = $("#resultBooking").prop('offsetHeight');
+
+            if((detailsH >= descriptionH) && (detailsH >= bookingH)) {
+              scope.descriptionH = descriptionH;
+              scope.detailsH = detailsH;
+              scope.bookingH = bookingH;
+              console.log($("#resultDescription"));
+              console.log($("#resultDescription").prop('offsetHeight'));
+              $('#resultDescription').css('top', '-' + (detailsH - descriptionH) +'px');
+              $('#resultBooking').css('top', '-' + (detailsH - bookingH) +'px');
+            }
+            else if(descriptionH >= bookingH) {
+              scope.descriptionH = descriptionH;
+              scope.detailsH = detailsH;
+              scope.bookingH = bookingH;
+              $('#resultDetails').css('top', '-' + (descriptionH - detailsH) +'px');
+              $('#resultBooking').css('top', '-' + (descriptionH - bookingH) +'px');
+            }
+            else {
+              scope.descriptionH = descriptionH;
+              scope.detailsH = detailsH;
+              scope.bookingH = bookingH;
+              $('#resultDescription').css('top', '-' + (bookingH - descriptionH) +'px');
+              $('#resultDetails').css('top', '-' + (bookingH - detailsH) +'px');
+            }
+
+            $('#resultTabs').css('top', '-' + bookingH + 'px');
+          }  
+          element.css('display', (scope.$eval(args[0]) != '') ? 'block' : 'none');
+        }        
+      }, true); 
+    }
+  };
+});
+
 app.directive('whenScrolled', function() {
   return function(scope, elm, attr) {
     var raw = elm[0];

@@ -305,7 +305,7 @@ button span {
 	color: #fff;
 	font-family: 'LANENAR';	
 	font-size: 18px;
-	text-shadow: 1px 1px 2px #000;
+	text-shadow: 1px 1px 1px #000;
 	background-color: #f28e36;
 	height: 27px;
 	width: 80px;
@@ -402,7 +402,7 @@ button span {
   font-family: "LANENAR";
   color: white;
   font-size: 21px;
-  text-shadow: 1px 1px 2px #000;
+  text-shadow: 1px 1px 1px #000;
   
   position: relative;
   top: 0px;
@@ -466,7 +466,7 @@ button span {
   font-family: "LANENAR";
   color: white;
   font-size: 21px;
-  text-shadow: 1px 1px 2px #000;
+  text-shadow: 1px 1px 1px #000;
   
   position: relative;
   top: 0px;
@@ -876,7 +876,7 @@ nav {
 	color: #fff;
 	font-family: 'LANENAR';	
 	font-size: 22px;
-	text-shadow: 1px 1px 2px #000;
+	text-shadow: 1px 1px 1px #000;
 }
 
 ul {
@@ -899,7 +899,7 @@ li {
 #footer {
 	color: #fff;
 	font-family: 'LANENAR';	
-	text-shadow: 1px 1px 2px #000;
+	text-shadow: 1px 1px 1px #000;
 	width:100%;
 	min-width: 1024px;
 	height: 35px;
@@ -929,7 +929,7 @@ li {
 	color: #fff;
 	font-family: 'LANENAR';	
 	font-size: 20px;
-	text-shadow: 1px 1px 2px #000;
+	text-shadow: 1px 1px 1px #000;
 	background-color: #f28e36;
 	height: 27px;
 	width: 80px;
@@ -1350,16 +1350,16 @@ li {
 	background-color: #24afe8;
   width: 800px;
 	height: 26px;
-	padding: 3px 20px 1px;
+	padding: 0px 20px 1px;
 }
 
 .resultExtra {
-	font-family: 'Lobster';	
+	font-family: 'LANENAR';	
 	width: 800px;
 	height: 24px;
-	margin: 6px 20px 0px 20px;
+	margin: 3px 20px 0px 20px;
 	color: #25afe6;
-	font-size: 18px;
+	font-size: 20px;
 }
 
 .resultPrice {
@@ -1527,8 +1527,6 @@ li {
 	font-size: 14px;
 
 	width: 2520px;
-	height: 230px;
-	top: -262px;
 	left: -1680px;
 	position: relative;
 	overflow: hidden;
@@ -1536,7 +1534,6 @@ li {
 
 .resultTab {
 	width: 810px;
-	height: 200px;
 	padding: 5px 15px;
 	display: inline-block;
 	position: relative;

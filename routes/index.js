@@ -4,7 +4,13 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Activity Explorer - Experience More' });
+  var ua = req.header('user-agent');
+  if(/mobile/i.test(ua)) {
+    res.render('mobile_index', { title: 'Activity Explorer - Experience More', layout: 'mobile_layout' });
+  } 
+  else {
+    res.render('desktop_index', { title: 'Activity Explorer - Experience More', layout: 'desktop_layout' });
+  }
 };
 
 exports.partials = function (req, res) {
