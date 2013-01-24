@@ -76,14 +76,12 @@ html(lang='en', ng-app='activity')
     block content
 
     div#resultPopUp(ng-style="activityStyle")
-      div#activityLoading(ng-loading-result="activity true")
+      div#activityLoading(ng-loading="activity true")
         div#resultLoadingWheel(class="loadingWheel")
-      div(ng-loading-result="activity false")
+      div(ng-loading="activity false")
         div#resultTopBar
           span#resultTabTitle(ng-click='hideTabs()'){{activity.name[0]}}
-          div#resultTabButtons  
-            div#resultDescriptionButton(class="resultTabButton", ng-click="toggleResultDescription()", ng-class="resultTabSelected('description')")
-              | Description
+          div#resultTabButtons 
             div#resultDetailsButton(class="resultTabButton", ng-click="toggleResultDetails()", ng-class="resultTabSelected('details')")
               | Details
             div#resultBookingButton(class="resultTabButton", ng-click="toggleResultBooking()", ng-class="resultTabSelected('booking')")
@@ -99,10 +97,11 @@ html(lang='en', ng-app='activity')
               li.imageNavigationButton(ng-repeat="image in activity.images[0].image", ng-style="imageNavigationStyle(image)", 
                 ng-click="imageNavigate(image)") 
           div#resultTabs  
-            div#resultDescription(class="resultTab")
-              {{activity.description[0]}}
             div#resultDetails(class="resultTab")
               table
+                tr
+                  td Description: 
+                  td {{activity.description[0]}}
                 tr
                   td Notes: 
                   td {{activity.instructions[0]}}

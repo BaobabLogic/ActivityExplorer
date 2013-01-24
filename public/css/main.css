@@ -350,7 +350,6 @@ button span {
 
 /*Header Popups*/
 #themesPopUp {
-	-webkit-font-smoothing: antialiased;
 	display: none;
 	width: 500px;
 	height: 250px;
@@ -1429,14 +1428,14 @@ li {
 }
 
 #resultTabTitle {
-	width: 539px;
+	width: 662px;
 	height: 27px;
 	padding-top: 3px;
 	display: inline-block;	
 }
 
 #resultTabButtons {
-	width: 281px;
+	width: 158px;
 	position: relative;
 	display: inline-block;	
 }
@@ -1465,10 +1464,6 @@ li {
 
 #resultDetailsButton {
 	width: 70px;  
-}
-
-#resultDescriptionButton {
-	width: 108px;
 }
 
  #resultBookingButton:hover, #resultDetailsButton:hover, #resultDescriptionButton:hover {
@@ -1509,8 +1504,8 @@ li {
 	font-family: "Cantarell-Regular";
 	font-size: 14px;
 
-	width: 2520px;
-	left: -1680px;
+	width: 1680px;
+	left: 0px;
 	position: relative;
 	overflow: hidden;
 }
@@ -1535,6 +1530,8 @@ li {
 }
 
 #resultBooking {
+	top: -178px;
+	height: 204px;
 }
 
 #bookingSection {	
@@ -1548,10 +1545,9 @@ li {
 }
 
 #resultDetails {
+	max-height: 560px;
 }
 
-#resultDescription {
-}
 
 #resultBackground {
   display: none;
