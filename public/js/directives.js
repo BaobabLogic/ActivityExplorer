@@ -95,9 +95,7 @@ app.directive('ngLoadingResult', function() {
               scope.descriptionH = descriptionH;
               scope.detailsH = detailsH;
               scope.bookingH = bookingH;
-              console.log($("#resultDescription"));
-              console.log($("#resultDescription").prop('offsetHeight'));
-              $('#resultDescription').css('top', '-' + (detailsH - descriptionH) +'px');
+              $('#resultDescription').css('top', '-' + ((detailsH - descriptionH)) +'px');
               $('#resultBooking').css('top', '-' + (detailsH - bookingH) +'px');
             }
             else if(descriptionH >= bookingH) {
