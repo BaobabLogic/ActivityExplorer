@@ -2,13 +2,13 @@ $(function() {
   var footerButton = "";
   $('.barButton').click(function() {
     footerButton = $(this).val();
-    $("#" + footerButton).show();
-    $("#background").show();
+    $("#" + footerButton).fadeIn(800, 'easeOutExpo');
+    $("#background").fadeIn(800, 'easeOutExpo');
   });
   
   $("#background").click(function(){
-    $("#background").hide();
-    $("#" + footerButton).hide();
+    $("#background").fadeOut(800, 'easeOutExpo');
+    $("#" + footerButton).fadeOut(800, 'easeOutExpo');
   });        
 });
 

@@ -204,6 +204,10 @@ function AppCtrl($scope, $http, $location) {
     }  
   };
 
+  $scope.sortSelect = function(selected) {
+    $scope.sort = selected;
+  };
+
   //Results Section
     //Results Display Section
 
@@ -277,8 +281,8 @@ function AppCtrl($scope, $http, $location) {
   $scope.applyDisplaySettings = function() {
     $scope.activityStyle.top = computeTop() + 'px';
     $scope.activityStyle.left = computeLeft() + 'px';
-    $scope.popUpStyle.top = (window.innerHeight - 560)/2 + 'px';
-    $scope.popUpStyle.left = (window.innerWidth - 830)/2 + 'px';
+    $scope.popUpStyle.top = (window.innerHeight - 650)/2 + 'px';
+    $scope.popUpStyle.left = (window.innerWidth - 840)/2 + 'px';
     $scope.mainRestartingStyle.top = computeTopLoading() + 'px';
     $scope.$apply();    
   }
@@ -294,6 +298,9 @@ function AppCtrl($scope, $http, $location) {
   $scope.adults = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
   $scope.children = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 
+  $scope.selectedAdults = 1;
+  $scope.selectedChildren = 0;
+
    //Results Data Section    
 
   $http.get('/api').
@@ -308,7 +315,11 @@ function AppCtrl($scope, $http, $location) {
     if(children == undefined) {children = 0}
     $http.get('/api/available/' + adults + '/' + children + '/' + date.getFullYear() + '-' + date.getMonth()+1 + '-' + date.getDate() + '/' + id).
       success(function(data, status, headers, config) {
-        $scope.available = data;
+        $scope.available = data;  
+        if(data[0].inventories[0].inventory != undefined) {
+          $scope.selectedTimeslot = data[0].inventories[0].inventory[0].start_time[0];
+          $scope.timeslots = data[0].inventories[0].inventory;
+        }      
       }); 
   }; 
 
@@ -406,48 +417,64 @@ function AppCtrl($scope, $http, $location) {
   $scope.tabSelected = "none";
 
   $scope.toggleResultDetails = function() {
-    if($scope.resultTabPosition().top == '-560px') { 
-      $('#resultTabs').css('left', '0px');
-      $('#resultTabs').animate({ top: '-52px' }, 800, 'easeOutExpo');
-      $scope.tabSelected = "details";
+    if(($scope.resultTabPosition().top == '-52px') && ($scope.resultTabPosition().left == '0px')) { 
+      $('#resultTabs').animate({ top: '-452px' }, 800, 'easeInOutCubic');  
+      $scope.tabSelected = "none"; 
     }
-    else if($scope.resultTabPosition().left != '0px') {
-      $('#resultTabs').animate({ top: '-560px' }, 800, 'easeOutExpo', function() {
+    else if(($scope.resultTabPosition().top == '-52px') && ($scope.resultTabPosition().left == '-840px')) {
+      $('#resultTabs').animate({ top: '-272px' }, 600, 'easeInOutQuart', function() {
+        $('#resultTabs').css('top', '-452px');
         $('#resultTabs').css('left', '0px');
-        $('#resultTabs').animate({ top: '-52px' }, 800, 'easeOutExpo');        
+        $('#resultTabs').animate({ top: '-52px' }, 1200, 'easeOutExpo');        
       });
       $scope.tabSelected = "details";
     }
+    else if($scope.resultTabPosition().left == '0px') {
+      $('#resultTabs').animate({ top: '-52px' }, 1000, 'easeOutExpo');     
+      $scope.tabSelected = "details";
+    }
     else {
-      $('#resultTabs').animate({ top: '-560px' }, 800, 'easeOutExpo');
-      $scope.tabSelected = "none";
+      $('#resultTabs').css('top', '-452px');
+      $('#resultTabs').css('left', '0px');
+      $('#resultTabs').animate({ top: '-52px' }, 1200, 'easeOutExpo');     
+      $scope.tabSelected = "details";
     }
   };
 
   $scope.toggleResultBooking = function() {
-    if($scope.resultTabPosition().top == '-560px') { 
-      $('#resultTabs').css('left', '-840px');
-      $('#resultTabs').animate({ top: '-52px' }, 800, 'easeOutExpo');
-      $scope.tabSelected = "booking";
-    }
-    else if($scope.resultTabPosition().left != '-840px') {
-      $('#resultTabs').animate({ top: '-560px' }, 800, 'easeOutExpo', function() {
+    if(($scope.resultTabPosition().top == '-52px') && ($scope.resultTabPosition().left == '0px')) { 
+      $('#resultTabs').animate({ top: '-452px' }, 600, 'easeInOutQuart', function() {
         $('#resultTabs').css('left', '-840px');
-        $('#resultTabs').animate({ top: '-52px' }, 800, 'easeOutExpo');        
+        $('#resultTabs').css('top', '-272px');
+        $('#resultTabs').animate({ top: '-52px' }, 1000, 'easeOutExpo');        
       });
       $scope.tabSelected = "booking";
     }
+    else if(($scope.resultTabPosition().top == '-52px') && ($scope.resultTabPosition().left == '-840px')) {
+      $('#resultTabs').animate({ top: '-272px' }, 600, 'easeInOutCubic');  
+      $scope.tabSelected = "none"; 
+    }
+    else if($scope.resultTabPosition().left == '0px') {
+      $('#resultTabs').css('left', '-840px');
+      $('#resultTabs').css('top', '-272px');
+      $('#resultTabs').animate({ top: '-52px' }, 1000, 'easeOutExpo');     
+      $scope.tabSelected = "booking";
+    }
     else {
-      $('#resultTabs').animate({ top: '-560px' }, 800, 'easeOutExpo');
-      $scope.tabSelected = "none";
+      $('#resultTabs').animate({ top: '-52px' }, 1000, 'easeOutExpo');
+      $scope.tabSelected = "booking";
     }
   };
 
   $scope.hideTabs = function() {
-    if($scope.resultTabPosition().top != '-560px') { 
-      $('#resultTabs').animate({ top: '-560px' }, 800, 'easeOutExpo');
+    if(($scope.resultTabPosition().top == '-52px') && ($scope.resultTabPosition().left == '0px')) { 
+      $('#resultTabs').animate({ top: '-452px' }, 800, 'easeInOutCubic');
       $scope.tabSelected = "none";
-    }  
+    }
+    else if(($scope.resultTabPosition().top == '-52px') && ($scope.resultTabPosition().left == '-840px')) {
+      $('#resultTabs').animate({ top: '-272px' }, 600, 'easeInOutCubic');  
+      $scope.tabSelected = "none"; 
+    }
   };
 
   $scope.popUpResult = function(id) { 
@@ -470,7 +497,7 @@ function AppCtrl($scope, $http, $location) {
   };
 
   $scope.popUpResultClose = function() { 
-    $('#resultTabs').animate({ top: '-560px' }, 800, 'easeOutExpo');
+    $('#resultTabs').animate({ top: '-452px' }, 800, 'easeOutExpo');
     $scope.tabSelected = "none";
     $('#resultPopUp').fadeOut(800, 'easeOutExpo');
     $('#resultBackground').fadeOut(800, 'easeOutExpo', function() {
@@ -485,8 +512,8 @@ function AppCtrl($scope, $http, $location) {
 
   $scope.popUpStyle = {
     position: 'fixed',
-    top: (window.innerHeight - 560)/2 + 'px',
-    left: (window.innerWidth - 830)/2 + 'px'
+    top: (window.innerHeight - 650)/2 + 'px',
+    left: (window.innerWidth - 840)/2 + 'px'
   };
 
 
