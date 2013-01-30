@@ -231,11 +231,17 @@ button span {
 	float: right;
 	width: 250px;
 	height: 24px;
+	margin: 0px;
+	padding: 0px;
 	border: none;
+	border-radius: 0px;
 }
 
 #searchBar:focus {
 	color: #2c2c2c;
+	-moz-box-shadow: 0px 0px 0px #2b2b2b;
+	-webkit-box-shadow: 0px 0px 0px #2b2b2b;
+	box-shadow: 0px 0px 0px #2b2b2b;
 }
 
 #search input:focus
@@ -246,6 +252,7 @@ button span {
 .explore {
 	font-family: 'LANENAR';
 	font-size: 18px;
+	line-height: 22px;
 	color: #fff;
 	text-shadow: 1px 1px 1px #000;
 	position: relative;
@@ -288,6 +295,7 @@ button span {
 	color: #fff;
 	font-family: 'LANENAR';	
 	font-size: 18px;
+	line-height: 26px;
 	text-shadow: 1px 1px 1px #000;
 	background-color: #f28e36;
 	height: 27px;
@@ -911,6 +919,7 @@ li {
 	color: #fff;
 	font-family: 'LANENAR';	
 	font-size: 20px;
+	line-height: 26px;
 	text-shadow: 1px 1px 1px #000;
 	background-color: #f28e36;
 	height: 27px;
@@ -963,7 +972,6 @@ li {
 }
 
 #view {
-	font-size: 20px;
   margin: 3px 4px 4px 45px;
   background-color:#15a0db;
   border-radius:4px;
@@ -992,6 +1000,8 @@ li {
 }
 
 #view label {
+	font-size: 20px;
+	line-height: 24px;
   float:left;
 }
 
@@ -1102,6 +1112,7 @@ li {
 
 	font-family: 'LANENAR';
 	font-size: 20px;
+	line-height: 24px;
 	color: #fff;
 	text-shadow: 1px 1px 2px #000;
 
@@ -1176,6 +1187,7 @@ li {
 	margin-right: auto;
 	font-family: 'LANENAR';
 	font-size: 32px;
+	line-height: 36px;
 	color: #fff;
 	text-shadow: 1px 1px 2px #000;
 }
@@ -1321,6 +1333,7 @@ li {
 }
 
 .topHalf {
+	line-height: 26px;
 }
 
 .smallDetails .details .topHalf {
@@ -1521,6 +1534,8 @@ li {
 }
 
 #resultTabButtons {
+	line-height: 24px;
+	top: 1px;
 	width: 158px;
 	position: relative;
 	display: inline-block;	
@@ -1708,11 +1723,40 @@ li {
 }
 
 #datePicker {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 16px;
-	width: 150px;
-	margin: 20px 0px 0 118px;
 	cursor: pointer; cursor: hand;
+
+	color: #fff;
+	font-family: 'LANENAR';	
+	font-size: 20px;
+	text-shadow: 1px 1px 1px #000;
+	text-align: center;
+	height: 30px;
+	width: 180px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin: 20px 0px 0 84px;
+	border: 0px;
+  border-radius:7px;
+	display: block;
+
+	background-color: #f28e36;	
+	background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(242,142,54)),
+		color-stop(0.61, rgb(241,175,83))
+	);
+	
+	-moz-box-shadow: 1px 1px 3px black;
+	-webkit-box-shadow: 1px 1px 3px black;
+	box-shadow: 1px 1px 3px black;
 }
 
 #people {
@@ -1729,8 +1773,86 @@ li {
 	margin-right: 5px;
 }
 
-#timeslot {
-	margin: 5px 0px 20px 162px;
+#timeslotButton {
+	color: #fff;
+	font-family: 'LANENAR';	
+	font-size: 20px;
+	text-shadow: 1px 1px 1px #000;
+	height: 30px;
+	width: 100px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin: 15px 0px 20px 145px;
+	border: 0px;
+  border-radius:7px;
+	display: block;
+
+	background-color: #f28e36;	
+	background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(242,142,54)),
+		color-stop(0.61, rgb(241,175,83))
+	);
+	
+	-moz-box-shadow: 1px 1px 3px black;
+	-webkit-box-shadow: 1px 1px 3px black;
+	box-shadow: 1px 1px 3px black;
+}
+
+#timeslotButton:active {
+  background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+  background-image: -webkit-gradient(
+  	linear,
+  	left bottom,
+  	left top,
+  	color-stop(0.21, rgb(241,175,83)),
+  	color-stop(0.61, rgb(242,142,54))
+  );
+}
+
+#timeslots {
+	display: none;
+	width: 110px;
+	height: 145px;
+	position: fixed;
+	top: 36px;
+	right: 30px;
+	z-index: 150;
+	color: white;
+	border: 2px solid #f7941d;
+  border-radius:7px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+	
+	background-color: rgb(44,185,245);
+	background-image: linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+	background-image: -o-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+	background-image: -moz-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+	background-image: -webkit-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+	background-image: -ms-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.43, rgb(51,170,255)),
+		color-stop(0.72, rgb(51,190,255)),
+		color-stop(0.86, rgb(61,190,255))
+	);	
 }
 
 #bookButton {

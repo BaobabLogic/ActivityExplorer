@@ -323,6 +323,15 @@ function AppCtrl($scope, $http, $location) {
       }); 
   }; 
 
+  $scope.timeslotSelectButton = function() {
+    if($('#timeslots').is(':visible')) {
+      $('#timeslots').fadeOut(800, 'easeOutExpo');
+    }
+    else {
+      $('#timeslots').fadeIn(800, 'easeOutExpo');
+    }
+  };
+
   $scope.image = function (url) {
     if (typeof url == 'string' || url instanceof String) {
       return url.replace("thumb", "medium");

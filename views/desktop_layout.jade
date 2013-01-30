@@ -6,6 +6,7 @@ html(lang='en', ng-app='activity')
     meta(name="detectify-verification", content="505388be3469f9a32b6e99eabb1954e0")
     link(rel='stylesheet', href='/css/jquery-ui-1.9.1.custom.min.css')
     link(rel='stylesheet', href='/css/angular-ui.min.css')
+    link(rel="stylesheet", href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css")
     link(rel='stylesheet', href='/css/main.css')
     script(type='text/javascript', src='/js/jquery-1.8.2.min.js')
     script(type='text/javascript', src='/js/jquery-ui-1.9.1.custom.min.js')
@@ -138,8 +139,10 @@ html(lang='en', ng-app='activity')
                     select(ng-model="selectedAdults", ng-options="adult for adult in adults")
                     span#children Children 
                     select(ng-model="selectedChildren", ng-options="child for child in children")
-                  div(ng-available="available[0].inventories available")    
-                    select#timeslot(ng-model="selectedTimeslot", ng-options="timeslot.start_time[0] for timeslot in timeslots")
+                  div(ng-available="available[0].inventories available") 
+                    button#timeslotButton(ng-click="timeslotSelectButton()") {{selectedTimeslot}}
+                    div#timeslots
+                      button.timeslot(ng-repeat="timeslot in timeslots", class='ng-class: timeslotClass(timeslot)', ng-click="timeslotSelect(timeslot)") {{timeslot.start_time[0]}}
                     button#bookButton(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])") Book
                   div(ng-available="available[0].inventories unavailable")
                     div#nospace There is not enough space to accommodate your party on the selected date. 
@@ -226,6 +229,7 @@ html(lang='en', ng-app='activity')
     script(type='text/javascript', src='/js/angular.min.js')
     script(type='text/javascript', src='/js/angular-ui.min.js')
     script(type='text/javascript', src='/js/angular-ui-ieshiv.min.js')
+    script(type='text/javascript', src='/js/ui-bootstrap-0.1.0.min.js')
     script(type='text/javascript', src='/js/app.js')
     script(type='text/javascript', src='/js/controllers.js')
     script(type='text/javascript', src='/js/directives.js')

@@ -2,7 +2,7 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('activity_mobile', ['activity_mobile.filters', 'activity_mobile.services', 'activity_mobile.directives', 'ui.directives', 'ui.filters']).
+angular.module('activity_mobile', ['activity_mobile.filters', 'activity_mobile.services', 'activity_mobile.directives', 'ui.directives', 'ui.filters', 'ui.bootstrap']).
   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
     		templateUrl: 'partials/mobile'
