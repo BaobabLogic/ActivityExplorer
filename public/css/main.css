@@ -764,7 +764,7 @@ button span {
 #sortPopUp {
 	display: none;
 	width: 110px;
-	height: 155px;
+	height: 145px;
 	position: fixed;
 	top: 36px;
 	right: 30px;
@@ -796,7 +796,7 @@ button span {
 .sortButton {
 	font-family: "LANENAR";
 	color: white;
-	font-size: 21px;
+	font-size: 20px;
 	text-shadow: 1px 1px 2px #000;
 
 	width: 110px;
@@ -1043,10 +1043,9 @@ li {
   display: none;
   position: absolute;
   background: #FFFFFF;
-  padding: 5px;
   z-index: 151;
-  min-height: 560px;
-  min-width: 820px;
+  height: 640px;
+  width: 840px;
 	-moz-box-shadow: 1px 1px 5px #8a8a8a;
 	-webkit-box-shadow: 1px 1px 5px #8a8a8a;
 	box-shadow: 1px 1px 5px #8a8a8a; 
@@ -1062,6 +1061,93 @@ li {
   background: #1C1C1C;
   z-index: 150;
 	opacity: 0.6;
+}
+
+#popUpTopBar {
+  width: 820px;
+	height: 30px;
+	padding-left: 20px;
+	position: relative;
+	display: inline-block;
+	font-family: 'LANENAR';	
+	font-size: 20px;
+	color: #fff;
+	text-shadow: 1px 1px 2px #000;
+	background-color: #24afe8;
+	z-index: 300;
+}
+
+#popUpTabTitle {
+	width: 674px;
+	height: 27px;
+	padding-top: 3px;
+	display: inline-block;	
+}
+
+#popUpTabButtons {
+	width: 146px;
+	position: relative;
+	display: inline-block;	
+}
+
+.popUpTabButton {
+	cursor: pointer; cursor: hand;	
+	height: 28px;
+	top: -9px;
+	padding-top: 2px;
+	padding-left: 15px;
+	position: relative;
+	display: inline-block;
+	z-index: 160;
+
+	font-family: 'LANENAR';
+	font-size: 20px;
+	color: #fff;
+	text-shadow: 1px 1px 2px #000;
+
+	background-color: transparent;
+}
+
+ .popUpTabButton:hover {
+ 	background-color: #f28e36;	
+	background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(242,142,54)),
+		color-stop(0.61, rgb(241,175,83))
+	);
+ }
+
+ .popUpSelectedButton {
+ 	background-color: #f28e36;	
+	background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(242,142,54)),
+		color-stop(0.61, rgb(241,175,83))
+	);
+ }
+
+#aboutButton {
+	width: 62px;
+}
+
+#helpButton {
+	width: 54px;  
 }
 
 #facebook {
@@ -1505,7 +1591,9 @@ li {
 	font-size: 14px;
 
 	width: 1680px;
+	height: 400px;
 	left: 0px;
+	top: -502px;
 	position: relative;
 	overflow: hidden;
 }
@@ -1515,37 +1603,188 @@ li {
 	padding: 5px 15px;
 	display: inline-block;
 	position: relative;
-	background-color: white;
 	overflow-x: hidden;
 	overflow-y: scroll;
 	background-color: #f7f5f5;
 	z-index: 200;
 }
 
-#datePicker {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 16px;
-	width: 150px;
-	margin: 20px 0px 0 100px;
+#resltBookingSection{
+	width: 840px;
+	height: 400px;
+	top: -180px;
+	display: inline-block;
+	position: relative;
+	z-index: 200;	
 }
 
 #resultBooking {
-	top: -178px;
-	height: 204px;
+	height: 210px;
+	margin: 0px;
+}
+
+#resultBookinClose {
+	width: 840px;
+	height: 180px;
+	margin: 0px;
 }
 
 #bookingSection {	
+	width: 405px;
 	display: inline-block;
 	float: left;
 }
 
 #requirementsSection {
+	width: 405px;
 	display: inline-block;
 	float: right;
 }
 
+#loadingAvailability {
+	width: 64px;
+	height: 64px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top: 20px;
+	background-image: url('/img/loading_64_g.gif');
+}
+
+#nospace {
+	width: 300px;
+	margin: 10px 0px 10px 45px;
+	text-align: center;
+}
+
+#checkAvailability {
+	color: #fff;
+	font-family: 'LANENAR';	
+	font-size: 20px;
+	text-shadow: 1px 1px 1px #000;
+	height: 30px;
+	width: 200px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: 95px;
+	border: 0px;
+  border-radius:7px;
+	display: block;
+
+	background-color: #f28e36;	
+	background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(242,142,54)),
+		color-stop(0.61, rgb(241,175,83))
+	);
+	
+	-moz-box-shadow: 1px 1px 3px black;
+	-webkit-box-shadow: 1px 1px 3px black;
+	box-shadow: 1px 1px 3px black;
+}
+
+#checkAvailability:active {
+  background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+  background-image: -webkit-gradient(
+  	linear,
+  	left bottom,
+  	left top,
+  	color-stop(0.21, rgb(241,175,83)),
+  	color-stop(0.61, rgb(242,142,54))
+  );
+}
+
+#datePicker {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	width: 150px;
+	margin: 20px 0px 0 118px;
+	cursor: pointer; cursor: hand;
+}
+
+#people {
+	width: 230px;
+	margin: 10px 0px 10px 80px;
+}
+
+#adults {
+	margin-right: 5px;
+}
+
+#children {
+	margin-left: 10px;
+	margin-right: 5px;
+}
+
+#timeslot {
+	margin: 5px 0px 20px 162px;
+}
+
+#bookButton {
+	color: #fff;
+	font-family: 'LANENAR';	
+	font-size: 28px;
+	text-shadow: 1px 1px 1px #000;
+	height: 40px;
+	width: 100px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: 145px;
+	border: 0px;
+  border-radius:7px;
+	display: block;
+
+	background-color: #f28e36;	
+	background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(242,142,54)),
+		color-stop(0.61, rgb(241,175,83))
+	);
+	
+	-moz-box-shadow: 1px 1px 3px black;
+	-webkit-box-shadow: 1px 1px 3px black;
+	box-shadow: 1px 1px 3px black;
+}
+
+#bookButton:active {
+  background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+  background-image: -webkit-gradient(
+  	linear,
+  	left bottom,
+  	left top,
+  	color-stop(0.21, rgb(241,175,83)),
+  	color-stop(0.61, rgb(242,142,54))
+  );
+}
+
 #resultDetails {
-	max-height: 560px;
+	height: 390px;
 }
 
 

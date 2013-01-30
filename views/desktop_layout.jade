@@ -11,7 +11,7 @@ html(lang='en', ng-app='activity')
     script(type='text/javascript', src='/js/jquery-ui-1.9.1.custom.min.js')
     script(type='text/javascript', src='/js/extra.js')
 
-  body(ng-controller='AppCtrl')
+  body(ng-controller='AppCtrl')  
     div#header
       div#logo  
         image(src='/img/logo-small2.png', height=28, width=289)
@@ -66,11 +66,11 @@ html(lang='en', ng-app='activity')
           span#duration 3 days or more
         div.slider(id="durationS", slider="duration")
     div#sortPopUp
-      button.sortButton(class='ng-class: sortButtonClass("random")', ng-click="sort='random'") Random
-      button.sortButton(class='ng-class: sortButtonClass("priceLow")', ng-click="sort='priceLow'") Price Low
-      button.sortButton(class='ng-class: sortButtonClass("priceHigh")', ng-click="sort='priceHigh'") Price High
-      button.sortButton(class='ng-class: sortButtonClass("timeShort")', ng-click="sort='timeShort'") Time Short  
-      button.sortButton(class='ng-class: sortButtonClass("timeLong")', ng-click="sort='timeLong'") Time Long        
+      button.sortButton(class='ng-class: sortButtonClass("random")', ng-click="sortSelect('random')") Random
+      button.sortButton(class='ng-class: sortButtonClass("priceLow")', ng-click="sortSelect('priceLow')") Price Low
+      button.sortButton(class='ng-class: sortButtonClass("priceHigh")', ng-click="sortSelect('priceHigh')") Price High
+      button.sortButton(class='ng-class: sortButtonClass("timeShort")', ng-click="sortSelect('timeShort')") Time Short  
+      button.sortButton(class='ng-class: sortButtonClass("timeLong")', ng-click="sortSelect('timeLong')") Time Long        
     div#invisiBackground
 
     block content
@@ -129,49 +129,50 @@ html(lang='en', ng-app='activity')
                 tr
                   td Exclusions: 
                   td {{activity.exclusions[0]}}
-            div#resultBooking(class="resultTab")
-              div#bookingSection
-                input#datePicker(ng-model="selectedDate",  value="{{selectedDate | date:'dd MMMM yyyy'}}", ui-date)
-                div
-                  select(ng-model="selectedAdults", ng-options="adult for adult in adults")
-                    option(value="") Adults
-                  select(ng-model="selectedChildren", ng-options="child for child in children")
-                    option(value="") Children
-                div(ng-available="available[0].inventories available")    
-                  select(name="timeslot", ng-options="timeslot.start_time[0] for timeslot in available[0].inventories[0].inventory")
-                {{available[0].inventories[0].inventory.length}}    
-                button(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])", 
-                        ng-available="available[0].inventories available") Book Now 
-                button(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])", 
-                        ng-available="available[0].inventories unavailable") Check Availability Again
-                div(ng-available="available[0].inventories loading")
-                  | Loading
-              div#requirementsSection  
-                table 
-                  tr 
-                    td Minimum Age: 
-                    td {{activity.min_age[0]}}
-                  tr
-                    td Maximum Weight: 
-                    td {{activity.max_weight[0]}}
-                  tr
-                    td Minimum Height: 
-                    td {{activity.min_height[0]}}
-                  tr
-                    td Maximum Height: 
-                    td {{activity.max_height[0]}}
-                  tr
-                    td Fitness: 
-                    td {{activity.fitness[0]}}
-                  tr
-                    td Qualifications: 
-                    td {{activity.qualifications[0]}}
-                  tr
-                    td Certification: 
-                    td {{activity.certification[0]}}
-                  tr
-                    td Experience Level: 
-                    td {{activity.experience_level[0]}}
+            div#resltBookingSection      
+              div#resultBooking(class="resultTab")
+                div#bookingSection
+                  input#datePicker(ng-model="selectedDate",  value="{{selectedDate | date:'dd MMMM yyyy'}}", ui-date, readonly)
+                  div#people
+                    span#adults Adults 
+                    select(ng-model="selectedAdults", ng-options="adult for adult in adults")
+                    span#children Children 
+                    select(ng-model="selectedChildren", ng-options="child for child in children")
+                  div(ng-available="available[0].inventories available")    
+                    select#timeslot(ng-model="selectedTimeslot", ng-options="timeslot.start_time[0] for timeslot in timeslots")
+                    button#bookButton(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])") Book
+                  div(ng-available="available[0].inventories unavailable")
+                    div#nospace There is not enough space to accommodate your party on the selected date. 
+                    button#checkAvailability(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])") Check Availability
+                  div#loadingAvailability(ng-available="available[0].inventories loading")
+                div#requirementsSection  
+                  table 
+                    tr 
+                      td Minimum Age: 
+                      td {{activity.min_age[0]}}
+                    tr
+                      td Maximum Weight: 
+                      td {{activity.max_weight[0]}}
+                    tr
+                      td Minimum Height: 
+                      td {{activity.min_height[0]}}
+                    tr
+                      td Maximum Height: 
+                      td {{activity.max_height[0]}}
+                    tr
+                      td Fitness: 
+                      td {{activity.fitness[0]}}
+                    tr
+                      td Qualifications: 
+                      td {{activity.qualifications[0]}}
+                    tr
+                      td Certification: 
+                      td {{activity.certification[0]}}
+                    tr
+                      td Experience Level: 
+                      td {{activity.experience_level[0]}}
+              div#resultBookinClose(ng-click='hideTabs()')
+
             
               
         div.resultName(ng-click='hideTabs()') 
@@ -185,15 +186,25 @@ html(lang='en', ng-app='activity')
     div#resultBackground(ng-click="popUpResultClose()")
 
     div#popups
-      div#about(ng-style="popUpStyle", class="popup")
-        div#facebook
-          iframe(src='//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FActivityExplorer&width=300&height=468&colorscheme=light&show_faces=false&border_color&stream=true&header=true&appId=177056142347559', scrolling='no', frameborder='0', style='border: none; overflow: hidden; width: 300px; height: 468px;', allowtransparency='true')
-        div#twitter 
-          a.twitter-timeline(width="300", height="468",data-dnt='true', href='https://twitter.com/ActivityExplore', data-widget-id='262054067466014721') Tweets by @ActivityExplore
-          script !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");    
-    
+      div#more(ng-style="popUpStyle", class="popup")
+        div#popUpTopBar
+          span#popUpTabTitle
 
-    div#about(ng-style="popUpStyle", class="popup")   
+          div#popUpTabButtons 
+            div#aboutButton(class="popUpTabButton", ng-click="", ng-class="popUpTabSelected('about')")
+              | About
+            div#helpButton(class="popUpTabButton", ng-click="", ng-class="popUpTabSelected('help')")
+              | Help
+        div#facebook
+          iframe(src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FActivityExplorer&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=177056142347559", scrolling="no", frameborder="0", style="border:none; overflow:hidden; width:100px; height:21px;", allowTransparency="true")  
+        div#twitter 
+          a(href="https://twitter.com/ActivityExplore", class="twitter-follow-button", data-show-count="false") Follow @ActivityExplore
+          script !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+        
+
+        div#about 
+          h2 About Activity Explorer
+          | Explore
 
     div#background
 
@@ -209,8 +220,8 @@ html(lang='en', ng-app='activity')
           span
           a(href="/large") Large
       ul.footerList
-        button.barButton(type='button', value='about')
-          span About
+        button.barButton(type='button', value='more')
+          span More
 
     script(type='text/javascript', src='/js/angular.min.js')
     script(type='text/javascript', src='/js/angular-ui.min.js')
