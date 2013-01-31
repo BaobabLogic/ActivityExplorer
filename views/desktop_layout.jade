@@ -130,15 +130,22 @@ html(lang='en', ng-app='activity')
                 tr
                   td Exclusions: 
                   td {{activity.exclusions[0]}}
+                tr
+                  td Requirements: 
+                  td Minimum Age: {{activity.min_age[0]}}, Maximum Weight: {{activity.max_weight[0]}}, 
+                    | Minimum Height: {{activity.min_height[0]}}, Maximum Height: {{activity.max_height[0]}},
+                    | Fitness: {{activity.fitness[0]}}, Qualifications: {{activity.qualifications[0]}}, 
+                    | Certification: {{activity.certification[0]}}, Experience Level: {{activity.experience_level[0]}}
             div#resltBookingSection      
               div#resultBooking(class="resultTab")
-                div#bookingSection
+                div#bookingDetailsSection
                   input#datePicker(ng-model="selectedDate",  value="{{selectedDate | date:'dd MMMM yyyy'}}", ui-date, readonly)
                   div#people
                     span#adults Adults 
                     select(ng-model="selectedAdults", ng-options="adult for adult in adults")
                     span#children Children 
                     select(ng-model="selectedChildren", ng-options="child for child in children")
+                div#bookingSection  
                   div(ng-available="available[0].inventories available") 
                     button#timeslotButton(ng-click="timeslotSelectButton()") {{selectedTimeslot}}
                     div#timeslots
@@ -148,32 +155,6 @@ html(lang='en', ng-app='activity')
                     div#nospace There is not enough space to accommodate your party on the selected date. 
                     button#checkAvailability(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])") Check Availability
                   div#loadingAvailability(ng-available="available[0].inventories loading")
-                div#requirementsSection  
-                  table 
-                    tr 
-                      td Minimum Age: 
-                      td {{activity.min_age[0]}}
-                    tr
-                      td Maximum Weight: 
-                      td {{activity.max_weight[0]}}
-                    tr
-                      td Minimum Height: 
-                      td {{activity.min_height[0]}}
-                    tr
-                      td Maximum Height: 
-                      td {{activity.max_height[0]}}
-                    tr
-                      td Fitness: 
-                      td {{activity.fitness[0]}}
-                    tr
-                      td Qualifications: 
-                      td {{activity.qualifications[0]}}
-                    tr
-                      td Certification: 
-                      td {{activity.certification[0]}}
-                    tr
-                      td Experience Level: 
-                      td {{activity.experience_level[0]}}
               div#resultBookinClose(ng-click='hideTabs()')
 
             

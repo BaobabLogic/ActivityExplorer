@@ -426,61 +426,61 @@ function AppCtrl($scope, $http, $location) {
   $scope.tabSelected = "none";
 
   $scope.toggleResultDetails = function() {
-    if(($scope.resultTabPosition().top == '-52px') && ($scope.resultTabPosition().left == '0px')) { 
+    if(($scope.resultTabPosition().top == '-30px') && ($scope.resultTabPosition().left == '0px')) { 
       $('#resultTabs').animate({ top: '-452px' }, 800, 'easeInOutCubic');  
       $scope.tabSelected = "none"; 
     }
-    else if(($scope.resultTabPosition().top == '-52px') && ($scope.resultTabPosition().left == '-840px')) {
+    else if(($scope.resultTabPosition().top == '-30px') && ($scope.resultTabPosition().left == '-840px')) {
       $('#resultTabs').animate({ top: '-272px' }, 600, 'easeInOutQuart', function() {
         $('#resultTabs').css('top', '-452px');
         $('#resultTabs').css('left', '0px');
-        $('#resultTabs').animate({ top: '-52px' }, 1200, 'easeOutExpo');        
+        $('#resultTabs').animate({ top: '-30px' }, 1200, 'easeOutExpo');        
       });
       $scope.tabSelected = "details";
     }
     else if($scope.resultTabPosition().left == '0px') {
-      $('#resultTabs').animate({ top: '-52px' }, 1000, 'easeOutExpo');     
+      $('#resultTabs').animate({ top: '-30px' }, 1000, 'easeOutExpo');     
       $scope.tabSelected = "details";
     }
     else {
       $('#resultTabs').css('top', '-452px');
       $('#resultTabs').css('left', '0px');
-      $('#resultTabs').animate({ top: '-52px' }, 1200, 'easeOutExpo');     
+      $('#resultTabs').animate({ top: '-30px' }, 1200, 'easeOutExpo');     
       $scope.tabSelected = "details";
     }
   };
 
   $scope.toggleResultBooking = function() {
-    if(($scope.resultTabPosition().top == '-52px') && ($scope.resultTabPosition().left == '0px')) { 
+    if(($scope.resultTabPosition().top == '-30px') && ($scope.resultTabPosition().left == '0px')) { 
       $('#resultTabs').animate({ top: '-452px' }, 600, 'easeInOutQuart', function() {
         $('#resultTabs').css('left', '-840px');
         $('#resultTabs').css('top', '-272px');
-        $('#resultTabs').animate({ top: '-52px' }, 1000, 'easeOutExpo');        
+        $('#resultTabs').animate({ top: '-30px' }, 1000, 'easeOutExpo');        
       });
       $scope.tabSelected = "booking";
     }
-    else if(($scope.resultTabPosition().top == '-52px') && ($scope.resultTabPosition().left == '-840px')) {
+    else if(($scope.resultTabPosition().top == '-30px') && ($scope.resultTabPosition().left == '-840px')) {
       $('#resultTabs').animate({ top: '-272px' }, 600, 'easeInOutCubic');  
       $scope.tabSelected = "none"; 
     }
     else if($scope.resultTabPosition().left == '0px') {
       $('#resultTabs').css('left', '-840px');
       $('#resultTabs').css('top', '-272px');
-      $('#resultTabs').animate({ top: '-52px' }, 1000, 'easeOutExpo');     
+      $('#resultTabs').animate({ top: '-30px' }, 1000, 'easeOutExpo');     
       $scope.tabSelected = "booking";
     }
     else {
-      $('#resultTabs').animate({ top: '-52px' }, 1000, 'easeOutExpo');
+      $('#resultTabs').animate({ top: '-30px' }, 1000, 'easeOutExpo');
       $scope.tabSelected = "booking";
     }
   };
 
   $scope.hideTabs = function() {
-    if(($scope.resultTabPosition().top == '-52px') && ($scope.resultTabPosition().left == '0px')) { 
+    if(($scope.resultTabPosition().top == '-30px') && ($scope.resultTabPosition().left == '0px')) { 
       $('#resultTabs').animate({ top: '-452px' }, 800, 'easeInOutCubic');
       $scope.tabSelected = "none";
     }
-    else if(($scope.resultTabPosition().top == '-52px') && ($scope.resultTabPosition().left == '-840px')) {
+    else if(($scope.resultTabPosition().top == '-30px') && ($scope.resultTabPosition().left == '-840px')) {
       $('#resultTabs').animate({ top: '-272px' }, 600, 'easeInOutCubic');  
       $scope.tabSelected = "none"; 
     }

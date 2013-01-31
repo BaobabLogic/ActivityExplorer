@@ -360,7 +360,7 @@ button span {
 #themesPopUp {
 	display: none;
 	width: 500px;
-	height: 250px;
+	height: 225px;
 	position: fixed;
 	top: 36px;
 	right: 25px;
@@ -689,11 +689,12 @@ button span {
 	font-family: "LANENAR";
   color: #ffb657;
 	font-size: 23px;
+	line-height: 24px;
 	text-shadow: 1px 1px 2px #000;
 	
 	display: none;
 	width: 280px;
-	height: 128px;
+	height: 118px;
 	position: fixed;
 	top: 36px;
 	right: 40px;
@@ -805,6 +806,7 @@ button span {
 	font-family: "LANENAR";
 	color: white;
 	font-size: 20px;
+	line-height: 24px;
 	text-shadow: 1px 1px 2px #000;
 
 	width: 110px;
@@ -1644,16 +1646,16 @@ li {
 	margin: 0px;
 }
 
-#bookingSection {	
-	width: 405px;
-	display: inline-block;
-	float: left;
-}
-
-#requirementsSection {
+#bookingSection {
 	width: 405px;
 	display: inline-block;
 	float: right;
+}
+
+#bookingDetailsSection {	
+	width: 405px;
+	display: inline-block;
+	float: left;
 }
 
 #loadingAvailability {
