@@ -1428,6 +1428,7 @@ li {
 .resultName {
 	font-family: 'LANENAR';	
 	font-size: 20px;
+	line-height: 26px;
 	color: #fff;
 	text-shadow: 1px 1px 2px #000;
 	background-color: #24afe8;
@@ -1438,6 +1439,7 @@ li {
 
 .resultExtra {
 	font-family: 'LANENAR';	
+	line-height: 26px;
 	width: 800px;
 	height: 24px;
 	margin: 3px 20px 0px 20px;
