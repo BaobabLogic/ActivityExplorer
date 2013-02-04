@@ -52,8 +52,61 @@ $(function() {
         $('#' + headButton + 'PopUp').fadeOut(800, 'easeOutExpo');
     } 
 
+    if(headButton == 'sort') {
+      $(document).click( function(e){
+        $('#' + headButton + 'PopUp').fadeOut(800, 'easeOutExpo');
+      }); 
+    }   
+    else {
+      $(document).click( function(e){
+        if ( $(e.target).parents("#" + headButton + "PopUp").length == 0 ) $('#' + headButton + 'PopUp').fadeOut(800, 'easeOutExpo');
+      }); 
+    }
+
+  });     
+});
+
+$(function() {
+  var toggleDropDownButton = "";
+
+  $('.toggleDropDownButton').click(function(e) {
+    toggleDropDownButton = $(this).val();
+
+    if(toggleDropDownButton == 'adults') {
+      if($('#childrenDropDown').is(':visible')){
+        $('#childrenDropDown').fadeOut(800, 'easeOutExpo');
+      }
+      if($('#timeslotsDropDown').is(':visible')){
+        $('#timeslotsDropDown').fadeOut(800, 'easeOutExpo');
+      }
+    }
+    else if(toggleDropDownButton == 'children') {
+      if($('#adultsDropDown').is(':visible')){
+        $('#adultsDropDown').fadeOut(800, 'easeOutExpo');
+      }
+      if($('#timeslotsDropDown').is(':visible')){
+        $('#timeslotsDropDown').fadeOut(800, 'easeOutExpo');
+      }
+    }
+    else if(toggleDropDownButton == 'timeslots') {
+      if($('#adultsDropDown').is(':visible')){
+        $('#adultsDropDown').fadeOut(800, 'easeOutExpo');
+      }
+      if($('#childrenDropDown').is(':visible')){
+        $('#childrenDropDown').fadeOut(800, 'easeOutExpo');
+      }
+    }
+
+    if(!$('#' + toggleDropDownButton + 'DropDown').is(':visible')){
+        $('#' + toggleDropDownButton + 'DropDown').fadeIn(800, 'easeOutExpo');
+        e.stopPropagation();
+    }
+    else{
+        $('#' + toggleDropDownButton + 'DropDown').fadeOut(800, 'easeOutExpo');
+    } 
+
     $(document).click( function(e){
-      if ( $(e.target).parents("#" + headButton + "PopUp").length == 0 ) $('#' + headButton + 'PopUp').fadeOut(800, 'easeOutExpo');
+      $('#' + toggleDropDownButton + 'DropDown').fadeOut(800, 'easeOutExpo');
     });    
   });     
 });

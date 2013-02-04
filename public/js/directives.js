@@ -39,9 +39,6 @@ app.directive('ngAvailable', function() {
         else if(args[1] == 'unavailable'){
           element.css('display', ((obj != undefined) && (obj[0].inventory == undefined)) ? 'block' : 'none');
         }
-        else if(args[1] == 'loading'){
-          element.css('display', (obj == undefined) ? 'block' : 'none');
-        }
       }); 
     }
   };

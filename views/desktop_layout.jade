@@ -99,7 +99,7 @@ html(lang='en', ng-app='activity')
                 ng-click="imageNavigate(image)") 
           div#resultTabs  
             div#resultDetails(class="resultTab")
-              table
+              table.detailsTable
                 tr
                   td Description: 
                   td {{activity.description[0]}}
@@ -141,20 +141,32 @@ html(lang='en', ng-app='activity')
                 div#bookingDetailsSection
                   input#datePicker(ng-model="selectedDate",  value="{{selectedDate | date:'dd MMMM yyyy'}}", ui-date, readonly)
                   div#people
-                    span#adults Adults 
-                    select(ng-model="selectedAdults", ng-options="adult for adult in adults")
-                    span#children Children 
-                    select(ng-model="selectedChildren", ng-options="child for child in children")
-                div#bookingSection  
-                  div(ng-available="available[0].inventories available") 
-                    button#timeslotButton(ng-click="timeslotSelectButton()") {{selectedTimeslot}}
-                    div#timeslots
-                      button.timeslot(ng-repeat="timeslot in timeslots", class='ng-class: timeslotClass(timeslot)', ng-click="timeslotSelect(timeslot)") {{timeslot.start_time[0]}}
-                    button#bookButton(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])") Book
-                  div(ng-available="available[0].inventories unavailable")
-                    div#nospace There is not enough space to accommodate your party on the selected date. 
-                    button#checkAvailability(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])") Check Availability
-                  div#loadingAvailability(ng-available="available[0].inventories loading")
+                    span#adults 
+                      | Adults 
+                      button#adultsButton(class="toggleDropDownButton", value="adults") {{selectedAdults}}
+                      div#adultsDropDown(ng-style="adultsDropDownStyle")
+                        button.dropDownButton(ng-repeat="adult in adults", class='ng-class: adultsClass(adult)', ng-click="adultsSelect(adult)") {{adult}}
+                    span#children 
+                      | Children 
+                      button#childrenButton(class="toggleDropDownButton", value="children") {{selectedChildren}}
+                      div#childrenDropDown(ng-style="childrenDropDownStyle")
+                        button.dropDownButton(ng-repeat="child in children", class='ng-class: childrenClass(child)', ng-click="childrenSelect(child)") {{child}}
+                div#bookingSection
+                  div(ng-visible="!availabilityLoading")
+                    div(ng-visible="availabilityDone")  
+                      div#bookTime(ng-available="available[0].inventories available") 
+                        div#timeslotSection
+                          div Time
+                          button#timeslotButton(class="toggleDropDownButton", value="timeslots") {{selectedTimeslot}}
+                          div#timeslotsDropDown(ng-style="timeslotsDropDownStyle")
+                            button.dropDownButton(ng-repeat="timeslot in timeslots", class='ng-class: timeslotClass(timeslot.start_time[0])', ng-click="timeslotSelect(timeslot.start_time[0])") {{timeslot.start_time[0]}}
+                        button#bookButton(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])") Book
+                      div(ng-available="available[0].inventories unavailable")
+                        div#nospace There is not enough space on {{selectedDate | date:'dd MMMM yyyy'}} to accommodate {{selectedAdults}} adults and {{selectedChildren}} children. 
+                    div(ng-visible="!availabilityDone")
+                      div#newDetails New booking details. Click to check availability:
+                      button#checkAvailability(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])") Check Availability
+                  div#loadingAvailability(ng-visible="availabilityLoading")
               div#resultBookinClose(ng-click='hideTabs()')
 
             
@@ -173,22 +185,35 @@ html(lang='en', ng-app='activity')
       div#more(ng-style="popUpStyle", class="popup")
         div#popUpTopBar
           span#popUpTabTitle
-
+            image#moreLogo(src='/img/logo-small2.png', height=28, width=289)
           div#popUpTabButtons 
             div#aboutButton(class="popUpTabButton", ng-click="", ng-class="popUpTabSelected('about')")
               | About
             div#helpButton(class="popUpTabButton", ng-click="", ng-class="popUpTabSelected('help')")
               | Help
-        div#facebook
-          iframe(src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FActivityExplorer&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=177056142347559", scrolling="no", frameborder="0", style="border:none; overflow:hidden; width:100px; height:21px;", allowTransparency="true")  
-        div#twitter 
-          a(href="https://twitter.com/ActivityExplore", class="twitter-follow-button", data-show-count="false") Follow @ActivityExplore
-          script !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+        span#social
+          div#twitter 
+            a(href="https://twitter.com/ActivityExplore", class="twitter-follow-button", data-show-count="false") Follow @ActivityExplore
+            script !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+      
+
+          div#facebook
+            iframe(src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FActivityExplorer&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=177056142347559", scrolling="no", frameborder="0", style="border:none; overflow:hidden; width:100px; height:21px;", allowTransparency="true")  
+          
+          div#gplus
+            div(class="g-plusone", data-size="tall", data-annotation="inline", data-width="140", data-href="https://plus.google.com/u/0/111349483941515876378/")
+            script(type="text/javascript")
+              (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+              })();
+
         
 
-        div#about 
-          h2 About Activity Explorer
-          | Explore
+        div#about
+          | 
+          image(src='/img/full_logo.png', height=115, width=284)
 
     div#background
 

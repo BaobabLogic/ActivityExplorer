@@ -15,5 +15,15 @@
     "npm": "1.1.x"
   },
   "subdomain": "activityexplorer",
-  "version": "0.0.0-37"
+  "domains": [
+    "activityexplorer.co.za",
+    "www.activityexplorer.co.za",
+    "activityexplorer.co",
+    "www.activityexplorer.co",
+    "activityexplorer.net",
+    "www.activityexplorer.net",
+    "activityexplorer.com",
+    "www.activityexplorer.com"
+  ],
+  "version": "0.0.0-38"
 }
