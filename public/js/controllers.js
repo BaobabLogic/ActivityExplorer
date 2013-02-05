@@ -102,10 +102,12 @@ function AppCtrl($scope, $http, $location) {
                   },
                   { 
                     "name": "Animal Experience",
-                    "left": [  { "name": "Aquariums", "selected": true }, 
-                               { "name": "Educational Experience", "selected": true }, 
-                               { "name": "Elephant Experience", "selected": true }], 
-                    "right": [  { "name": "Reptile Demonstration", "selected": true }, 
+                    "left": [  { "name": "Aquariums", "selected": true },  
+                               { "name": "Animal Interaction", "selected": true },
+                               { "name": "Bird Watching", "selected": true },
+                               { "name": "Educational Experience", "selected": true }], 
+                    "right": [  { "name": "Elephant Experience", "selected": true },
+                                { "name": "Reptile Demonstration", "selected": true }, 
                                 { "name": "Wildlife Experience", "selected": true }, 
                                 { "name": "Wildlife Photography", "selected": true }],
                     "selected": true
