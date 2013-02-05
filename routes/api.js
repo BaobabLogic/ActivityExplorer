@@ -18,7 +18,7 @@ parser.addListener('end', function(result) {
     var current = round(result.services.$.current_page);
     var total = round(result.services.$.pages); 
 
-    console.log("Fetching page " + current + " of " + total + " pages.");  
+    console.log("Receive page " + current + " of " + total + " pages.");  
 
     if(current == 1) {
       activitar = result.services.service;
