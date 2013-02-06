@@ -256,7 +256,7 @@ function AppCtrl($scope, $http, $location) {
         return (wide*high); break;
       case "/small": 
         var wide = Math.floor((width-70)/247);
-        var high = Math.floor((height/235) + 1);
+        var high = Math.floor((height/238) + 1);
         return (wide*high); break;
       default: 
         var wide = Math.floor((width-70)/316);

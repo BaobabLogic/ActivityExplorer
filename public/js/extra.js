@@ -51,19 +51,15 @@ $(function() {
     else{
         $('#' + headButton + 'PopUp').fadeOut(800, 'easeOutExpo');
     } 
-
-    if(headButton == 'sort') {
-      $(document).click( function(e){
+    
+    $(document).click( function(e){
+      if(headButton == 'sort') {
         $('#' + headButton + 'PopUp').fadeOut(800, 'easeOutExpo');
-      }); 
-    }   
-    else {
-      $(document).click( function(e){
-        if ( $(e.target).parents("#" + headButton + "PopUp").length == 0 ) {
-          $('#' + headButton + 'PopUp').fadeOut(800, 'easeOutExpo');
-        }  
-      }); 
-    }
+      }
+      else if ( $(e.target).parents("#" + headButton + "PopUp").length == 0 ) {
+        $('#' + headButton + 'PopUp').fadeOut(800, 'easeOutExpo');
+      } 
+    }); 
 
   });     
 });
