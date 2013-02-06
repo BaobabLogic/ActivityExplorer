@@ -300,7 +300,7 @@ function AppCtrl($scope, $http, $location) {
 
   $scope.timeslotsDropDownStyle = {
     top: (height()/2 - 198) + 'px',
-    right:(width()/2 - 116) + 'px'
+    right:(width()/2 - 131) + 'px'
   };
 
   $scope.applyDisplaySettings = function() {
@@ -311,7 +311,7 @@ function AppCtrl($scope, $http, $location) {
     $scope.childrenDropDownStyle.top = (height()/2 - 176) + 'px';
     $scope.childrenDropDownStyle.right = (width()/2 + 96) + 'px';
     $scope.timeslotsDropDownStyle.top = (height()/2 - 198) + 'px';
-    $scope.timeslotsDropDownStyle.right = (width()/2 - 116) + 'px';
+    $scope.timeslotsDropDownStyle.right = (width()/2 - 131) + 'px';
     $scope.popUpStyle.top = (height() - 650)/2 + 'px';
     $scope.popUpStyle.left = (width() - 840)/2 + 'px';
     $scope.mainRestartingStyle.top = computeTopLoading() + 'px';
@@ -406,7 +406,12 @@ function AppCtrl($scope, $http, $location) {
         if(data[0].inventories[0].inventory != undefined) {
           $scope.selectedTimeslot = data[0].inventories[0].inventory[0].start_time[0];
           $scope.timeslots = data[0].inventories[0].inventory;
-          $('#timeslotsDropDown').css('height', ($scope.timeslots.length*29) + 'px');
+          if($scope.timeslots.length*29 <= 450) {
+            $('#timeslotsDropDown').css('height', ($scope.timeslots.length*29) + 'px');
+          }
+          else {
+            $('#timeslotsDropDown').css('height', '450px');            
+          }
         } 
         $scope.availabilityDone = true;  
         $scope.availabilityLoading = false;  

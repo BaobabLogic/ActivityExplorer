@@ -138,9 +138,6 @@ angular.module('activity.filters', [])
         }
         
         //Return final array
-        console.log(array.length);
-        console.log(tempArray.length);
-        console.log(newArray.length);
       	return newArray;
       }  
     };

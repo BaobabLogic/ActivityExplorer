@@ -59,7 +59,9 @@ $(function() {
     }   
     else {
       $(document).click( function(e){
-        if ( $(e.target).parents("#" + headButton + "PopUp").length == 0 ) $('#' + headButton + 'PopUp').fadeOut(800, 'easeOutExpo');
+        if ( $(e.target).parents("#" + headButton + "PopUp").length == 0 ) {
+          $('#' + headButton + 'PopUp').fadeOut(800, 'easeOutExpo');
+        }  
       }); 
     }
 

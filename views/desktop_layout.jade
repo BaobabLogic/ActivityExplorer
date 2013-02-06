@@ -185,7 +185,7 @@ html(lang='en', ng-app='activity')
             
               
         div.resultName(ng-click='hideTabs()') 
-          span Category
+          span
           div.duration {{getDuration(activity.duration[0])}} hours
         div.resultExtra(ng-click='hideTabs()')
           span.leftExtra
@@ -242,10 +242,11 @@ html(lang='en', ng-app='activity')
           span
           a(href="/large") Large
       ul.footerList
-        button.barButton(type='button', value='more')
-          span More
+        //  button.barButton(type='button', value='more') 
+        //    span More
 
-    script(type='text/javascript', src='/js/angular.min.js')
+
+    script(type='text/javascript', src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js")
     script(type='text/javascript', src='/js/angular-ui.min.js')
     script(type='text/javascript', src='/js/angular-ui-ieshiv.min.js')
     script(type='text/javascript', src='/js/ui-bootstrap-0.1.0.min.js')
