@@ -1809,6 +1809,7 @@ ui-datepicker-div {
 	width: 44px;
 	height: 405px;
 	overflow-y: scroll;
+	overflow-x: hidden;
 	position: fixed;
 	z-index: 150;
 	color: white;
@@ -1841,6 +1842,7 @@ ui-datepicker-div {
 	width: 44px;
 	height: 405px;
 	overflow-y: scroll;
+	overflow-x: hidden;
 	position: fixed;
 	z-index: 150;
 	color: white;
@@ -1994,7 +1996,8 @@ ui-datepicker-div {
 	z-index: 150;
 	color: white;
 	text-align: center;
-	overflow-x: scroll;
+	overflow-y: scroll;
+	overflow-x: hidden;
 	border: 2px solid #f7941d;
   border-radius:7px;
 	-moz-box-shadow: 1px 1px 3px #000;
@@ -2038,10 +2041,10 @@ ui-datepicker-div {
 	font-family: 'LANENAR';	
 	font-size: 28px;
 	text-shadow: 1px 1px 1px #000;
-	height: 45px;
+	text-align: center;
+	height: 33px;
 	width: 100px;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding: 12px 15px 0px 15px;
 	margin-top: 10px;
 	float: right;
 	border: 0px;

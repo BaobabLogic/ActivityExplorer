@@ -170,10 +170,11 @@ html(lang='en', ng-app='activity')
                       div#bookTime(ng-available="available[0].inventories available") 
                         div#timeslotSection
                           div Time
-                          button#timeslotButton(class="toggleDropDownButton", value="timeslots") {{selectedTimeslot}}
+                          button#timeslotButton(class="toggleDropDownButton", value="timeslots") {{selectedTimeslot.start_time[0]}}
                           div#timeslotsDropDown(ng-style="timeslotsDropDownStyle")
-                            button.dropDownButton(ng-repeat="timeslot in timeslots", class='ng-class: timeslotClass(timeslot.start_time[0])', ng-click="timeslotSelect(timeslot.start_time[0])") {{timeslot.start_time[0]}}
-                        button#bookButton(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])") Book
+                            button.dropDownButton(ng-repeat="timeslot in timeslots", class='ng-class: timeslotClass(timeslot)', ng-click="timeslotSelect(timeslot)") {{timeslot.start_time[0]}}
+                        a#bookButton(ng-href="http://activityexplorer.activitar.com/portal_bookings/new?service_id={{activity.id[0]}}&date={{selectedDate | date:'dd MMMM yyyy'}}&adults={{selectedAdults}}&children={{selectedChildren}}&timeslot={{selectedTimeslot.id[0]}}&supplier_id={{activity.supplier_id[0]}}") 
+                          | Book
                       div(ng-available="available[0].inventories unavailable")
                         div#nospace There is not enough space on {{selectedDate | date:'dd MMMM yyyy'}} to accommodate {{selectedAdults}} adults and {{selectedChildren}} children. 
                     div(ng-visible="!availabilityDone")

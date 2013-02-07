@@ -404,7 +404,7 @@ function AppCtrl($scope, $http, $location) {
       success(function(data, status, headers, config) {
         $scope.available = data;  
         if(data[0].inventories[0].inventory != undefined) {
-          $scope.selectedTimeslot = data[0].inventories[0].inventory[0].start_time[0];
+          $scope.selectedTimeslot = data[0].inventories[0].inventory[0];
           $scope.timeslots = data[0].inventories[0].inventory;
           if($scope.timeslots.length*29 <= 450) {
             $('#timeslotsDropDown').css('height', ($scope.timeslots.length*29) + 'px');
