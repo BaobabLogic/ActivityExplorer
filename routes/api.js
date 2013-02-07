@@ -3,7 +3,6 @@
  */
 
 var https = require('https'),
-    http = require('http'),
   	xml2js = require('xml2js');
 
 //XML Parser
@@ -116,7 +115,7 @@ exports.specificService = function (req, res) {
       method: 'GET',  
     };
 
-    http.get(service, function(res2) {
+    https.get(service, function(res2) {
       res2.on('data', function(d) {
         parser2.parseString(d);
         res.json(activity);
