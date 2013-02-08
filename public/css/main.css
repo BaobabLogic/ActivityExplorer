@@ -945,6 +945,35 @@ li {
 	text-shadow: 1px 1px 1px #000;
 	width:100%;
 	min-width: 1024px;
+	height: 35px;
+	padding: 3px 0 2px 0;
+	position:fixed;
+	bottom:0;
+	right:0;
+
+	background:#0073ff;	
+	background-image: linear-gradient(bottom, rgb(0,115,255) 13%, rgb(36,156,255) 57%, rgb(36,156,255) 79%);
+	background-image: -o-linear-gradient(bottom, rgb(0,115,255) 13%, rgb(36,156,255) 57%, rgb(36,156,255) 79%);
+	background-image: -moz-linear-gradient(bottom, rgb(0,115,255) 13%, rgb(36,156,255) 57%, rgb(36,156,255) 79%);
+	background-image: -webkit-linear-gradient(bottom, rgb(0,115,255) 13%, rgb(36,156,255) 57%, rgb(36,156,255) 79%);
+	background-image: -ms-linear-gradient(bottom, rgb(0,115,255) 13%, rgb(36,156,255) 57%, rgb(36,156,255) 79%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.13, rgb(0,115,255)),
+		color-stop(0.57, rgb(36,156,255)),
+		color-stop(0.79, rgb(36,156,255))
+	);
+}
+
+#footerMobile {
+	color: #fff;
+	font-family: 'LANENAR';	
+	text-shadow: 1px 1px 1px #000;
+	width:100%;
+	min-width: 1024px;
 	height: 89px;
 	padding: 3px 0 2px 0;
 	position:fixed;
@@ -969,6 +998,40 @@ li {
 }
 
 .barButton {
+	color: #fff;
+	font-family: 'LANENAR';	
+	font-size: 20px;
+	text-shadow: 1px 1px 1px #000;
+	background-color: #f28e36;
+	height: 27px;
+	width: 80px;
+	padding-left: 7px;
+	padding-right: 7px;
+	margin: 3px 8px;
+	border: 0px;
+  border-radius:7px;
+	position: relative;
+	
+	background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(242,142,54)),
+		color-stop(0.61, rgb(241,175,83))
+	);
+	
+	-moz-box-shadow: 1px 1px 3px black;
+	-webkit-box-shadow: 1px 1px 3px black;
+	box-shadow: 1px 1px 3px black;
+}
+
+.barButtonMobile {
 	color: #fff;
 	font-family: 'LANENAR';	
 	font-size: 80px;
@@ -1018,7 +1081,28 @@ li {
 	);
 }
 
+.barButtonMobile:active {
+	background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(241,175,83)),
+		color-stop(0.61, rgb(242,142,54))
+	);
+}
+
 .barButton span {
+	position: relative;
+	top: -2px;
+}
+
+.barButtonMobile span {
 	position: relative;
 	top: -2px;
 }

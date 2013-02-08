@@ -21,51 +21,7 @@ body(ng-controller='MobileCtrl')
         image(src='http://www.clker.com/cliparts/r/N/1/v/H/d/magnifying-lens-hi.png', height=160, width=160)  
       div#settingsMobile
         image(src='http://i47.tinypic.com/10mr1af.png', height=170, width=170) 
-        div#themesPopUp 
-      div#themeFront(ng-visible="themeVisible")
-        div#themeTop
-          button#themeTitle(ng-click="themeTitleClick(themes, !themes.selected)")
-            | Themes
-        div#themeLeft
-          div(ng-repeat="theme in themes.left")
-            button.themeButton(ng-click="themeButtonClick(theme)")  {{theme.name}} 
-            button.themeSelectButton(ng-class="select(theme.selected)", ng-click="themeSelectClick(theme)")
-        div#themeRight  
-          div(ng-repeat="theme in themes.right")
-            button.themeButton(ng-click="themeButtonClick(theme)")  {{theme.name}}
-            button.themeSelectButton(ng-class="select(theme.selected)", ng-click="themeSelectClick(theme)")
-      div#themeBack(ng-visible="!themeVisible") 
-        div#typeTop
-          div#typeBack 
-            button#backButton.themeButton(ng-click="themeVisible=!themeVisible") Back
-          button#typeTitle(ng-click="themeTitleClick(theme, !theme.selected)")
-            | {{theme.name}}
-        div#themeLeft
-          div.typeBox(ng-repeat="type in theme.left")
-            span.typeSpan {{type.name}} 
-            button.themeSelectButton(ng-class="select(type.selected)", ng-click="typeSelectClick(type, theme)")
-        div#themeRight  
-          div.typeBox(ng-repeat="type in theme.right")
-            span.typeSpan {{type.name}}
-            button.themeSelectButton(ng-class="select(type.selected)", ng-click="typeSelectClick(type, theme)")
-        
-    div#refinePopUp
-      div#refineInside
-        div#budgetDiv
-          | Budget:
-          span#budget R5000 or more
-        div.slider(id="budgetS", slider="budget")
-        div#durationDiv
-          | Time:
-          span#duration 3 days or more
-        div.slider(id="durationS", slider="duration")
-    div#sortPopUp
-      button.sortButton(class='ng-class: sortButtonClass("random")', ng-click="sortSelect('random')") Random
-      button.sortButton(class='ng-class: sortButtonClass("priceLow")', ng-click="sortSelect('priceLow')") Price Low
-      button.sortButton(class='ng-class: sortButtonClass("priceHigh")', ng-click="sortSelect('priceHigh')") Price High
-      button.sortButton(class='ng-class: sortButtonClass("timeShort")', ng-click="sortSelect('timeShort')") Time Short  
-      button.sortButton(class='ng-class: sortButtonClass("timeLong")', ng-click="sortSelect('timeLong')") Time Long        
-    div#invisiBackground
+
 
   block content
 
@@ -202,9 +158,9 @@ body(ng-controller='MobileCtrl')
 
     div#background
 
-  nav#footer
+  nav#footerMobile
       ul.footerList
-        button.barButton(type='button', value='more')
+        button.barButtonMobile(type='button', value='more')
           span More
 
     script(type='text/javascript', src='/js/angular.min.js')
