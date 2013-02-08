@@ -1798,10 +1798,12 @@ ui-datepicker-div {
 
 #adultsButton {
 	width: 50px;
+	height: 26px;
 }
 
 #childrenButton {
 	width: 50px;
+	height: 26px;
 }
 
 #adultsDropDown {
@@ -2019,6 +2021,10 @@ ui-datepicker-div {
 		color-stop(0.72, rgb(51,190,255)),
 		color-stop(0.86, rgb(61,190,255))
 	);	
+}
+
+#timeslotsDropDown .dropDownButton {
+	height: 29px;
 }
 
 .timeslot {
