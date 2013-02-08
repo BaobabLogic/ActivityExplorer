@@ -13,9 +13,154 @@ html(lang='en', ng-app='activity_mobile')
     script(type='text/javascript', src='/js/quo.js')
     script(type='text/javascript', src='/js/extra_mobile.js')
 
-  body(ng-controller='MobileCtrl')
+body(ng-controller='MobileCtrl')  
+    div#mobileHeader
+      div#mLogo
+        image(src='http://oi46.tinypic.com/2s6afba.jpg', height=168, width=510)
+      div#searchLogo
+        image(src='http://www.clker.com/cliparts/r/N/1/v/H/d/magnifying-lens-hi.png', height=160, width=160)  
+      div#settingsMobile
+        image(src='http://i47.tinypic.com/10mr1af.png', height=170, width=170) 
 
-    block content
+  block content
+
+    div#resultPopUp(ng-style="activityStyle")
+      div#activityLoading(ng-loading="activity true")
+        div#resultLoadingWheel(class="loadingWheel")
+      div(ng-loading="activity false")
+        div#resultTopBar
+          span#resultTabTitle(ng-click='hideTabs()'){{activity.name[0]}}
+          div#resultTabButtons 
+            div#resultDetailsButton(class="resultTabButton", ng-click="toggleResultDetails()", ng-class="resultTabSelected('details')")
+              | Details
+            div#resultBookingButton(class="resultTabButton", ng-click="toggleResultBooking()", ng-class="resultTabSelected('booking')")
+              | Book
+        div.resultSlider        
+          div.resultImages(ng-style="imagesStyle", ng-click='hideTabs()')
+            span.resultImage(ng-repeat="image in activity.images[0].image")
+              image(ng-src="{{image.medium[0]}}", width=840, height=560)
+          div#popUpButtons(ng-click='hideTabs()')   
+            div.imageButton(id="leftButton", ng-click="activityImage(activity.images[0].image, false)")   
+            div.imageButton(id="rightButton", ng-click="activityImage(activity.images[0].image, true)") 
+            ul.imageNavigation
+              li.imageNavigationButton(ng-repeat="image in activity.images[0].image", ng-style="imageNavigationStyle(image)", 
+                ng-click="imageNavigate(image)") 
+          div#resultTabs  
+            div#resultDetails(class="resultTab")
+              table
+                tr
+                  td Description: 
+                  td {{activity.description[0]}}
+                tr
+                  td Notes: 
+                  td {{activity.instructions[0]}}
+                tr
+                  td Where: 
+                  td {{activity.where[0]}}
+                tr
+                  td When:  
+                  td{{activity.when[0]}}
+                tr
+                  td Weather: 
+                  td{{activity.weather[0]}}
+                tr
+                  td What to Wear: 
+                  td {{activity.wear[0]}}
+                tr
+                  td Things to bring: 
+                  td {{activity.bring[0]}}
+                tr
+                  td Guest/Spectators: 
+                  td {{activity.guests[0]}}              
+                tr
+                  td Inclusions: 
+                  td {{activity.inclusions[0]}}
+                tr
+                  td Exclusions: 
+                  td {{activity.exclusions[0]}}
+            div#resltBookingSection      
+              div#resultBooking(class="resultTab")
+                div#bookingSection
+                  input#datePicker(ng-model="selectedDate",  value="{{selectedDate | date:'dd MMMM yyyy'}}", ui-date, readonly)
+                  div#people
+                    span#adults Adults 
+                    select(ng-model="selectedAdults", ng-options="adult for adult in adults")
+                    span#children Children 
+                    select(ng-model="selectedChildren", ng-options="child for child in children")
+                  div(ng-available="available[0].inventories available")    
+                    select#timeslot(ng-model="selectedTimeslot", ng-options="timeslot.start_time[0] for timeslot in timeslots")
+                    button#bookButton(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])") Book
+                  div(ng-available="available[0].inventories unavailable")
+                    div#nospace There is not enough space to accommodate your party on the selected date. 
+                    button#checkAvailability(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])") Check Availability
+                  div#loadingAvailability(ng-available="available[0].inventories loading")
+                div#requirementsSection  
+                  table 
+                    tr 
+                      td Minimum Age: 
+                      td {{activity.min_age[0]}}
+                    tr
+                      td Maximum Weight: 
+                      td {{activity.max_weight[0]}}
+                    tr
+                      td Minimum Height: 
+                      td {{activity.min_height[0]}}
+                    tr
+                      td Maximum Height: 
+                      td {{activity.max_height[0]}}
+                    tr
+                      td Fitness: 
+                      td {{activity.fitness[0]}}
+                    tr
+                      td Qualifications: 
+                      td {{activity.qualifications[0]}}
+                    tr
+                      td Certification: 
+                      td {{activity.certification[0]}}
+                    tr
+                      td Experience Level: 
+                      td {{activity.experience_level[0]}}
+              div#resultBookinClose(ng-click='hideTabs()')
+
+            
+              
+        div.resultName(ng-click='hideTabs()') 
+          span Category
+          div.duration {{getDuration(activity.duration[0])}} hours
+        div.resultExtra(ng-click='hideTabs()')
+          span.leftExtra
+            | {{activity.location[0]}}
+          span.price R{{price(activity.price[0])}} per person
+            
+    div#resultBackground(ng-click="popUpResultClose()")
+
+    div#popups
+      div#more(ng-style="popUpStyle", class="popup")
+        div#popUpTopBar
+          span#popUpTabTitle
+
+          div#popUpTabButtons 
+            div#aboutButton(class="popUpTabButton", ng-click="", ng-class="popUpTabSelected('about')")
+              | About
+            div#helpButton(class="popUpTabButton", ng-click="", ng-class="popUpTabSelected('help')")
+              | Help
+        div#facebook
+          iframe(src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FActivityExplorer&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=177056142347559", scrolling="no", frameborder="0", style="border:none; overflow:hidden; width:100px; height:21px;", allowTransparency="true")  
+        div#twitter 
+          a(href="https://twitter.com/ActivityExplore", class="twitter-follow-button", data-show-count="false") Follow @ActivityExplore
+          script !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+        
+
+        div#about 
+          h2 About Activity Explorer
+          | Explore
+
+    div#background
+
+  nav#footer
+      ul.footerList
+        button.barButton(type='button', value='more')
+          span More
 
     script(type='text/javascript', src='/js/angular.min.js')
     script(type='text/javascript', src='/js/angular-ui.min.js')
