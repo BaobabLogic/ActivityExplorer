@@ -1,0 +1,291 @@
+@font-face {
+    font-family: 'BEBAS';
+    src: url('/fonts/Bebas-webfont.eot');
+    src: url('/fonts/Bebas-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Bebas-webfont.woff') format('woff'),
+         url('/fonts/Bebas-webfont.ttf') format('truetype'),
+         url('/fonts/Bebas-webfont.svg#Bebas') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'DISTGRG';
+    src: url('/fonts/DISTGRG-webfont.eot');
+    src: url('/fonts/DISTGRG-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/DISTGRG-webfont.woff') format('woff'),
+         url('/fonts/DISTGRG-webfont.ttf') format('truetype'),
+         url('/fonts/DISTGRG-webfont.svg#LANENAR') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lobster';
+    src: url('/fonts/Lobster_1.3-webfont.eot');
+    src: url('/fonts/Lobster_1.3-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Lobster_1.3-webfont.woff') format('woff'),
+         url('/fonts/Lobster_1.3-webfont.ttf') format('truetype'),
+         url('/fonts/Lobster_1.3-webfont.svg#Lobster_1.3') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LANENAR';
+    src: url('/fonts/LANENAR_-webfont.eot');
+    src: url('/fonts/LANENAR_-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/LANENAR_-webfont.woff') format('woff'),
+         url('/fonts/LANENAR_-webfont.ttf') format('truetype'),
+         url('/fonts/LANENAR_-webfont.svg#LANENAR_') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cantarell-Regular';
+    src: url('/fonts/Cantarell-Regular-webfont.eot');
+    src: url('/fonts/Cantarell-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Cantarell-Regular-webfont.woff') format('woff'),
+         url('/fonts/Cantarell-Regular-webfont.ttf') format('truetype'),
+         url('/fonts/Cantarell-Regular-webfont.svg#Cantarell-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Main items */
+html, body {
+    font-family: "Cantarell-Regular";
+    font-size: 15px;
+    margin:0;
+    padding:0;
+    height:100%;
+    background: #7ddaff;
+    /*background-image: url('/img/main-noise.png');*/
+}
+
+#wrapper {
+    min-height:100%;
+    position:relative;
+    margin: 0px;
+    background:#1BB0F2;
+}
+
+#main {
+    position: relative;
+    top: 40px;
+    margin: 0 auto;
+    padding: 0 0 60px 0;   
+}
+
+
+
+/* Common items */
+h2 {    
+    color: #f7941d;
+    font-family: 'LANENAR'; 
+    font-size: 25px;
+    text-shadow: 1px 1px 1px #000;
+    margin: 0;
+}
+
+a, a:link, a:hover, a:visited, a:active {
+    text-decoration: none;
+    color: #fff;
+}
+
+button{
+    cursor: pointer; cursor: hand;
+}
+
+button span {
+    position: relative;
+    top: 2px;
+}
+
+#header {
+    width: 100%;
+    min-width: 1024px;
+    height: 210px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: #249cff;
+    background-image: linear-gradient(bottom, rgb(0,115,255) 13%, rgb(36,156,255) 57%, rgb(36,156,255) 79%);
+    background-image: -o-linear-gradient(bottom, rgb(0,115,255) 13%, rgb(36,156,255) 57%, rgb(36,156,255) 79%);
+    background-image: -moz-linear-gradient(bottom, rgb(0,115,255) 13%, rgb(36,156,255) 57%, rgb(36,156,255) 79%);
+    background-image: -webkit-linear-gradient(bottom, rgb(0,115,255) 13%, rgb(36,156,255) 57%, rgb(36,156,255) 79%);
+    background-image: -ms-linear-gradient(bottom, rgb(0,115,255) 13%, rgb(36,156,255) 57%, rgb(36,156,255) 79%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.13, rgb(0,115,255)),
+        color-stop(0.57, rgb(36,156,255)),
+        color-stop(0.79, rgb(36,156,255))
+    );
+
+    -moz-box-shadow: 1px 1px 2px #2e2e2e;
+    -webkit-box-shadow: 1px 1px 2px #2e2e2e;
+    box-shadow: 1px 1px 2px #2e2e2e;
+}
+
+.headerList {
+    position: relative;
+    top: 1px;
+    float: right;
+    margin: 0 35px;
+    padding:0;
+}
+
+#logo {
+    position: fixed;
+    top: 18px;
+    left: 30px;
+    width: 510px;
+    height: 168px;
+    z-index: 101;
+    display: inline-block;  
+}
+
+#searchLogo {
+    position: fixed;
+    top: 20px;
+    left: 560px;
+    width: 160px;
+    height: 160px;
+    z-index: 101;
+    display: inline-block;  
+}
+
+#settings {
+    position: fixed;
+    top: 12px;
+    left: 770px;
+    width: 170px;
+    height: 170px;
+    z-index: 101;
+    display: inline-block;  
+}
+
+#background {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #1C1C1C;
+  z-index: 150;
+    opacity: 0.6;
+}
+
+/* Items in footer */
+nav {
+    color: #fff;
+    font-family: 'LANENAR'; 
+    font-size: 22px;
+    text-shadow: 1px 1px 1px #000;
+}
+
+ul {
+    list-style-type:none;
+}
+
+li {
+    display: inline;
+}
+
+.footerList {
+    position: relative;
+    top: 1px;
+    float: right;
+    margin: 0 35px;
+    padding:0;
+
+}
+#footer {
+    color: #fff;
+    font-family: 'LANENAR'; 
+    text-shadow: 1px 1px 1px #000;
+    width:100%;
+    min-width: 1024px;
+    height: 89px;
+    padding: 3px 0 2px 0;
+    position:fixed;
+    bottom:0;
+    right:0;
+
+    background:#0073ff; 
+    background-image: linear-gradient(bottom, rgb(0,115,255) 13%, rgb(36,156,255) 57%, rgb(36,156,255) 79%);
+    background-image: -o-linear-gradient(bottom, rgb(0,115,255) 13%, rgb(36,156,255) 57%, rgb(36,156,255) 79%);
+    background-image: -moz-linear-gradient(bottom, rgb(0,115,255) 13%, rgb(36,156,255) 57%, rgb(36,156,255) 79%);
+    background-image: -webkit-linear-gradient(bottom, rgb(0,115,255) 13%, rgb(36,156,255) 57%, rgb(36,156,255) 79%);
+    background-image: -ms-linear-gradient(bottom, rgb(0,115,255) 13%, rgb(36,156,255) 57%, rgb(36,156,255) 79%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.13, rgb(0,115,255)),
+        color-stop(0.57, rgb(36,156,255)),
+        color-stop(0.79, rgb(36,156,255))
+    );
+}
+
+.barButton {
+    color: #fff;
+    font-family: 'LANENAR'; 
+    font-size: 80px;
+    text-shadow: 2px 2px 2px #000;
+    background-color: #f28e36;
+    height: 81px;
+    width: 240px;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin: 3px 8px;
+    border: 0px;
+  border-radius:7px;
+    position: relative;
+    
+    background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(242,142,54)),
+        color-stop(0.61, rgb(241,175,83))
+    );
+    
+    -moz-box-shadow: 1px 1px 3px black;
+    -webkit-box-shadow: 1px 1px 3px black;
+    box-shadow: 1px 1px 3px black;
+}
+.barButton:active {
+    background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(241,175,83)),
+        color-stop(0.61, rgb(242,142,54))
+    );
+}
+.barButton span {
+    position: relative;
+    top: -2px;
+}
