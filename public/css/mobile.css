@@ -79,6 +79,614 @@ html, body {
     padding: 0 0 60px 0;   
 }
 
+.explore {
+    font-family: 'LANENAR';
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    position: relative;
+    width: 68px;
+    height: 27px;
+    display: inline-block;
+
+    background-color: #f28e36;  
+    background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(242,142,54)),
+        color-stop(0.61, rgb(241,175,83))
+    );
+    
+    
+    -moz-box-shadow: 0px 0px 0px black;
+    -webkit-box-shadow: 0px 0px 0px black;
+    box-shadow: 0px 0px 0px black;      
+
+    border: 0;
+    border-radius: 0;
+}
+
+.explore span {
+    position: relative;
+    top: 1px;
+    left: 6px;
+    cursor: default;
+}
+
+.headButton {
+    color: #fff;
+    font-family: 'LANENAR'; 
+    font-size: 18px;
+    text-shadow: 1px 1px 1px #000;
+    background-color: #f28e36;
+    height: 27px;
+    width: 80px;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin: 3px 8px;
+    border: 0px;
+  border-radius:7px;
+    position: relative;
+    
+    background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(242,142,54)),
+        color-stop(0.61, rgb(241,175,83))
+    );
+    
+    -moz-box-shadow: 1px 1px 3px #2b2b2b;
+    -webkit-box-shadow: 1px 1px 3px #2b2b2b;
+    box-shadow: 1px 1px 3px #2b2b2b;
+}
+
+.headButton:active {
+    background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(241,175,83)),
+        color-stop(0.61, rgb(242,142,54))
+    );
+}
+
+.headButton span {
+    position: relative;
+    top: -2px;
+}
+
+#topButtons {
+    position: relative;
+    top: 1px;
+}
+
+#sort {
+    margin-right: 12px;
+}
+
+/*Header Popups*/
+#themesPopUp {
+    display: none;
+    width: 500px;
+    height: 250px;
+    position: fixed;
+    top: 36px;
+    right: 25px;
+    z-index: 150;
+    border: 2px solid #f7941d;
+  border-radius:7px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+    
+    background-color: rgb(44,185,245);
+    background-image: linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+    background-image: -o-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+    background-image: -moz-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+    background-image: -webkit-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+    background-image: -ms-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.43, rgb(51,170,255)),
+        color-stop(0.72, rgb(51,190,255)),
+        color-stop(0.86, rgb(61,190,255))
+    );
+}
+
+#themeTop {
+  font-family: "LANENAR";
+  color: white;
+  font-size: 21px;
+  text-shadow: 1px 1px 1px #000;
+  
+  position: relative;
+  top: 0px;
+  width: 400px;
+  height: 40px;
+  margin: 10px 0px 5px 0px;
+  padding-bottom: 5px;
+}
+
+#themeTitle {
+  font-family: "LANENAR";
+  color: white;
+  font-size: 21px;
+  text-shadow: 1px 1px 2px #000;
+  
+  margin: 0px 150px;
+  width: 200px;
+  height: 33px;
+  display: inline-block;
+  text-align: center;
+  border-radius:7px;
+  border: 0px;
+  
+  -moz-box-shadow: 1px 1px 3px #2b2b2b;
+    -webkit-box-shadow: 1px 1px 3px #2b2b2b;
+    box-shadow: 1px 1px 3px #2b2b2b;
+  
+    background-color: #f28e36;
+  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(242,142,54)),
+        color-stop(0.61, rgb(241,175,83))
+    );
+}
+
+#themeTitle:active {
+  background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.21, rgb(241,175,83)),
+    color-stop(0.61, rgb(242,142,54))
+  );
+}
+
+#typeTop {
+  font-family: "LANENAR";
+  color: white;
+  font-size: 21px;
+  text-shadow: 1px 1px 1px #000;
+  
+  position: relative;
+  top: 0px;
+  width: 400px;
+  height: 40px;
+  margin: 10px 0px 5px 0px;
+  padding-bottom: 5px;
+}
+
+#typeBack {
+  width: 150px;
+  display: inline-block;
+}
+
+#backButton {
+  position: relative;
+  margin-left: 50px;
+  top: 2px;
+}
+
+#typeTitle {
+  font-family: "LANENAR";
+  color: white;
+  font-size: 21px;
+  text-shadow: 1px 1px 2px #000;
+  
+  margin: 0px;
+  width: 200px;
+  height: 33px;
+  display: inline-block;
+  text-align: center;
+  border-radius:7px;
+  border: 0px;
+  
+  -moz-box-shadow: 1px 1px 3px #2b2b2b;
+    -webkit-box-shadow: 1px 1px 3px #2b2b2b;
+    box-shadow: 1px 1px 3px #2b2b2b;
+  
+    background-color: #f28e36;
+  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(242,142,54)),
+        color-stop(0.61, rgb(241,175,83))
+    );
+}
+
+#typeTitle:active {
+  background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.21, rgb(241,175,83)),
+    color-stop(0.61, rgb(242,142,54))
+  );
+}
+
+#themeLeft {
+  float: left;
+  display: inline-block;
+  width: 220px;
+  height: 180px;
+  margin-left: 20px;
+}
+
+#themeRight {
+  float: right;
+  display: inline-block;
+  width: 200px;
+  height: 180px;
+  margin-right: 20px;
+}
+
+.typeSpan {
+  font-family: "LANENAR";
+  color: #fff;
+  font-size: 20px;
+  text-shadow: 1px 1px 2px #000;
+  height: 20px;
+  padding: 2px 0px 3px;
+}
+
+.typeBox {
+  margin-bottom: 6px;
+}
+
+.themeButton {
+    font-family: "LANENAR";
+    color: white;
+    font-size: 20px;
+    text-shadow: 1px 1px 2px #000;
+
+    margin: 0;
+    display: inline-block;
+    
+    background-color: transparent;
+    border: 0;  
+    box-shadow: none;
+  border-radius:7px;
+}
+
+#themeTop .themeButton {
+  font-size: 19px;
+  margin: 0px 10px 0px;
+  display: inline-block;
+}
+
+.themeButton:hover {
+  -moz-box-shadow: 1px 1px 3px #2b2b2b;
+    -webkit-box-shadow: 1px 1px 3px #2b2b2b;
+    box-shadow: 1px 1px 3px #2b2b2b;
+    
+    background-color: #f28e36;
+  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(242,142,54)),
+        color-stop(0.61, rgb(241,175,83))
+    );
+}
+
+.themeButton:active {
+  -moz-box-shadow: 1px 1px 3px #2b2b2b;
+    -webkit-box-shadow: 1px 1px 3px #2b2b2b;
+    box-shadow: 1px 1px 3px #2b2b2b;
+    
+    background-color: #f28e36;
+    background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(241,175,83)),
+        color-stop(0.61, rgb(242,142,54))
+    );
+}
+
+.themeSelectButton {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    display: inline-block;
+    float: right;
+        
+  border-radius:7px;
+  border: 0px;
+  
+    -moz-box-shadow: 1px 1px 3px #2b2b2b;
+    -webkit-box-shadow: 1px 1px 3px #2b2b2b;
+    box-shadow: 1px 1px 3px #2b2b2b;
+    
+    background-color: #f28e36;
+  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(242,142,54)),
+        color-stop(0.61, rgb(241,175,83))
+    );
+}
+
+.themeSelectButton:active {
+  background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.21, rgb(241,175,83)),
+    color-stop(0.61, rgb(242,142,54))
+  );
+}
+
+.themeSelectEmpty {
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid #6b6b6b;
+  
+  -moz-box-shadow: 1px 1px 2px #5c5c5c;
+    -webkit-box-shadow: 1px 1px 2px #5c5c5c;
+    box-shadow: 1px 1px 2px #5c5c5c;
+}
+
+.themeSelectEmpty:active {
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid #f7941d;
+  
+  -moz-box-shadow: 1px 1px 2px #5c5c5c;
+    -webkit-box-shadow: 1px 1px 2px #5c5c5c;
+    box-shadow: 1px 1px 2px #5c5c5c;
+}
+
+#refinePopUp {
+    font-family: "LANENAR";
+  color: #ffb657;
+    font-size: 23px;
+    text-shadow: 1px 1px 2px #000;
+    
+    display: none;
+    width: 280px;
+    height: 128px;
+    position: fixed;
+    top: 36px;
+    right: 40px;
+    z-index: 150;
+    border: 2px solid #f7941d;
+  border-radius:7px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+    
+    background-color: rgb(44,185,245);
+    background-image: linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+    background-image: -o-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+    background-image: -moz-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+    background-image: -webkit-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+    background-image: -ms-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.43, rgb(51,170,255)),
+        color-stop(0.72, rgb(51,190,255)),
+        color-stop(0.86, rgb(61,190,255))
+    );
+}
+
+#refineInside {
+    margin: 10px 0px 10px 25px;
+}
+
+#budget, #duration{
+    font-family: 'LANENAR';
+    color: #fff;
+    font-size: 21px;
+    margin-top: 4px;
+    margin-right: 25px;
+    float: right;   
+}
+
+#budgetDiv {
+  width: 240px;
+  margin: 0px 0px 8px 8px;
+}
+
+#durationDiv {
+  width: 225px;
+  margin: 18px 0px 8px 15px;
+}
+
+.slider {
+    width: 230px;
+    margin-bottom: 10px;
+    margin-top: 2px;
+}
+
+.ui-slider { 
+    height: 3px;
+    background-color: #fff;
+    border: none;
+    -moz-box-shadow: 1px 1px 3px black;
+    -webkit-box-shadow: 1px 1px 3px black;
+    box-shadow: 1px 1px 3px black;
+}
+
+.ui-slider .ui-slider-handle { 
+    border: none;
+    background: url("/img/circle.png") no-repeat scroll 50% 50%;
+    margin-top: -5px;
+}
+
+.ui-slider a {
+    outline:none;
+}
+
+#sortPopUp {
+    display: none;
+    width: 110px;
+    height: 145px;
+    position: fixed;
+    top: 36px;
+    right: 30px;
+    z-index: 150;
+    color: white;
+    border: 2px solid #f7941d;
+  border-radius:7px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+    
+    background-color: rgb(44,185,245);
+    background-image: linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+    background-image: -o-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+    background-image: -moz-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+    background-image: -webkit-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+    background-image: -ms-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.43, rgb(51,170,255)),
+        color-stop(0.72, rgb(51,190,255)),
+        color-stop(0.86, rgb(61,190,255))
+    );
+}
+
+.sortButton {
+    font-family: "LANENAR";
+    color: white;
+    font-size: 20px;
+    text-shadow: 1px 1px 2px #000;
+
+    width: 110px;
+    margin: 0px;
+    display: block;
+    
+    background-color: transparent;
+    border: 0;  
+    box-shadow: none;
+}
+
+.sortButton:active {
+    background-color: #f28e36;
+  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(242,142,54)),
+        color-stop(0.61, rgb(241,175,83))
+    );
+}
+
+.currentSort {
+    background-color: #f28e36;
+  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(242,142,54)),
+        color-stop(0.61, rgb(241,175,83))
+    );
+}
+
+#invisiBackground {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 120;
+}
 
 
 /* Common items */
@@ -288,4 +896,854 @@ li {
 .barButton span {
     position: relative;
     top: -2px;
+}
+
+#view {
+    font-size: 20px;
+  margin: 3px 4px 4px 45px;
+  background-color:#15a0db;
+  border-radius:4px;
+  border:1px solid #D0D0D0;
+  overflow: hidden;
+  float:left;
+    height: 26px;
+    
+    background-image: linear-gradient(bottom, rgb(31,148,237) 21%, rgb(29,177,251) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(31,148,237) 21%, rgb(29,177,251) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(31,148,237) 21%, rgb(29,177,251) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(31,148,237) 21%, rgb(29,177,251) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(31,148,237) 21%, rgb(29,177,251) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(31,148,237)),
+        color-stop(0.61, rgb(29,177,251))
+    );
+    
+    -moz-box-shadow: 1px 1px 3px black;
+    -webkit-box-shadow: 1px 1px 3px black;
+    box-shadow: 1px 1px 3px black;
+}
+
+#view label {
+  float:left;
+}
+
+#view label a {
+    position: relative;
+  text-align:center;
+  display:block;
+  padding: 0 12px 0 12px;
+}
+
+#view label:active {
+  height: 26px;
+    background-color: #f28e36;
+  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(242,142,54)),
+        color-stop(0.61, rgb(241,175,83))
+    );
+}
+
+.currentView {
+  height: 26px;
+    background-color: #f28e36;
+  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(242,142,54)),
+        color-stop(0.61, rgb(241,175,83))
+    );
+}
+
+/*Footer Popups*/
+.popup {
+  display: none;
+  position: absolute;
+  background: #FFFFFF;
+  z-index: 151;
+  height: 640px;
+  width: 840px;
+    -moz-box-shadow: 1px 1px 5px #8a8a8a;
+    -webkit-box-shadow: 1px 1px 5px #8a8a8a;
+    box-shadow: 1px 1px 5px #8a8a8a; 
+}
+
+#background {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #1C1C1C;
+  z-index: 150;
+    opacity: 0.6;
+}
+
+#popUpTopBar {
+  width: 820px;
+    height: 30px;
+    padding-left: 20px;
+    position: relative;
+    display: inline-block;
+    font-family: 'LANENAR'; 
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    background-color: #24afe8;
+    z-index: 300;
+}
+
+#popUpTabTitle {
+    width: 674px;
+    height: 27px;
+    padding-top: 3px;
+    display: inline-block;  
+}
+
+#popUpTabButtons {
+    width: 146px;
+    position: relative;
+    display: inline-block;  
+}
+
+.popUpTabButton {
+    cursor: pointer; cursor: hand;  
+    height: 28px;
+    top: -9px;
+    padding-top: 2px;
+    padding-left: 15px;
+    position: relative;
+    display: inline-block;
+    z-index: 160;
+
+    font-family: 'LANENAR';
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+
+    background-color: transparent;
+}
+
+ .popUpTabButton:hover {
+    background-color: #f28e36;  
+    background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(242,142,54)),
+        color-stop(0.61, rgb(241,175,83))
+    );
+ }
+
+ .popUpSelectedButton {
+    background-color: #f28e36;  
+    background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(242,142,54)),
+        color-stop(0.61, rgb(241,175,83))
+    );
+ }
+
+#aboutButton {
+    width: 62px;
+}
+
+#helpButton {
+    width: 54px;  
+}
+
+#facebook {
+    float: left;
+    margin: 40px 0 0 30px;
+    height: 500px;
+  z-index: 151;
+}   
+
+#twitter {
+    float: right;
+    margin: 40px 60px 0 0;
+    height: 500px;
+  z-index: 151;
+}
+
+
+
+
+/*Items in result section */
+#mainRestarting {
+    position: relative;
+    width: 735px;
+    height: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'LANENAR';
+    font-size: 32px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.mainBlock{
+    display: block;
+}
+
+.mainNone{
+    display: none;
+}
+
+.result{
+
+}
+
+.smallResult{
+    width: 231px;
+    height: 203px;  
+    margin: 16px 8px 0px 8px;
+    display: inline-block;
+
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+    -moz-box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+
+    border: 0;
+}
+
+.smallResult:hover {
+    cursor: pointer; cursor: hand;
+    -moz-box-shadow: 0px 2px 8px #616161;
+    -webkit-box-shadow: 0px 2px 10px #616161;
+    box-shadow: 0px 2px 10px #616161;
+}
+
+.smallDetails {
+    position: relative;
+    height: 27px;
+    width: 217px;
+    padding: 0px 2px 0px 12px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    background-color: #25afe6;
+}
+
+.mediumResult{
+    width: 300px;
+    height: 258px;  
+    margin: 16px 8px 0px 8px;
+    padding: 0px;
+    display: inline-block;
+
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+    -moz-box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+
+    border: 0;
+}
+
+.mediumResult:hover {
+    cursor: pointer; cursor: hand;
+    -moz-box-shadow: 0px 2px 8px #616161;
+    -webkit-box-shadow: 0px 2px 10px #616161;
+    box-shadow: 0px 2px 10px #616161;
+}
+
+.mediumDetails {
+    position: relative;
+    height: 29px;
+    width: 280px;
+    padding: 0px 10px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    background-color: #25afe6;
+}
+
+.largeResult{
+    width: 441px;
+    height: 352px;  
+    margin: 16px 8px 0px 8px;
+    display: inline-block;
+
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+    -moz-box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+
+    border: 0;
+}
+
+.largeResult:hover {
+    cursor: pointer; cursor: hand;
+    -moz-box-shadow: 0px 2px 8px #616161;
+    -webkit-box-shadow: 0px 2px 10px #616161;
+    box-shadow: 0px 2px 10px #616161;
+}
+
+.largeDetails {
+    position: relative;
+    height: 29px;
+    width: 417px;
+    padding: 0px 12px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    background-color: #25afe6;
+}
+
+.smallImage {
+    width: 231px;
+    height: 154px;
+    background: #ededed;
+    /*background-image: url('/img/main-noise.png');*/
+}
+
+.mediumImage {
+    width: 300px;
+    height: 200px;
+    /*background-image: url('/img/main-noise.png');*/
+}
+
+.largeImage {
+    width: 441px;
+    height: 294px;
+    background: #ededed;
+    /*background-image: url('/img/main-noise.png');*/
+}
+
+.smallDetails .details {
+    display: inline-block;
+}
+
+.mediumDetails .details {
+    margin-top: 1px;
+    display: inline-block;
+}
+
+.largeDetails .details {
+    margin-top: 1px;
+    display: inline-block;
+}
+
+.topHalf {
+}
+
+.smallDetails .details .topHalf {
+    font-family: 'LANENAR'; 
+    text-shadow: 0px 1px 1px #000;
+    font-size: 20px;
+    width: 210px;
+}
+
+.mediumDetails .details .topHalf {
+    font-family: 'LANENAR'; 
+    text-shadow: 0px 1px 2px #000;
+    font-size: 20px;
+    width: 280px;
+}
+
+.largeDetails .details .topHalf {
+    font-family: 'LANENAR'; 
+    text-shadow: 1px 1px 2px #000;
+    font-size: 20px;
+    width: 417px;
+}
+
+.smallDetails .details .bottomHalf {
+    font-family: 'LANENAR'; 
+    width: 210px;
+    margin-top: 3px;
+    color: #25afe6;
+    font-size: 18px;
+}
+
+.mediumDetails .details .bottomHalf {
+    font-family: 'LANENAR'; 
+    width: 280px;
+    margin-top: 5px;
+    color: #25afe6;
+    font-size: 20px;
+}
+
+.largeDetails .details .bottomHalf {
+    font-family: 'LANENAR'; 
+    width: 417px;
+    margin-top: 5px;
+    color: #25afe6;
+    font-size: 18px;
+}
+
+.location {
+    display: inline-block;
+    color: #1898c7; 
+    text-shadow: 0px 0px 0px #000;
+}
+
+.price {
+    color: #ff8426;
+    text-shadow: 0px 0px 0px #000;
+    float: right;
+    display: inline-block;
+}
+
+.duration {
+    float: right;
+    display: inline-block;
+}
+
+/*Items in result popup*/
+#resultPopUp {
+  display: none;
+  position: fixed;
+  background: #FFFFFF;
+  z-index: 151;
+  width: 840px;
+  height: 650px;
+  overflow: hidden;
+    -moz-box-shadow: 1px 1px 5px #2c2c2c;
+    -webkit-box-shadow: 1px 1px 5px #2c2c2c;
+    box-shadow: 1px 1px 5px #2c2c2c; 
+}
+
+#activityLoading {
+  width: 840px;
+  height: 650px;
+    background: #7ddaff;
+}
+
+#resultLoadingWheel {
+    top: 261px; 
+}
+
+.resultName {
+    font-family: 'LANENAR'; 
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    background-color: #24afe8;
+  width: 800px;
+    height: 26px;
+    padding: 0px 20px 1px;
+}
+
+.resultExtra {
+    font-family: 'LANENAR'; 
+    width: 800px;
+    height: 24px;
+    margin: 3px 20px 0px 20px;
+    color: #25afe6;
+    font-size: 20px;
+}
+
+.resultPrice {
+    float: right;
+}
+
+.resultSlider {
+    width: 840px;
+    height: 560px;
+    margin: 0px;
+    top: 0px;
+    display: block;
+    overflow: hidden;
+}
+
+.resultImages {
+    height: 560px;
+    position: absolute;
+    display: inline-block;
+    overflow: visible;
+}
+
+.resultImage {
+    width: 840px;
+    height: 560px;
+    position: relative;
+    display: inline-block;
+    background: #ededed;
+}
+
+.imageButton {
+    cursor: pointer; cursor: hand;
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    top: 269px;
+    margin: 0px 18px;
+    z-index: 160;
+}
+
+#leftButton {
+    float: left;
+    background-image: url('/img/left_arrow.png');
+}
+
+#rightButton {
+    float: right;
+    background-image: url('/img/right_arrow.png');
+}
+
+.imageNavigation {
+    float: right;
+    position: relative;
+    top: 515px;
+    right: -41px;
+}
+
+.imageNavigationButton {
+    cursor: pointer; cursor: hand;
+    position: relative;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 4px; 
+    z-index: 160;
+    background-image: url('/img/slider_selector.png');  
+}
+
+/* Result Tabs*/
+
+#resultTopBar {
+  width: 820px;
+    height: 30px;
+    padding-left: 20px;
+    position: relative;
+    display: inline-block;
+    font-family: 'LANENAR'; 
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    background-color: #24afe8;
+    z-index: 300;
+}
+
+#resultTabTitle {
+    width: 662px;
+    height: 27px;
+    padding-top: 3px;
+    display: inline-block;  
+}
+
+#resultTabButtons {
+    width: 158px;
+    position: relative;
+    display: inline-block;  
+}
+
+.resultTabButton {
+    cursor: pointer; cursor: hand;  
+    height: 28px;
+    top: -1px;
+    padding-top: 2px;
+    padding-left: 15px;
+    position: relative;
+    display: inline-block;
+    z-index: 160;
+
+    font-family: 'LANENAR';
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+
+    background-color: transparent;
+}
+
+#resultBookingButton {
+    width: 58px;
+}
+
+#resultDetailsButton {
+    width: 70px;  
+}
+
+ #resultBookingButton:hover, #resultDetailsButton:hover, #resultDescriptionButton:hover {
+    background-color: #f28e36;  
+    background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(242,142,54)),
+        color-stop(0.61, rgb(241,175,83))
+    );
+ }
+
+ .resultSelectedBookingButton {
+    background-color: #f28e36;  
+    background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(242,142,54)),
+        color-stop(0.61, rgb(241,175,83))
+    );
+ }
+
+#resultTabs {
+    font-family: "Cantarell-Regular";
+    font-size: 14px;
+
+    width: 1680px;
+    height: 400px;
+    left: 0px;
+    top: -502px;
+    position: relative;
+    overflow: hidden;
+}
+
+.resultTab {
+    width: 810px;
+    padding: 5px 15px;
+    display: inline-block;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #f7f5f5;
+    z-index: 200;
+}
+
+#resltBookingSection{
+    width: 840px;
+    height: 400px;
+    top: -180px;
+    display: inline-block;
+    position: relative;
+    z-index: 200;   
+}
+
+#resultBooking {
+    height: 210px;
+    margin: 0px;
+}
+
+#resultBookinClose {
+    width: 840px;
+    height: 180px;
+    margin: 0px;
+}
+
+#bookingSection {   
+    width: 405px;
+    display: inline-block;
+    float: left;
+}
+
+#requirementsSection {
+    width: 405px;
+    display: inline-block;
+    float: right;
+}
+
+#loadingAvailability {
+    width: 64px;
+    height: 64px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 20px;
+    background-image: url('/img/loading_64_g.gif');
+}
+
+#nospace {
+    width: 300px;
+    margin: 10px 0px 10px 45px;
+    text-align: center;
+}
+
+#checkAvailability {
+    color: #fff;
+    font-family: 'LANENAR'; 
+    font-size: 20px;
+    text-shadow: 1px 1px 1px #000;
+    height: 30px;
+    width: 200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 95px;
+    border: 0px;
+  border-radius:7px;
+    display: block;
+
+    background-color: #f28e36;  
+    background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(242,142,54)),
+        color-stop(0.61, rgb(241,175,83))
+    );
+    
+    -moz-box-shadow: 1px 1px 3px black;
+    -webkit-box-shadow: 1px 1px 3px black;
+    box-shadow: 1px 1px 3px black;
+}
+
+#checkAvailability:active {
+  background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.21, rgb(241,175,83)),
+    color-stop(0.61, rgb(242,142,54))
+  );
+}
+
+#datePicker {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    width: 150px;
+    margin: 20px 0px 0 118px;
+    cursor: pointer; cursor: hand;
+}
+
+#people {
+    width: 230px;
+    margin: 10px 0px 10px 80px;
+}
+
+#adults {
+    margin-right: 5px;
+}
+
+#children {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+#timeslot {
+    margin: 5px 0px 20px 162px;
+}
+
+#bookButton {
+    color: #fff;
+    font-family: 'LANENAR'; 
+    font-size: 28px;
+    text-shadow: 1px 1px 1px #000;
+    height: 40px;
+    width: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 145px;
+    border: 0px;
+  border-radius:7px;
+    display: block;
+
+    background-color: #f28e36;  
+    background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.21, rgb(242,142,54)),
+        color-stop(0.61, rgb(241,175,83))
+    );
+    
+    -moz-box-shadow: 1px 1px 3px black;
+    -webkit-box-shadow: 1px 1px 3px black;
+    box-shadow: 1px 1px 3px black;
+}
+
+#bookButton:active {
+  background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.21, rgb(241,175,83)),
+    color-stop(0.61, rgb(242,142,54))
+  );
+}
+
+#resultDetails {
+    height: 390px;
+}
+
+
+#resultBackground {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #1C1C1C;
+  z-index: 150;
+    opacity: 0.6;
+}
+
+
+/* Other */
+
+#mapTop {
+    width: 100%;
+    height: 50px;
+};
+
+#loading {
+    display: block;
 }
