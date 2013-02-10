@@ -201,23 +201,11 @@ button span {
 	position: fixed;
 	top: 3px;
 	left: 40px;
-	width: 28px;
-	height: 289px;
+	width: 289px;
+	height: 28px;
 	z-index: 101;
 	display: inline-block;
 }
-
-#searchLogo {
-	position: fixed;
-	top: 20px;
-	left: 560px;
-	width: 160px;
-	height: 160px;
-	z-index: 101;
-	display: inline-block;	
-}
-
-
 
 #search {
 	position: fixed;
@@ -243,11 +231,17 @@ button span {
 	float: right;
 	width: 250px;
 	height: 24px;
+	margin: 0px;
+	padding: 0px;
 	border: none;
+	border-radius: 0px;
 }
 
 #searchBar:focus {
 	color: #2c2c2c;
+	-moz-box-shadow: 0px 0px 0px #2b2b2b;
+	-webkit-box-shadow: 0px 0px 0px #2b2b2b;
+	box-shadow: 0px 0px 0px #2b2b2b;
 }
 
 #search input:focus
@@ -258,6 +252,7 @@ button span {
 .explore {
 	font-family: 'LANENAR';
 	font-size: 18px;
+	line-height: 22px;
 	color: #fff;
 	text-shadow: 1px 1px 1px #000;
 	position: relative;
@@ -300,6 +295,7 @@ button span {
 	color: #fff;
 	font-family: 'LANENAR';	
 	font-size: 18px;
+	line-height: 26px;
 	text-shadow: 1px 1px 1px #000;
 	background-color: #f28e36;
 	height: 27px;
@@ -364,7 +360,7 @@ button span {
 #themesPopUp {
 	display: none;
 	width: 500px;
-	height: 250px;
+	height: 225px;
 	position: fixed;
 	top: 36px;
 	right: 25px;
@@ -564,8 +560,10 @@ button span {
 	font-family: "LANENAR";
 	color: white;
 	font-size: 20px;
+	line-height: 21px;
 	text-shadow: 1px 1px 2px #000;
 
+	height: 26px;
 	margin: 0;
 	display: inline-block;
 	
@@ -693,11 +691,12 @@ button span {
 	font-family: "LANENAR";
   color: #ffb657;
 	font-size: 23px;
+	line-height: 24px;
 	text-shadow: 1px 1px 2px #000;
 	
 	display: none;
 	width: 280px;
-	height: 128px;
+	height: 118px;
 	position: fixed;
 	top: 36px;
 	right: 40px;
@@ -776,7 +775,7 @@ button span {
 #sortPopUp {
 	display: none;
 	width: 110px;
-	height: 145px;
+	height: 140px;
 	position: fixed;
 	top: 36px;
 	right: 30px;
@@ -809,9 +808,11 @@ button span {
 	font-family: "LANENAR";
 	color: white;
 	font-size: 20px;
+	line-height: 24px;
 	text-shadow: 1px 1px 2px #000;
 
 	width: 110px;
+	height: 28px;
 	margin: 0px;
 	display: block;
 	
@@ -923,6 +924,7 @@ li {
 	color: #fff;
 	font-family: 'LANENAR';	
 	font-size: 20px;
+	line-height: 26px;
 	text-shadow: 1px 1px 1px #000;
 	background-color: #f28e36;
 	height: 27px;
@@ -973,8 +975,8 @@ li {
 	position: relative;
 	top: -2px;
 }
+
 #view {
-	font-size: 20px;
   margin: 3px 4px 4px 45px;
   background-color:#15a0db;
   border-radius:4px;
@@ -1003,6 +1005,8 @@ li {
 }
 
 #view label {
+	font-size: 20px;
+	line-height: 24px;
   float:left;
 }
 
@@ -1075,9 +1079,9 @@ li {
 }
 
 #popUpTopBar {
-  width: 820px;
-	height: 30px;
-	padding-left: 20px;
+  width: 824px;
+	height: 35px;
+	padding-left: 16px;
 	position: relative;
 	display: inline-block;
 	font-family: 'LANENAR';	
@@ -1089,10 +1093,42 @@ li {
 }
 
 #popUpTabTitle {
-	width: 674px;
+	width: 678px;
 	height: 27px;
-	padding-top: 3px;
 	display: inline-block;	
+}
+
+#moreLogo {
+	margin-top: -4px;
+}
+
+#social {
+	width: 440px;
+	height: 28px;
+	margin-top: 10px;
+	margin-right: 15px;
+	float: right;
+}
+
+#twitter {
+	position: relative;
+	top: -3px;
+	display: inline-block;
+	float: right;
+}
+
+#facebook {
+	width: 100px;
+	position: relative;
+	top: -2px;
+	display: inline-block;
+	float: right;
+}	
+
+#gplus {
+	width: 140px;
+	display: inline-block;
+	float: right;
 }
 
 #popUpTabButtons {
@@ -1103,9 +1139,8 @@ li {
 
 .popUpTabButton {
 	cursor: pointer; cursor: hand;	
-	height: 28px;
-	top: -9px;
-	padding-top: 2px;
+	height: 31px;
+	padding-top: 4px;
 	padding-left: 15px;
 	position: relative;
 	display: inline-block;
@@ -1113,6 +1148,7 @@ li {
 
 	font-family: 'LANENAR';
 	font-size: 20px;
+	line-height: 24px;
 	color: #fff;
 	text-shadow: 1px 1px 2px #000;
 
@@ -1161,20 +1197,6 @@ li {
 	width: 54px;  
 }
 
-#facebook {
-	float: left;
-	margin: 40px 0 0 30px;
-	height: 500px;
-  z-index: 151;
-}	
-
-#twitter {
-	float: right;
-	margin: 40px 60px 0 0;
-	height: 500px;
-  z-index: 151;
-}
-
 
 
 
@@ -1187,6 +1209,7 @@ li {
 	margin-right: auto;
 	font-family: 'LANENAR';
 	font-size: 32px;
+	line-height: 36px;
 	color: #fff;
 	text-shadow: 1px 1px 2px #000;
 }
@@ -1205,7 +1228,7 @@ li {
 
 .smallResult{
 	width: 231px;
-	height: 203px;	
+	height: 206px;	
 	margin: 16px 8px 0px 8px;
 	display: inline-block;
 
@@ -1332,6 +1355,7 @@ li {
 }
 
 .topHalf {
+	line-height: 26px;
 }
 
 .smallDetails .details .topHalf {
@@ -1424,6 +1448,7 @@ li {
 .resultName {
 	font-family: 'LANENAR';	
 	font-size: 20px;
+	line-height: 26px;
 	color: #fff;
 	text-shadow: 1px 1px 2px #000;
 	background-color: #24afe8;
@@ -1434,6 +1459,7 @@ li {
 
 .resultExtra {
 	font-family: 'LANENAR';	
+	line-height: 26px;
 	width: 800px;
 	height: 24px;
 	margin: 3px 20px 0px 20px;
@@ -1532,6 +1558,8 @@ li {
 }
 
 #resultTabButtons {
+	line-height: 24px;
+	top: 1px;
 	width: 158px;
 	position: relative;
 	display: inline-block;	
@@ -1604,7 +1632,7 @@ li {
 	width: 1680px;
 	height: 400px;
 	left: 0px;
-	top: -502px;
+	top: -452px;
 	position: relative;
 	overflow: hidden;
 }
@@ -1623,33 +1651,34 @@ li {
 #resltBookingSection{
 	width: 840px;
 	height: 400px;
-	top: -180px;
+	top: -250px;
 	display: inline-block;
 	position: relative;
 	z-index: 200;	
 }
 
 #resultBooking {
-	height: 210px;
+	height: 140px;
 	margin: 0px;
 }
 
 #resultBookinClose {
 	width: 840px;
-	height: 180px;
+	height: 250px;
 	margin: 0px;
 }
 
-#bookingSection {	
-	width: 405px;
-	display: inline-block;
-	float: left;
-}
-
-#requirementsSection {
-	width: 405px;
+#bookingSection {
+	width: 390px;
+	padding-top: 8px;
 	display: inline-block;
 	float: right;
+}
+
+#bookingDetailsSection {	
+	width: 390px;
+	display: inline-block;
+	float: left;
 }
 
 #loadingAvailability {
@@ -1658,13 +1687,19 @@ li {
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
-	top: 20px;
+	top: 30px;
 	background-image: url('/img/loading_64_g.gif');
 }
 
 #nospace {
-	width: 300px;
-	margin: 10px 0px 10px 45px;
+	width: 320px;
+	margin: 35px 0px 10px 35px;
+	text-align: center;
+}
+
+#newDetails {
+	width: 320px;
+	margin: 25px 0px 10px 35px;
 	text-align: center;
 }
 
@@ -1678,6 +1713,7 @@ li {
 	padding-left: 15px;
 	padding-right: 15px;
 	margin-left: 95px;
+	margin-top: 10px;
 	border: 0px;
   border-radius:7px;
 	display: block;
@@ -1719,29 +1755,291 @@ li {
 }
 
 #datePicker {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 16px;
-	width: 150px;
-	margin: 20px 0px 0 118px;
 	cursor: pointer; cursor: hand;
+
+	color: #fff;
+	font-family: 'LANENAR';	
+	font-size: 20px;
+	text-shadow: 1px 1px 1px #000;
+	text-align: center;
+	height: 30px;
+	width: 200px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin: 22px 0px 0 90px;
+	border: 0px;
+  border-radius:7px;
+	display: block;
+
+	background-color: #f28e36;	
+	background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(242,142,54)),
+		color-stop(0.61, rgb(241,175,83))
+	);
+	
+	-moz-box-shadow: 1px 1px 3px black;
+	-webkit-box-shadow: 1px 1px 3px black;
+	box-shadow: 1px 1px 3px black;
+}
+
+ui-datepicker-div {
+	margin-top: 4px;
+	left: -30px;
+}
+
+#adultsButton {
+	width: 50px;
+	height: 26px;
+}
+
+#childrenButton {
+	width: 50px;
+	height: 26px;
+}
+
+#adultsDropDown {
+	display: none;
+	width: 44px;
+	height: 405px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	position: fixed;
+	z-index: 150;
+	color: white;
+	text-align: center;
+	border: 2px solid #f7941d;
+  border-radius:7px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+	
+	background-color: rgb(44,185,245);
+	background-image: linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+	background-image: -o-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+	background-image: -moz-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+	background-image: -webkit-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+	background-image: -ms-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.43, rgb(51,170,255)),
+		color-stop(0.72, rgb(51,190,255)),
+		color-stop(0.86, rgb(61,190,255))
+	);	
+}
+
+#childrenDropDown {
+	display: none;
+	width: 44px;
+	height: 405px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	position: fixed;
+	z-index: 150;
+	color: white;
+	text-align: center;
+	border: 2px solid #f7941d;
+  border-radius:7px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+	
+	background-color: rgb(44,185,245);
+	background-image: linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+	background-image: -o-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+	background-image: -moz-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+	background-image: -webkit-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+	background-image: -ms-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.43, rgb(51,170,255)),
+		color-stop(0.72, rgb(51,190,255)),
+		color-stop(0.86, rgb(61,190,255))
+	);	
+}
+
+.booking_dropdown_toggle {
+	color: #fff;
+	font-family: 'LANENAR';	
+	font-size: 20px;
+	text-shadow: 1px 1px 1px #000;
+	height: 30px;
+	width: 100px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin: 15px 0px 20px 145px;
+	border: 0px;
+  border-radius:7px;
+	display: block;
+
+	background-color: #f28e36;	
+	background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(242,142,54)),
+		color-stop(0.61, rgb(241,175,83))
+	);
+	
+	-moz-box-shadow: 1px 1px 3px black;
+	-webkit-box-shadow: 1px 1px 3px black;
+	box-shadow: 1px 1px 3px black;
+}
+
+.booking_dropdown_toggle:active {
+  background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+  background-image: -webkit-gradient(
+  	linear,
+  	left bottom,
+  	left top,
+  	color-stop(0.21, rgb(241,175,83)),
+  	color-stop(0.61, rgb(242,142,54))
+  );
 }
 
 #people {
 	width: 230px;
-	margin: 10px 0px 10px 80px;
+	margin: 30px 0px 10px 90px;
 }
 
 #adults {
-	margin-right: 5px;
+	float: left;
 }
 
 #children {
-	margin-left: 10px;
-	margin-right: 5px;
+	float: right;
 }
 
-#timeslot {
-	margin: 5px 0px 20px 162px;
+#timeslotButton {
+	height: 30px;
+	width: 100px;
+	margin: 0px 0px 20px 0px;
+	float: left;
+	display: block;	
+}
+
+.toggleDropDownButton {
+	color: #fff;
+	font-family: 'LANENAR';	
+	font-size: 20px;
+	text-shadow: 1px 1px 1px #000;
+	padding-left: 15px;
+	padding-right: 15px;
+	border: 0px;
+  border-radius:7px;
+	display: inline-block;
+
+	background-color: #f28e36;	
+	background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(242,142,54)),
+		color-stop(0.61, rgb(241,175,83))
+	);
+	
+	-moz-box-shadow: 1px 1px 3px black;
+	-webkit-box-shadow: 1px 1px 3px black;
+	box-shadow: 1px 1px 3px black;
+}
+
+.toggleDropDownButton:active {
+  background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+  background-image: -webkit-gradient(
+  	linear,
+  	left bottom,
+  	left top,
+  	color-stop(0.21, rgb(241,175,83)),
+  	color-stop(0.61, rgb(242,142,54))
+  );
+}
+
+#timeslotsDropDown {
+	display: none;
+	width: 98px;
+	height: 145px;
+	position: fixed;
+	z-index: 150;
+	color: white;
+	text-align: center;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border: 2px solid #f7941d;
+  border-radius:7px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+	
+	background-color: rgb(44,185,245);
+	background-image: linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+	background-image: -o-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+	background-image: -moz-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+	background-image: -webkit-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+	background-image: -ms-linear-gradient(bottom, rgb(51,170,255) 43%, rgb(51,190,255) 72%, rgb(61,190,255) 86%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.43, rgb(51,170,255)),
+		color-stop(0.72, rgb(51,190,255)),
+		color-stop(0.86, rgb(61,190,255))
+	);	
+}
+
+#timeslotsDropDown .dropDownButton {
+	height: 29px;
+}
+
+.timeslot {
+
+}
+
+#bookTime {
+	margin: 25px 0px 0px 25px;
+	width: 280px;
+}
+
+#timeslotSection {
+	margin-top: 4px;
+	float: left;
+	text-align: center;
 }
 
 #bookButton {
@@ -1749,11 +2047,12 @@ li {
 	font-family: 'LANENAR';	
 	font-size: 28px;
 	text-shadow: 1px 1px 1px #000;
-	height: 40px;
+	text-align: center;
+	height: 33px;
 	width: 100px;
-	padding-left: 15px;
-	padding-right: 15px;
-	margin-left: 145px;
+	padding: 12px 15px 0px 15px;
+	margin-top: 10px;
+	float: right;
 	border: 0px;
   border-radius:7px;
 	display: block;
@@ -1798,6 +2097,10 @@ li {
 	height: 390px;
 }
 
+.detailsTable td {
+	vertical-align: top;
+}
+
 
 #resultBackground {
   display: none;
@@ -1821,4 +2124,54 @@ li {
 
 #loading {
 	display: block;
+}
+
+.dropDownButton {
+	font-family: "LANENAR";
+	color: white;
+	font-size: 20px;
+	line-height: 24px;
+	text-shadow: 1px 1px 2px #000;
+
+	width: 100%;
+	margin: 0px;
+	display: block;
+	
+	background-color: transparent;
+	border: 0;	
+	box-shadow: none;
+}
+
+.dropDownButton:active {
+	background-color: #f28e36;
+  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(242,142,54)),
+		color-stop(0.61, rgb(241,175,83))
+	);
+}
+
+.currentDropDown {
+	background-color: #f28e36;
+  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(242,142,54)),
+		color-stop(0.61, rgb(241,175,83))
+	);
 }

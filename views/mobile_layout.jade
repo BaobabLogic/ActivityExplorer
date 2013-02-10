@@ -22,13 +22,12 @@ body(ng-controller='MobileCtrl')
       div#settings
         image(src='http://i47.tinypic.com/10mr1af.png', height=170, width=170)    
     
-        
-     
+    block content    
 
-  nav#footer
-      ul.footerList
-        button.barButton(type='button', value='more')
-          span More  
+    nav#footer
+        ul.footerList
+          button.barButton(type='button', value='more')
+            span More  
 
     script(type='text/javascript', src='/js/angular.min.js')
     script(type='text/javascript', src='/js/angular-ui.min.js')
