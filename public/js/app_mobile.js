@@ -229,30 +229,23 @@ $scope.sortSelect = function(selected) {
 
 var computeWidth = function(size) {
   var width = window.innerWidth;
-  switch (size){
-    case "/large": return width - (width-68)%457 - 68; break;
-    case "/small": return width - (width-70)%247 - 70; break;
-    default: return width - (width-70)%316 - 70;
-  }    
+  return width*0.8;
+      
 };
   
 $scope.mainStyle = function(size) {
   var width = window.innerWidth;
-  switch (size){
-    case "/large": return { width: (width - (width-68)%457 - 68) + 'px' }; break;
-    case "/small": return { width: (width - (width-70)%247 - 70) + 'px' }; break;
-    default: return { width: (width - (width-70)%316 - 70) + 'px' };
-  }
+  return { width: width*0.8 + 'px' };
 };
 
 var computeTop = function() {
   var height = window.innerHeight;
-  return (height-650)/2; 
+  return height*0.7; 
 };
 
 var computeLeft = function() {
   var width = window.innerWidth;
-  return (width-860)/2; 
+  return (width)/2; 
 };
   
 $scope.activityStyle = {
@@ -263,20 +256,9 @@ $scope.activityStyle = {
 $scope.amount = function(size) {
   var width = window.innerWidth;
   var height = window.innerHeight;
-  switch (size){
-    case "/large": 
-      var wide = Math.floor((width-68)/457);
-      var high = Math.floor((height/378) + 2);
-      return (wide*high); break;
-    case "/small": 
-      var wide = Math.floor((width-70)/247);
-      var high = Math.floor((height/235) + 1);
-      return (wide*high); break;
-    default: 
-      var wide = Math.floor((width-70)/316);
-      var high = Math.floor((height/284) + 2);
-      return (wide*high);
-  }  
+  var wide = Math.floor((width-68)/457);
+  var high = Math.floor((height/378) + 2);
+  return (wide*high);  
 };
 
 $scope.count = 0;

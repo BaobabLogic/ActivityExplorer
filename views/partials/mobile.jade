@@ -3,8 +3,8 @@ div(ng-loading="results true")
    | The server is restarting. 
    br
    | Please refresh the page in about 1 minute.
-div(id="main", ng-style="mainStyle('/small')", when-scrolled="loadMore()")
-  div(ng-repeat="result in results | searchFilter:search:themes:budget:duration:sort:(count*amount('/small'))",
+div(id="main", ng-style="mainStyle('/mobile')", when-scrolled="loadMore()")
+  div(ng-repeat="result in results | searchFilter:search:themes:budget:duration:sort:(count*amount('/mobile'))",
    class="smallResult", ng-click="popUpResult(result.id[0])")
     div(class="smallImage") 
       image(ng-src='{{image(result.image[0])}}', width=231, height=154)
