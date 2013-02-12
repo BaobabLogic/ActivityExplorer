@@ -19,6 +19,8 @@ config(['$routeProvider', '$locationProvider', function($routeProvider, $locatio
 
 function MobileCtrl($scope, $http, $location) {
 
+/* TEMPORARY for functionality */
+
 $scope.search = "";
 
  //Themes

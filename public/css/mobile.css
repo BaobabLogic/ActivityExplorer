@@ -753,9 +753,9 @@ button span {
 #logo {
     position: fixed;
     top: 18px;
-    left: 30px;
-    width: 510px;
-    height: 168px;
+    left: 50px;
+    width: 867px;
+    height: 84px;
     z-index: 101;
     display: inline-block;  
 }
