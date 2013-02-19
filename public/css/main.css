@@ -1809,11 +1809,11 @@ ui-datepicker-div {
 #adultsDropDown {
 	display: none;
 	width: 44px;
-	height: 405px;
-	overflow-y: scroll;
+	height: 441px;
+	overflow-y: hidden;
 	overflow-x: hidden;
 	position: fixed;
-	z-index: 150;
+	z-index: 200;
 	color: white;
 	text-align: center;
 	border: 2px solid #f7941d;
@@ -1842,11 +1842,11 @@ ui-datepicker-div {
 #childrenDropDown {
 	display: none;
 	width: 44px;
-	height: 405px;
-	overflow-y: scroll;
+	height: 441px;
+	overflow-y: hidden;
 	overflow-x: hidden;
 	position: fixed;
-	z-index: 150;
+	z-index: 200;
 	color: white;
 	text-align: center;
 	border: 2px solid #f7941d;
@@ -1995,10 +1995,10 @@ ui-datepicker-div {
 	width: 98px;
 	height: 145px;
 	position: fixed;
-	z-index: 150;
+	z-index: 151;
 	color: white;
 	text-align: center;
-	overflow-y: scroll;
+	overflow-y: hidden;
 	overflow-x: hidden;
 	border: 2px solid #f7941d;
   border-radius:7px;
@@ -2024,7 +2024,7 @@ ui-datepicker-div {
 }
 
 #timeslotsDropDown .dropDownButton {
-	height: 29px;
+	height: 21px;
 }
 
 .timeslot {
@@ -2129,11 +2129,12 @@ ui-datepicker-div {
 .dropDownButton {
 	font-family: "LANENAR";
 	color: white;
-	font-size: 20px;
-	line-height: 24px;
+	font-size: 16px;
+	line-height: 16px;
 	text-shadow: 1px 1px 2px #000;
 
 	width: 100%;
+	height: 21px;
 	margin: 0px;
 	display: block;
 	

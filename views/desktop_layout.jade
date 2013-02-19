@@ -157,13 +157,9 @@ html(lang='en', ng-app='activity')
                     span#adults 
                       | Adults 
                       button#adultsButton(class="toggleDropDownButton", value="adults") {{selectedAdults}}
-                      div#adultsDropDown(ng-style="adultsDropDownStyle")
-                        button.dropDownButton(ng-repeat="adult in adults", class='ng-class: adultsClass(adult)', ng-click="adultsSelect(adult)") {{adult}}
                     span#children 
                       | Children 
                       button#childrenButton(class="toggleDropDownButton", value="children") {{selectedChildren}}
-                      div#childrenDropDown(ng-style="childrenDropDownStyle")
-                        button.dropDownButton(ng-repeat="child in children", class='ng-class: childrenClass(child)', ng-click="childrenSelect(child)") {{child}}
                 div#bookingSection
                   div(ng-visible="!availabilityLoading")
                     div(ng-visible="availabilityDone")  
@@ -171,8 +167,6 @@ html(lang='en', ng-app='activity')
                         div#timeslotSection
                           div Time
                           button#timeslotButton(class="toggleDropDownButton", value="timeslots") {{selectedTimeslot.start_time[0]}}
-                          div#timeslotsDropDown(ng-style="timeslotsDropDownStyle")
-                            button.dropDownButton(ng-repeat="timeslot in timeslots", class='ng-class: timeslotClass(timeslot)', ng-click="timeslotSelect(timeslot)") {{timeslot.start_time[0]}}
                         a#bookButton(ng-href="http://activityexplorer.activitar.com/portal_bookings/new?service_id={{activity.id[0]}}&date={{selectedDate | date:'dd MMMM yyyy'}}&adults={{selectedAdults}}&children={{selectedChildren}}&timeslot={{selectedTimeslot.id[0]}}&supplier_id={{activity.supplier_id[0]}}") 
                           | Book
                       div(ng-available="available[0].inventories unavailable")
@@ -194,6 +188,14 @@ html(lang='en', ng-app='activity')
           span.price R{{price(activity.price[0])}} per person
             
     div#resultBackground(ng-click="popUpResultClose()")
+
+    
+    div#adultsDropDown(ng-style="adultsDropDownStyle")
+      button.dropDownButton(ng-repeat="adult in adults", class='ng-class: adultsClass(adult)', ng-click="adultsSelect(adult)") {{adult}}
+    div#childrenDropDown(ng-style="childrenDropDownStyle")
+      button.dropDownButton(ng-repeat="child in children", class='ng-class: childrenClass(child)', ng-click="childrenSelect(child)") {{child}}
+    div#timeslotsDropDown(ng-style="timeslotsDropDownStyle")
+      button.dropDownButton(ng-repeat="timeslot in timeslots", class='ng-class: timeslotClass(timeslot)', ng-click="timeslotSelect(timeslot)") {{timeslot.start_time[0]}}
 
     div#popups
       div#more(ng-style="popUpStyle", class="popup")

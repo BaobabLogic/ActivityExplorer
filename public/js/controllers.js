@@ -285,17 +285,18 @@ function AppCtrl($scope, $http, $location) {
   };
 
   var width = function() {
+    console.log($(window).innerWidth());
     return window.innerWidth;
   };
 
   $scope.adultsDropDownStyle = {
     top: (height()/2 - 176) + 'px',
-    right:(width()/2 + 231) + 'px'
+    left:(width()/2 - 279) + 'px'
   };
 
   $scope.childrenDropDownStyle = {
     top: (height()/2 - 176) + 'px',
-    right:(width()/2 + 96) + 'px'
+    left:(width()/2 - 144) + 'px'
   };
 
   $scope.timeslotsDropDownStyle = {
@@ -406,12 +407,7 @@ function AppCtrl($scope, $http, $location) {
         if(data[0].inventories[0].inventory != undefined) {
           $scope.selectedTimeslot = data[0].inventories[0].inventory[0];
           $scope.timeslots = data[0].inventories[0].inventory;
-          if($scope.timeslots.length*29 <= 450) {
-            $('#timeslotsDropDown').css('height', ($scope.timeslots.length*29) + 'px');
-          }
-          else {
-            $('#timeslotsDropDown').css('height', '450px');            
-          }
+          $('#timeslotsDropDown').css('height', ($scope.timeslots.length*21) + 'px');
         } 
         $scope.availabilityDone = true;  
         $scope.availabilityLoading = false;  
