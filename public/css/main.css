@@ -1122,7 +1122,7 @@ li {
 	box-shadow: 1px 1px 5px #8a8a8a; 
 }
 
-#background {
+#background, #backgroundHelp {
   display: none;
   position: fixed;
   height: 100%;
@@ -2255,4 +2255,15 @@ ui-datepicker-div {
 		color-stop(0.21, rgb(242,142,54)),
 		color-stop(0.61, rgb(241,175,83))
 	);
+}
+
+/*
+#tender_window {
+	top: 54px !important;
+	height: 600px !important;
+}
+*/
+
+#tender_closer {
+	display: none;
 }

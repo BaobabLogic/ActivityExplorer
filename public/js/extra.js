@@ -12,6 +12,22 @@ $(function() {
   });        
 });
 
+$(function() {
+  var scrollPosition = 0;
+
+  $('#help').click(function() {
+    scrollPosition = window.pageYOffset;
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    $("#tender_window").fadeIn(800, 'easeOutExpo');
+    $("#backgroundHelp").fadeIn(800, 'easeOutExpo');
+  });
+  
+  $("#backgroundHelp").click(function(){
+    $("html, body").animate({ scrollTop: scrollPosition }, "slow");
+    $("#backgroundHelp").fadeOut(800, 'easeOutExpo');
+    $("#tender_window").fadeOut(800, 'easeOutExpo');
+  });  
+});
   
 $(function() {
   var headButton = "";
