@@ -285,7 +285,6 @@ function AppCtrl($scope, $http, $location) {
   };
 
   var width = function() {
-    console.log($(window).innerWidth());
     return window.innerWidth;
   };
 
