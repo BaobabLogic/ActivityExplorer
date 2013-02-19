@@ -976,6 +976,62 @@ li {
 	top: -2px;
 }
 
+#help {
+	color: #fff;
+	font-family: 'LANENAR';	
+	font-size: 20px;
+	line-height: 26px;
+	text-shadow: 1px 1px 1px #000;
+	background-color: #f28e36;
+	height: 27px;
+	width: 80px;
+	padding-left: 7px;
+	padding-right: 7px;
+	margin: 3px 8px;
+	border: 0px;
+  border-radius:7px;
+	position: relative;
+	
+	background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(242,142,54)),
+		color-stop(0.61, rgb(241,175,83))
+	);
+	
+	-moz-box-shadow: 1px 1px 3px black;
+	-webkit-box-shadow: 1px 1px 3px black;
+	box-shadow: 1px 1px 3px black;
+}
+
+#help:active {
+	background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+	background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(241,175,83)),
+		color-stop(0.61, rgb(242,142,54))
+	);
+}
+
+#help span {
+	position: relative;
+	top: -2px;
+}
+
 #view {
   margin: 3px 4px 4px 45px;
   background-color:#15a0db;
@@ -1096,6 +1152,10 @@ li {
 	width: 678px;
 	height: 27px;
 	display: inline-block;	
+}
+
+#more{
+	background-color: #f5f5f5;
 }
 
 #moreLogo {

@@ -198,15 +198,10 @@ html(lang='en', ng-app='activity')
       button.dropDownButton(ng-repeat="timeslot in timeslots", class='ng-class: timeslotClass(timeslot)', ng-click="timeslotSelect(timeslot)") {{timeslot.start_time[0]}}
 
     div#popups
-      div#more(ng-style="popUpStyle", class="popup")
+      div#about(ng-style="popUpStyle", class="popup")
         div#popUpTopBar
           span#popUpTabTitle
             image#moreLogo(src='/img/logo-small2.png', height=28, width=289)
-          div#popUpTabButtons 
-            div#aboutButton(class="popUpTabButton", ng-click="", ng-class="popUpTabSelected('about')")
-              | About
-            div#helpButton(class="popUpTabButton", ng-click="", ng-class="popUpTabSelected('help')")
-              | Help
         span#social
           div#twitter 
             a(href="https://twitter.com/ActivityExplore", class="twitter-follow-button", data-show-count="false") Follow @ActivityExplore
@@ -225,12 +220,6 @@ html(lang='en', ng-app='activity')
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
               })();
 
-        
-
-        div#about
-          | 
-          image(src='/img/full_logo.png', height=115, width=284)
-
     div#background
 
     nav#footer
@@ -245,8 +234,10 @@ html(lang='en', ng-app='activity')
           span
           a(href="/large") Large
       ul.footerList
-        //  button.barButton(type='button', value='more') 
-        //    span More
+        button#help(type='button', value='help') 
+          span Help
+          // button.barButton(type='button', value='about') 
+          // span About
 
 
     script(type='text/javascript', src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js")
@@ -258,3 +249,11 @@ html(lang='en', ng-app='activity')
     script(type='text/javascript', src='/js/directives.js')
     script(type='text/javascript', src='/js/filters.js')
     script(type='text/javascript', src='/js/services.js')
+    script(type="text/javascript", charset="utf-8")
+      Tender = {
+        hideToggle: true,
+        hide_kb: true,
+        category: 'problems',
+        widgetToggles: [document.getElementById('help')]
+      } 
+    script(type="text/javascript", src="https://activity-explorer.tenderapp.com/tender_widget.js")
