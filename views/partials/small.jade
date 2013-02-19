@@ -7,7 +7,7 @@ div(id="main", ng-style="mainStyle('/small')", when-scrolled="loadMore()")
   div(ng-repeat="result in results | searchFilter:search:themes:budget:duration:sort:(count*amount('/small'))",
    class="smallResult", ng-click="popUpResult(result.id[0])")
     div(class="smallImage") 
-      image(ng-src='{{image(result.image[0])}}', width=231, height=154)
+      image(ng-src='{{image(result.image[0])}}', width=231, height=154, class="small_img")
     div.smallDetails
       div.details 
         div.topHalf 

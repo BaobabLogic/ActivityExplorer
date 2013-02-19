@@ -7,7 +7,7 @@ div(id="main", ng-style="mainStyle('/medium')", when-scrolled="loadMore()", ng-l
   div(ng-repeat="result in results | searchFilter:search:themes:budget:duration:sort:(count*amount('/medium'))",
    class="mediumResult", ng-click="popUpResult(result.id[0])")
     div(class="mediumImage") 
-      image(ng-src='{{image(result.image[0])}}', width=300, height=200)
+      image(ng-src='{{image(result.image[0])}}', width=300, height=200, class="medium_img")
     div.mediumDetails
       div.details 
         div.topHalf 

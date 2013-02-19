@@ -1226,9 +1226,24 @@ li {
 
 }
 
-#service_image{
+.service_image{
 	width: 840px;
 	height: 560px;
+}
+
+.small_img{
+	width: 231px; 
+	height: 154px;
+}
+
+.medium_img{
+	width: 300px;
+	height: 200px;
+}
+
+.large_img{
+	width: 441px;
+	height: 294px;
 }
 
 .smallResult{

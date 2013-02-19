@@ -7,7 +7,7 @@ div(id="main", ng-style="mainStyle('/large')", when-scrolled="loadMore()")
   div(ng-repeat="result in results | searchFilter:search:themes:budget:duration:sort:(count*amount('/large'))",
    class="largeResult", ng-click="popUpResult(result.id[0])")
     div(class="largeImage") 
-      image(ng-src='{{image(result.image[0])}}', width=441, height=294)
+      image(ng-src='{{image(result.image[0])}}', width=441, height=294, class="large_img")
     div.largeDetails
       div.details 
         div.topHalf 
