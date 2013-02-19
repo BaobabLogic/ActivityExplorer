@@ -103,7 +103,7 @@ html(lang='en', ng-app='activity')
         div.resultSlider        
           div.resultImages(ng-style="imagesStyle", ng-click='hideTabs()')
             span.resultImage(ng-repeat="image in activity.images[0].image")
-              image(ng-src="{{image.medium[0]}}", width=840, height=560)
+              image(ng-src="{{image.medium[0]}}", width=840, height=560, id="service_image")
           div#popUpButtons(ng-click='hideTabs()')   
             div.imageButton(id="leftButton", ng-click="activityImage(activity.images[0].image, false)")   
             div.imageButton(id="rightButton", ng-click="activityImage(activity.images[0].image, true)") 

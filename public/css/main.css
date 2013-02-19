@@ -1226,6 +1226,11 @@ li {
 
 }
 
+#service_image{
+	width: 840px;
+	height: 560px;
+}
+
 .smallResult{
 	width: 231px;
 	height: 206px;	
