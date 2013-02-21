@@ -11,7 +11,7 @@
     src: url('/fonts/Bebas-webfont.eot?#iefix') format('embedded-opentype'),
          url('/fonts/Bebas-webfont.woff') format('woff'),
          url('/fonts/Bebas-webfont.ttf') format('truetype'),
-         url('/fonts/Bebas-webfont.svg#Bebas') format('svg');
+         url('/fonts/Bebas-webfont.svg#BEBAS') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -22,20 +22,9 @@
     src: url('/fonts/DISTGRG-webfont.eot?#iefix') format('embedded-opentype'),
          url('/fonts/DISTGRG-webfont.woff') format('woff'),
          url('/fonts/DISTGRG-webfont.ttf') format('truetype'),
-         url('/fonts/DISTGRG-webfont.svg#LANENAR') format('svg');
+         url('/fonts/DISTGRG-webfont.svg#DISTGRG') format('svg');
   font-weight: normal;
   font-style: normal;
-}
-
-@font-face {
-    font-family: 'Lobster';
-    src: url('/fonts/Lobster_1.3-webfont.eot');
-    src: url('/fonts/Lobster_1.3-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/Lobster_1.3-webfont.woff') format('woff'),
-         url('/fonts/Lobster_1.3-webfont.ttf') format('truetype'),
-         url('/fonts/Lobster_1.3-webfont.svg#Lobster_1.3') format('svg');
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
@@ -45,6 +34,16 @@
          url('/fonts/LANENAR_-webfont.woff') format('woff'),
          url('/fonts/LANENAR_-webfont.ttf') format('truetype'),
          url('/fonts/LANENAR_-webfont.svg#LANENAR_') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SofiaProLight';
+    src: url('/fonts/sofiaprolight-webfont.eot');
+    src: url('/fonts/sofiaprolight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/sofiaprolight-webfont.ttf') format('truetype'),
+         url('/fonts/sofiaprolight-webfont.svg#SofiaProLight') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -91,9 +90,9 @@ html, body {
 /* Common items */
 h2 {	
 	color: #f7941d;
-	font-family: 'LANENAR';	
+	font-family: 'SofiaProLight';	
 	font-size: 25px;
-	text-shadow: 1px 1px 1px #000;
+	text-shadow: 0px 1px 1px #000;
 	margin: 0;
 }
 
@@ -250,11 +249,11 @@ button span {
 }
 
 .explore {
-	font-family: 'LANENAR';
-	font-size: 18px;
+	font-family: 'SofiaProLight';
+	font-size: 16px;
 	line-height: 22px;
 	color: #fff;
-	text-shadow: 1px 1px 1px #000;
+	text-shadow: 0px 1px 1px #000;
 	position: relative;
 	width: 68px;
 	height: 27px;
@@ -293,10 +292,10 @@ button span {
 
 .headButton {
 	color: #fff;
-	font-family: 'LANENAR';	
-	font-size: 18px;
+	font-family: 'SofiaProLight';	
+	font-size: 16px;
 	line-height: 26px;
-	text-shadow: 1px 1px 1px #000;
+	text-shadow: 0px 1px 1px #000;
 	background-color: #f28e36;
 	height: 27px;
 	width: 80px;
@@ -389,10 +388,10 @@ button span {
 }
 
 #themeTop {
-  font-family: "LANENAR";
+  font-family: "SofiaProLight";
   color: white;
-  font-size: 21px;
-  text-shadow: 1px 1px 1px #000;
+  font-size: 20px;
+	text-shadow: 0px 1px 1px #000;
   
   position: relative;
   top: 0px;
@@ -403,10 +402,10 @@ button span {
 }
 
 #themeTitle {
-  font-family: "LANENAR";
+  font-family: "SofiaProLight";
   color: white;
-  font-size: 21px;
-  text-shadow: 1px 1px 2px #000;
+  font-size: 20px;
+	text-shadow: 0px 1px 1px #000;
   
   margin: 0px 150px;
   width: 200px;
@@ -453,10 +452,10 @@ button span {
 }
 
 #typeTop {
-  font-family: "LANENAR";
+  font-family: "SofiaProLight";
   color: white;
-  font-size: 21px;
-  text-shadow: 1px 1px 1px #000;
+  font-size: 20px;
+	text-shadow: 0px 1px 1px #000;
   
   position: relative;
   top: 0px;
@@ -478,10 +477,10 @@ button span {
 }
 
 #typeTitle {
-  font-family: "LANENAR";
+  font-family: "SofiaProLight";
   color: white;
-  font-size: 21px;
-  text-shadow: 1px 1px 2px #000;
+  font-size: 20px;
+	text-shadow: 0px 1px 1px #000;
   
   margin: 0px;
   width: 200px;
@@ -538,16 +537,16 @@ button span {
 #themeRight {
   float: right;
   display: inline-block;
-  width: 200px;
+  width: 210px;
   height: 180px;
   margin-right: 20px;
 }
 
 .typeSpan {
-  font-family: "LANENAR";
+  font-family: "SofiaProLight";
   color: #fff;
-  font-size: 20px;
-  text-shadow: 1px 1px 2px #000;
+  font-size: 18px;
+	text-shadow: 0px 1px 1px #000;
   height: 20px;
   padding: 2px 0px 3px;
 }
@@ -557,11 +556,11 @@ button span {
 }
 
 .themeButton {
-	font-family: "LANENAR";
+	font-family: "SofiaProLight";
 	color: white;
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 21px;
-	text-shadow: 1px 1px 2px #000;
+	text-shadow: 0px 1px 1px #000;
 
 	height: 26px;
 	margin: 0;
@@ -574,7 +573,7 @@ button span {
 }
 
 #themeTop .themeButton {
-  font-size: 19px;
+  font-size: 18px;
   margin: 0px 10px 0px;
   display: inline-block;
 }
@@ -622,7 +621,7 @@ button span {
 }
 
 .themeSelectButton {
-	width: 20px;
+	width: 18px;
 	height: 20px;
 	margin: 0;
 	display: inline-block;
@@ -688,11 +687,11 @@ button span {
 }
 
 #refinePopUp {
-	font-family: "LANENAR";
+	font-family: "SofiaProLight";
   color: #ffb657;
-	font-size: 23px;
+	font-size: 20px;
 	line-height: 24px;
-	text-shadow: 1px 1px 2px #000;
+	text-shadow: 0px 1px 1px #000;
 	
 	display: none;
 	width: 280px;
@@ -729,9 +728,9 @@ button span {
 }
 
 #budget, #duration{
-	font-family: 'LANENAR';
+	font-family: 'SofiaProLight';
 	color: #fff;
-	font-size: 21px;
+	font-size: 18px;
 	margin-top: 4px;
 	margin-right: 25px;
 	float: right;	
@@ -805,11 +804,11 @@ button span {
 }
 
 .sortButton {
-	font-family: "LANENAR";
+	font-family: "SofiaProLight";
 	color: white;
-	font-size: 20px;
+	font-size: 17px;
 	line-height: 24px;
-	text-shadow: 1px 1px 2px #000;
+	text-shadow: 0px 1px 1px #000;
 
 	width: 110px;
 	height: 28px;
@@ -869,9 +868,9 @@ button span {
 /* Items in footer */
 nav {
 	color: #fff;
-	font-family: 'LANENAR';	
+	font-family: 'SofiaProLight';	
 	font-size: 22px;
-	text-shadow: 1px 1px 1px #000;
+	text-shadow: 0px 1px 1px #000;
 }
 
 ul {
@@ -893,8 +892,8 @@ li {
 
 #footer {
 	color: #fff;
-	font-family: 'LANENAR';	
-	text-shadow: 1px 1px 1px #000;
+	font-family: 'SofiaProLight';	
+	text-shadow: 0px 1px 1px #000;
 	width:100%;
 	min-width: 1024px;
 	height: 35px;
@@ -922,10 +921,10 @@ li {
 
 .barButton {
 	color: #fff;
-	font-family: 'LANENAR';	
+	font-family: 'SofiaProLight';	
 	font-size: 20px;
 	line-height: 26px;
-	text-shadow: 1px 1px 1px #000;
+	text-shadow: 0px 1px 1px #000;
 	background-color: #f28e36;
 	height: 27px;
 	width: 80px;
@@ -978,10 +977,10 @@ li {
 
 #help {
 	color: #fff;
-	font-family: 'LANENAR';	
-	font-size: 20px;
+	font-family: 'SofiaProLight';	
+	font-size: 16px;
 	line-height: 26px;
-	text-shadow: 1px 1px 1px #000;
+	text-shadow: 0px 1px 1px #000;
 	background-color: #f28e36;
 	height: 27px;
 	width: 80px;
@@ -1061,7 +1060,7 @@ li {
 }
 
 #view label {
-	font-size: 20px;
+	font-size: 16px;
 	line-height: 24px;
   float:left;
 }
@@ -1140,10 +1139,10 @@ li {
 	padding-left: 16px;
 	position: relative;
 	display: inline-block;
-	font-family: 'LANENAR';	
+	font-family: 'SofiaProLight';	
 	font-size: 20px;
 	color: #fff;
-	text-shadow: 1px 1px 2px #000;
+	text-shadow: 0px 1px 1px #000;
 	background-color: #24afe8;
 	z-index: 300;
 }
@@ -1206,11 +1205,11 @@ li {
 	display: inline-block;
 	z-index: 160;
 
-	font-family: 'LANENAR';
+	font-family: 'SofiaProLight';
 	font-size: 20px;
 	line-height: 24px;
 	color: #fff;
-	text-shadow: 1px 1px 2px #000;
+	text-shadow: 0px 1px 1px #000;
 
 	background-color: transparent;
 }
@@ -1267,11 +1266,11 @@ li {
 	height: 32px;
 	margin-left: auto;
 	margin-right: auto;
-	font-family: 'LANENAR';
+	font-family: 'SofiaProLight';
 	font-size: 32px;
 	line-height: 36px;
 	color: #fff;
-	text-shadow: 1px 1px 2px #000;
+	text-shadow: 0px 1px 1px #000;
 }
 
 .mainBlock{
@@ -1333,7 +1332,7 @@ li {
 	width: 217px;
 	padding: 0px 2px 0px 12px;
 	color: #fff;
-	text-shadow: 1px 1px 2px #000;
+	text-shadow: 0px 1px 1px #000;
 	background-color: #25afe6;
 }
 
@@ -1365,7 +1364,7 @@ li {
 	width: 280px;
 	padding: 0px 10px;
 	color: #fff;
-	text-shadow: 1px 1px 2px #000;
+	text-shadow: 0px 1px 1px #000;
 	background-color: #25afe6;
 }
 
@@ -1396,7 +1395,7 @@ li {
 	width: 417px;
 	padding: 0px 12px;
 	color: #fff;
-	text-shadow: 1px 1px 2px #000;
+	text-shadow: 0px 1px 1px #000;
 	background-color: #25afe6;
 }
 
@@ -1439,44 +1438,44 @@ li {
 }
 
 .smallDetails .details .topHalf {
-	font-family: 'LANENAR';	
+	font-family: 'SofiaProLight';	
 	text-shadow: 0px 1px 1px #000;
-	font-size: 20px;
+	font-size: 16px;
 	width: 210px;
 }
 
 .mediumDetails .details .topHalf {
-	font-family: 'LANENAR';	
-	text-shadow: 0px 1px 2px #000;
-	font-size: 20px;
+	font-family: 'SofiaProLight';	
+	text-shadow: 0px 1px 1px #000;
+	font-size: 18px;
 	width: 280px;
 }
 
 .largeDetails .details .topHalf {
-	font-family: 'LANENAR';	
-	text-shadow: 1px 1px 2px #000;
+	font-family: 'SofiaProLight';	
+	text-shadow: 0px 1px 1px #000;
 	font-size: 20px;
 	width: 417px;
 }
 
 .smallDetails .details .bottomHalf {
-	font-family: 'LANENAR';	
+	font-family: 'SofiaProLight';	
 	width: 210px;
 	margin-top: 3px;
+	color: #25afe6;
+	font-size: 15px;
+}
+
+.mediumDetails .details .bottomHalf {
+	font-family: 'SofiaProLight';	
+	width: 280px;
+	margin-top: 5px;
 	color: #25afe6;
 	font-size: 18px;
 }
 
-.mediumDetails .details .bottomHalf {
-	font-family: 'LANENAR';	
-	width: 280px;
-	margin-top: 5px;
-	color: #25afe6;
-	font-size: 20px;
-}
-
 .largeDetails .details .bottomHalf {
-	font-family: 'LANENAR';	
+	font-family: 'SofiaProLight';	
 	width: 417px;
 	margin-top: 5px;
 	color: #25afe6;
@@ -1526,11 +1525,11 @@ li {
 }
 
 .resultName {
-	font-family: 'LANENAR';	
-	font-size: 20px;
+	font-family: 'SofiaProLight';	
+	font-size: 18px;
 	line-height: 26px;
 	color: #fff;
-	text-shadow: 1px 1px 2px #000;
+	text-shadow: 0px 1px 1px #000;
 	background-color: #24afe8;
   width: 800px;
 	height: 26px;
@@ -1538,13 +1537,13 @@ li {
 }
 
 .resultExtra {
-	font-family: 'LANENAR';	
+	font-family: 'SofiaProLight';	
 	line-height: 26px;
 	width: 800px;
 	height: 24px;
 	margin: 3px 20px 0px 20px;
 	color: #25afe6;
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .resultPrice {
@@ -1622,10 +1621,10 @@ li {
 	padding-left: 20px;
 	position: relative;
 	display: inline-block;
-	font-family: 'LANENAR';	
-	font-size: 20px;
+	font-family: 'SofiaProLight';	
+	font-size: 18px;
 	color: #fff;
-	text-shadow: 1px 1px 2px #000;
+	text-shadow: 0px 1px 1px #000;
 	background-color: #24afe8;
 	z-index: 300;
 }
@@ -1655,10 +1654,10 @@ li {
 	display: inline-block;
 	z-index: 160;
 
-	font-family: 'LANENAR';
-	font-size: 20px;
+	font-family: 'SofiaProLight';
+	font-size: 18px;
 	color: #fff;
-	text-shadow: 1px 1px 2px #000;
+	text-shadow: 0px 1px 1px #000;
 
 	background-color: transparent;
 }
@@ -1785,9 +1784,9 @@ li {
 
 #checkAvailability {
 	color: #fff;
-	font-family: 'LANENAR';	
-	font-size: 20px;
-	text-shadow: 1px 1px 1px #000;
+	font-family: 'SofiaProLight';	
+	font-size: 18px;
+	text-shadow: 0px 1px 1px #000;
 	height: 30px;
 	width: 200px;
 	padding-left: 15px;
@@ -1838,9 +1837,9 @@ li {
 	cursor: pointer; cursor: hand;
 
 	color: #fff;
-	font-family: 'LANENAR';	
-	font-size: 20px;
-	text-shadow: 1px 1px 1px #000;
+	font-family: 'SofiaProLight';	
+	font-size: 18px;
+	text-shadow: 0px 1px 1px #000;
 	text-align: center;
 	height: 30px;
 	width: 200px;
@@ -1954,9 +1953,9 @@ ui-datepicker-div {
 
 .booking_dropdown_toggle {
 	color: #fff;
-	font-family: 'LANENAR';	
-	font-size: 20px;
-	text-shadow: 1px 1px 1px #000;
+	font-family: 'SofiaProLight';	
+	font-size: 18px;
+	text-shadow: 0px 1px 1px #000;
 	height: 30px;
 	width: 100px;
 	padding-left: 15px;
@@ -2025,9 +2024,9 @@ ui-datepicker-div {
 
 .toggleDropDownButton {
 	color: #fff;
-	font-family: 'LANENAR';	
-	font-size: 20px;
-	text-shadow: 1px 1px 1px #000;
+	font-family: 'SofiaProLight';	
+	font-size: 18px;
+	text-shadow: 0px 1px 1px #000;
 	padding-left: 15px;
 	padding-right: 15px;
 	border: 0px;
@@ -2124,9 +2123,9 @@ ui-datepicker-div {
 
 #bookButton {
 	color: #fff;
-	font-family: 'LANENAR';	
-	font-size: 28px;
-	text-shadow: 1px 1px 1px #000;
+	font-family: 'SofiaProLight';	
+	font-size: 24px;
+	text-shadow: 0px 1px 1px #000;
 	text-align: center;
 	height: 33px;
 	width: 100px;
@@ -2207,11 +2206,11 @@ ui-datepicker-div {
 }
 
 .dropDownButton {
-	font-family: "LANENAR";
+	font-family: "SofiaProLight";
 	color: white;
 	font-size: 16px;
 	line-height: 16px;
-	text-shadow: 1px 1px 2px #000;
+	text-shadow: 0px 1px 1px #000;
 
 	width: 100%;
 	height: 21px;
