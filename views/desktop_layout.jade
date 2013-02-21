@@ -89,6 +89,8 @@ html(lang='en', ng-app='activity')
 
     block content
 
+    div#mainLoadingWheel(class="loadingWheel", ng-visible="loading_results")
+
     div#resultPopUp(ng-style="activityStyle")
       div#activityLoading(ng-loading="activity true")
         div#resultLoadingWheel(class="loadingWheel")

@@ -387,12 +387,15 @@ function AppCtrl($scope, $http, $location) {
   });  
 
 
-   //Results Data Section    
+   //Results Data Section   
+
+  $scope.loading_results = true;  
 
   $http.get('/api').
     success(function(data, status, headers, config) {
       $scope.results = data;
       $scope.loadMore();
+      $scope.loading_results = false;  
     });
 
   $scope.availabilityCheck = function(adults, children, date, id) { 
