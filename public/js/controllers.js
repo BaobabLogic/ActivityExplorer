@@ -374,9 +374,9 @@ function AppCtrl($scope, $http, $location) {
   $scope.availabilityDone = false;
   $scope.availabilityLoading = true;
 
-  $scope.$watch('selectedDate', function() {
+  $scope.changeDate = function() {
     $scope.availabilityDone = false;
-  });
+  };
 
   $scope.$watch('selectedAdults', function() {
     $scope.availabilityDone = false;

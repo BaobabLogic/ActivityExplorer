@@ -154,7 +154,7 @@ html(lang='en', ng-app='activity')
             div#resltBookingSection      
               div#resultBooking(class="resultTab")
                 div#bookingDetailsSection
-                  input#datePicker(ng-model="selectedDate",  value="{{selectedDate | date:'dd MMMM yyyy'}}", ui-date, readonly)
+                  input#datePicker(ng-model="selectedDate", value="{{selectedDate | date:'dd MMMM yyyy'}}", ui-date, readonly, ng-change="changeDate()")
                   div#people
                     span#adults 
                       | Adults 
