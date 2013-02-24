@@ -373,17 +373,28 @@ function AppCtrl($scope, $http, $location) {
 
   $scope.availabilityDone = false;
   $scope.availabilityLoading = true;
+  $scope.availabilityError = false;
+  $scope.availabilityCanceled = false;
 
   $scope.changeDate = function() {
+    $scope.availabilityLoading = false; 
+    $scope.availabilityError = false;
     $scope.availabilityDone = false;
+    $scope.availabilityCanceled = true;
   };
 
   $scope.$watch('selectedAdults', function() {
+    $scope.availabilityLoading = false; 
+    $scope.availabilityError = false;
     $scope.availabilityDone = false;
+    $scope.availabilityCanceled = true;
   });
 
   $scope.$watch('selectedChildren', function() {
+    $scope.availabilityLoading = false; 
+    $scope.availabilityError = false;
     $scope.availabilityDone = false;
+    $scope.availabilityCanceled = true;
   });  
 
 
@@ -400,6 +411,8 @@ function AppCtrl($scope, $http, $location) {
 
   $scope.availabilityCheck = function(adults, children, date, id) { 
     $scope.available = "";
+    $scope.availabilityError = false;
+    $scope.availabilityCanceled = false;
     $scope.availabilityLoading = true;
     if(adults == undefined) {adults = 1}
     if(children == undefined) {children = 0}
@@ -413,6 +426,9 @@ function AppCtrl($scope, $http, $location) {
         } 
         $scope.availabilityDone = true;  
         $scope.availabilityLoading = false;  
+      }).
+      error(function(data, status, headers, config) {
+        $scope.availabilityError = true;
       }); 
   }; 
 
@@ -631,8 +647,7 @@ function AppCtrl($scope, $http, $location) {
 
   $scope.popUpStyle = {
     position: 'fixed',
-    top: (window.innerHeight - 650)/2 + 'px',
-    left: (window.innerWidth - 840)/2 + 'px'
+    top: (window.innerHeight - 500)/2 + 'px'
   };
 
 

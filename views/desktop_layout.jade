@@ -3,6 +3,8 @@ html(lang='en', ng-app='activity')
 
   head
     title= title
+    meta(name="description", content="Enjoy the best possible experience when searching for and booking your favourite thing to do.")
+    meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
     meta(name="detectify-verification", content="505388be3469f9a32b6e99eabb1954e0")
     meta(name="google-site-verification", content="X9pkc_puF75Lwrhy0r8iDoXjFafIuAU-qK4MkZApmvg")
     link(rel='stylesheet', href='/css/jquery-ui-1.9.1.custom.min.css')
@@ -164,7 +166,7 @@ html(lang='en', ng-app='activity')
                       button#childrenButton(class="toggleDropDownButton", value="children") {{selectedChildren}}
                 div#bookingSection
                   div(ng-visible="!availabilityLoading")
-                    div(ng-visible="availabilityDone")  
+                    div(ng-visible="availabilityDone&&(!availabilityCanceled)")  
                       div#bookTime(ng-available="available[0].inventories available") 
                         div#timeslotSection
                           div Time
@@ -173,8 +175,11 @@ html(lang='en', ng-app='activity')
                           | Book
                       div(ng-available="available[0].inventories unavailable")
                         div#nospace There is not enough space on {{selectedDate | date:'dd MMMM yyyy'}} to accommodate {{selectedAdults}} adults and {{selectedChildren}} children. 
-                    div(ng-visible="!availabilityDone")
+                    div(ng-visible="(!availabilityDone)||availabilityCanceled")
                       div#newDetails New booking details. Click to check availability:
+                      button#checkAvailability(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])") Check Availability
+                    div(ng-visible="availabilityError&&(!availabilityDone)")
+                      div#newDetails There was an error checking availability, please try again.
                       button#checkAvailability(ng-click="availabilityCheck(selectedAdults, selectedChildren, selectedDate, activity.id[0])") Check Availability
                   div#loadingAvailability(ng-visible="availabilityLoading")
               div#resultBookinClose(ng-click='hideTabs()')
@@ -201,9 +206,7 @@ html(lang='en', ng-app='activity')
 
     div#popups
       div#about(ng-style="popUpStyle", class="popup")
-        div#popUpTopBar
-          span#popUpTabTitle
-            image#moreLogo(src='/img/logo-small2.png', height=28, width=289)
+        image#aboutImage(src='/img/about.png', height=800, width=400)
         span#social
           div#twitter 
             a(href="https://twitter.com/ActivityExplore", class="twitter-follow-button", data-show-count="false") Follow @ActivityExplore
@@ -238,10 +241,10 @@ html(lang='en', ng-app='activity')
           span
           a(href="/large") Large
       ul.footerList
+        button.barButton(type='button', value='about') 
+          span About
         button#help(type='button', value='help') 
           span Help
-          // button.barButton(type='button', value='about') 
-          // span About
 
 
     script(type='text/javascript', src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js")
