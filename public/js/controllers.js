@@ -6,13 +6,18 @@ function AppCtrl($scope, $http, $location) {
   //Search Bar   
    //Search
   if($location.search().s == undefined) {
-    $location.search({s: ""});
+    $location.search().s = "";
   }
   $scope.search = $location.search().s;
 
+  if($location.search().p == undefined) {
+    $location.search().p = "";
+  }
+  $scope.popup_id = $location.search().p;
+
   $scope.$watch('search', function() {
-    $location.search({s: $scope.search});
-  });  
+    $location.search({s: $scope.search, p: $scope.popup_id});
+  }); 
   
    //Themes
   $scope.category = "";
@@ -622,6 +627,8 @@ function AppCtrl($scope, $http, $location) {
 
   $scope.popUpResult = function(id) { 
     $scope.activity = "";
+    $scope.popup_id = id;
+    $location.search({s: $scope.search, p: $scope.popup_id});
     $http.get('/api/service/' + id).
       success(function(data, status, headers, config) {
         $scope.activity = data;
@@ -640,6 +647,7 @@ function AppCtrl($scope, $http, $location) {
   };
 
   $scope.popUpResultClose = function() { 
+    $location.search({s: $scope.search, p: ""});
     $scope.hideTabs();
     $('#resultPopUp').fadeOut(800, 'easeOutExpo');
     $('#resultBackground').fadeOut(800, 'easeOutExpo', function() {
@@ -650,6 +658,13 @@ function AppCtrl($scope, $http, $location) {
       });
     });
   }
+
+    //Popup currently open
+  
+  if($location.search().p != "") {
+    $scope.popUpResult($location.search().p);
+  }
+
     //Footer PopUps
 
   $scope.popUpStyle = {
