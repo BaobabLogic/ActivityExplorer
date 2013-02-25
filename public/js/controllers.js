@@ -647,7 +647,8 @@ function AppCtrl($scope, $http, $location) {
   };
 
   $scope.popUpResultClose = function() { 
-    $location.search({s: $scope.search, p: ""});
+    $scope.popup_id = "";
+    $location.search({s: $scope.search, p: $scope.popup_id});
     $scope.hideTabs();
     $('#resultPopUp').fadeOut(800, 'easeOutExpo');
     $('#resultBackground').fadeOut(800, 'easeOutExpo', function() {
