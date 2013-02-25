@@ -5,7 +5,14 @@
 function AppCtrl($scope, $http, $location) {
   //Search Bar   
    //Search
-  $scope.search = "";
+  if($location.search().s == undefined) {
+    $location.search({s: ""});
+  }
+  $scope.search = $location.search().s;
+
+  $scope.$watch('search', function() {
+    $location.search({s: $scope.search});
+  });  
   
    //Themes
   $scope.category = "";

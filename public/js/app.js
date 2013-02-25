@@ -17,5 +17,5 @@ angular.module('activity', ['activity.filters', 'activity.services', 'activity.d
     	}).otherwise({
     		redirectTo: '/medium'
     	});
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true).hashPrefix('!');
   }]);
