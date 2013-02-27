@@ -2,7 +2,7 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('activity', ['activity.filters', 'activity.services', 'activity.directives', 'ui.directives', 'ui.filters', 'ui.bootstrap']).
+angular.module('activity', ['activity.filters', 'activity.directives', 'ui.directives', 'ui.filters']).
   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.when('/list', {
     		templateUrl: 'partials/list'

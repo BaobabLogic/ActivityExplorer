@@ -10,7 +10,6 @@ html(lang='en', ng-app='activity')
     meta(name="google-site-verification", content="X9pkc_puF75Lwrhy0r8iDoXjFafIuAU-qK4MkZApmvg")
     link(rel='stylesheet', href='/css/jquery-ui-1.9.1.custom.min.css')
     link(rel='stylesheet', href='/css/angular-ui.min.css')
-    link(rel="stylesheet", href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css")
     link(rel='stylesheet', href='/css/main.css')
     script(type='text/javascript', src='/js/jquery-1.8.2.min.js')
     script(type='text/javascript', src='/js/jquery-ui-1.9.1.custom.min.js')
@@ -157,7 +156,7 @@ html(lang='en', ng-app='activity')
             div#resltBookingSection      
               div#resultBooking(class="resultTab")
                 div#bookingDetailsSection
-                  input#datePicker(ng-model="selectedDate", value="{{selectedDate | date:'dd MMMM yyyy'}}", ui-date, readonly, ng-change="changeDate()")
+                  input#datePicker(ui-date="{dateFormat: 'dd MM yy'}", ng-model="selectedDate", readonly, ng-change="changeDate()")
                   div#people
                     span#adults 
                       | Adults 
@@ -251,12 +250,10 @@ html(lang='en', ng-app='activity')
     script(type='text/javascript', src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js")
     script(type='text/javascript', src='/js/angular-ui.min.js')
     script(type='text/javascript', src='/js/angular-ui-ieshiv.min.js')
-    script(type='text/javascript', src='/js/ui-bootstrap-0.1.0.min.js')
-    script(type='text/javascript', src='/js/app.js')
-    script(type='text/javascript', src='/js/controllers.js')
-    script(type='text/javascript', src='/js/directives.js')
-    script(type='text/javascript', src='/js/filters.js')
-    script(type='text/javascript', src='/js/services.js')
+    script(type='text/javascript', src='/js/app.min.js')
+    script(type='text/javascript', src='/js/controllers.min.js')
+    script(type='text/javascript', src='/js/directives.min.js')
+    script(type='text/javascript', src='/js/filters.min.js')
     script(type="text/javascript", charset="utf-8")
       Tender = {
         hideToggle: true,

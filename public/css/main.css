@@ -1665,7 +1665,7 @@ li {
 .resultTabButton {
 	cursor: pointer; cursor: hand;	
 	height: 28px;
-	top: -1px;
+	top: -3px;
 	padding-top: 2px;
 	padding-left: 15px;
 	position: relative;
@@ -2147,7 +2147,7 @@ ui-datepicker-div {
 	text-align: center;
 	height: 33px;
 	width: 100px;
-	padding: 12px 15px 0px 15px;
+	padding: 6px 15px 6px 15px;
 	margin-top: 10px;
 	float: right;
 	border: 0px;
