@@ -229,24 +229,39 @@ $scope.sortSelect = function(selected) {
 
 var computeWidth = function(size) {
   var width = window.innerWidth;
-  return width*0.8;
+  return width*0.5;
       
 };
   
 $scope.mainStyle = function(size) {
-  var width = window.innerWidth;
-  return { width: width*0.8 + 'px' };
-};
+    var width = window.innerWidth;
+    if (width >= 1024) {
+      return {width: (width - (width-50)%457 - 50) + 'px', margin-left: 'auto', margin-right: 'auto'};
+    }
+    else {
+      return {width: '80%', margin-left: '10%', margin-right: '10%'};
+    }
+  };
 
 var computeTop = function() {
   var height = window.innerHeight;
-  return height*0.7; 
+  return height/2; 
 };
 
 var computeLeft = function() {
   var width = window.innerWidth;
-  return (width)/2; 
+  return (width)/3; 
 };
+
+$scope.resultStyle = function(size) {
+    var width = window.innerWidth;
+    if (width >= 1024) {
+      return {width: '451px', height: '352px', margin: ' 16px 8px 0px 8px'};
+    }
+    else {
+      return {width: '80%', height: (width*1.6)/3 + 'px' margin: '16px 0px 0px 0px'};
+    }
+  };
   
 $scope.activityStyle = {
   top: computeTop() + 'px',
@@ -256,8 +271,8 @@ $scope.activityStyle = {
 $scope.amount = function(size) {
   var width = window.innerWidth;
   var height = window.innerHeight;
-  var wide = Math.floor((width-68)/457);
-  var high = Math.floor((height/378) + 2);
+  var wide = Math.floor(width*0.75);
+  var high = Math.floor(height*0.25);
   return (wide*high);  
 };
 

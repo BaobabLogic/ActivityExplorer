@@ -8,6 +8,9 @@ html(lang='en', ng-app='activity_mobile')
     link(rel='stylesheet', href='/css/angular-ui.min.css')
     link(rel="stylesheet", href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css")
     link(rel='stylesheet', href='/css/mobile.css')
+    link(rel='stylesheet', href='/css/font-awesome.min.css')
+
+
     script(type='text/javascript', src='/js/jquery-1.8.2.min.js')
     script(type='text/javascript', src='/js/jquery-ui-1.9.1.custom.min.js')
     script(type='text/javascript', src='/js/quo.js')
@@ -15,13 +18,18 @@ html(lang='en', ng-app='activity_mobile')
 
 body(ng-controller='MobileCtrl')  
     div#header
-      div#logo
-        image(src='/img/logo-small2.png', height=9999, width=9999)  
+           a.btn.btn-large.btn-warning(href='#')
+              i.icon-align-justify.icon-4x
+           a.btn.btn-large.btn-warning(href='#').pull-right
+              i.icon-search.icon-4x
+        div#logo
+        image(src='/img/logo-small2.png', height=70, width=722,5)
     
-    block content    
+    block content        
 
     script(type='text/javascript', src='/js/angular.min.js')
     script(type='text/javascript', src='/js/angular-ui.min.js')
     script(type='text/javascript', src='/js/angular-ui-ieshiv.min.js')
     script(type='text/javascript', src='/js/ui-bootstrap-0.1.0.min.js')
     script(type='text/javascript', src='/js/app_mobile.js')
+ 

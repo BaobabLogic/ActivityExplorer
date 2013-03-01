@@ -420,7 +420,7 @@ function AppCtrl($scope, $http, $location) {
     if(($scope.resultTabPosition().top == '-52px') && ($scope.resultTabPosition().left == '0px')) { 
       $('#resultTabs').animate({ top: '-452px' }, 800, 'easeInOutCubic');  
       $scope.tabSelected = "none"; 
-    }
+    }//LOOK HERE MOTHERFUCKER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     else if(($scope.resultTabPosition().top == '-52px') && ($scope.resultTabPosition().left == '-840px')) {
       $('#resultTabs').animate({ top: '-272px' }, 600, 'easeInOutQuart', function() {
         $('#resultTabs').css('top', '-452px');

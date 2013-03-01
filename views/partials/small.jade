@@ -6,9 +6,9 @@ div(ng-loading="results true")
 div(id="main", ng-style="mainStyle('/small')", when-scrolled="loadMore()")
   div(ng-repeat="result in results | searchFilter:search:themes:budget:duration:sort:(count*amount('/small'))",
    class="smallResult", ng-click="popUpResult(result.id[0])")
-    div(class="mobilemage") 
+    div(class="smallImage") 
       image(ng-src='{{image(result.image[0])}}', width=231, height=154)
-    div.mobileDetails
+    div.smallDetails
       div.details 
         div.topHalf 
           | {{result.service_category[0]}}

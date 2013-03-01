@@ -5,10 +5,10 @@ div(ng-loading="results true")
    | Please refresh the page in about 1 minute.
 div(id="main", ng-style="mainStyle('/mobile')", when-scrolled="loadMore()")
   div(ng-repeat="result in results | searchFilter:search:themes:budget:duration:sort:(count*amount('/mobile'))",
-   class="smallResult", ng-click="popUpResult(result.id[0])")
-    div(class="smallImage") 
-      image(ng-src='{{image(result.image[0])}}', width=231, height=154)
-    div.smallDetails
+   class="mobileResult", ng-click="popUpResult(result.id[0])")
+    div(class="mobileImage") 
+      image(ng-src='{{image(result.image[0])}}', width=9999, height=9999)
+    div.mobileDetails
       div.details 
         div.topHalf 
           | {{result.service_category[0]}}
