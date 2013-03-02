@@ -1452,7 +1452,7 @@ li {
 }
 
 .topHalf {
-	line-height: 26px;
+	line-height: 24px;
 }
 
 .smallDetails .details .topHalf {
@@ -1487,7 +1487,7 @@ li {
 .mediumDetails .details .bottomHalf {
 	font-family: 'SofiaProLight';	
 	width: 280px;
-	margin-top: 5px;
+	margin-top: 4px;
 	color: #25afe6;
 	font-size: 18px;
 }
@@ -1495,7 +1495,7 @@ li {
 .largeDetails .details .bottomHalf {
 	font-family: 'SofiaProLight';	
 	width: 417px;
-	margin-top: 5px;
+	margin-top: 4px;
 	color: #25afe6;
 	font-size: 18px;
 }
@@ -1556,7 +1556,7 @@ li {
 
 .resultExtra {
 	font-family: 'SofiaProLight';	
-	line-height: 26px;
+	line-height: 24px;
 	width: 800px;
 	height: 24px;
 	margin: 3px 20px 0px 20px;
@@ -1649,8 +1649,7 @@ li {
 
 #resultTabTitle {
 	width: 662px;
-	height: 27px;
-	padding-top: 3px;
+	height: 30px;
 	display: inline-block;	
 }
 
@@ -1664,10 +1663,10 @@ li {
 
 .resultTabButton {
 	cursor: pointer; cursor: hand;	
-	height: 28px;
-	top: -3px;
-	padding-top: 2px;
+	height: 29px;
+	padding-top: 1px;
 	padding-left: 15px;
+	top: -1px;
 	position: relative;
 	display: inline-block;
 	z-index: 160;
@@ -1729,7 +1728,7 @@ li {
 	width: 1680px;
 	height: 400px;
 	left: 0px;
-	top: -452px;
+	top: -453px;
 	position: relative;
 	overflow: hidden;
 }
@@ -2047,6 +2046,7 @@ ui-datepicker-div {
 	text-shadow: 0px 1px 1px #000;
 	padding-left: 15px;
 	padding-right: 15px;
+	padding-bottom: 4px;
 	border: 0px;
   border-radius:7px;
 	display: inline-block;
