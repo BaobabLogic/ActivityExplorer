@@ -1803,8 +1803,9 @@ li {
 	color: #fff;
 	font-family: 'SofiaProLight';	
 	font-size: 18px;
+	line-height: 24px;
 	text-shadow: 0px 1px 1px #000;
-	height: 30px;
+	height: 34px;
 	width: 200px;
 	padding-left: 15px;
 	padding-right: 15px;
@@ -1862,6 +1863,7 @@ li {
 	width: 200px;
 	padding-left: 15px;
 	padding-right: 15px;
+	padding-bottom: 4px;
 	margin: 22px 0px 0 90px;
 	border: 0px;
   border-radius:7px;
@@ -1894,12 +1896,12 @@ ui-datepicker-div {
 
 #adultsButton {
 	width: 50px;
-	height: 26px;
+	height: 28px;
 }
 
 #childrenButton {
 	width: 50px;
-	height: 26px;
+	height: 28px;
 }
 
 #adultsDropDown {
@@ -2145,9 +2147,9 @@ ui-datepicker-div {
 	font-size: 24px;
 	text-shadow: 0px 1px 1px #000;
 	text-align: center;
-	height: 33px;
+	height: 30px;
 	width: 100px;
-	padding: 6px 15px 6px 15px;
+	padding: 6px 15px 8px 15px;
 	margin-top: 10px;
 	float: right;
 	border: 0px;
