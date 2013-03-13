@@ -19,10 +19,17 @@ html(lang='en', ng-app='activity_mobile')
 body(ng-controller='MobileCtrl')  
     .container
         div#header
-            i.icon-angle-left.icon-camera-retro.icon-large.icon-4x.pull-right
-            i.icon-search.icon.icon-large.icon-4x.pull-right
-            div#logo
-                image(src='/img/logo-small2.png', height=70, width=722,5)
+            .row
+                .span1
+                    i.icon-angle-left(style='color: orange;').icon-large.icon-4x.pull-right
+                .span1.offset1
+                    div#logo
+                        image(src='/img/logo-small2.png', height=70, width=722,5)
+                .span3.offset8
+                    i.icon-search(style='color: orange;').icon-large.icon-4x.pull-right
+                    .span1
+                    i.icon-cog(style='color: orange;').icon-large.icon-4x.pull-right
+
     
     block content        
 

@@ -77,6 +77,7 @@ a [class^="icon-"],
 a [class*=" icon-"] {
   display: inline-block;
 }
+
 /* makes the font 33% larger relative to the icon container */
 .icon-large:before {
   vertical-align: -10%;
@@ -156,6 +157,14 @@ ul.icons li [class*=" icon-"] {
 .icon-2x {
   font-size: 2em;
 }
+
+.icon-shadow{
+  box-shadow:
+    -.475em .75em 0 .275em rgba(220, 220, 0, 1),
+    -.185em .675em 0 .175em rgba(220, 220, 0, 1)
+  ;
+}
+
 .icon-2x.icon-border {
   border-width: 2px;
   -webkit-border-radius: 4px;

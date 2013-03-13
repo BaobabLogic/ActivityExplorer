@@ -765,7 +765,17 @@ button span {
 #logo {
     position: fixed;
     top: 5px;
-    left: 20px;
+    left: 50px;
+    width: 722,5px;
+    height: 70px;
+    z-index: 101;
+    display: inline-block;  
+}
+
+#logo1 {
+    position: fixed;
+    top: 200px;
+    left: 50px;
     width: 722,5px;
     height: 70px;
     z-index: 101;
