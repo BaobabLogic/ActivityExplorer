@@ -186,6 +186,15 @@ ul.icons li [class*=" icon-"] {
 .pull-left {
   float: left;
 }
+
+.pull-header {
+  position: fixed;
+  top: 5px;
+  left: 50px;
+  z-index: 101;
+  display: inline-block;  
+}
+
 [class^="icon-"].pull-left,
 [class*=" icon-"].pull-left {
   margin-right: .3em;

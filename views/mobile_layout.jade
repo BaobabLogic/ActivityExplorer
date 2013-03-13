@@ -17,13 +17,12 @@ html(lang='en', ng-app='activity_mobile')
     script(type='text/javascript', src='/js/extra_mobile.js')
 
 body(ng-controller='MobileCtrl')  
-    div#header
-           a.btn.btn-large.btn-warning(href='#')
-              i.icon-align-justify.icon-4x
-           a.btn.btn-large.btn-warning(href='#').pull-right
-              i.icon-search.icon-4x
-        div#logo
-        image(src='/img/logo-small2.png', height=70, width=722,5)
+    .container
+        div#header
+            i.icon-angle-left.icon-camera-retro.icon-large.icon-4x.pull-right
+            i.icon-search.icon.icon-large.icon-4x.pull-right
+            div#logo
+                image(src='/img/logo-small2.png', height=70, width=722,5)
     
     block content        
 
