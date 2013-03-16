@@ -783,8 +783,10 @@ button {
 
 #sideArrow {
     position: fixed;
-    top: 10px;
+    top: 3.5px;
     left: 6px;
+    line-height: .8em;
+    font-size: 1.9em;
     z-index: 101;
     display: inline-block;
     text-shadow:0px 0px 5px #000000;
@@ -792,7 +794,9 @@ button {
 
 #searchLogo {
     position: fixed;
-    top: 10px;
+    top: 3.5px;
+    line-height: .8em;
+    font-size: 1.8em;
     left: 90%;
     z-index: 101;
     display: inline-block;
@@ -801,8 +805,10 @@ button {
 
 #optionsLogo {
     position: fixed;
-    top: 10px;
+    top: 3.5px;
     left: 80%;
+    line-height: .8em;
+    font-size: 1.9em;
     z-index: 101;
     display: inline-block;
     text-shadow:0px 0px 5px #000000;

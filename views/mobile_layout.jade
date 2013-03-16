@@ -21,17 +21,17 @@ body(ng-controller='MobileCtrl')
         div#header
             nav#topButtons(ng-model="head")
                 ul.headerList
-                    a.btn.headButton(href='#', type='button', value='themes', id="themes")
+                    a.headButton(href='#', type='button', value='themes', id="themes")
                         div#logo
                             image(src='/img/logo-small2.png', height=35, width=361.25)
                         div#sideArrow
-                            i.icon-angle-left(style='color: orange;').icon-large.icon-2x
-                    a.btn.searchBtn(href='#', type='button', value'search', id='search')
+                            i.icon-angle-left(style='color: orange;')
+                    a.searchBtn(href='#', type='button', value'search', id='search')
                         div#searchLogo
-                            i.icon-search(style='color: orange;').icon-large.icon-2x
-                    a.btn.optionsBtn(href='#', type='button', value'options', id='options')
+                            i.icon-search(style='color: orange;')
+                    a.optionsBtn(href='#', type='button', value'options', id='options')
                         div#optionsLogo
-                            i.icon-cog(style='color: orange;').icon-large.icon-2x
+                            i.icon-cog(style='color: orange;')
                 
 
     div#themesPopUp 
