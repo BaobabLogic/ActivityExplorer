@@ -19,17 +19,19 @@ html(lang='en', ng-app='activity_mobile')
 body(ng-controller='MobileCtrl')  
     .container
         div#header
-            .row
-                button.headButton(type='button', value='themes', id="themes")
-                .span1
-                    i.icon-angle-left(style='color: orange;').icon-large.icon-2x
-                .span1.offset1
-                    div#logo
-                        image(src='/img/logo-small2.png', height=35, width=361.25, href='http://www.google.co.za')
-                .span3.offset5
-                    .span1.offset1
-                        i.icon-cog(style='color: orange;').icon-large.icon-2x.pull-header
-                i.icon-search(style='color: orange;').icon-large.icon-2x.pull-header
+            nav#topButtons(ng-model="head")
+                ul.headerList
+                    a.btn.headButton(href='#', type='button', value='themes', id="themes")
+                        div#logo
+                            image(src='/img/logo-small2.png', height=35, width=361.25)
+                        div#sideArrow
+                            i.icon-angle-left(style='color: orange;').icon-large.icon-2x
+                    a.btn.searchBtn(href='#', type='button', value'search', id='search')
+                        div#searchLogo
+                            i.icon-search(style='color: orange;').icon-large.icon-2x
+                    a.btn.optionsBtn(href='#', type='button', value'options', id='options')
+                        div#optionsLogo
+                            i.icon-cog(style='color: orange;').icon-large.icon-2x
                 
 
     div#themesPopUp 
@@ -59,7 +61,6 @@ body(ng-controller='MobileCtrl')
           div.typeBox(ng-repeat="type in theme.right")
             span.typeSpan {{type.name}}
             button.themeSelectButton(ng-class="select(type.selected)", ng-click="typeSelectClick(type, theme)")
-
     
     block content        
 
