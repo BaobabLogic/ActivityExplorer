@@ -20,15 +20,45 @@ body(ng-controller='MobileCtrl')
     .container
         div#header
             .row
+                button.headButton(type='button', value='themes', id="themes")
                 .span1
-                    i.icon-angle-left(style='color: orange;').icon-large.icon-4x.pull-right
+                    i.icon-angle-left(style='color: orange;').icon-large.icon-2x
                 .span1.offset1
                     div#logo
-                        image(src='/img/logo-small2.png', height=70, width=722,5)
-                .span3.offset8
-                    i.icon-search(style='color: orange;').icon-large.icon-4x.pull-right
-                    .span1
-                    i.icon-cog(style='color: orange;').icon-large.icon-4x.pull-right
+                        image(src='/img/logo-small2.png', height=35, width=361.25, href='http://www.google.co.za')
+                .span3.offset5
+                    .span1.offset1
+                        i.icon-cog(style='color: orange;').icon-large.icon-2x.pull-header
+                i.icon-search(style='color: orange;').icon-large.icon-2x.pull-header
+                
+
+    div#themesPopUp 
+      div#themeFront(ng-visible="themeVisible")
+        div#themeTop
+          button#themeTitle(ng-click="themeTitleClick(themes, !themes.selected)")
+            | Themes
+        div#themeLeft
+          div(ng-repeat="theme in themes.left")
+            button.themeButton(ng-click="themeButtonClick(theme)")  {{theme.name}} 
+            button.themeSelectButton(ng-class="select(theme.selected)", ng-click="themeSelectClick(theme)")
+        div#themeRight  
+          div(ng-repeat="theme in themes.right")
+            button.themeButton(ng-click="themeButtonClick(theme)")  {{theme.name}}
+            button.themeSelectButton(ng-class="select(theme.selected)", ng-click="themeSelectClick(theme)")
+      div#themeBack(ng-visible="!themeVisible") 
+        div#typeTop
+          div#typeBack 
+            button#backButton.themeButton(ng-click="themeVisible=!themeVisible") Back
+          button#typeTitle(ng-click="themeTitleClick(theme, !theme.selected)")
+            | {{theme.name}}
+        div#themeLeft
+          div.typeBox(ng-repeat="type in theme.left")
+            span.typeSpan {{type.name}} 
+            button.themeSelectButton(ng-class="select(type.selected)", ng-click="typeSelectClick(type, theme)")
+        div#themeRight  
+          div.typeBox(ng-repeat="type in theme.right")
+            span.typeSpan {{type.name}}
+            button.themeSelectButton(ng-class="select(type.selected)", ng-click="typeSelectClick(type, theme)")
 
     
     block content        

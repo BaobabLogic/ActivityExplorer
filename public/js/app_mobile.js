@@ -13,8 +13,6 @@ config(['$routeProvider', '$locationProvider', function($routeProvider, $locatio
 }]);
 
 
-
-
 /* Controllers */
 
 function MobileCtrl($scope, $http, $location) {
@@ -541,10 +539,6 @@ $scope.viewButtonClass = function (button) {
   }
 }
 }
-
-
-
-
 
 /* Directives */
 
