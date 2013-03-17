@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'DISTGRG';
+    src: url('/fonts/DISTGRG-webfont.eot');
+    src: url('/fonts/DISTGRG-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/DISTGRG-webfont.woff') format('woff'),
+         url('/fonts/DISTGRG-webfont.ttf') format('truetype'),
+         url('/fonts/DISTGRG-webfont.svg#LANENAR') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body{
+  background: #7cdafe !important;
+}
+
+.headA{
+  color: #f28e36;
+  font-family: 'DISTGRG'; 
+  font-size: 20px;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.headB{
+  color: #fff;
+  font-family: 'DISTGRG'; 
+  font-size: 20px;
+  text-shadow: 1px 1px 1px #000;
+
+}
+
+.white{
+  color: #fff;
+}
+
+.headBlue {
+  background: #0074ff !important;
+}
+
+
+.backBlue{
+  background: #7cdafe !important;
+}
+
+.asideHeadBlue{
+  background: #0766d4 !important;
+}
+
+.asideBlue{
+  background: #34afdb !important;
+}

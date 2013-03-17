@@ -1,25 +1,53 @@
 section#main(data-transition='slide')
-  header
+  header(class='headBlue')
     nav(class='left box')
-      a(href='#menu', data-router='aside', data-icon='menu')
+      a(href='#menu', data-router='aside', data-icon='menu', class='white')
 
     nav(class='right box')
-      a(href='#', data-icon='search')
+      a(href='#', data-icon='search', class='white')
 
     div(class='centered title with-subtitle')
-      span.partA A
-      span.partB ctivity
-      span.partA E
-      span.partB xplorer
-      small.subtitle Experience More
+      span.headA A
+      span.headB ctivity 
+      span.headA E
+      span.headB xplorer
 
-  article#results(class='active block')
+  article#results(class='active block backBlue')
     div
       div(align='center', ng-repeat='result in results')
         img(ng-src='{{image(result.image[0])}}')
 
-aside#menu
+  article#account(class='list indented backBlue')
+    div
+        
+  article#logIn(class='list indented backBlue')
+    div
+        
+  article#about(class='list indented backBlue')
+    div
+        
+  article#help(class='list indented backBlue')
+    div
+
+aside#menu(class='left')
   header(data-title="Menu")
-    article.list
-      ul
-        li(class="current results")
+  article#sideMenu(class="list scroll active")
+    ul
+      li(class="current")
+        a(href='#results', data-router='article')
+          strong Results
+      li
+        a(href='#account', data-router='article')
+          strong Account
+      li
+        a(href='#logIn', data-router='article')
+          strong Log In
+      li
+        a(href='#', class='logout')
+          strong Log Out
+      li
+        a(href='#about', data-router='article')
+          strong About
+      li
+        a(href='#help', data-router='article')
+          strong Help  
