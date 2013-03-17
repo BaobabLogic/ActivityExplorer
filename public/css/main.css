@@ -1169,7 +1169,6 @@ li {
 #more{
 	background-color: #f5f5f5;
 }
-
 #moreLogo {
 	margin-top: -4px;
 }
@@ -1865,6 +1864,7 @@ li {
 	padding-right: 15px;
 	padding-bottom: 4px;
 	margin: 22px 0px 0 90px;
+
 	border: 0px;
   border-radius:7px;
 	display: block;
