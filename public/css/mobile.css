@@ -48,3 +48,8 @@ html, body{
 .asideBlue{
   background: #34afdb !important;
 }
+
+.icon {
+  color: #f28e36 !important;
+  text-shadow: 0px 1px 1px black !important;
+}
