@@ -1,18 +1,25 @@
-div(ng-loading="results true")
-  div#mainLoadingWheel(ng-style="mainRestartingStyle")
-   | The server is restarting. 
-   br
-   | Please refresh the page in about 1 minute.
-div(id="main", ng-style="mainStyle('/mobile')", when-scrolled="loadMore()")
-  div(ng-repeat="result in results | searchFilter:search:themes:budget:duration:sort:(count*amount('/mobile'))",
-   class="mobileResult", ng-click="popUpResult(result.id[0])")
-    div(class="mobileImage") 
-      image(ng-src='{{image(result.image[0])}}', width=9999, height=9999)
-    div.mobileDetails
-      div.details 
-        div.topHalf 
-          | {{result.service_category[0]}}
-          div.duration {{getDuration(result.duration[0])}} hrs
-        div.bottomHalf 
-          div.location {{result.location[0]}}
-          div.price R{{price(result.price[0])}}
+section#main(data-transition='slide')
+  header
+    nav(class='left box')
+      a(href='#menu', data-router='aside', data-icon='menu')
+
+    nav(class='right box')
+      a(href='#', data-icon='search')
+
+    div(class='centered title with-subtitle')
+      span.partA A
+      span.partB ctivity
+      span.partA E
+      span.partB xplorer
+      small.subtitle Experience More
+
+  article#results(class='active block')
+    div
+      div(align='center', ng-repeat='result in results')
+        img(ng-src='{{image(result.image[0])}}')
+
+aside#menu
+  header(data-title="Menu")
+    article.list
+      ul
+        li(class="current results")

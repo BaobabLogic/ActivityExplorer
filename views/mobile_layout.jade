@@ -2,11 +2,18 @@ doctype 5
 html(lang='en', ng-app='activity_mobile')
 
   head
+    meta(charset="utf-8")
     title= title
+    meta(name='description', content='')
+    meta(name='author', content='')
+    meta(name='HandheldFriendly', content='True')
+    meta(name='viewport', content='initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black')
+    meta(name='format-detection', content='telephone=no')
+    meta(http-equiv='cleartype', content='on')
     link(rel='stylesheet', href='/css/angular-ui.min.css')
-    link(rel="stylesheet", href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css")
     link(rel='stylesheet', href='/css/mobile.css')
-    link(rel='stylesheet', href='/css/font-awesome.min.css')
     link(rel='stylesheet', href='/css/lungo.css')
     link(rel='stylesheet', href='/css/lungo.icon.css')
     link(rel='stylesheet', href='/css/lungo.icon.brand.css')
@@ -15,59 +22,14 @@ html(lang='en', ng-app='activity_mobile')
     script(type='text/javascript', src='/js/quo.js')
     script(type='text/javascript', src='/js/extra_mobile.js')
 
-body(ng-controller='MobileCtrl')  
-    .container
-        div#header
-            nav#topButtons(ng-model="head")
-                ul.headerList
-                    a.headButton(href='#', type='button', value='sidemenu', id="sidemenu")
-                        div#logo
-                            image(src='/img/logo-small2.png', height=35, width=361.25)
-                        div#sideArrow
-                            i.icon-angle-left(style='color: orange;')
-                    a.searchBtn(href='#', type='button', value'search', id='search')
-                        div#searchLogo
-                            i.icon-search(style='color: orange;')
-                    a.optionsBtn(href='#', type='button', value'options', id='options')
-                        div#optionsLogo
-                            i.icon-cog(style='color: orange;')
-                
+  body(class="app", ng-controller='MobileCtrl')  
+      
+      block content        
 
-    div#themesPopUp 
-      div#themeFront(ng-visible="themeVisible")
-        div#themeTop
-          button#themeTitle(ng-click="themeTitleClick(themes, !themes.selected)")
-            | Themes
-        div#themeLeft
-          div(ng-repeat="theme in themes.left")
-            button.themeButton(ng-click="themeButtonClick(theme)")  {{theme.name}} 
-            button.themeSelectButton(ng-class="select(theme.selected)", ng-click="themeSelectClick(theme)")
-        div#themeRight  
-          div(ng-repeat="theme in themes.right")
-            button.themeButton(ng-click="themeButtonClick(theme)")  {{theme.name}}
-            button.themeSelectButton(ng-class="select(theme.selected)", ng-click="themeSelectClick(theme)")
-      div#themeBack(ng-visible="!themeVisible") 
-        div#typeTop
-          div#typeBack 
-            button#backButton.themeButton(ng-click="themeVisible=!themeVisible") Back
-          button#typeTitle(ng-click="themeTitleClick(theme, !theme.selected)")
-            | {{theme.name}}
-        div#themeLeft
-          div.typeBox(ng-repeat="type in theme.left")
-            span.typeSpan {{type.name}} 
-            button.themeSelectButton(ng-class="select(type.selected)", ng-click="typeSelectClick(type, theme)")
-        div#themeRight  
-          div.typeBox(ng-repeat="type in theme.right")
-            span.typeSpan {{type.name}}
-            button.themeSelectButton(ng-class="select(type.selected)", ng-click="typeSelectClick(type, theme)")
-    
-    block content        
-
-    script(type='text/javascript', src='/js/lungo.js')
-    script(type='text/javascript', src='/js/angular.min.js')
-    script(type='text/javascript', src='/js/angular-ui.min.js')
-    script(type='text/javascript', src='/js/angular-ui-ieshiv.min.js')
-    script(type='text/javascript', src='/js/ui-bootstrap-0.1.0.min.js')
-    script(type='text/javascript', src='/js/lungo_mobile.js')
-    script(type='text/javascript', src='/js/app_mobile.js')
+      script(type='text/javascript', src='/js/lungo.js')
+      script(type='text/javascript', src='/js/angular.min.js')
+      script(type='text/javascript', src='/js/angular-ui.min.js')
+      script(type='text/javascript', src='/js/angular-ui-ieshiv.min.js')
+      script(type='text/javascript', src='/js/lungo_mobile.js')
+      script(type='text/javascript', src='/js/app_mobile.js')
  
