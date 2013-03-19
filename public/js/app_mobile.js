@@ -16,7 +16,45 @@ config(['$routeProvider', '$locationProvider', function($routeProvider, $locatio
 /* Controllers */
 
 function MobileCtrl($scope, $http, $location) {
+  $scope.atHome = true;
+  $scope.searchMenuVis = false;
 
+  $$('.searchButton').tap(function() {
+    if($scope.searchMenuVis == false)
+      $('#resultsView').animate({ top: '300px'}, 800, 'easeInOutQuart');
+    else
+      $('#resultsView').animate({ top: '0px'}, 800, 'easeInOutQuart');
+
+    $scope.searchMenuVis = !$scope.searchMenuVis;
+  });
+
+  $$('.logo').tap(function() {
+    if($scope.searchMenuVis == true)
+      $('#resultsView').animate({ top: '0px'}, 800, 'easeInOutQuart');
+ 
+    $scope.searchMenuVis = !$scope.searchMenuVis;
+  });
+
+  $$('.menuButton').tap(function() {
+    if($scope.searchMenuVis == true)
+      $('#resultsView').animate({ top: '0px'}, 800, 'easeInOutQuart');
+
+    $scope.searchMenuVis = !$scope.searchMenuVis;
+  });
+
+  $$('#resultsView').tap(function() {
+    if($scope.searchMenuVis == true)
+      $('#resultsView').animate({ top: '0px'}, 800, 'easeInOutQuart');
+
+    $scope.searchMenuVis = !$scope.searchMenuVis;
+  });
+
+  $http.get('/api').
+  success(function(data, status, headers, config) {
+    $scope.results = data;
+    $scope.loadMore();
+    $scope.loading_results = false;  
+  });
 }
 
 /* Directives */

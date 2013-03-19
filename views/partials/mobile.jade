@@ -1,19 +1,20 @@
 section#main(data-transition='slide')
   header(class='headBlue')
-    nav(class='left box')
+    nav(class='left box menuButton')
       a(href='#menu', data-router='aside', data-icon='menu', class='white')
 
-    nav(class='right box')
+    nav(class='right box searchButton')
       a(href='#', data-icon='search', class='white')
 
-    div(class='centered title with-subtitle')
+    div(class='centered title with-subtitle logo')
       span.headA A
       span.headB ctivity 
       span.headA E
       span.headB xplorer
 
   article#results(class='active block backBlue')
-    div
+    div#searchMenu
+    div#resultsView
 
   article#account(class='list indented backBlue')
     div
