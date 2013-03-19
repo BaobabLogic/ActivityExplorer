@@ -165,3 +165,11 @@ header {
   display: inline-block;
   color: #ff8426;
 }
+
+.iconRight{
+  padding-right: 6px;
+  padding-top: 2px;
+  float: right;
+  display: inline-block;
+  color: #666666;
+}
