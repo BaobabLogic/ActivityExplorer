@@ -12,9 +12,19 @@ section#main(data-transition='slide')
       span.headA E
       span.headB xplorer
 
-  article#results(class='active block backBlue')
+  article#results(class='active block backBlue', data-control='carousel')
     div#searchMenu
-    div#resultsView
+    div#loading(ng-visible='loadingResults')
+    div#resultsView(ng-loading='results false', class='overthrow')
+      div.result(ng-repeat='result in results | searchFilter:search:themes:budget:duration:sort:500')
+        div.resultImageDiv
+          img(ng-src='{{image(result.image[0])}}', class='resultImage')
+        div.resultDetails
+          span.topLeft {{result.service_category[0]}}
+          span.topRight R{{price(result.price[0])}}
+        div.resultDetailsMore
+          span.bottomLeft {{result.location[0]}}
+          span.bottomRight {{getDuration(result.duration[0])}} hrs
 
   article#account(class='list indented backBlue')
     div
