@@ -42,8 +42,14 @@ html, body{
 
 .icon {
   color: #f28e36 !important;
-  text-shadow: 0px 1px 1px black !important;
+  text-shadow: 0px 1px 1px #000 !important;
 }
+
+/* 
+.icon {
+  color: #003470 !important;
+  text-shadow: 0px 1px 0px #298dff !important;
+}*/
 
 .asideHeadBlue{
   background: #0766d4 !important;
