@@ -14,6 +14,9 @@ section#main(data-transition='slide')
 
   article#results(class='active block backBlue', data-control='carousel')
     div#searchMenu
+      form
+        fieldset
+          input(type='text', placeholder='Explore…')
     div#loading(ng-visible='loadingResults')
     div#resultsView(ng-loading='results false', class='overthrow')
       div.result(ng-repeat='result in results | searchFilter:search:themes:budget:duration:sort:500')
@@ -55,7 +58,7 @@ aside#menu(class='left')
           strong Log In
           div(data-icon='plus', class='iconRight')
       li
-        a(href='#', class='logout')
+        a(href='#', class='logout', data-action='normal', data-router='article')
           strong Log Out
           div(data-icon='minus', class='iconRight')
       li
