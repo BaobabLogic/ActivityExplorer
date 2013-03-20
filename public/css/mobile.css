@@ -9,6 +9,16 @@
   font-style: normal;
 }
 
+@font-face {
+    font-family: 'SofiaProLight';
+    src: url('/fonts/sofiaprolight-webfont.eot');
+    src: url('/fonts/sofiaprolight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/sofiaprolight-webfont.ttf') format('truetype'),
+         url('/fonts/sofiaprolight-webfont.svg#SofiaProLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html, body{
   background: #7cdafe !important;
 }
@@ -167,6 +177,22 @@ header {
   display: inline-block;
   color: #666666;
 }
+
+.optionsDiv{
+  padding-top: 15px;
+}
+
+.optionsText{
+  padding-right: 16%;
+  font-size: 17px;
+  color: #fff;
+  text-shadow: 0px 1px 1px #000;
+}
+
+.searchText{
+  display: inline-block;
+  padding-left: 10px;
+}
 /*
 .searchBox{
   width: 80%;
@@ -182,3 +208,192 @@ header {
   box-shadow: inset 2px 2px 4px #ccc;
   overflow: hidden; 
 }*/
+
+#themeTop {
+  font-family: "SofiaProLight";
+  color: white;
+  font-size: 20px;
+  text-shadow: 0px 1px 1px #000;
+  
+  position: relative;
+  top: 0px;
+  left: 20px;
+  width: 30%;
+  height: 40px;
+  margin: 5px 0px 5px 0px;
+  padding-bottom: 5px;
+}
+
+#themeTitle {
+  font-family: "SofiaProLight";
+  color: white;
+  font-size: 15px;
+  text-shadow: 0px 1px 1px #000;
+  
+  width: 80%;
+  height: 38px;
+  display: inline-block;
+  text-align: center;
+  border-radius:7px;
+  border: 0px;
+  
+  -moz-box-shadow: 1px 1px 3px #2b2b2b;
+  -webkit-box-shadow: 1px 1px 3px #2b2b2b;
+  box-shadow: 1px 1px 3px #2b2b2b;
+  
+  background-color: #f28e36;
+  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
+  background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+  background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+  background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+  background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.21, rgb(242,142,54)),
+    color-stop(0.61, rgb(241,175,83))
+  );
+}
+
+#themeTitle:active {
+  background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.21, rgb(241,175,83)),
+    color-stop(0.61, rgb(242,142,54))
+  );
+}
+
+.themeButton {
+  font-family: "SofiaProLight";
+  color: white;
+  font-size: 11px;
+  text-shadow: 0px 1px 1px #000;
+
+  height: 26px;
+  margin: 0;
+  display: inline-block;
+  
+  background-color: transparent;
+  border: 0;  
+  box-shadow: none;
+  border-radius:5px;
+}
+
+#themeTop .themeButton {
+  font-size: 8px;
+  margin: 0px 8px 0px;
+  display: inline-block;
+}
+
+.themeButton:active {
+  -moz-box-shadow: 1px 1px 3px #2b2b2b;
+  -webkit-box-shadow: 1px 1px 3px #2b2b2b;
+  box-shadow: 1px 1px 3px #2b2b2b;
+  
+  background-color: #f28e36;
+  background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.21, rgb(241,175,83)),
+    color-stop(0.61, rgb(242,142,54))
+  );
+}
+
+.themeSelectButton {
+  width: 5px;
+  height: 5px;
+  margin: 0;
+  display: inline-block;
+  float: right;
+    
+  border-radius:7px;
+  border: 0px;
+  
+  -moz-box-shadow: 1px 1px 3px #2b2b2b;
+  -webkit-box-shadow: 1px 1px 3px #2b2b2b;
+  box-shadow: 1px 1px 3px #2b2b2b;
+  
+  background-color: #f28e36;
+  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
+  background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+  background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+  background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+  background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
+
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.21, rgb(242,142,54)),
+    color-stop(0.61, rgb(241,175,83))
+  );
+}
+
+.themeSelectButton:active {
+  background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+  background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.21, rgb(241,175,83)),
+    color-stop(0.61, rgb(242,142,54))
+  );
+}
+
+.themeSelectEmpty {
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid #6b6b6b;
+  
+  -moz-box-shadow: 1px 1px 2px #5c5c5c;
+  -webkit-box-shadow: 1px 1px 2px #5c5c5c;
+  box-shadow: 1px 1px 2px #5c5c5c;
+}
+
+.themeSelectEmpty:active {
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid #f7941d;
+  
+  -moz-box-shadow: 1px 1px 2px #5c5c5c;
+  -webkit-box-shadow: 1px 1px 2px #5c5c5c;
+  box-shadow: 1px 1px 2px #5c5c5c;
+}
+
+#themeLeft {
+  float: left;
+  display: inline-block;
+  width: 42%;
+  height: 180px;
+  margin-left: 20px;
+}
+
+#themeRight {
+  float: right;
+  display: inline-block;
+  width: 42%;
+  height: 180px;
+  margin-right: 20px;
+}

@@ -14,9 +14,21 @@ section#main(data-transition='slide')
 
   article#results(class='active block backBlue', data-control='carousel')
     div#searchMenu
-      form
-        fieldset
-          input(type='text', placeholder='Explore…')
+      div
+        form
+          fieldset
+            input.searchText(type='text', placeholder='Explore…')
+      div.optionsDiv
+        div
+          div#themeTop
+            button#themeTitle(ng-click="themeTitleClick(themes, !themes.selected)")
+              | Themes
+          div#themeLeft
+            div(ng-repeat="theme in themes.left")
+              button.themeButton(ng-click="themeButtonClick(theme)")  {{theme.name}}
+          div#themeRight  
+            div(ng-repeat="theme in themes.right")
+              button.themeButton(ng-click="themeButtonClick(theme)")  {{theme.name}}
     div#loading(ng-visible='loadingResults')
     div#resultsView(ng-loading='results false', class='overthrow')
       div.result(ng-repeat='result in results | searchFilter:search:themes:budget:duration:sort:500')
