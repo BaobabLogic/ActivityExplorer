@@ -30,7 +30,7 @@ section#main(data-transition='slide')
             div(ng-repeat="theme in themes.right")
               button.themeButton(ng-click="themeButtonClick(theme)")  {{theme.name}}
     div#loading(ng-visible='loadingResults')
-    div#resultsView(ng-loading='results false', class='overthrow')
+    div#resultsView(ng-loading='results false', class='scroll')
       div.result(ng-repeat='result in results | searchFilter:search:themes:budget:duration:sort:500')
         div.resultImageDiv
           img(ng-src='{{image(result.image[0])}}', class='resultImage')
