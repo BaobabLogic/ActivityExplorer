@@ -19,6 +19,17 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Cantarell-Regular';
+    src: url('/fonts/Cantarell-Regular-webfont.eot');
+    src: url('/fonts/Cantarell-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Cantarell-Regular-webfont.woff') format('woff'),
+         url('/fonts/Cantarell-Regular-webfont.ttf') format('truetype'),
+         url('/fonts/Cantarell-Regular-webfont.svg#Cantarell-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html, body{
   background: #7cdafe !important;
 }
@@ -105,19 +116,26 @@ header {
   overflow: auto;
 }
 
-#loading{
-  background-image: url('/img/loading_128.gif');
-  position: relative;
-  width: 128px;
-  height: 128px;
-  margin-left: auto;
-  margin-right: auto;
-  top: 15%; 
+.loadingMargin{
+  margin-top: 180px;
 }
 
+.loading.white > span.top{background-color:rgba(255,132,38,0.99)!important}
+.loading.white > span.top::after{background-color:rgba(255,132,38,0.9)!important}
+.loading.white > span.left::before{background-color:rgba(255,132,38,0.8)!important}
+.loading.white > span.left{background-color:rgba(255,132,38,0.7)!important}
+.loading.white > span.left::after{background-color:rgba(255,132,38,0.6)!important}
+.loading.white > span.bottom::before{background-color:rgba(255,132,38,0.5)!important}
+.loading.white > span.bottom{background-color:rgba(255,132,38,0.4)!important}
+.loading.white > span.bottom::after{background-color:rgba(255,132,38,0.35)!important}
+.loading.white > span.right::before{background-color:rgba(255,132,38,0.3)!important}
+.loading.white > span.right{background-color:rgba(255,132,38,0.25)!important}
+.loading.white > span.right::after{background-color:rgba(255,132,38,0.2)!important}
+.loading.white > span.top::before{background-color:rgba(255,132,38,0.15)!important}
+
 .result{
-  width: 80%;
-  margin: 15px 10% 15px 10%;
+  width: 90%;
+  margin: 15px 5% 15px 5%;
   -moz-box-shadow: 0px 2px 8px #616161;
   -webkit-box-shadow: 0px 2px 10px #616161;
   box-shadow: 0px 2px 10px #616161;
@@ -125,6 +143,7 @@ header {
 
 .resultImage{
   width: 100%;
+  min-height: 160px;
 }
 
 .resultDetails{
@@ -140,6 +159,7 @@ header {
 .topLeft{
   padding-left: 10px;
   line-height: 22px;
+  font-size: 15px;
   float: left;
   display: inline-block;
   color: #fff;
@@ -149,6 +169,7 @@ header {
 .topRight{
   padding-right: 10px;
   line-height: 22px;
+  font-size: 15px;
   float: right;
   display: inline-block;
   color: #fff;
@@ -157,6 +178,7 @@ header {
 .bottomLeft{
   padding-left: 10px;
   line-height: 22px;
+  font-size: 15px;
   float: left;
   display: inline-block;
   color: #1898c7;
@@ -165,6 +187,7 @@ header {
 .bottomRight{
   padding-right: 10px;
   line-height: 22px;
+  font-size: 15px;
   float: right;
   display: inline-block;
   color: #ff8426;
@@ -192,6 +215,22 @@ header {
 .searchText{
   display: inline-block;
   padding-left: 10px;
+}
+
+#images{
+  width: 100%;
+  min-height: 200px;
+}
+
+#more{
+  background-color: #f7f5f5;
+  font-family: 'Cantarell-Regular';
+  text-align: center;
+}
+
+.detailTitle{
+  font-weight: bold;
+  padding: 6px 0px 4px 0px;
 }
 /*
 .searchBox{

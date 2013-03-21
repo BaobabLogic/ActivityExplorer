@@ -19,10 +19,13 @@ function MobileCtrl($scope, $http, $location) {
   $scope.atHome = true;
   $scope.searchMenuVis = false;
   $scope.loadingResults = true;
+  $scope.loadingActivity = true;
   $scope.search = "";
   $scope.budget = 10;
   $scope.duration = 10;
   $scope.sort = "random";
+  $scope.activity = "";
+  $scope.available = "";
 
   $scope.themes = { 
     "left":    [
@@ -147,7 +150,13 @@ function MobileCtrl($scope, $http, $location) {
                 }
             ],
     "selected": true      
-  };      
+  };  
+
+  $http.get('/api').
+    success(function(data, status, headers, config) {
+      $scope.results = data;
+      $scope.loadingResults = false;  
+    });    
 
   $$('.searchButton').tap(function() {
     if($scope.searchMenuVis == false)
@@ -193,10 +202,52 @@ function MobileCtrl($scope, $http, $location) {
     $scope.searchMenuVis = !$scope.searchMenuVis;
   });
 
-  $http.get('/api').
-  success(function(data, status, headers, config) {
-    $scope.results = data;
-    $scope.loadingResults = false;  
+  var myDate = new Date();
+  myDate.setDate(myDate.getDate()+2);
+  $scope.selectedDate = myDate;
+
+  $scope.adults = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+  $scope.children = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+
+  $scope.selectedAdults = 1;
+  $scope.selectedChildren = 0;
+
+  $$('.result').tap(function(){
+    $scope.activity = "";
+    $http.get('/api/service/' + this.id).
+      success(function(data, status, headers, config) {
+        $scope.activity = data;
+        $scope.loadingActivity = false;
+        $scope.availabilityCheck(1, 0, $scope.selectedDate, $scope.activity.id);
+      });
+    Lungo.Router.section('activity'); 
+  });
+
+  $scope.availabilityCheck = function(adults, children, date, id) { 
+    $scope.available = "";
+    $scope.availabilityError = false;
+    $scope.availabilityCanceled = false;
+    $scope.availabilityLoading = true;
+    if(adults == undefined) {adults = 1}
+    if(children == undefined) {children = 0}
+    $http.get('/api/available/' + adults + '/' + children + '/' + '2013-04-22' + '/' + id).
+      success(function(data, status, headers, config) {
+        $scope.available = data;  
+        if(data[0].inventories[0].inventory != undefined) {
+          $scope.selectedTimeslot = data[0].inventories[0].inventory[0];
+          $scope.timeslots = data[0].inventories[0].inventory;
+        } 
+        $scope.availabilityDone = true;  
+        $scope.availabilityLoading = false;  
+      }).
+      error(function(data, status, headers, config) {
+        $scope.availabilityError = true;
+      }); 
+  };
+
+  $$('.activityBack').tap(function(){
+    Lungo.Router.back();
+    $scope.loadingActivity = true;
   });
 
   $scope.image = function (url) {
@@ -278,73 +329,6 @@ app.directive('ngVisible', function() {
     scope.$watch(attr.ngVisible, function(visible) {
       element.css('display', visible ? 'block' : 'none');
     });
-  };
-});
-
-app.directive('ngLoading', function() {
-  return {
-    restrict: 'A',
-    scope: true,
-    link: function( scope, element, attrs ) {
-      scope.$watch(function(){ 
-        var args = attrs.ngLoading.match(/[^ ]+/g);
-        if(scope.$eval(args[1])) {
-          element.css('display', (scope.$eval(args[0]) == '') ? 'block' : 'none');
-        }
-        else {
-          element.css('display', (scope.$eval(args[0]) != '') ? 'block' : 'none');
-        }
-      }); 
-    }
-  };
-});
-
-app.directive('ngLoadingResult', function() {
-  return {
-    restrict: 'A',
-    scope: true,
-    link: function( scope, element, attrs ) {
-      var args = attrs.ngLoadingResult.match(/[^ ]+/g);
-      scope.$watch(function(){ 
-        return scope.$eval(args[0]);
-      }, function() {
-        if(scope.$eval(args[1])) {
-          element.css('display', (scope.$eval(args[0]) == '') ? 'block' : 'none');
-        }
-        else {
-          if($("#resultDescription").prop('offsetHeight') != 0) {
-            var descriptionH = $("#resultDescription").prop('offsetHeight'),
-                detailsH = $("#resultDetails").prop('offsetHeight'),
-                bookingH = $("#resultBooking").prop('offsetHeight');
-
-            if((detailsH >= descriptionH) && (detailsH >= bookingH)) {
-              scope.descriptionH = descriptionH;
-              scope.detailsH = detailsH;
-              scope.bookingH = bookingH;
-              $('#resultDescription').css('top', '-' + ((detailsH - descriptionH)) +'px');
-              $('#resultBooking').css('top', '-' + (detailsH - bookingH) +'px');
-            }
-            else if(descriptionH >= bookingH) {
-              scope.descriptionH = descriptionH;
-              scope.detailsH = detailsH;
-              scope.bookingH = bookingH;
-              $('#resultDetails').css('top', '-' + (descriptionH - detailsH) +'px');
-              $('#resultBooking').css('top', '-' + (descriptionH - bookingH) +'px');
-            }
-            else {
-              scope.descriptionH = descriptionH;
-              scope.detailsH = detailsH;
-              scope.bookingH = bookingH;
-              $('#resultDescription').css('top', '-' + (bookingH - descriptionH) +'px');
-              $('#resultDetails').css('top', '-' + (bookingH - detailsH) +'px');
-            }
-
-            $('#resultTabs').css('top', '-' + bookingH + 'px');
-          }  
-          element.css('display', (scope.$eval(args[0]) != '') ? 'block' : 'none');
-        }        
-      }, true); 
-    }
   };
 });
 

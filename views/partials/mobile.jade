@@ -12,7 +12,7 @@ section#main(data-transition='slide')
       span.headA E
       span.headB xplorer
 
-  article#results(class='active block backBlue', data-control='carousel')
+  article#results(class='active block backBlue')
     div#searchMenu
       div
         form
@@ -29,9 +29,10 @@ section#main(data-transition='slide')
           div#themeRight  
             div(ng-repeat="theme in themes.right")
               button.themeButton(ng-click="themeButtonClick(theme)")  {{theme.name}}
-    div#loading(ng-visible='loadingResults')
-    div#resultsView(ng-loading='results false', class='scroll')
-      div.result(ng-repeat='result in results | searchFilter:search:themes:budget:duration:sort:500')
+    div.loadingMargin(ng-visible='loadingResults')
+      div(data-loading='white')
+    div#resultsView(ng-visible='!loadingResults', class='scroll')
+      div.result(ng-repeat='result in results | searchFilter:search:themes:budget:duration:sort:30.', id='{{result.id[0]}}')
         div.resultImageDiv
           img(ng-src='{{image(result.image[0])}}', class='resultImage')
         div.resultDetails
@@ -52,6 +53,58 @@ section#main(data-transition='slide')
         
   article#help(class='list indented backBlue')
     div
+
+section#activity(data-transition='slide')
+  header(class='headBlue')
+    nav(class='left box activityBack')
+      a(href='#', data-router='section', data-icon='left')
+
+    div(class='centered title with-subtitle logo')
+      span.headA A
+      span.headB ctivity 
+      span.headA E
+      span.headB xplorer
+
+  article#activityMore(class='active block backBlue scroll')
+    div.loadingMargin(ng-visible='loadingActivity')
+      div(data-loading='white')
+    div(ng-visible='!loadingActivity')
+      div#images(class='scroll horizontal')
+        span.image(ng-repeat='image in activity.images[0].image')
+            img(ng-src='{{image.medium[0]}}', class='activityImage')
+      div.resultDetails
+        span.topLeft {{activity.name[0]}}
+        span.topRight R{{price(activity.price[0])}}
+      div.resultDetailsMore
+        span.bottomLeft {{activity.location[0]}}
+        span.bottomRight {{getDuration(activity.duration[0])}} hrs
+      div#more
+        p.detailTitle Description:  
+        p {{activity.description[0]}} 
+        p.detailTitle Notes:  
+        p {{activity.instructions[0]}} 
+        p.detailTitle Where:  
+        p {{activity.where[0]}} 
+        p.detailTitle When:   
+        p {{activity.when[0]}} 
+        p.detailTitle Weather:  
+        p {{activity.weather[0]}} 
+        p.detailTitle What to Wear:  
+        p {{activity.wear[0]}} 
+        p.detailTitle Things to bring:
+        p {{activity.bring[0]}}
+        p.detailTitle Guest/Spectators:  
+        p {{activity.guests[0]}}  
+        p.detailTitle Inclusions:  
+        p {{activity.inclusions[0]}} 
+        p.detailTitle Exclusions:  
+        p {{activity.exclusions[0]}} 
+        p.detailTitle Requirements:  
+        p Minimum Age: {{activity.min_age[0]}}, Maximum Weight: {{activity.max_weight[0]}}, 
+        p Minimum Height: {{activity.min_height[0]}}, Maximum Height: {{activity.max_height[0]}},
+        p Fitness: {{activity.fitness[0]}}, Qualifications: {{activity.qualifications[0]}}, 
+        p Certification: {{activity.certification[0]}}, Experience Level: {{activity.experience_level[0]}}
+
 
 aside#menu(class='left')
   header(data-title="Menu")
