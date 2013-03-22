@@ -38,30 +38,31 @@ angular.module('activity.filters', [])
           case 9: time = 259200; break;
           default: time = 99999999;
         }
-
+        
         //Filter based on parameters
         for(var i=0; i<array.length; i++) {
           var selected = false;
+          
           for(var m=0; m<themes.left.length; m++) {
             for(var j=0; j<themes.left[m].left.length; j++) {
-              if(themes.left[m].left[j].name == array[i].service_category) {
+              if(themes.left[m].left[j].name == array[i].activity[0]) {
                 selected = themes.left[m].left[j].selected;
-              } 
+              }
             }
             for(var k=0; k<themes.left[m].right.length; k++) {
-              if(themes.left[m].right[k].name == array[i].service_category) {
+              if(themes.left[m].right[k].name == array[i].activity[0]) {
                 selected = themes.left[m].right[k].selected;              
               } 
             }
           }
           for(var m=0; m<themes.right.length; m++) {
             for(var j=0; j<themes.right[m].left.length; j++) {
-              if(themes.right[m].left[j].name == array[i].service_category) {
+              if(themes.right[m].left[j].name == array[i].activity[0]) {
                 selected = themes.right[m].left[j].selected;              
               } 
             }
             for(var k=0; k<themes.right[m].right.length; k++) {
-              if(themes.right[m].right[k].name == array[i].service_category) {
+              if(themes.right[m].right[k].name == array[i].activity[0]) {
                 selected = themes.right[m].right[k].selected;              
               } 
             }
@@ -71,17 +72,17 @@ angular.module('activity.filters', [])
           for(var m=0; m<searchArray.length; m++) {
             push_word = false;
 
-            if((array[i].price <= price) && (array[i].duration <= time) && selected ) {
+            if((array[i].price <= price) && (array[i].duration <= time) && selected) {
               if( (new RegExp(searchArray[m], 'i')).test(array[i].name[0]) ){
                 push_word = true;
               }
               else if( (new RegExp(searchArray[m], 'i')).test(array[i].description[0]) ) {
                 push_word = true;
               }
-              else if( (new RegExp(searchArray[m], 'i')).test(array[i].service_type[0]) ) {
+              else if( (new RegExp(searchArray[m], 'i')).test(array[i].activity_theme[0]) ) {
                 push_word = true;
               }
-              else if( (new RegExp(searchArray[m], 'i')).test(array[i].service_category[0]) ) {
+              else if( (new RegExp(searchArray[m], 'i')).test(array[i].activity[0]) ) {
                 push_word = true;
               }
               else if( (new RegExp(searchArray[m], 'i')).test(array[i].location[0]) ) {
@@ -99,7 +100,7 @@ angular.module('activity.filters', [])
           
           if(push) {
             tempArray.push(array[i]);
-          }         
+          }  
         }
 
         //Sort based on parameters

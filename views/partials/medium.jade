@@ -11,7 +11,7 @@ div(id="main", ng-style="mainStyle('/medium')", when-scrolled="loadMore()", ng-l
     div.mediumDetails
       div.details 
         div.topHalf 
-          | {{result.service_category[0]}}
+          | {{result.activity[0]}}
           div.duration {{getDuration(result.duration[0])}} hrs
         div.bottomHalf 
           div.location {{result.location[0]}}
