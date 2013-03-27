@@ -107,11 +107,12 @@ exports.api = function (req, res) {
 
 exports.specificService = function (req, res) {
   var serviceID = req.params.id;
+  var date = req.params.date;
   if(serviceID != 'undefined') {
     var service = {
       hostname: 'www.activitar.com',
       port: 443,
-      path: '/api/services/' + serviceID + '.xml?api_key=rTLUr5A4iGiat3Y2BjZn&per_page=99999',
+      path: '/api/services/' + serviceID + '.xml?api_key=rTLUr5A4iGiat3Y2BjZn&date=' + date,
       method: 'GET',  
     };
 

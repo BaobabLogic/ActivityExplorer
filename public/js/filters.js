@@ -72,7 +72,7 @@ angular.module('activity.filters', [])
           for(var m=0; m<searchArray.length; m++) {
             push_word = false;
 
-            if((array[i].price <= price) && (array[i].duration <= time) && selected) {
+            if((array[i].price <= price) && (array[i].price > 0) && (array[i].duration <= time) && selected) {
               if( (new RegExp(searchArray[m], 'i')).test(array[i].name[0]) ){
                 push_word = true;
               }

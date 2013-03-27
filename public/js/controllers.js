@@ -634,7 +634,7 @@ function AppCtrl($scope, $http, $location) {
     $scope.activity = "";
     $scope.popup_id = id;
     $location.search({s: $scope.search, p: $scope.popup_id});
-    $http.get('/api/service/' + id).
+    $http.get('/api/service/' + id + "/" + $.datepicker.formatDate('yy-mm-dd', $scope.selectedDate)).
       success(function(data, status, headers, config) {
         $scope.activity = data;
         $scope.imagesStyle.width = (840*$scope.activity.images[0].image.length) + 'px';
