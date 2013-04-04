@@ -158,6 +158,28 @@ function MobileCtrl($scope, $http, $location) {
     "selected": true      
   };  
 
+  $scope.nums = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+  $scope.months_list = [1,2,3,4,5,6,7,8,9,10,11,12];
+  $scope.years_list = [2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
+  var days28 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20, 21, 22, 23, 24, 25, 26, 27,28];
+  var days29 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20, 21, 22, 23, 24, 25, 26, 27,28, 29];
+  var days30 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20, 21, 22, 23, 24, 25, 26, 27,28, 29, 30];
+  var days31 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20, 21, 22, 23, 24, 25, 26, 27,28, 29, 30, 31];
+  $scope.days_list = function(month, year) {
+    if( (new Date(year, 1, 29).getMonth() === 1) && (month == 2) ) {
+      return days29;
+    }  
+    else if(month == 2) {
+      return days28;
+    }
+    else if( (month == 4) || (month == 6) || (month == 9) || (month == 11) ) {
+      return days30;
+    }  
+    else {
+      return days31;
+    }  
+  };  
+
   $http.get('/api').
     success(function(data, status, headers, config) {
       $scope.results = data;
