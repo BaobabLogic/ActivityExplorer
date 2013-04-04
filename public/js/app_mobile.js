@@ -26,6 +26,12 @@ function MobileCtrl($scope, $http, $location) {
   $scope.sort = "random";
   $scope.activity = "";
   $scope.available = "";
+  $scope.themesSelectVis = true;
+  $scope.refineSelectVis = false;
+  $scope.sortSelectVis = false;
+  $scope.detailsSelectVis = true;
+  $scope.bookSelectVis = false;
+  $scope.reviewsSelectVis = false;
 
   $scope.themes = { 
     "left":    [
@@ -200,6 +206,42 @@ function MobileCtrl($scope, $http, $location) {
       $('#resultsView').animate({ top: '0px'}, 800, 'easeInOutQuart');
 
     $scope.searchMenuVis = !$scope.searchMenuVis;
+  });
+
+  $$('.themesSelect').tap(function() {
+    $scope.themesSelectVis = true;
+    $scope.refineSelectVis = false;
+    $scope.sortSelectVis = false;
+  });
+
+  $$('.refineSelect').tap(function() {    
+    $scope.themesSelectVis = false;
+    $scope.refineSelectVis = true;
+    $scope.sortSelectVis = false;
+  });
+
+  $$('.sortSelect').tap(function() {
+    $scope.themesSelectVis = false;
+    $scope.refineSelectVis = false;
+    $scope.sortSelectVis = true;
+  });
+
+  $$('.detailsSelect').tap(function() {
+    $scope.detailsSelectVis = true;
+    $scope.bookSelectVis = false;
+    $scope.reviewsSelectVis = false;
+  });
+
+  $$('.bookSelect').tap(function() {    
+    $scope.detailsSelectVis = false;
+    $scope.bookSelectVis = true;
+    $scope.reviewsSelectVis = false;
+  });
+
+  $$('.reviewsSelect').tap(function() {
+    $scope.detailsSelectVis = false;
+    $scope.bookSelectVis = false;
+    $scope.reviewsSelectVis = true;
   });
 
   var myDate = new Date();

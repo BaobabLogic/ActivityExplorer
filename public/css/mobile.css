@@ -222,6 +222,25 @@ header {
   min-height: 200px;
 }
 
+#moreButtons{
+  height: 35px;
+  width: 100%;
+}
+
+.moreButtonsActual{
+  margin: 5px 0px 5px 10%;
+  height: 25px;
+  width: 20%;
+}
+
+.moreTitle {
+  font-family: "SofiaProLight";
+  color: white;
+  font-size: 14px;
+  text-shadow: 0px 1px 1px #000;
+  margin: auto;
+}
+
 #more{
   background-color: #f7f5f5;
   font-family: 'Cantarell-Regular';
@@ -263,53 +282,33 @@ header {
   padding-bottom: 5px;
 }
 
-#themeTitle {
+.themeTitle {
   font-family: "SofiaProLight";
   color: white;
   font-size: 15px;
   text-shadow: 0px 1px 1px #000;
-  
-  width: 80%;
-  height: 38px;
   display: inline-block;
   text-align: center;
-  border-radius:7px;
-  border: 0px;
-  
-  -moz-box-shadow: 1px 1px 3px #2b2b2b;
-  -webkit-box-shadow: 1px 1px 3px #2b2b2b;
-  box-shadow: 1px 1px 3px #2b2b2b;
-  
-  background-color: #f28e36;
-  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
-  background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-  background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-  background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-  background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0.21, rgb(242,142,54)),
-    color-stop(0.61, rgb(241,175,83))
-  );
 }
 
-#themeTitle:active {
-  background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
-  background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
-  background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
-  background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
-  background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
+.filtersDiv{
+  padding: 0px 0px 20px 9%;
+  width: 100%;
+  height: 50px;
+}
 
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0.21, rgb(241,175,83)),
-    color-stop(0.61, rgb(242,142,54))
-  );
+.filtersButtons{
+  width: 25%;
+  height: 30px;
+  margin-right: 8%;
+}
+
+.themesText{  
+  font-family: "SofiaProLight";
+  color: white;
+  font-size: 14px;
+  text-shadow: 0px 1px 1px #000;
+  padding-top: 10px;
 }
 
 .themeButton {
@@ -328,111 +327,72 @@ header {
   border-radius:5px;
 }
 
-#themeTop .themeButton {
-  font-size: 8px;
-  margin: 0px 8px 0px;
-  display: inline-block;
-}
-
-.themeButton:active {
-  -moz-box-shadow: 1px 1px 3px #2b2b2b;
-  -webkit-box-shadow: 1px 1px 3px #2b2b2b;
-  box-shadow: 1px 1px 3px #2b2b2b;
-  
-  background-color: #f28e36;
-  background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
-  background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
-  background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
-  background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
-  background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
-
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0.21, rgb(241,175,83)),
-    color-stop(0.61, rgb(242,142,54))
-  );
-}
-
-.themeSelectButton {
+.checkbox{
+  float: right;
   width: 5px;
   height: 5px;
-  margin: 0;
-  display: inline-block;
-  float: right;
-    
-  border-radius:7px;
-  border: 0px;
-  
-  -moz-box-shadow: 1px 1px 3px #2b2b2b;
-  -webkit-box-shadow: 1px 1px 3px #2b2b2b;
-  box-shadow: 1px 1px 3px #2b2b2b;
-  
-  background-color: #f28e36;
-  background-image: linear-gradient(bottom, rgb(242,142,54) 21%, rgb(31,148,237) 61%);
-  background-image: -o-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-  background-image: -moz-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-  background-image: -webkit-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-  background-image: -ms-linear-gradient(bottom, rgb(242,142,54) 21%, rgb(241,175,83) 61%);
-
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0.21, rgb(242,142,54)),
-    color-stop(0.61, rgb(241,175,83))
-  );
 }
 
-.themeSelectButton:active {
-  background-image: linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
-  background-image: -o-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
-  background-image: -moz-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
-  background-image: -webkit-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
-  background-image: -ms-linear-gradient(bottom, rgb(241,175,83) 21%, rgb(242,142,54) 61%);
-
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0.21, rgb(241,175,83)),
-    color-stop(0.61, rgb(242,142,54))
-  );
+.checkboxSize{
 }
 
-.themeSelectEmpty {
-  background-image: none;
-  background-color: transparent;
-  border: 1px solid #6b6b6b;
-  
-  -moz-box-shadow: 1px 1px 2px #5c5c5c;
-  -webkit-box-shadow: 1px 1px 2px #5c5c5c;
-  box-shadow: 1px 1px 2px #5c5c5c;
-}
-
-.themeSelectEmpty:active {
-  background-image: none;
-  background-color: transparent;
-  border: 1px solid #f7941d;
-  
-  -moz-box-shadow: 1px 1px 2px #5c5c5c;
-  -webkit-box-shadow: 1px 1px 2px #5c5c5c;
-  box-shadow: 1px 1px 2px #5c5c5c;
-}
-
-#themeLeft {
+#themeLeft {  
   float: left;
   display: inline-block;
-  width: 42%;
+  width: 40%;
   height: 180px;
-  margin-left: 20px;
+  margin-left: -15px;
+  margin-top: 20px;
 }
 
-#themeRight {
+#themeRight {  
   float: right;
   display: inline-block;
-  width: 42%;
+  width: 40%;
   height: 180px;
-  margin-right: 20px;
+  margin-right: 35px;
+  margin-top: 20px;
+}
+
+.refineDivs{
+  padding-top: 20px;
+  padding-right: 10%;
+}
+
+.refineTitle{
+  font-family: "SofiaProLight";
+  color: #f99331;
+  font-size: 17px;
+  text-shadow: 0px 1px 1px #000;
+}
+
+.refineExtra{
+  font-family: "SofiaProLight";
+  color: white;
+  font-size: 17px;
+  text-shadow: 0px 1px 1px #000;
+  float: right;
+}
+
+.sliderDiv{
+  padding-top: 5px;  
+}
+
+.slider{
+  width: 100%;  
+}
+
+.sortText{
+  width: 92%;
+  font-family: "SofiaProLight";
+  color: white;
+  font-size: 18px;
+  text-shadow: 0px 1px 1px #000;
+  padding-top: 15px;
+  text-align: center;
+  display: inline-block;
+}
+
+.sortSpace{
+  padding: 12px 0px 6px 0px;
 }

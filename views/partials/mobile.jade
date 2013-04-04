@@ -19,16 +19,55 @@ section#main(data-transition='slide')
           fieldset
             input.searchText(type='text', placeholder='Explore…')
       div.optionsDiv
-        div
-          div#themeTop
-            button#themeTitle(ng-click="themeTitleClick(themes, !themes.selected)")
-              | Themes
-          div#themeLeft
-            div(ng-repeat="theme in themes.left")
-              button.themeButton(ng-click="themeButtonClick(theme)")  {{theme.name}}
-          div#themeRight  
-            div(ng-repeat="theme in themes.right")
-              button.themeButton(ng-click="themeButtonClick(theme)")  {{theme.name}}
+        div.filtersDiv
+          a.filtersButtons(class='button themesSelect', href='#')
+            span.themeTitle Themes
+          a.filtersButtons(class='button refineSelect', href='#')
+            span.themeTitle Refine
+          a.filtersButtons(class='button sortSelect', href='#')
+            span.themeTitle Sort
+
+          div(ng-visible='themesSelectVis') 
+            div#themeLeft
+              div(ng-repeat="theme in themes.left")
+                div.themesText 
+                  span {{theme.name}}
+                  span.checkbox 
+                    a.checkboxSize(class='button', href='#')
+            div#themeRight  
+              div(ng-repeat="theme in themes.right")
+                div.themesText
+                  span {{theme.name}}
+                  span.checkbox 
+                    a.checkboxSize(class='button', href='#')
+
+          div(ng-visible='refineSelectVis')
+            div.refineDivs
+              div
+                span.refineTitle Budget:
+                span.refineExtra R5000 or more
+              div.sliderDiv
+                input(class='slider', type='range', min='1', max='10', value='10', id="budgetS", slider="budget")
+            div.refineDivs
+              div
+                span.refineTitle Time:
+                span.refineExtra 3 days or more
+              div.sliderDiv
+                input(class='slider', type='range', min='1', max='10', value='10', id="durationS", slider="duration")
+
+          div(ng-visible='sortSelectVis') 
+            div.sortText
+              p.sortSpace
+              | Random
+              p.sortSpace
+              | Price Low
+              p.sortSpace
+              | Price High
+              p.sortSpace
+              | Time Short
+              p.sortSpace
+              | Time Long
+
     div.loadingMargin(ng-visible='loadingResults')
       div(data-loading='white')
     div#resultsView(ng-visible='!loadingResults', class='scroll')
@@ -78,7 +117,14 @@ section#activity(data-transition='slide')
       div.resultDetailsMore
         span.bottomLeft {{activity.location[0]}}
         span.bottomRight {{getDuration(activity.duration[0])}} hrs
-      div#more
+      div#moreButtons
+        a.moreButtonsActual(class='button detailsSelect', href='#')
+          span.moreTitle Details
+        a.moreButtonsActual(class='button bookSelect', href='#')
+          span.moreTitle Book
+        a.moreButtonsActual(class='button reviewsSelect', href='#')
+          span.moreTitle Reviews
+      div#more(ng-visible='detailsSelectVis')
         p.detailTitle Description:  
         p {{activity.description[0]}} 
         p.detailTitle Notes:  
@@ -104,6 +150,12 @@ section#activity(data-transition='slide')
         p Minimum Height: {{activity.min_height[0]}}, Maximum Height: {{activity.max_height[0]}},
         p Fitness: {{activity.fitness[0]}}, Qualifications: {{activity.qualifications[0]}}, 
         p Certification: {{activity.certification[0]}}, Experience Level: {{activity.experience_level[0]}}
+
+      div(ng-visible='bookSelectVis')
+        | Book
+
+      div(ng-visible='reviewsSelectVis')
+        | Reviews
 
 
 aside#menu(class='left')
