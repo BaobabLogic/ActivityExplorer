@@ -55,6 +55,12 @@ app.get('*', routes.index);
 
 var port = process.env.PORT || 3000;
 
-server.listen(port, function(){
+server.listen(port, function() {
   console.log("Express server listening on port %d in %s mode", server.address().port, app.settings.env);
+
+  if (process.getuid() === 0)
+    require('fs').stat(__filename, function(err, stats) {
+      if (err) return console.log(err)
+      process.setuid(stats.uid);
+    });
 });
