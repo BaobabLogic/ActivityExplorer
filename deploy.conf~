@@ -1,8 +1,0 @@
-[linode]
-user deploy
-host __176.58.104.111__
-repo __git@github.com:BaobabLogic/ActivityExplorer.git__
-ref origin/master
-path /home/apps/ae
-post-deploy npm install && [ -e ../shared/pids/node.pid ] && sudo restart node || sudo start node
-test sleep 1 && curl localhost >/dev/null
