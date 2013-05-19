@@ -53,9 +53,7 @@ app.get('*', routes.index);
 
 // Start server
 
-var port = process.env.PORT || 3000;
-console.log(port);
-server.listen(port, function() {
+server.listen(3000, function() {
   console.log("Express server listening on port %d in %s mode", server.address().port, app.settings.env);
 
   if (process.getuid() === 0)
