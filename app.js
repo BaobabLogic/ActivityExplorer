@@ -3,14 +3,6 @@
  * Module dependencies.
  */
 
-var hostname      = require('os').hostname();
-var processNumber = process.env.INDEX_OF_PROCESS || 0;
-
-require('nodefly').profile(
-    'dc3b994068a9064f0319db0130f44fa0',
-    ["Activity Explorer", hostname, processNumber],
-);
-
 var express = require('express'),
     http = require('http'),
     routes = require('./routes'),
