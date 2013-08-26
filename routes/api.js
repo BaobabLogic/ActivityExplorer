@@ -10,7 +10,8 @@ var https = require('https'),
 var inspect = require('eyes').inspector({maxLength: false});
 var round = Math.round;
 var activitar= []; 
-var activity; var availability;
+var activity; 
+var availability;
 
 var parser = new xml2js.Parser();
 
@@ -18,7 +19,7 @@ parser.addListener('end', function(result) {
     var current = round(result.services.$.current_page);
     var total = round(result.services.$.pages); 
 
-    console.log("Received page " + current + " of " + total + " pages.");  
+    console.log("\nReceived page " + current + " of " + total + " pages.");  
 
     if(current == 1) {
       activitar = result.services.service;
@@ -40,7 +41,8 @@ parser.addListener('end', function(result) {
         activitar[i] = tempj;
         activitar[j] = tempi;
       }
-      console.log('Activitar main query complete.');
+			var date = new Date();
+      console.log('\nActivitar MAIN query COMPLETE.\n%s', date);
     }    
 });
 
@@ -75,7 +77,8 @@ function refresh(page) {
 }
 
 exports.refresh = function() {
-  console.log('Starting Activitar main query.');
+	var date = new Date();
+	console.log('\nActivitar MAIN query STARTING.\n%s', date);
   refresh(1);
 };
 
@@ -106,6 +109,10 @@ exports.api = function (req, res) {
 };
 
 exports.specificService = function (req, res) {
+	var date = new Date();
+	console.log("\nReceived service DETAILS query.\n%s\nRequest's service ID: %d",
+		 date, req.params.id);
+
   var serviceID = req.params.id;
   var date = req.params.date;
   if(serviceID != 'undefined') {
@@ -120,6 +127,9 @@ exports.specificService = function (req, res) {
       res2.on('data', function(d) {
         parser2.parseString(d);
         res.json(activity);
+				
+				date = new Date();
+				console.log("\nDETAILS query COMPLETE.\n%s", date);
       });
 
     }).on('error', function(e) {
@@ -132,6 +142,11 @@ exports.specificService = function (req, res) {
 };
 
 exports.availabilityCheck = function (req, res) {
+	var date = new Date();
+	console.log("\nReceived AVAILABILITY query.\n%s\nRequest's service ID: %d" +
+		 "\nRequest's adults param: %d\nRequest's children param: %d\nRequest's date param: %s",
+		 date, req.params.id, req.params.adults, req.params.children, req.params.date);
+
   var adults = req.params.adults;
   var children = req.params.children;
   var date = req.params.date;
@@ -149,6 +164,9 @@ exports.availabilityCheck = function (req, res) {
       res2.on('data', function(d) {
         parser3.parseString(d);
         res.json(availability);
+
+				date = new Date();
+				console.log("\nAVAILABILITY query COMPLETE.\n%s", date);
       });
 
     }).on('error', function(e) {
