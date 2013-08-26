@@ -54,9 +54,9 @@ app.get('*', routes.index);
 // Start server
 
 server.listen(3000, function() {
-	var date = new Date();
+	var log_date = new Date();
   console.log("\nExpress server LISTENING on port %d in %s mode.\n%s",
-		server.address().port, app.settings.env, date);
+		server.address().port, app.settings.env, log_date);
 
   if (process.getuid() === 0)
     require('fs').stat(__filename, function(err, stats) {

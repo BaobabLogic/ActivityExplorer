@@ -41,8 +41,8 @@ parser.addListener('end', function(result) {
         activitar[i] = tempj;
         activitar[j] = tempi;
       }
-			var date = new Date();
-      console.log('\nActivitar MAIN query COMPLETE.\n%s', date);
+			var log_date = new Date();
+      console.log('\nActivitar MAIN query COMPLETE.\n%s', log_date);
     }    
 });
 
@@ -57,7 +57,7 @@ parser3.addListener('end', function(result) {
 });
 
 //Activitar main refresh query
-
+//
 function refresh(page) {
   var search = {
     hostname: 'www.activitar.com',
@@ -77,82 +77,61 @@ function refresh(page) {
 }
 
 exports.refresh = function() {
-	var date = new Date();
-	console.log('\nActivitar MAIN query STARTING.\n%s', date);
+	var log_date = new Date();
+	console.log('\nActivitar MAIN query STARTING.\n%s', log_date);
   refresh(1);
 };
 
-//Activitar service query
-
-function service(serviceID) {
-  var service = {
-    hostname: 'www.activitar.com',
-    port: 443,
-    path: '/api/services/' + serviceID + '.xml?api_key=rTLUr5A4iGiat3Y2BjZn&per_page=99999',
-    method: 'GET',  
-  };
-
-  https.get(service, function(res) {
-    res.on('data', function(d) {
-      parser2.parseString(d);
-    });
-
-  }).on('error', function(e) {
-    console.error(e);
-  });
-}
 
 //Activity Explorer responses to requests for Activitar API info
-
 exports.api = function (req, res) {
   res.json(activitar);
 };
 
-exports.specificService = function (req, res) {
-	var date = new Date();
-	console.log("\nReceived service DETAILS query.\n%s\nRequest's service ID: %d",
-		 date, req.params.id);
+//Activity Details Query
 
-  var serviceID = req.params.id;
-  var date = req.params.date;
-  if(serviceID != 'undefined') {
-    var service = {
-      hostname: 'www.activitar.com',
-      port: 443,
-      path: '/api/services/' + serviceID + '.xml?api_key=rTLUr5A4iGiat3Y2BjZn&date=' + date,
-      method: 'GET',  
-    };
+function specificService(date, id, res) {
+		var service = {
+			hostname: 'www.activitar.com',
+			port: 443,
+			path: '/api/services/' + id + '.xml?api_key=rTLUr5A4iGiat3Y2BjZn&date=' + date,
+			method: 'GET',  
+		};
 
-    https.get(service, function(res2) {
-      res2.on('data', function(d) {
-        parser2.parseString(d);
+		https.get(service, function(rec) {
+			rec.on('data', function(d) {
+				parser2.parseString(d);
         res.json(activity);
-				
-				date = new Date();
-				console.log("\nDETAILS query COMPLETE.\n%s", date);
-      });
 
-    }).on('error', function(e) {
-      console.error(e);
-    });
-  }
+				var log_date = new Date();
+				console.log("\nDETAILS query COMPLETE.\n%s", log_date);
+			});
+
+		}).on('error', function(e) {
+			console.error(e);
+		});
+};
+
+exports.specificService = function (req, res) {
+  var id = req.params.id;
+  var date = req.params.date;
+
+	var log_date = new Date();
+	console.log("\nReceived service DETAILS query.\n%s\nRequest's service ID: %d",
+		 log_date, id);
+	
+  if (id != 'undefined') {
+		specificService(date, id, res);
+	}
   else {
     res.json(activity);
   }
 };
 
-exports.availabilityCheck = function (req, res) {
-	var date = new Date();
-	console.log("\nReceived AVAILABILITY query.\n%s\nRequest's service ID: %d" +
-		 "\nRequest's adults param: %d\nRequest's children param: %d\nRequest's date param: %s",
-		 date, req.params.id, req.params.adults, req.params.children, req.params.date);
+//Availability query
 
-  var adults = req.params.adults;
-  var children = req.params.children;
-  var date = req.params.date;
-  var id = req.params.id;
-  if(id != 'undefined'){
-    var service = {
+function availabilityCheck(adults, children, date, id, res) {
+	var service = {
       hostname: 'www.activitar.com',
       port: 443,
       path: '/api/services/available.xml?api_key=rTLUr5A4iGiat3Y2BjZn&adults=' + 
@@ -160,19 +139,34 @@ exports.availabilityCheck = function (req, res) {
       method: 'GET',  
     };
 
-    https.get(service, function(res2) {
-      res2.on('data', function(d) {
+    https.get(service, function(rec) {
+      rec.on('data', function(d) {
         parser3.parseString(d);
         res.json(availability);
 
-				date = new Date();
-				console.log("\nAVAILABILITY query COMPLETE.\n%s", date);
+				var log_date = new Date();
+				console.log("\nAVAILABILITY query COMPLETE.\n%s", log_date);
       });
 
     }).on('error', function(e) {
       console.error(e);
     });
-  }
+}
+
+exports.availabilityCheck = function (req, res) {
+  var id = req.params.id;
+	var adults = req.params.adults;
+  var children = req.params.children;
+  var date = req.params.date;
+
+	var log_date = new Date();
+	console.log("\nReceived AVAILABILITY query.\n%s\nRequest's service ID: %d" +
+		 "\nRequest's adults param: %d\nRequest's children param: %d\nRequest's date param: %s",
+		 log_date, id, adults, children, date);
+
+  if (id != 'undefined') {
+		availabilityCheck(adults, children, date, id, res);
+	}
   else {
     res.json(availability);
   } 
